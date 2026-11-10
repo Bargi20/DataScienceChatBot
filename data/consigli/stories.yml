@@ -1,0 +1,159 @@
+version: "3.1"
+
+stories:
+
+- story: consiglio completo con tutte le domande
+  steps:
+  - intent: chiedi_consiglio
+  - action: action_avvia_consiglio
+  - action: consiglio_form
+  - active_loop: consiglio_form
+  - slot_was_set:
+    - requested_slot: consiglio_giocatori
+  - intent: indica_criteri
+    entities:
+    - num_giocatori: "4"
+  - action: consiglio_form
+  - slot_was_set:
+    - consiglio_giocatori: "4"
+  - slot_was_set:
+    - requested_slot: consiglio_eta
+  - intent: indica_criteri
+    entities:
+    - eta: "8"
+  - action: consiglio_form
+  - slot_was_set:
+    - consiglio_eta: "8"
+  - slot_was_set:
+    - requested_slot: consiglio_durata
+  - intent: rispondi_indifferente
+  - action: consiglio_form
+  - slot_was_set:
+    - consiglio_durata: indifferente
+  - slot_was_set:
+    - requested_slot: consiglio_budget
+  - intent: indica_criteri
+    entities:
+    - budget: "30"
+  - action: consiglio_form
+  - slot_was_set:
+    - consiglio_budget: "30"
+  - slot_was_set:
+    - requested_slot: consiglio_genere
+  - intent: indica_criteri
+    entities:
+    - categoria: party
+  - action: consiglio_form
+  - slot_was_set:
+    - consiglio_genere: party
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_consiglia_giochi
+  - intent: thanks
+  - action: utter_thanks
+
+- story: consiglio con criteri già nel primo messaggio e domanda di cultura ludica a metà
+  steps:
+  - intent: chiedi_consiglio
+    entities:
+    - num_giocatori: "4"
+    - budget: "30"
+  - slot_was_set:
+    - consiglio_giocatori: "4"
+  - slot_was_set:
+    - consiglio_budget: "30"
+  - action: action_avvia_consiglio
+  - action: consiglio_form
+  - active_loop: consiglio_form
+  - slot_was_set:
+    - requested_slot: consiglio_eta
+  - intent: faq_giochi
+  - action: utter_faq_giochi
+  - action: consiglio_form
+  - slot_was_set:
+    - requested_slot: consiglio_eta
+  - intent: indica_criteri
+    entities:
+    - eta: "10"
+  - action: consiglio_form
+  - slot_was_set:
+    - consiglio_eta: "10"
+  - slot_was_set:
+    - requested_slot: consiglio_durata
+  - intent: indica_criteri
+    entities:
+    - durata: un'ora
+  - action: consiglio_form
+  - slot_was_set:
+    - consiglio_durata: "60"
+  - slot_was_set:
+    - requested_slot: consiglio_genere
+  - intent: rispondi_indifferente
+  - action: consiglio_form
+  - slot_was_set:
+    - consiglio_genere: indifferente
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_consiglia_giochi
+
+- story: consiglio interrotto a metà
+  steps:
+  - intent: chiedi_consiglio
+  - action: action_avvia_consiglio
+  - action: consiglio_form
+  - active_loop: consiglio_form
+  - slot_was_set:
+    - requested_slot: consiglio_giocatori
+  - intent: indica_criteri
+    entities:
+    - num_giocatori: "2"
+  - action: consiglio_form
+  - slot_was_set:
+    - consiglio_giocatori: "2"
+  - slot_was_set:
+    - requested_slot: consiglio_eta
+  - intent: interrompi
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_interrompi_consiglio
+
+- story: occasione, poi giochi simili e una sorpresa
+  steps:
+  - intent: chiedi_consiglio_occasione
+    entities:
+    - occasione: coppia
+  - action: action_consiglia_occasione
+  - intent: chiedi_giochi_simili
+    entities:
+    - gioco: Catan
+  - slot_was_set:
+    - gioco: Catan
+  - action: action_giochi_simili
+  - intent: chiedi_sorpresa
+  - action: action_sorprendimi
+
+- story: idea regalo e poi una domanda di cultura ludica
+  steps:
+  - intent: chiedi_idea_regalo
+    entities:
+    - eta: "8"
+  - action: action_idea_regalo
+  - intent: faq_giochi
+  - action: utter_faq_giochi
+  - intent: thanks
+  - action: utter_thanks
+
+- story: dopo la sorpresa chiede un consiglio su misura
+  steps:
+  - intent: chiedi_sorpresa
+  - action: action_sorprendimi
+  - intent: chiedi_sorpresa
+  - action: action_sorprendimi
+  - intent: chiedi_consiglio
+  - action: action_avvia_consiglio
+  - action: consiglio_form
+  - active_loop: consiglio_form

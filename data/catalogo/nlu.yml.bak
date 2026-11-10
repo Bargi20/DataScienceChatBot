@@ -1,0 +1,622 @@
+version: "3.1"
+
+# Area catalogo: domande sui prodotti del negozio.
+#
+# Valori canonici dell'entità `categoria` (gli stessi della colonna `categorie` di dataset/catalogo.csv):
+#   strategia, famiglia, party, cooperativo, carte, bambini, astratto, deckbuilding, legacy,
+#   solitario, per due, investigativo, piazzamento lavoratori, roll and write, avventura,
+#   bluff, dadi, accessori
+# I sinonimi in fondo al file riportano a questi valori i modi più comuni di chiamarli;
+# actions/catalogo.py (categoria_canonica) fa la stessa cosa nel codice.
+#
+# I nomi dei giochi da riconoscere come entità `gioco` sono nella lookup table
+# data/catalogo/lookup_giochi.yml, generata da dataset/genera_lookup.py.
+
+nlu:
+- intent: info_gioco
+  examples: |
+    - parlami di [Catan](gioco)
+    - cos'è [Wingspan](gioco)?
+    - di cosa parla [Terraforming Mars](gioco)?
+    - mi descrivi [dixit](gioco)?
+    - com'e [azul](gioco)? non lo conosco
+    - vorrei sapere qualcosa su [Root](gioco)
+    - info su [7 wonders duel](gioco)
+    - dimmi tutto su [Spirit Island](gioco)
+    - che tipo di gioco e [Dune Imperium](gioco)?
+    - come funziona [codenames](gioco)?
+    - mi dai qualche informazione su [carcasone](gioco)
+    - scheda di [Everdell](gioco)
+    - cosa mi sai dire di [lorenzo il magnifico](gioco)?
+    - raccontami qualcosa di [Gloomhaven](gioco)
+    - in cosa consiste [Sky Team](gioco)?
+    - descrizione di [ticket to ride](gioco)
+    - che cos'e [Mysterium](gioco)
+    - voglio saperne di piu su [kingdomino](gioco)
+    - dettagli su [Arkham Horror](gioco) per favore
+    - ho sentito parlare di [Brass Birmingham](gioco), di che si tratta?
+    - mi spieghi in due parole [Harmonies](gioco)?
+    - [Cartographers](gioco) che gioco è?
+    - parlami di questo gioco
+    - dimmi di piu su quel gioco
+    - com'è fatto questo gioco?
+
+- intent: chiedi_prezzo
+  examples: |
+    - quanto costa [Catan](gioco)?
+    - prezzo di [Azul](gioco)
+    - quanto viene [wingspan](gioco)?
+    - a quanto vendete [Ticket to Ride](gioco)?
+    - quanto costa?
+    - e quanto costa?
+    - quanto lo pagherei [Scythe](gioco)?
+    - qual è il prezzo di [7 Wonders](gioco)
+    - [Dixit](gioco) quanto costa
+    - quanto si spende per [terraforming mars](gioco)?
+    - costo di [Pandemic Legacy](gioco)?
+    - quanto costa il [set di 7 dadi poliedrici](gioco)?
+    - quanto viene il [tappetino da gioco](gioco)?
+    - prezzo?
+    - quant'è [heroquest](gioco)?
+    - quanto viene a costare [gloomhaven](gioco)
+    - ma [splendor](gioco) quanto costa?
+    - e caro [Barrage](gioco)?
+    - quanto costa [Brass Birmingham](gioco)?
+    - che prezzo ha [sushi go](gioco)?
+    - prezzo [codenames](gioco)
+    - quanto costano le bustine protettive?
+    - a che prezzo lo vendete?
+    - quanto costa [catan citta e cavalieri](gioco)?
+    - quanto devo spendere per [Il Signore degli Anelli](gioco)?
+
+- intent: chiedi_disponibilita
+  examples: |
+    - e disponibile [Catan](gioco)?
+    - avete [Azul](gioco)?
+    - [Dixit](gioco) è disponibile?
+    - c'è [wingspan](gioco) in magazzino?
+    - ce l'avete [Ticket to Ride](gioco)?
+    - è disponibile?
+    - ce l'avete?
+    - [Spirit Island](gioco) e esaurito?
+    - avete ancora [Pandemic Legacy](gioco)?
+    - è in stock [Terraforming Mars](gioco)?
+    - quanti pezzi avete di [Codenames](gioco)?
+    - posso comprare [sky team](gioco) adesso o e finito?
+    - vendete [Patchwork](gioco)?
+    - trovo [gloomhaven](gioco) da voi?
+    - c'è ancora disponibilita di [Everdell](gioco)?
+    - [carcassonne](gioco) e disponibile da subito?
+    - e disponibile [Tzolkin](gioco)?
+    - avete in vendita [Gaia Project](gioco)?
+    - è ancora disponibile?
+    - è tornato disponibile [Coup](gioco)?
+    - [7 wonders duel](gioco) lo avete in magazzino?
+    - ci sono ancora copie di [Barrage](gioco)?
+    - [Wingspan Espansione Europa](gioco) c'è?
+    - lo avete?
+
+- intent: chiedi_giocatori
+  examples: |
+    - in quanti si gioca a [Catan](gioco)?
+    - quanti giocatori servono per [Azul](gioco)?
+    - [Wingspan](gioco) si può giocare da soli?
+    - si può giocare in [2](num_giocatori) a [Ticket to Ride](gioco)?
+    - [Dixit](gioco) in [due](num_giocatori) si puo fare?
+    - va bene per [6](num_giocatori) persone [Codenames](gioco)?
+    - quanti possono giocare a [Terraforming Mars](gioco)?
+    - per quanti giocatori è [7 Wonders](gioco)?
+    - numero di giocatori di [Scythe](gioco)
+    - si gioca anche in [cinque](num_giocatori)?
+    - in quanti si gioca?
+    - quante persone servono?
+    - posso giocarci in [3](num_giocatori)?
+    - [Lupus in Tabula](gioco) quanti giocatori minimo?
+    - [carcasone](gioco) fino a quanti giocatori?
+    - e in [quattro](num_giocatori) funziona?
+    - c'è la modalita solitario in [Arnak](gioco)?
+    - [Sky Team](gioco) si gioca solo in coppia?
+    - si puo giocare in [8](num_giocatori) a [Just One](gioco)?
+    - massimo quanti giocatori per [King of Tokyo](gioco)?
+    - [Root](gioco) da quanti giocatori è?
+
+- intent: chiedi_durata
+  examples: |
+    - quanto dura una partita a [Catan](gioco)?
+    - [Terraforming Mars](gioco) quanto dura?
+    - quanto tempo ci vuole per [Azul](gioco)?
+    - durata di [Wingspan](gioco)
+    - quanto dura?
+    - e quanto dura una partita?
+    - e lungo [Twilight Imperium](gioco)?
+    - una partita a [Barrage](gioco) quanto tempo richiede?
+    - [Codenames](gioco) e veloce?
+    - quanto ci si mette a finire [scythe](gioco)?
+    - in quanto tempo si gioca [7 wonders](gioco)?
+    - dura tanto [Spirit Island](gioco)?
+    - [dixit](gioco) quanti minuti dura?
+    - è un gioco lungo?
+    - quanto tempo serve per una partita?
+    - dura molto [Gloomhaven](gioco)?
+    - tempo di gioco di [Kingdomino](gioco)
+    - una partita di [lorenzo il magnifico](gioco) quanto dura piu o meno?
+    - [Detective](gioco) quante ore ci vogliono?
+    - si fa in fretta una partita a [Dobble](gioco)?
+
+- intent: chiedi_eta
+  examples: |
+    - da che età è [Catan](gioco)?
+    - [Dixit](gioco) per che eta e consigliato?
+    - età minima per [Azul](gioco)?
+    - va bene per un bambino di [6](eta) anni [Kingdomino](gioco)?
+    - mio figlio ha [8](eta) anni, puo giocare a [Ticket to Ride](gioco)?
+    - [Exploding Kittens](gioco) e adatto ai bambini?
+    - da quanti anni si puo giocare?
+    - è adatto a una bambina di [cinque](eta) anni?
+    - per che età è?
+    - [Pandemic Legacy](gioco) è per ragazzi?
+    - che età serve per [wingspan](gioco)?
+    - [Dobble](gioco) va bene per bimbi di [4](eta) anni?
+    - a [10](eta) anni si può giocare a [Terraforming Mars](gioco)?
+    - età consigliata [Labirinto Magico](gioco)
+    - dai quanti anni è [Uno](gioco)?
+    - il mio nipotino ha [7](eta) anni, va bene [Rhino Hero](gioco)?
+    - età minima?
+    - [Zombicide](gioco) è troppo per un ragazzino di [11](eta) anni?
+    - mia figlia ha [9](eta) anni, ci riesce con [Splendor](gioco)?
+
+- intent: chiedi_difficolta
+  examples: |
+    - [Terraforming Mars](gioco) è difficile?
+    - quanto è complicato [Spirit Island](gioco)?
+    - [Catan](gioco) e facile da imparare?
+    - è un gioco difficile?
+    - le regole di [Azul](gioco) sono semplici?
+    - [Barrage](gioco) va bene per chi inizia?
+    - che difficolta ha [Root](gioco)?
+    - è complesso [Gloomhaven](gioco)?
+    - livello di difficoltà di [wingspan](gioco)
+    - [Dune Imperium](gioco) e impegnativo?
+    - è facile?
+    - si impara in fretta [Kingdomino](gioco)?
+    - quanto è complesso da spiegare [7 wonders](gioco)?
+    - è troppo complicato per chi non ha mai giocato?
+    - [lorenzo il magnifico](gioco) è per esperti?
+    - complessità di [Tzolk'in](gioco)?
+    - le regole sono difficili?
+    - [Ark Nova](gioco) e difficile?
+    - quanto e tosto [Scythe](gioco)?
+    - è un gioco complicato da capire [Everdell](gioco)?
+
+- intent: chiedi_editore_autore
+  examples: |
+    - chi ha inventato [Catan](gioco)?
+    - chi è l'autore di [Wingspan](gioco)?
+    - chi pubblica [Azul](gioco)?
+    - chi è l'editore di [Codenames](gioco)?
+    - di che casa editrice e [Dixit](gioco)?
+    - chi l'ha creato?
+    - chi ha ideato [Lorenzo il Magnifico](gioco)?
+    - chi produce [Dobble](gioco)?
+    - [Terraforming Mars](gioco) chi lo fa?
+    - autore di [7 wonders](gioco)
+    - editore di [Railroad Ink](gioco)?
+    - chi è il designer di [Spirit Island](gioco)?
+    - quale editore ha fatto [Bang](gioco)?
+    - chi l'ha disegnato?
+    - in che anno è uscito [Carcassonne](gioco)?
+    - [Ticket to Ride](gioco) di che anno e?
+    - chi è l'editore?
+    - chi ha progettato [Barrage](gioco)?
+    - di chi e [Quoridor](gioco)?
+    - chi e l'autore?
+
+- intent: chiedi_lingua
+  examples: |
+    - [Catan](gioco) è in italiano?
+    - in che lingua è [Coup](gioco)?
+    - [Friday](gioco) e in inglese?
+    - c'è la versione italiana di [Wingspan](gioco)?
+    - le carte di [Dixit](gioco) sono in italiano?
+    - è in italiano?
+    - che lingua ha?
+    - il regolamento e in italiano?
+    - per [Hive](gioco) serve sapere l'inglese?
+    - è dipendente dalla lingua [Skull](gioco)?
+    - avete [Terraforming Mars](gioco) in italiano?
+    - edizione italiana di [7 Wonders Duel](gioco)?
+    - è in lingua originale [Dune Imperium](gioco)?
+    - [Patchwork](gioco) ha testo in inglese?
+    - lingua di [Codenames](gioco)
+    - è tradotto in italiano?
+    - [arkham horror](gioco) e in italiano o in inglese?
+    - le regole di [Flip 7](gioco) sono in italiano?
+    - serve l'inglese per giocarci?
+
+- intent: chiedi_espansioni
+  examples: |
+    - ci sono espansioni per [Catan](gioco)?
+    - che espansioni avete di [Carcassonne](gioco)?
+    - [Wingspan](gioco) ha espansioni?
+    - espansioni di [7 Wonders](gioco)
+    - ha delle espansioni?
+    - esistono espansioni?
+    - [Terraforming Mars](gioco) si può espandere?
+    - avete qualche espansione di [Pandemic](gioco)?
+    - quali espansioni ci sono per [Scythe](gioco)?
+    - [Città e Cavalieri](gioco) è un'espansione?
+    - per giocare a [Catan Espansione 5-6 giocatori](gioco) serve il gioco base?
+    - che espansioni ha [ticket to ride](gioco)?
+    - c'è un'espansione per giocare in piu persone a [Catan](gioco)?
+    - avete altre espansioni?
+    - [Bang](gioco) ha espansioni?
+    - [exploding kittens](gioco) espansione
+    - [7 wonders duel](gioco) ha qualche espansione?
+    - espansioni disponibili per [Dixit](gioco)?
+    - [Prelude](gioco) di che gioco è l'espansione?
+    - vendete espansioni per [Azul](gioco)?
+
+- intent: confronta_giochi
+  examples: |
+    - meglio [Catan](gioco) o [Carcassonne](gioco)?
+    - confronta [Azul](gioco) e [Splendor](gioco)
+    - che differenza c'è tra [Ticket to Ride](gioco) e [Ticket to Ride Europa](gioco)?
+    - [Wingspan](gioco) o [Everdell](gioco), quale scelgo?
+    - differenze tra [7 wonders](gioco) e [7 wonders duel](gioco)
+    - paragona [Pandemic](gioco) con [Spirit Island](gioco)
+    - [codenames](gioco) vs [dixit](gioco)
+    - è meglio [Terraforming Mars](gioco) o [Scythe](gioco)?
+    - confrontalo con [Azul](gioco)
+    - e rispetto a [Kingdomino](gioco) com'e?
+    - mettimi a confronto [Dune Imperium](gioco) e [Arnak](gioco)
+    - quale è piu facile tra [Root](gioco) e [Small World](gioco)?
+    - [lupus in tabula](gioco) o [bang](gioco)?
+    - confronta due giochi
+    - vorrei confrontare due giochi
+    - cosa cambia tra [Sky Team](gioco) e [Codenames Duetto](gioco)?
+    - [Risiko](gioco) contro [Small World](gioco), quale dura meno?
+    - fammi un confronto tra [Cluedo](gioco) e [Mysterium](gioco)
+    - che differenza c'è con [Jaipur](gioco)?
+    - [carcasone](gioco) e [kingdomino](gioco) si somigliano?
+
+- intent: cerca_categoria
+  examples: |
+    - che giochi [cooperativi](categoria) avete?
+    - mostrami i giochi di [strategia](categoria)
+    - avete giochi [party](categoria)?
+    - giochi [per bambini](categoria)
+    - elenco dei giochi [di carte](categoria)
+    - quali giochi [astratti](categoria) vendete?
+    - cerco giochi [legacy](categoria)
+    - avete qualcosa di [deckbuilding](categoria)?
+    - giochi [in solitario](categoria)
+    - giochi [per coppie](categoria) ne avete?
+    - giochi [investigativi](categoria) ce ne sono?
+    - che giochi di [piazzamento lavoratori](categoria) avete?
+    - mostrami i [roll & write](categoria)
+    - giochi di [avventura](categoria)?
+    - avete giochi di [bluff](categoria)?
+    - giochi con i [dadi](categoria)
+    - quali sono i giochi [per famiglie](categoria)?
+    - che giochi [da festa](categoria) avete?
+    - giochi di societa [per bambini](categoria)
+    - mi fai vedere i [gialli](categoria)?
+    - che [escape room](categoria) avete?
+    - giochi [collaborativi](categoria)
+    - vorrei vedere i giochi [worker placement](categoria)
+    - che generi di giochi vendete?
+    - che categorie di giochi avete?
+    - lista dei giochi [testa a testa](categoria)
+
+- intent: cerca_editore
+  examples: |
+    - che giochi avete di [Asmodee](editore)?
+    - giochi [Cranio Creations](editore)
+    - mostrami i giochi della [Ghenos](editore)
+    - avete giochi [dV Giochi](editore)?
+    - cosa vendete di [Horrible Guild](editore)?
+    - giochi pubblicati da [Giochi Uniti](editore)
+    - quali giochi fa [cranio](editore)?
+    - catalogo [Oliphante](editore)
+    - avete roba della [Raven](editore)?
+    - giochi editi da [Asmodee Italia](editore)
+    - prodotti [HABA](editore)?
+    - che editori avete?
+    - quali case editrici trattate?
+    - giochi della [Hasbro](editore)
+    - avete qualcosa di [Pendragon](editore)?
+    - giochi [Ravensburger](editore)
+    - tutti i giochi di [Ghenos Games](editore)
+    - vendete giochi [Mattel](editore)?
+    - cosa avete della [Kosmos](editore)?
+    - di quali editori avete i giochi?
+
+- intent: mostra_offerte
+  examples: |
+    - che giochi avete in offerta?
+    - quali giochi sono scontati?
+    - mostrami le offerte
+    - giochi in sconto
+    - quali sono le offerte di oggi?
+    - avete giochi [cooperativi](categoria) in offerta?
+    - offerte su giochi [party](categoria)?
+    - qualche gioco a prezzo ridotto?
+    - cosa c'è in sconto adesso?
+    - fammi vedere i giochi in promozione
+    - ci sono giochi di [strategia](categoria) scontati?
+    - quali giochi costano meno del solito?
+    - avete delle occasioni da segnalarmi?
+    - che prodotti sono in offerta?
+    - lista dei giochi scontati
+    - offerte sui giochi [per bambini](categoria)?
+    - c'è qualche gioco in offerta?
+    - giochi in promo
+    - ci sono promozioni attive?
+    - ci sono offerte del weekend?
+    - vorrei sapere se ci sono sconti in questo periodo
+    - che prodotti sono in offerta adesso?
+    - giochi scontati
+
+- intent: mostra_novita
+  examples: |
+    - quali sono le novità?
+    - cosa c'è di nuovo?
+    - ultime uscite
+    - che giochi nuovi sono arrivati?
+    - novita del mese
+    - mostrami gli ultimi arrivi
+    - avete giochi appena usciti?
+    - cosa è uscito di recente?
+    - nuovi giochi in catalogo?
+    - ci sono novità interessanti?
+    - le novita di quest'anno
+    - giochi piu recenti
+    - ultimi giochi arrivati
+    - che nuovi titoli avete?
+    - fammi vedere le novità
+    - cosa c'è di nuovo in catalogo?
+    - avete qualche gioco nuovo?
+
+- intent: mostra_piu_apprezzati
+  examples: |
+    - quali sono i giochi più apprezzati?
+    - i giochi migliori che avete
+    - classifica dei giochi piu votati
+    - qual è il gioco più bello del catalogo?
+    - giochi con le recensioni migliori
+    - top 5 dei giochi
+    - i piu amati dai giocatori
+    - i giochi [cooperativi](categoria) più apprezzati
+    - il miglior gioco di [strategia](categoria)?
+    - quali sono i giochi [party](categoria) più votati?
+    - i titoli con il voto piu alto
+    - quali giochi piacciono di piu?
+    - giochi più popolari
+    - quali sono i piu venduti?
+    - i giochi più famosi che avete
+    - il gioco [per famiglie](categoria) migliore
+    - i migliori giochi [per bambini](categoria)
+    - qual e il gioco con la valutazione piu alta?
+
+- intent: mostra_accessori
+  examples: |
+    - vendete accessori?
+    - avete bustine protettive?
+    - che accessori avete?
+    - avete dadi?
+    - vorrei delle bustine per le carte
+    - c'è un tappetino da gioco?
+    - avete organizer per i giochi?
+    - vendete porta carte?
+    - cerco un set di dadi per giochi di ruolo
+    - sleeves per carte ne avete?
+    - accessori per giochi da tavolo
+    - avete un vassoio per i dadi?
+    - deck box?
+    - avete inserti per la scatola di [Wingspan](gioco)?
+    - bustine per [Catan](gioco)?
+    - protezioni per le carte
+    - mostrami gli accessori
+    - avete qualcosa per tenere in ordine i pezzi?
+
+- intent: indica_gioco
+  examples: |
+    - [Catan](gioco)
+    - [azul](gioco)
+    - intendevo [Wingspan](gioco)
+    - parlavo di [Ticket to Ride](gioco)
+    - [terraforming mars](gioco)
+    - e [Carcassonne](gioco)?
+    - e per [Dixit](gioco)?
+    - il gioco è [Codenames](gioco)
+    - si chiama [Spirit Island](gioco)
+    - [7 wonders duel](gioco)
+    - quello, [Scythe](gioco)
+    - e invece [Kingdomino](gioco)?
+    - [Dune Imperium](gioco) intendo
+    - mi riferivo a [Pandemic](gioco)
+    - [gloomhaven](gioco)
+    - e [Splendor](gioco)?
+    - [carcasone](gioco)
+    - [Brass Birmingham](gioco)
+    - e [lupus](gioco)?
+    - [harmonies](gioco) per favore
+    - e di [Root](gioco)?
+    - [SETI](gioco)
+
+# ---------------------------------------------------------------------------
+# Sinonimi delle categorie (valore canonico = categoria del catalogo)
+# ---------------------------------------------------------------------------
+
+- synonym: strategia
+  examples: |
+    - strategici
+    - strategico
+    - di strategia
+    - gestionali
+    - gestionale
+    - german
+    - eurogame
+
+- synonym: famiglia
+  examples: |
+    - per famiglie
+    - per la famiglia
+    - in famiglia
+    - per tutta la famiglia
+    - family
+    - family game
+    - familiari
+
+- synonym: party
+  examples: |
+    - party game
+    - party games
+    - per feste
+    - da festa
+    - per gruppi
+    - di gruppo
+    - da compagnia
+
+- synonym: cooperativo
+  examples: |
+    - cooperativi
+    - cooperativa
+    - cooperative
+    - collaborativi
+    - collaborativo
+    - coop
+
+- synonym: carte
+  examples: |
+    - di carte
+    - con le carte
+    - card game
+    - card games
+
+- synonym: bambini
+  examples: |
+    - per bambini
+    - per bimbi
+    - per i piu piccoli
+    - per i più piccoli
+    - per ragazzi
+    - kids
+    - giochi di societa per bambini
+    - giochi di società per bambini
+
+- synonym: astratto
+  examples: |
+    - astratti
+    - astratta
+    - astratte
+
+- synonym: deckbuilding
+  examples: |
+    - deck building
+    - deck-building
+    - deckbuilder
+    - deck builder
+    - costruzione del mazzo
+
+- synonym: legacy
+  examples: |
+    - giochi legacy
+    - campagna legacy
+
+- synonym: solitario
+  examples: |
+    - in solitario
+    - solitari
+    - single player
+    - solo mode
+    - da giocare da soli
+
+- synonym: per due
+  examples: |
+    - per coppie
+    - testa a testa
+    - a due
+
+- synonym: investigativo
+  examples: |
+    - investigativi
+    - investigativa
+    - gialli
+    - giallo
+    - di deduzione
+    - investigazione
+    - escape room
+    - misteri
+
+- synonym: piazzamento lavoratori
+  examples: |
+    - worker placement
+    - piazzamento di lavoratori
+    - piazzamento dei lavoratori
+
+- synonym: roll and write
+  examples: |
+    - roll & write
+    - roll&write
+    - roll e write
+    - roll n write
+    - flip and write
+    - flip & write
+    - carta e matita
+
+- synonym: avventura
+  examples: |
+    - avventure
+    - di avventura
+    - dungeon crawler
+    - fantasy
+
+- synonym: bluff
+  examples: |
+    - di bluff
+    - ruoli nascosti
+    - deduzione sociale
+    - lupi mannari
+
+- synonym: dadi
+  examples: |
+    - di dadi
+    - con i dadi
+
+- synonym: accessori
+  examples: |
+    - accessorio
+
+# ---------------------------------------------------------------------------
+# Sinonimi degli editori (valore canonico = editore del catalogo)
+# ---------------------------------------------------------------------------
+
+- synonym: Asmodee Italia
+  examples: |
+    - asmodee
+
+- synonym: Cranio Creations
+  examples: |
+    - cranio
+
+- synonym: Ghenos Games
+  examples: |
+    - ghenos
+
+- synonym: Horrible Guild
+  examples: |
+    - horrible games
+
+- synonym: Raven Distribution
+  examples: |
+    - raven
+
+- synonym: Pendragon Game Studio
+  examples: |
+    - pendragon
+
+- synonym: dV Giochi
+  examples: |
+    - da vinci giochi
+    - dv

@@ -1,0 +1,7 @@
+version: "3.1"
+
+rules:
+- rule: Rispondi alle FAQ sui pagamenti
+  steps:
+  - intent: faq_pagamenti
+  - action: utter_faq_pagamenti

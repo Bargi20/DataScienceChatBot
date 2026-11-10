@@ -1,0 +1,69 @@
+version: "3.1"
+
+stories:
+  - story: test faq negozio
+    steps:
+      - user: |
+          che orari avete?
+        intent: faq_negozio
+      - action: utter_faq_negozio
+
+  - story: test siamo aperti adesso
+    steps:
+      - user: |
+          siete aperti adesso?
+        intent: chiedi_apertura_adesso
+      - action: action_negozio_aperto
+
+  - story: test prossimi eventi
+    steps:
+      - user: |
+          quali eventi ci sono prossimamente?
+        intent: chiedi_eventi
+      - action: action_prossimi_eventi
+
+  - story: test operatore
+    steps:
+      - user: |
+          voglio parlare con una persona
+        intent: chiedi_operatore
+      - action: action_parla_operatore
+
+  - story: test reclamo
+    steps:
+      - user: |
+          sono molto insoddisfatto del vostro servizio
+        intent: fai_reclamo
+      - action: utter_reclamo
+
+  - story: test feedback completo
+    steps:
+      - user: |
+          vorrei lasciare un feedback
+        intent: lascia_feedback
+      - action: feedback_negozio_form
+      - active_loop: feedback_negozio_form
+      - user: |
+          /dai_voto_negozio{"negozio_voto":"5"}
+        intent: dai_voto_negozio
+      - action: feedback_negozio_form
+      - user: |
+          negozio bellissimo e personale gentile
+      - action: feedback_negozio_form
+      - active_loop: null
+      - action: action_invia_feedback_negozio
+
+  - story: test feedback interrotto
+    steps:
+      - user: |
+          vorrei lasciare un feedback
+        intent: lascia_feedback
+      - action: feedback_negozio_form
+      - active_loop: feedback_negozio_form
+      - user: |
+          lascia perdere
+        intent: interrompi
+      - action: action_deactivate_loop
+      - active_loop: null
+      - action: utter_negozio_feedback_interrotto
+      - action: action_azzera_feedback_negozio

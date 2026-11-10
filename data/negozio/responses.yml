@@ -1,0 +1,72 @@
+version: "3.1"
+
+responses:
+  utter_faq_negozio/orari:
+    - text: "Il negozio di Via Roma 12 ad Ancona è aperto:\n• lunedì 15:30–19:30\n• da martedì a sabato 10:00–13:00 e 15:30–19:30\n• domenica chiuso\n\nL'e-shop su www.gigigames.it è sempre aperto. 🎲"
+    - text: "Ecco i nostri orari in negozio:\n• lunedì: 15:30–19:30\n• martedì–sabato: 10:00–13:00 e 15:30–19:30\n• domenica: chiuso\n\nSe vuoi sapere se siamo aperti proprio adesso, chiedimelo!"
+
+  utter_faq_negozio/domenica:
+    - text: "La domenica il negozio fisico è chiuso. Ci trovi dal lunedì pomeriggio (15:30–19:30) e da martedì a sabato 10:00–13:00 e 15:30–19:30. Online, invece, puoi ordinare quando vuoi su www.gigigames.it. 😊"
+    - text: "Purtroppo la domenica siamo chiusi. Riapriamo il lunedì alle 15:30 (fino alle 19:30). Sul sito www.gigigames.it puoi comunque ordinare a qualsiasi ora."
+
+  utter_faq_negozio/indirizzo:
+    - text: "Il negozio GIGI Games si trova in Via Roma 12, 60121 Ancona. 📍\nTi aspettiamo per scoprire i giochi dal vivo!"
+    - text: "Siamo in Via Roma 12, 60121 Ancona: negozio fisico di giochi da tavolo, affiancato dall'e-shop www.gigigames.it. 📍"
+
+  utter_faq_negozio/come_arrivare:
+    - text: "Il negozio è in Via Roma 12, 60121 Ancona. 📍 Per le indicazioni più comode ti consiglio di inserire l'indirizzo nella tua app di mappe.\n\nPurtroppo non ho informazioni precise su parcheggi e mezzi pubblici nei dintorni: se ti serve un consiglio, chiedi ai nostri operatori allo 071 123 4567 o scrivi a assistenza@gigigames.it."
+
+  utter_faq_negozio/telefono:
+    - text: "Puoi chiamarci al 071 123 4567. 📞 Gli operatori rispondono dal lunedì al venerdì, dalle 9:00 alle 18:00."
+    - text: "Il nostro numero è 071 123 4567 (anche WhatsApp). Gli operatori sono disponibili lun–ven 9:00–18:00."
+
+  utter_faq_negozio/email:
+    - text: "Scrivici a assistenza@gigigames.it ✉️ Rispondiamo entro 24 ore lavorative."
+    - text: "L'indirizzo dell'assistenza è assistenza@gigigames.it. Ti rispondiamo entro 24 ore lavorative; se è urgente, chiamaci allo 071 123 4567 (lun–ven 9:00–18:00)."
+
+  utter_faq_negozio/whatsapp:
+    - text: "Sì, puoi scriverci su WhatsApp al 071 123 4567 (è lo stesso numero del telefono). Gli operatori rispondono dal lunedì al venerdì, dalle 9:00 alle 18:00. 💬"
+    - text: "Certo! Il nostro WhatsApp è 071 123 4567. Ti risponde un operatore lun–ven dalle 9:00 alle 18:00."
+
+  utter_faq_negozio/social:
+    - text: "Ci trovi su Instagram e Facebook come @gigigames. 📱 Lì pubblichiamo novità, offerte ed eventi."
+    - text: "Seguici su Instagram e Facebook: @gigigames. Novità e appuntamenti in negozio li annunciamo anche lì!"
+
+  utter_faq_negozio/chi_siamo:
+    - text: "GIGI Games è un negozio di giochi da tavolo online e fisico: l'e-shop è su www.gigigames.it e il negozio è in Via Roma 12 ad Ancona. 🎲\nOrganizziamo anche serate di gioco, tornei e tavoli demo. Io sono GIGI_Bot, l'assistente virtuale del negozio."
+    - text: "Siamo GIGI Games, appassionati di giochi da tavolo con un negozio a Ancona (Via Roma 12) e uno shop online su www.gigigames.it. Ti aiutiamo a scegliere il gioco giusto e a provarlo con noi!"
+
+  utter_faq_negozio/provare_giochi:
+    - text: "Sì! Il sabato pomeriggio in negozio c'è il tavolo demo, dove puoi provare i giochi prima di comprarli. 🎲 Ti consiglio di chiedere in anticipo quale gioco vuoi provare chiamando lo 071 123 4567."
+    - text: "Certo, da noi si prova! Ogni sabato pomeriggio c'è un tavolo demo. Per altre occasioni, scrivici o chiamaci (071 123 4567) e vediamo cosa si può fare."
+
+  utter_faq_negozio/serate_tornei:
+    - text: "In negozio organizziamo:\n• serata di gioco libero ogni venerdì alle 21:00 (gratis)\n• tavolo demo il sabato pomeriggio\n• tornei mensili\n\nPer le date dei prossimi appuntamenti chiedimi «quali sono i prossimi eventi?». Per iscriverti a un torneo scrivi a assistenza@gigigames.it o chiama lo 071 123 4567."
+
+  utter_faq_negozio/preordini:
+    - text: "Per preordinare un gioco vai sulla sua scheda prodotto sul sito. Il preordine si paga subito, al momento dell'ordine, e la spedizione avviene all'uscita del gioco.\n\nSe nello stesso ordine ci sono anche prodotti disponibili, questi partono subito e il preordine viene spedito dopo, senza costi aggiuntivi. 📦"
+
+  utter_faq_negozio/confezione_regalo:
+    - text: "Sì! La confezione regalo costa 2 € e il biglietto personalizzato è gratis. 🎁 Puoi aggiungerli al tuo ordine per un regalo già pronto."
+    - text: "Per i regali trovi la confezione regalo a 2 € e il biglietto personalizzato gratuito, con la tua dedica. 🎁"
+
+  utter_faq_negozio/usato_permute:
+    - text: "No, purtroppo non vendiamo giochi usati e non facciamo permute: da noi si trovano solo giochi nuovi."
+
+  utter_faq_negozio/b2b:
+    - text: "Per ludoteche, associazioni e scuole abbiamo condizioni dedicate. Scrivi a b2b@gigigames.it indicando chi sei e cosa ti serve: ti risponderemo con tutti i dettagli. 🏫"
+
+  utter_faq_negozio/lavora_con_noi:
+    - text: "Grazie dell'interesse! Per candidarti scrivi a lavora@gigigames.it presentandoti e allegando il tuo curriculum. 💼"
+
+  utter_faq_negozio/feste_eventi_privati:
+    - text: "Non ho informazioni su feste di compleanno o eventi privati in negozio. Per verificare se è possibile organizzarli scrivi a assistenza@gigigames.it o chiama lo 071 123 4567 (lun–ven 9:00–18:00): ti sapranno dire. 🎉"
+
+  utter_faq_negozio/sconti_studenti:
+    - text: "Non risultano sconti per studenti o convenzioni particolari tra le mie informazioni. Se vuoi chiedere se esiste qualche agevolazione per te, scrivi a assistenza@gigigames.it.\n\nPer risparmiare puoi iscriverti alla newsletter e ricevere il codice BENVENUTO10 (10% sul primo ordine), oppure accumulare GIGI Punti."
+
+  utter_faq_negozio/festivi:
+    - text: "Non ho informazioni sugli orari nei giorni festivi o sulle chiusure per ferie. Ti consiglio di chiamare lo 071 123 4567 o scrivere a assistenza@gigigames.it prima di passare. Gli orari abituali li trovi chiedendomi «che orari avete?». 🗓️"
+
+  utter_faq_negozio/prodotti_in_negozio:
+    - text: "Non ho informazioni precise sul fatto che tutto il catalogo online sia disponibile anche in negozio, né sull'eventuale differenza di prezzi. Prima di passare in Via Roma 12 ti consiglio di chiamare lo 071 123 4567 o scrivere a assistenza@gigigames.it per verificare un gioco in particolare."

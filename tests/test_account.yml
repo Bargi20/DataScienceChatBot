@@ -1,0 +1,69 @@
+version: "3.1"
+
+stories:
+- story: FAQ punti
+  steps:
+  - user: |
+      come funzionano i GIGI Punti?
+    intent: faq_account
+  - action: utter_faq_account
+
+- story: FAQ password dimenticata
+  steps:
+  - user: |
+      ho dimenticato la password
+    intent: faq_account
+  - action: utter_faq_account
+
+- story: Iscrizione alla newsletter
+  steps:
+  - user: |
+      voglio iscrivermi alla newsletter
+    intent: iscriviti_newsletter
+  - action: newsletter_form
+  - active_loop: newsletter_form
+  - user: |
+      [mario.rossi@gmail.com](email)
+    intent: fornisci_email
+  - action: newsletter_form
+  - active_loop: null
+  - action: action_iscrivi_newsletter
+
+- story: Iscrizione con email già nel messaggio
+  steps:
+  - user: |
+      iscrivi [anna_92@libero.it](email) alla newsletter
+    intent: iscriviti_newsletter
+  - action: newsletter_form
+  - active_loop: null
+  - action: action_iscrivi_newsletter
+
+- story: Newsletter interrotta
+  steps:
+  - user: |
+      iscrivimi alla newsletter
+    intent: iscriviti_newsletter
+  - action: newsletter_form
+  - active_loop: newsletter_form
+  - user: |
+      lascia perdere
+    intent: interrompi
+  - action: action_deactivate_loop
+  - active_loop: null
+  - action: utter_account_interrotto
+
+- story: Disiscrizione
+  steps:
+  - user: |
+      voglio disiscrivermi dalla newsletter
+    intent: disiscriviti_newsletter
+  - action: utter_disiscrizione_newsletter
+
+- story: Avviso disponibilità senza nome del gioco
+  steps:
+  - user: |
+      avvisami quando torna disponibile
+    intent: avvisami_disponibilita
+  - action: action_prepara_avviso
+  - action: avviso_disponibilita_form
+  - active_loop: avviso_disponibilita_form

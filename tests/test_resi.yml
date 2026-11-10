@@ -1,0 +1,68 @@
+version: "3.1"
+
+stories:
+- story: faq reso costo
+  steps:
+  - user: |
+      quanto costa fare un reso?
+    intent: faq_resi
+  - action: utter_faq_resi
+
+- story: faq garanzia
+  steps:
+  - user: |
+      quanto dura la garanzia?
+    intent: faq_resi
+  - action: utter_faq_resi
+
+- story: segnalazione completa
+  steps:
+  - user: |
+      mi è arrivato il gioco con la scatola rotta
+    intent: segnala_problema_ordine
+  - action: segnalazione_form
+  - active_loop: segnalazione_form
+  - user: |
+      [482913](numero_ordine)
+    intent: dai_dati_ordine
+  - action: segnalazione_form
+  - user: |
+      Arrivato danneggiato
+  - action: segnalazione_form
+  - user: |
+      la scatola e schiacciata su un lato
+  - action: segnalazione_form
+  - active_loop: null
+  - action: action_resi_crea_pratica
+
+- story: segnalazione con numero d'ordine
+  steps:
+  - user: |
+      ho un problema con l'ordine [482913](numero_ordine)
+    intent: segnala_problema_ordine
+    entities:
+    - numero_ordine: "482913"
+  - action: segnalazione_form
+  - active_loop: segnalazione_form
+  - user: |
+      Pezzi mancanti o difettosi
+  - action: segnalazione_form
+  - user: |
+      manca un dado
+  - action: segnalazione_form
+  - active_loop: null
+  - action: action_resi_crea_pratica
+
+- story: segnalazione interrotta
+  steps:
+  - user: |
+      mancano delle carte nel mio gioco
+    intent: segnala_problema_ordine
+  - action: segnalazione_form
+  - active_loop: segnalazione_form
+  - user: |
+      lascia perdere
+    intent: interrompi
+  - action: action_deactivate_loop
+  - active_loop: null
+  - action: action_resi_annulla_segnalazione

@@ -1,0 +1,502 @@
+version: "3.1"
+
+nlu:
+# ---------- FAQ account (retrieval intent) ----------
+- intent: faq_account/registrazione
+  examples: |
+    - come mi registro?
+    - come posso registrarmi sul sito
+    - voglio creare un account
+    - come si crea un account
+    - dove mi registro
+    - come faccio a registrarmi da voi?
+    - vorrei aprire un account sul vostro sito
+    - registrazione, come funziona?
+    - come creo il mio profilo
+    - come si fa a iscriversi al sito
+    - posso registrarmi? come faccio
+    - iscrizione al sito dove si fa
+    - mi vorrei registrare ma non trovo il pulsante
+    - come faccio a fare la registrazione
+    - come mi creo un account su gigigames
+    - devo registrarmi come si fa
+
+- intent: faq_account/serve_account
+  examples: |
+    - serve un account per comprare?
+    - devo per forza registrarmi per acquistare
+    - posso comprare senza registrarmi?
+    - e obbligatorio avere un account
+    - la registrazione e obbligatoria?
+    - si puo ordinare come ospite
+    - posso acquistare senza account
+    - devo creare un account per fare un ordine?
+    - non ho voglia di registrarmi, posso comprare lo stesso
+    - ordine da ospite si puo fare?
+    - senza iscrizione posso fare acquisti
+    - per ordinare ci vuole il profilo?
+    - bisogna avere un account per acquistare un gioco
+    - checkout come ospite possibile?
+    - mi tocca registrarmi per forza
+    - per comprare serve registrarsi o no
+    - serve l'account per ordinare?
+    - devo registrarmi per fare un ordine?
+    - si può acquistare come ospite
+    - posso ordinare senza creare un account
+    - acquisto senza registrazione
+    - è obbligatorio registrarsi per comprare?
+    - checkout da ospite
+    - non voglio registrarmi, posso comprare lo stesso?
+    - ordine senza iscrizione si puo?
+    - devo avere un account per acquistare?
+    - posso fare un ordine come ospite?
+    - comprare senza account è possibile?
+    - la registrazione è obbligatoria per ordinare?
+    - voglio solo comprare, senza registrarmi
+
+- intent: faq_account/vantaggi_account
+  examples: |
+    - quali vantaggi ho se mi registro?
+    - perche dovrei creare un account
+    - a cosa serve l'account
+    - cosa ci guadagno a registrarmi
+    - che vantaggi ha avere un account?
+    - conviene registrarsi
+    - cosa posso fare con un account
+    - quali sono i vantaggi dell'area personale
+    - che differenza c'e tra comprare con account e senza
+    - a che serve registrarsi sul sito
+    - vale la pena creare l'account?
+    - cosa offre l'account rispetto all'acquisto da ospite
+    - quali funzioni ci sono nell'area account
+    - perche registrarsi da voi
+    - benefici della registrazione
+    - cosa mi da l'account
+
+- intent: faq_account/accesso_problemi
+  examples: |
+    - non riesco ad accedere al mio account
+    - non riesco a fare il login
+    - il login non funziona
+    - non mi fa entrare nell'account
+    - errore quando provo ad accedere
+    - non riesco a entrare nel mio profilo
+    - mi dice che le credenziali non sono corrette
+    - ho problemi di accesso
+    - non riesco piu a loggarmi
+    - il mio accesso non va
+    - provo ad accedere ma non succede niente
+    - non posso entrare nell'area personale
+    - login impossibile, che faccio?
+    - non riesco ad accedere al sito con la mia email
+    - mi da errore email o password sbagliata ma sono giuste
+    - non mi fa fare il login
+
+- intent: faq_account/password_dimenticata
+  examples: |
+    - ho dimenticato la password
+    - password dimenticata
+    - non mi ricordo la password
+    - come recupero la password?
+    - come resetto la password
+    - ho perso la password del mio account
+    - come faccio a reimpostare la password
+    - non ricordo piu la password, cosa faccio
+    - recupero password
+    - mi sono scordato la password
+    - posso cambiare la password se non la ricordo
+    - la password non la ricordo piu
+    - voglio reimpostare la password
+    - come si recupera la password dell'account
+    - password persa aiuto
+    - ho scordato le credenziali di accesso
+
+- intent: faq_account/cambiare_dati
+  examples: |
+    - come cambio la mia email?
+    - voglio modificare l'indirizzo di spedizione salvato
+    - come aggiorno i miei dati personali
+    - posso cambiare il numero di telefono nell'account
+    - come modifico i dati del mio profilo
+    - devo cambiare indirizzo email dell'account
+    - ho cambiato casa, come aggiorno l'indirizzo
+    - dove modifico i miei dati
+    - come cambio la password dell'account
+    - ho sbagliato a scrivere il nome in fase di registrazione, si puo correggere
+    - voglio aggiornare le informazioni del mio account
+    - si puo cambiare l'email con cui mi sono registrato
+    - modifica dati account
+    - come cambio il mio indirizzo predefinito
+    - dove cambio le informazioni personali
+    - posso modificare il mio profilo
+
+- intent: faq_account/cancellare_account
+  examples: |
+    - come cancello il mio account?
+    - voglio eliminare il mio account
+    - come faccio a cancellare la mia iscrizione
+    - vorrei chiudere il mio profilo
+    - si puo cancellare l'account
+    - cancellazione account come si fa
+    - elimina il mio account per favore
+    - non voglio piu avere un account da voi
+    - come rimuovo i miei dati e il mio account
+    - voglio uscire e cancellare il profilo
+    - posso chiudere definitivamente il mio account?
+    - cancellare profilo
+    - come disattivo il mio account
+    - vorrei che cancellaste i miei dati e l'account
+    - come si elimina l'account dal sito
+    - voglio cancellarmi dal vostro sito
+
+- intent: faq_account/privacy_gdpr
+  examples: |
+    - come trattate i miei dati personali?
+    - che dati raccogliete su di me
+    - cosa fate con i miei dati
+    - siete in regola con il gdpr?
+    - privacy dei dati
+    - a cosa servono i miei dati?
+    - i miei dati sono al sicuro
+    - che dati conservate dei clienti
+    - dove trovo l'informativa sulla privacy
+    - come proteggete la mia privacy
+    - i miei dati vengono venduti a terzi?
+    - quali informazioni personali tenete
+    - posso chiedere quali dati avete su di me
+    - gdpr come funziona da voi
+    - trattamento dei dati personali
+    - la privacy e rispettata?
+    - condividete i miei dati con altri
+
+- intent: faq_account/wishlist
+  examples: |
+    - come funziona la wishlist?
+    - cos'e la lista dei desideri
+    - come aggiungo un gioco alla wishlist
+    - dove trovo la mia lista desideri
+    - posso salvare i giochi che mi interessano?
+    - voglio mettere un gioco tra i preferiti
+    - come uso la lista dei desideri
+    - a cosa serve la wishlist
+    - come salvo un gioco per dopo
+    - c'e una lista dei preferiti?
+    - wishlist, come si usa
+    - dove vedo i giochi che ho salvato
+    - posso creare una lista di giochi che voglio
+    - come tolgo un gioco dalla wishlist
+    - lista desideri come si fa
+
+- intent: faq_account/wishlist_condivisione
+  examples: |
+    - posso condividere la mia wishlist?
+    - come faccio vedere la lista desideri a un amico
+    - si puo condividere la lista dei desideri con i parenti per il regalo
+    - posso mandare la mia wishlist a qualcuno
+    - la wishlist e pubblica o privata?
+    - voglio che i miei amici vedano la mia lista dei desideri
+    - posso inviare la lista dei desideri per Natale
+    - condivisione wishlist
+    - come condivido la lista dei giochi che vorrei
+    - qualcuno puo vedere la mia wishlist?
+    - esiste un link per condividere la lista desideri
+    - posso far vedere i miei preferiti a mia moglie per il compleanno
+    - posso dare la wishlist ai miei per i regali
+    - la lista dei desideri si puo girare ad altri?
+
+- intent: faq_account/punti_funzionamento
+  examples: |
+    - come funzionano i GIGI Punti?
+    - cosa sono i gigi punti
+    - com'e fatto il programma fedelta
+    - c'e una raccolta punti?
+    - avete una carta fedelta
+    - come funziona il programma punti
+    - spiegami i punti fedelta
+    - come si accumulano i punti
+    - come faccio a guadagnare punti
+    - programma fedelta come funziona
+    - esiste un sistema a punti per i clienti?
+    - a cosa servono i gigi punti
+    - come si raccolgono i punti acquisti
+    - raccolta punti, come funziona
+    - cosa sono i punti fedelta
+    - serve l'account per avere i punti?
+
+- intent: faq_account/punti_conversione
+  examples: |
+    - quanti punti prendo per ogni euro speso?
+    - quanto valgono i punti
+    - 100 punti quanti euro sono
+    - quanto sconto mi danno i punti?
+    - che valore hanno i gigi punti
+    - quanti punti mi servono per 5 euro di sconto
+    - quanti punti guadagno con un acquisto
+    - per ogni euro quanti punti mi date
+    - se spendo 50 euro quanti punti ottengo
+    - a quanto corrispondono i punti in sconto
+    - conversione punti euro
+    - quanti punti per avere uno sconto?
+    - quanto vale un punto
+    - con 200 punti quanto risparmio
+    - come si calcolano i punti
+
+- intent: faq_account/punti_uso
+  examples: |
+    - come uso i miei punti?
+    - come posso spendere i gigi punti
+    - dove inserisco i punti al checkout
+    - come utilizzo i punti per avere lo sconto
+    - voglio usare i miei punti per un acquisto
+    - i punti si possono usare subito?
+    - come riscatto i punti fedelta
+    - posso pagare con i punti?
+    - come faccio a scontare l'ordine con i punti
+    - come si convertono i punti in sconto
+    - utilizzo punti nel carrello
+    - posso usare i punti insieme a un codice sconto
+    - come sfrutto i miei punti accumulati
+    - dove si usano i punti
+
+- intent: faq_account/punti_scadenza
+  examples: |
+    - i punti scadono?
+    - quando scadono i gigi punti
+    - quanto durano i punti fedelta
+    - i miei punti hanno una scadenza
+    - dopo quanto tempo perdo i punti
+    - scadenza punti
+    - i punti restano per sempre?
+    - se non li uso i punti vanno persi
+    - per quanto tempo valgono i punti
+    - dopo quanto scadono i punti accumulati
+    - c'e un limite di tempo per usare i punti?
+    - i punti hanno una data di scadenza?
+    - perdo i punti se non compro per un po
+    - quanto tempo ho per usare i miei punti
+
+- intent: faq_account/punti_saldo
+  examples: |
+    - come vedo quanti punti ho?
+    - dove vedo il mio saldo punti
+    - quanti punti ho accumulato?
+    - voglio sapere il mio saldo gigi punti
+    - dove controllo i punti
+    - come faccio a sapere i miei punti
+    - qual e il mio saldo punti
+    - dove trovo i punti che ho raccolto
+    - posso vedere i punti accumulati?
+    - controllo saldo punti fedelta
+    - non vedo i miei punti dove sono
+    - dove si consultano i punti
+    - quanti gigi punti ho
+    - saldo punti dove lo trovo
+    - i punti dell'ultimo ordine non compaiono
+
+- intent: faq_account/storico_ordini
+  examples: |
+    - dove vedo i miei ordini passati?
+    - come trovo lo storico degli ordini
+    - posso rivedere gli acquisti fatti
+    - dove trovo le fatture dei miei ordini
+    - voglio vedere tutti gli ordini che ho fatto
+    - storico acquisti dove sta
+    - come riguardo un vecchio ordine
+    - dove vedo cosa ho comprato in passato
+    - la cronologia degli ordini dove la trovo
+    - elenco dei miei ordini nell'account
+    - dove sono le mie fatture
+    - posso scaricare la fattura dall'area personale
+    - dove si trovano i miei ordini precedenti
+    - posso rivedere gli ordini che ho fatto?
+    - dove trovo lo storico dei miei ordini?
+    - come controllo i miei vecchi ordini?
+    - c'e una pagina con tutti i miei ordini?
+    - elenco dei miei ordini
+    - dove si vedono gli ordini fatti con il mio account?
+    - voglio rivedere cosa ho comprato in passato
+    - come ritrovo un ordine vecchio?
+    - dove sono i miei acquisti precedenti?
+    - lo storico ordini e nell'area account?
+
+- intent: faq_account/newsletter_come_funziona
+  examples: |
+    - come funziona la newsletter?
+    - cosa ricevo se mi iscrivo alla newsletter
+    - che cosa mandate nella newsletter
+    - la newsletter cosa contiene
+    - che email mandate agli iscritti
+    - quali vantaggi ha la newsletter
+    - cosa si riceve iscrivendosi
+    - perche dovrei iscrivermi alla newsletter
+    - ogni quanto mandate la newsletter
+    - mandate offerte via email?
+    - la newsletter e gratuita
+    - mi iscrivo e ricevo qualcosa?
+    - che novita arrivano con la newsletter
+    - a cosa serve iscriversi alla vostra newsletter
+    - la newsletter ha sconti riservati
+
+- intent: faq_account/codice_benvenuto
+  examples: |
+    - come ottengo il codice benvenuto10?
+    - non mi e arrivato il codice di benvenuto
+    - dove trovo il codice sconto della newsletter
+    - ho dimenticato di salvare il codice benvenuto
+    - il codice di benvenuto vale per tutti gli ordini?
+    - mi sono iscritto ma non ho ricevuto il codice sconto
+    - quanto sconto da il codice di benvenuto
+    - il codice benvenuto10 come si prende
+    - c'e uno sconto per chi si iscrive?
+    - sconto primo ordine come lo ottengo
+    - non trovo l'email con il codice sconto
+    - per avere il 10% sul primo ordine cosa devo fare
+    - il codice di benvenuto si puo usare piu volte
+    - ho perso l'email con il codice di benvenuto
+    - c e uno sconto per chi si iscrive alla newsletter?
+    - se mi iscrivo alla newsletter ho uno sconto?
+    - sconto di benvenuto
+    - voglio lo sconto del 10% sul primo ordine
+    - come faccio ad avere il 10% di sconto
+    - dove trovo il codice sconto per il primo ordine
+    - sconto primo acquisto
+    - c e un codice per i nuovi clienti?
+    - iscrivendomi mi date un buono?
+    - newsletter e codice sconto come funziona
+    - non mi e arrivato il codice [BENVENUTO10](codice_sconto) dopo l iscrizione
+    - ho dimenticato il codice di benvenuto
+    - sconto per nuovi iscritti
+    - il primo ordine ha uno sconto?
+    - mi fate uno sconto sul primo acquisto?
+
+- intent: faq_account/account_bloccato
+  examples: |
+    - il mio account e bloccato
+    - mi hanno bloccato l'account
+    - account sospeso, perche?
+    - dopo vari tentativi il mio account risulta bloccato
+    - non posso piu entrare, account bloccato
+    - come sblocco il mio account
+    - mi dice che l'account e stato disattivato
+    - ho sbagliato la password troppe volte e ora non entro
+    - il profilo risulta sospeso
+    - account bloccato cosa devo fare
+    - mi compare un messaggio di account bloccato
+    - sblocco account
+    - perche il mio account e stato sospeso
+    - non riesco piu a usare l'account dice bloccato
+
+- intent: faq_account/login_social
+  examples: |
+    - posso accedere con Google?
+    - si puo fare il login con Apple
+    - c'e l'accesso con google o apple?
+    - posso registrarmi con il mio account google
+    - accesso con facebook disponibile?
+    - esiste il login con account social
+    - posso entrare con apple id
+    - registrazione veloce con google si puo
+    - posso usare il mio account gmail per accedere
+    - login con google
+    - accedere con i social
+    - si puo entrare con sign in with apple
+    - c'e la registrazione con un click?
+    - posso accedere senza password
+
+# ---------- Iscrizione alla newsletter (form) ----------
+- intent: iscriviti_newsletter
+  examples: |
+    - voglio iscrivermi alla newsletter
+    - iscrivimi alla newsletter
+    - vorrei ricevere la newsletter
+    - mi iscrivo alla newsletter
+    - come mi iscrivo alla newsletter?
+    - voglio ricevere le vostre offerte via email
+    - iscrizione newsletter
+    - fammi iscrivere alla newsletter per favore
+    - mi piacerebbe ricevere le novita per email
+    - voglio il codice di benvenuto, mi iscrivo alla newsletter
+    - iscrivimi con la mia email [mario.rossi@gmail.com](email)
+    - iscrivi [anna_92@libero.it](email) alla newsletter
+    - vorrei iscrivermi per avere lo sconto del 10%
+    - sì, voglio iscrivermi alla newsletter
+    - ok iscrivimi alla newsletter
+    - mi mandate le offerte per mail? voglio iscrivermi
+    - newsletter: iscrivimi
+    - mi registro alla newsletter con [luca.bianchi@outlook.com](email)
+    - ricevere le novita sui giochi per email, come faccio a iscrivermi
+    - voglio entrare nella mailing list
+
+- intent: disiscriviti_newsletter
+  examples: |
+    - voglio disiscrivermi dalla newsletter
+    - come mi disiscrivo?
+    - non voglio piu ricevere le vostre email
+    - cancellami dalla newsletter
+    - annullare iscrizione newsletter
+    - smettete di mandarmi email promozionali
+    - come faccio a non ricevere piu la newsletter
+    - disiscrizione newsletter
+    - toglimi dalla mailing list
+    - ricevo troppe email, voglio disiscrivermi
+    - come cancello l'iscrizione alla newsletter
+    - basta newsletter per favore
+    - vorrei annullare l'iscrizione alle vostre email
+    - cancella la mia email dalla lista della newsletter
+    - non voglio piu le offerte per email
+    - come faccio a smettere di ricevere le mail di gigigames
+
+# ---------- Avvisami quando torna disponibile ----------
+- intent: avvisami_disponibilita
+  examples: |
+    - avvisami quando torna disponibile
+    - voglio essere avvisato quando [Catan](gioco) torna disponibile
+    - mi avvisate quando arriva di nuovo [Carcassonne](gioco)?
+    - avvisatemi quando [Dixit](gioco) e di nuovo in negozio
+    - notificami quando e disponibile
+    - mandami una mail quando torna in magazzino [Azul](gioco)
+    - mi fate sapere quando riarriva [Ticket to Ride](gioco)?
+    - quando torna disponibile [Catan](gioco) ditemelo
+    - vorrei un avviso di disponibilita per [Pandemic](gioco)
+    - e esaurito, mi avvisate quando lo riavete?
+    - avvisami appena lo rimettete in vendita
+    - posso ricevere un avviso quando torna disponibile?
+    - ditemi quando tornano disponibili [Wingspan](gioco)
+    - mi mandate un'email quando [7 Wonders](gioco) e di nuovo disponibile
+    - c'e un modo per essere avvisati quando un gioco torna disponibile
+    - avvisami quando riarrivano le scorte
+    - fammi sapere quando torna disponibile [Splendor](gioco)
+    - voglio una notifica quando riprendete [Codenames](gioco)
+    - lo vorrei ma e finito, avvisatemi quando arriva
+    - notifica disponibilita [Dobble](gioco)
+    - mi avvisi quando e di nuovo disponibile?
+    - se torna disponibile mi mandate un messaggio?
+
+- intent: fornisci_email
+  examples: |
+    - [mario.rossi@gmail.com](email)
+    - [anna_92@libero.it](email)
+    - la mia email e [luca.bianchi@outlook.com](email)
+    - la mia mail è [giulia.verdi@yahoo.it](email)
+    - ecco: [f.neri@gmail.com](email)
+    - [marco-ferrari@hotmail.com](email)
+    - usa questa email [sara.conti@icloud.com](email)
+    - scrivi a [davide.russo88@gmail.com](email)
+    - e [chiara.romano@libero.it](email)
+    - indirizzo email: [paolo.gallo@pec.it](email)
+    - la mail è [elena.moretti@gmail.com](email)
+    - [info@studiorossi.it](email)
+    - la mia posta elettronica [alex.deluca@proton.me](email)
+    - mandalo a [roberto.fontana@gmail.com](email)
+    - l'email e [mario.rossi@example.com](email)
+    - [giulia.bianchi@example.com](email)
+    - ho usato [luca.ferri@example.com](email)
+    - la mia email e [sara.neri@example.com](email)
+    - [paolo.verdi@gmail.com](email)
+    - e [elena.conti@hotmail.it](email)
+    - ho usato [laura.fabbri@example.com](email)
+    - l'indirizzo e [simone.costa@example.com](email)
+
+- regex: email
+  examples: |
+    - [a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z]{2,}

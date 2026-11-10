@@ -1,0 +1,134 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+stories:
+- story: happy path 1
+  steps:
+  - user: |
+      ciao!
+    intent: greet
+  - action: utter_greet
+  - user: |
+      fantastico
+    intent: mood_great
+  - action: utter_happy
+
+- story: happy path 2
+  steps:
+  - user: |
+      buongiorno
+    intent: greet
+  - action: utter_greet
+  - user: |
+      sto benissimo
+    intent: mood_great
+  - action: utter_happy
+  - user: |
+      arrivederci!
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: sad path 1
+  steps:
+  - user: |
+      ciao
+    intent: greet
+  - action: utter_greet
+  - user: |
+      non sto bene
+    intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - user: |
+      sì
+    intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - user: |
+      salve
+    intent: greet
+  - action: utter_greet
+  - user: |
+      sono triste
+    intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - user: |
+      non proprio
+    intent: deny
+  - action: utter_sorry
+
+- story: bot challenge
+  steps:
+  - user: |
+      sei un bot?
+    intent: bot_challenge
+  - action: utter_iamabot
+
+- story: ora, data e barzelletta
+  steps:
+  - user: |
+      che ore sono?
+    intent: ask_time
+  - action: action_tell_time
+  - user: |
+      che giorno è oggi?
+    intent: ask_date
+  - action: action_tell_date
+  - user: |
+      raccontami una barzelletta
+    intent: tell_joke
+  - action: utter_joke
+  - user: |
+      grazie mille
+    intent: thanks
+  - action: utter_thanks
+
+- story: presentazioni
+  steps:
+  - user: |
+      come ti chiami?
+    intent: ask_name
+  - action: utter_ask_name
+  - user: |
+      mi chiamo [Andrea](nome)
+    intent: tell_name
+  - slot_was_set:
+    - nome: Andrea
+  - action: action_nice_to_meet
+  - user: |
+      cosa sai fare?
+    intent: ask_capabilities
+  - action: utter_capabilities
+
+- story: domanda frequente a metà form e ritorno al form
+  steps:
+  - user: |
+      dov'e il mio ordine?
+    intent: traccia_ordine
+  - action: action_ordini_imposta_scopo
+  - action: ordine_form
+  - active_loop: ordine_form
+  - user: |
+      quanto costa la spedizione?
+    intent: faq_spedizioni
+  - action: utter_faq_spedizioni
+  - action: ordine_form
+  - active_loop: ordine_form
+
+- story: sì e no detti senza una domanda in sospeso
+  steps:
+  - user: |
+      che ore sono?
+    intent: ask_time
+  - action: action_tell_time
+  - user: |
+      sì
+    intent: affirm
+  - action: utter_risposta_si
+  - user: |
+      no
+    intent: deny
+  - action: utter_risposta_no

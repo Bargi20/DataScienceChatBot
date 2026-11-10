@@ -1,0 +1,25 @@
+version: "3.1"
+
+responses:
+  utter_faq_ordini/email_conferma:
+    - text: "La email di conferma arriva di solito entro pochi minuti dall'ordine. Se non la vedi, controlla la cartella spam o promozioni e verifica di aver scritto bene l'indirizzo. Se non c'è, scrivi ad assistenza@gigigames.it con il nome e l'ordine e te la rimandiamo."
+    - text: "Di solito la conferma arriva in pochi minuti. Dai un'occhiata a spam e promozioni: a volte finisce lì. Se non la trovi, scrivici a assistenza@gigigames.it o su WhatsApp al 071 123 4567 e la reinviamo."
+
+  utter_faq_ordini/dove_numero_ordine:
+    - text: "Il numero d'ordine (6 cifre, per esempio 482913) è scritto nell'email di conferma che ricevi dopo l'acquisto. Se hai un account lo trovi anche in area account, sotto I miei ordini."
+    - text: "Lo trovi nell'email di conferma dell'ordine, in alto: sono 6 cifre. Con un account registrato lo vedi anche in I miei ordini. Se hai perso l'email scrivi ad assistenza@gigigames.it."
+
+  utter_faq_ordini/ordine_telefono:
+    - text: "Gli ordini si fanno dal sito www.gigigames.it. Se hai dubbi mentre acquisti, l'assistenza risponde al 071 123 4567 (telefono e WhatsApp) dal lunedì al venerdì, 9:00-18:00. In negozio, in Via Roma 12 ad Ancona, puoi anche acquistare di persona."
+    - text: "Per ora gli ordini si effettuano solo online su www.gigigames.it. Puoi però chiamarci o scriverci su WhatsApp al 071 123 4567 (lun-ven 9:00-18:00) se hai bisogno di una mano durante l'acquisto."
+
+  utter_faq_ordini/tempi_preparazione:
+    - text: "Gli ordini fatti entro le 13:00 dal lunedì al venerdì partono in giornata. Quelli successivi partono il giorno lavorativo dopo. Con il bonifico si spedisce dopo l'accredito, 1-2 giorni."
+    - text: "Preparare l'ordine richiede poco: se ordini entro le 13:00 dal lunedì al venerdì il pacco parte in giornata, altrimenti il giorno lavorativo successivo. Per il bonifico si aspetta l'accredito (1-2 giorni)."
+
+  utter_faq_ordini/stati_ordine:
+    - text: "Ecco gli stati di un ordine:\n• in attesa di pagamento: aspettiamo il pagamento\n• in preparazione: stiamo preparando il pacco\n• spedito: è partito, ti arriva il tracciamento\n• in consegna: il corriere lo porta oggi\n• consegnato: arrivato a destinazione\n• annullato: l'ordine è stato cancellato\n• reso in corso: stiamo gestendo un reso"
+
+  utter_faq_ordini/piu_pacchi:
+    - text: "Capita se nell'ordine ci sono prodotti che partono in momenti diversi, per esempio un preordine o un articolo che arriva dall'editore. I prodotti disponibili partono subito e il resto dopo, senza costi aggiuntivi. Ogni pacco ha il suo tracciamento."
+    - text: "Sì, un ordine può partire in più pacchi: i prodotti disponibili vengono spediti subito, quelli in preordine appena escono, senza costi in più. Ricevi un tracciamento per ogni pacco. Se manca qualcosa da troppo tempo, scrivi ad assistenza@gigigames.it."

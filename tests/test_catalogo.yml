@@ -1,0 +1,116 @@
+#### Storie di test dell'area catalogo (rasa test).
+
+stories:
+
+- story: prezzo e poi durata con il gioco dal contesto
+  steps:
+  - user: |
+      quanto costa [Catan](gioco)?
+    intent: chiedi_prezzo
+  - action: action_chiedi_prezzo
+  - user: |
+      e quanto dura?
+    intent: chiedi_durata
+  - action: action_chiedi_durata
+
+- story: stessa domanda su un altro gioco
+  steps:
+  - user: |
+      quanto costa [Azul](gioco)?
+    intent: chiedi_prezzo
+  - action: action_chiedi_prezzo
+  - user: |
+      e [Splendor](gioco)?
+    intent: indica_gioco
+  - action: action_indica_gioco
+
+- story: disponibilità di un gioco esaurito
+  steps:
+  - user: |
+      avete [Spirit Island](gioco)?
+    intent: chiedi_disponibilita
+  - action: action_chiedi_disponibilita
+
+- story: giocatori senza nome del gioco
+  steps:
+  - user: |
+      in quanti si gioca?
+    intent: chiedi_giocatori
+  - action: action_chiedi_giocatori
+  - user: |
+      [ticket to ride](gioco)
+    intent: indica_gioco
+  - action: action_indica_gioco
+
+- story: età per un bambino
+  steps:
+  - user: |
+      mio figlio ha [7](eta) anni, va bene [Kingdomino](gioco)?
+    intent: chiedi_eta
+  - action: action_chiedi_eta
+
+- story: difficoltà ed espansioni
+  steps:
+  - user: |
+      [Terraforming Mars](gioco) e difficile?
+    intent: chiedi_difficolta
+  - action: action_chiedi_difficolta
+  - user: |
+      ci sono espansioni?
+    intent: chiedi_espansioni
+  - action: action_chiedi_espansioni
+
+- story: confronto tra due giochi
+  steps:
+  - user: |
+      meglio [Pandemic](gioco) o [Mysterium](gioco)?
+    intent: confronta_giochi
+  - action: action_confronta_giochi
+
+- story: giochi di una categoria e di un editore
+  steps:
+  - user: |
+      che giochi [cooperativi]{"entity": "categoria", "value": "cooperativo"} avete?
+    intent: cerca_categoria
+  - action: action_cerca_categoria
+  - user: |
+      e cosa avete di [cranio]{"entity": "editore", "value": "Cranio Creations"}?
+    intent: cerca_editore
+  - action: action_cerca_editore
+
+- story: offerte, novità e più apprezzati
+  steps:
+  - user: |
+      che giochi sono in offerta?
+    intent: mostra_offerte
+  - action: action_mostra_offerte
+  - user: |
+      e le novita?
+    intent: mostra_novita
+  - action: action_mostra_novita
+  - user: |
+      quali sono i giochi piu apprezzati?
+    intent: mostra_piu_apprezzati
+  - action: action_mostra_piu_apprezzati
+
+- story: accessori, lingua e autore
+  steps:
+  - user: |
+      vendete bustine protettive?
+    intent: mostra_accessori
+  - action: action_mostra_accessori
+  - user: |
+      [Coup](gioco) e in italiano?
+    intent: chiedi_lingua
+  - action: action_chiedi_lingua
+  - user: |
+      chi l'ha inventato?
+    intent: chiedi_editore_autore
+  - action: action_chiedi_editore_autore
+
+- story: informazioni su un gioco
+  steps:
+  - user: |
+      parlami di [Wingspan](gioco)
+    intent: info_gioco
+  - action: action_info_gioco

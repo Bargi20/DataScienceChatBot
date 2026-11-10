@@ -1,0 +1,88 @@
+version: "3.1"
+
+stories:
+
+- story: prezzo, durata e disponibilità dello stesso gioco
+  steps:
+  - intent: chiedi_prezzo
+    entities:
+    - gioco: Catan
+  - action: action_chiedi_prezzo
+  - intent: chiedi_durata
+  - action: action_chiedi_durata
+  - intent: chiedi_disponibilita
+  - action: action_chiedi_disponibilita
+
+- story: stessa domanda su un altro gioco
+  steps:
+  - intent: chiedi_prezzo
+    entities:
+    - gioco: Wingspan
+  - action: action_chiedi_prezzo
+  - intent: indica_gioco
+    entities:
+    - gioco: Everdell
+  - action: action_indica_gioco
+  - intent: confronta_giochi
+    entities:
+    - gioco: Wingspan
+  - action: action_confronta_giochi
+
+- story: il bot chiede di quale gioco si parla
+  steps:
+  - intent: chiedi_giocatori
+  - action: action_chiedi_giocatori
+  - intent: indica_gioco
+    entities:
+    - gioco: Azul
+  - action: action_indica_gioco
+  - intent: chiedi_eta
+  - action: action_chiedi_eta
+
+- story: dalla categoria alla scheda di un gioco
+  steps:
+  - intent: cerca_categoria
+    entities:
+    - categoria: cooperativo
+  - action: action_cerca_categoria
+  - intent: info_gioco
+    entities:
+    - gioco: Pandemic
+  - action: action_info_gioco
+  - intent: chiedi_espansioni
+  - action: action_chiedi_espansioni
+
+- story: offerte e poi novità
+  steps:
+  - intent: mostra_offerte
+  - action: action_mostra_offerte
+  - intent: chiedi_difficolta
+    entities:
+    - gioco: Scythe
+  - action: action_chiedi_difficolta
+  - intent: mostra_novita
+  - action: action_mostra_novita
+
+- story: editore, autore e altri giochi dello stesso editore
+  steps:
+  - intent: chiedi_editore_autore
+    entities:
+    - gioco: Lorenzo il Magnifico
+  - action: action_chiedi_editore_autore
+  - intent: cerca_editore
+    entities:
+    - editore: Cranio Creations
+  - action: action_cerca_editore
+  - intent: chiedi_lingua
+    entities:
+    - gioco: Barrage
+  - action: action_chiedi_lingua
+
+- story: accessori e più apprezzati
+  steps:
+  - intent: mostra_piu_apprezzati
+  - action: action_mostra_piu_apprezzati
+  - intent: mostra_accessori
+  - action: action_mostra_accessori
+  - intent: chiedi_prezzo
+  - action: action_chiedi_prezzo

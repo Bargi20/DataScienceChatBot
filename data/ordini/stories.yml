@@ -1,0 +1,30 @@
+version: "3.1"
+
+stories:
+- story: Ordini - stato con numero già nel messaggio
+  steps:
+  - intent: traccia_ordine
+    entities:
+    - numero_ordine: "482913"
+  - action: action_ordini_imposta_scopo
+  - action: ordine_form
+  - active_loop: ordine_form
+  - slot_was_set:
+    - requested_slot: ordini_email
+  - intent: dai_dati_ordine
+    entities:
+    - email: mario.rossi@example.com
+  - action: ordine_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_ordini_esegui
+
+- story: Ordini - domanda frequente e poi richiesta di stato
+  steps:
+  - intent: faq_ordini
+  - action: utter_faq_ordini
+  - intent: traccia_ordine
+  - action: action_ordini_imposta_scopo
+  - action: ordine_form
+  - active_loop: ordine_form

@@ -1,0 +1,452 @@
+version: "3.1"
+
+# Domande frequenti fatte a metà di un form: il bot risponde e poi ripete la domanda del form.
+# Funziona perché tutti i form elencano gli intent faq_* in ignored_intents (domain.yml):
+# il form non prende la domanda come risposta, si ferma e lascia il turno a queste regole.
+# Per uscire da un form c'è l'intent «interrompi», con le regole nei file delle aree.
+
+rules:
+
+# --- consiglio personalizzato (consiglio_form) ---
+
+- rule: faq_giochi durante consiglio_form
+  condition:
+  - active_loop: consiglio_form
+  steps:
+  - intent: faq_giochi
+  - action: utter_faq_giochi
+  - action: consiglio_form
+  - active_loop: consiglio_form
+
+- rule: faq_carrello durante consiglio_form
+  condition:
+  - active_loop: consiglio_form
+  steps:
+  - intent: faq_carrello
+  - action: utter_faq_carrello
+  - action: consiglio_form
+  - active_loop: consiglio_form
+
+- rule: faq_ordini durante consiglio_form
+  condition:
+  - active_loop: consiglio_form
+  steps:
+  - intent: faq_ordini
+  - action: utter_faq_ordini
+  - action: consiglio_form
+  - active_loop: consiglio_form
+
+- rule: faq_spedizioni durante consiglio_form
+  condition:
+  - active_loop: consiglio_form
+  steps:
+  - intent: faq_spedizioni
+  - action: utter_faq_spedizioni
+  - action: consiglio_form
+  - active_loop: consiglio_form
+
+- rule: faq_pagamenti durante consiglio_form
+  condition:
+  - active_loop: consiglio_form
+  steps:
+  - intent: faq_pagamenti
+  - action: utter_faq_pagamenti
+  - action: consiglio_form
+  - active_loop: consiglio_form
+
+- rule: faq_resi durante consiglio_form
+  condition:
+  - active_loop: consiglio_form
+  steps:
+  - intent: faq_resi
+  - action: utter_faq_resi
+  - action: consiglio_form
+  - active_loop: consiglio_form
+
+- rule: faq_account durante consiglio_form
+  condition:
+  - active_loop: consiglio_form
+  steps:
+  - intent: faq_account
+  - action: utter_faq_account
+  - action: consiglio_form
+  - active_loop: consiglio_form
+
+- rule: faq_negozio durante consiglio_form
+  condition:
+  - active_loop: consiglio_form
+  steps:
+  - intent: faq_negozio
+  - action: utter_faq_negozio
+  - action: consiglio_form
+  - active_loop: consiglio_form
+
+# --- verifica di un ordine (ordine_form) ---
+
+- rule: faq_giochi durante ordine_form
+  condition:
+  - active_loop: ordine_form
+  steps:
+  - intent: faq_giochi
+  - action: utter_faq_giochi
+  - action: ordine_form
+  - active_loop: ordine_form
+
+- rule: faq_carrello durante ordine_form
+  condition:
+  - active_loop: ordine_form
+  steps:
+  - intent: faq_carrello
+  - action: utter_faq_carrello
+  - action: ordine_form
+  - active_loop: ordine_form
+
+- rule: faq_ordini durante ordine_form
+  condition:
+  - active_loop: ordine_form
+  steps:
+  - intent: faq_ordini
+  - action: utter_faq_ordini
+  - action: ordine_form
+  - active_loop: ordine_form
+
+- rule: faq_spedizioni durante ordine_form
+  condition:
+  - active_loop: ordine_form
+  steps:
+  - intent: faq_spedizioni
+  - action: utter_faq_spedizioni
+  - action: ordine_form
+  - active_loop: ordine_form
+
+- rule: faq_pagamenti durante ordine_form
+  condition:
+  - active_loop: ordine_form
+  steps:
+  - intent: faq_pagamenti
+  - action: utter_faq_pagamenti
+  - action: ordine_form
+  - active_loop: ordine_form
+
+- rule: faq_resi durante ordine_form
+  condition:
+  - active_loop: ordine_form
+  steps:
+  - intent: faq_resi
+  - action: utter_faq_resi
+  - action: ordine_form
+  - active_loop: ordine_form
+
+- rule: faq_account durante ordine_form
+  condition:
+  - active_loop: ordine_form
+  steps:
+  - intent: faq_account
+  - action: utter_faq_account
+  - action: ordine_form
+  - active_loop: ordine_form
+
+- rule: faq_negozio durante ordine_form
+  condition:
+  - active_loop: ordine_form
+  steps:
+  - intent: faq_negozio
+  - action: utter_faq_negozio
+  - action: ordine_form
+  - active_loop: ordine_form
+
+# --- segnalazione di un problema (segnalazione_form) ---
+
+- rule: faq_giochi durante segnalazione_form
+  condition:
+  - active_loop: segnalazione_form
+  steps:
+  - intent: faq_giochi
+  - action: utter_faq_giochi
+  - action: segnalazione_form
+  - active_loop: segnalazione_form
+
+- rule: faq_carrello durante segnalazione_form
+  condition:
+  - active_loop: segnalazione_form
+  steps:
+  - intent: faq_carrello
+  - action: utter_faq_carrello
+  - action: segnalazione_form
+  - active_loop: segnalazione_form
+
+- rule: faq_ordini durante segnalazione_form
+  condition:
+  - active_loop: segnalazione_form
+  steps:
+  - intent: faq_ordini
+  - action: utter_faq_ordini
+  - action: segnalazione_form
+  - active_loop: segnalazione_form
+
+- rule: faq_spedizioni durante segnalazione_form
+  condition:
+  - active_loop: segnalazione_form
+  steps:
+  - intent: faq_spedizioni
+  - action: utter_faq_spedizioni
+  - action: segnalazione_form
+  - active_loop: segnalazione_form
+
+- rule: faq_pagamenti durante segnalazione_form
+  condition:
+  - active_loop: segnalazione_form
+  steps:
+  - intent: faq_pagamenti
+  - action: utter_faq_pagamenti
+  - action: segnalazione_form
+  - active_loop: segnalazione_form
+
+- rule: faq_resi durante segnalazione_form
+  condition:
+  - active_loop: segnalazione_form
+  steps:
+  - intent: faq_resi
+  - action: utter_faq_resi
+  - action: segnalazione_form
+  - active_loop: segnalazione_form
+
+- rule: faq_account durante segnalazione_form
+  condition:
+  - active_loop: segnalazione_form
+  steps:
+  - intent: faq_account
+  - action: utter_faq_account
+  - action: segnalazione_form
+  - active_loop: segnalazione_form
+
+- rule: faq_negozio durante segnalazione_form
+  condition:
+  - active_loop: segnalazione_form
+  steps:
+  - intent: faq_negozio
+  - action: utter_faq_negozio
+  - action: segnalazione_form
+  - active_loop: segnalazione_form
+
+# --- iscrizione alla newsletter (newsletter_form) ---
+
+- rule: faq_giochi durante newsletter_form
+  condition:
+  - active_loop: newsletter_form
+  steps:
+  - intent: faq_giochi
+  - action: utter_faq_giochi
+  - action: newsletter_form
+  - active_loop: newsletter_form
+
+- rule: faq_carrello durante newsletter_form
+  condition:
+  - active_loop: newsletter_form
+  steps:
+  - intent: faq_carrello
+  - action: utter_faq_carrello
+  - action: newsletter_form
+  - active_loop: newsletter_form
+
+- rule: faq_ordini durante newsletter_form
+  condition:
+  - active_loop: newsletter_form
+  steps:
+  - intent: faq_ordini
+  - action: utter_faq_ordini
+  - action: newsletter_form
+  - active_loop: newsletter_form
+
+- rule: faq_spedizioni durante newsletter_form
+  condition:
+  - active_loop: newsletter_form
+  steps:
+  - intent: faq_spedizioni
+  - action: utter_faq_spedizioni
+  - action: newsletter_form
+  - active_loop: newsletter_form
+
+- rule: faq_pagamenti durante newsletter_form
+  condition:
+  - active_loop: newsletter_form
+  steps:
+  - intent: faq_pagamenti
+  - action: utter_faq_pagamenti
+  - action: newsletter_form
+  - active_loop: newsletter_form
+
+- rule: faq_resi durante newsletter_form
+  condition:
+  - active_loop: newsletter_form
+  steps:
+  - intent: faq_resi
+  - action: utter_faq_resi
+  - action: newsletter_form
+  - active_loop: newsletter_form
+
+- rule: faq_account durante newsletter_form
+  condition:
+  - active_loop: newsletter_form
+  steps:
+  - intent: faq_account
+  - action: utter_faq_account
+  - action: newsletter_form
+  - active_loop: newsletter_form
+
+- rule: faq_negozio durante newsletter_form
+  condition:
+  - active_loop: newsletter_form
+  steps:
+  - intent: faq_negozio
+  - action: utter_faq_negozio
+  - action: newsletter_form
+  - active_loop: newsletter_form
+
+# --- avviso di disponibilità (avviso_disponibilita_form) ---
+
+- rule: faq_giochi durante avviso_disponibilita_form
+  condition:
+  - active_loop: avviso_disponibilita_form
+  steps:
+  - intent: faq_giochi
+  - action: utter_faq_giochi
+  - action: avviso_disponibilita_form
+  - active_loop: avviso_disponibilita_form
+
+- rule: faq_carrello durante avviso_disponibilita_form
+  condition:
+  - active_loop: avviso_disponibilita_form
+  steps:
+  - intent: faq_carrello
+  - action: utter_faq_carrello
+  - action: avviso_disponibilita_form
+  - active_loop: avviso_disponibilita_form
+
+- rule: faq_ordini durante avviso_disponibilita_form
+  condition:
+  - active_loop: avviso_disponibilita_form
+  steps:
+  - intent: faq_ordini
+  - action: utter_faq_ordini
+  - action: avviso_disponibilita_form
+  - active_loop: avviso_disponibilita_form
+
+- rule: faq_spedizioni durante avviso_disponibilita_form
+  condition:
+  - active_loop: avviso_disponibilita_form
+  steps:
+  - intent: faq_spedizioni
+  - action: utter_faq_spedizioni
+  - action: avviso_disponibilita_form
+  - active_loop: avviso_disponibilita_form
+
+- rule: faq_pagamenti durante avviso_disponibilita_form
+  condition:
+  - active_loop: avviso_disponibilita_form
+  steps:
+  - intent: faq_pagamenti
+  - action: utter_faq_pagamenti
+  - action: avviso_disponibilita_form
+  - active_loop: avviso_disponibilita_form
+
+- rule: faq_resi durante avviso_disponibilita_form
+  condition:
+  - active_loop: avviso_disponibilita_form
+  steps:
+  - intent: faq_resi
+  - action: utter_faq_resi
+  - action: avviso_disponibilita_form
+  - active_loop: avviso_disponibilita_form
+
+- rule: faq_account durante avviso_disponibilita_form
+  condition:
+  - active_loop: avviso_disponibilita_form
+  steps:
+  - intent: faq_account
+  - action: utter_faq_account
+  - action: avviso_disponibilita_form
+  - active_loop: avviso_disponibilita_form
+
+- rule: faq_negozio durante avviso_disponibilita_form
+  condition:
+  - active_loop: avviso_disponibilita_form
+  steps:
+  - intent: faq_negozio
+  - action: utter_faq_negozio
+  - action: avviso_disponibilita_form
+  - active_loop: avviso_disponibilita_form
+
+# --- feedback sul negozio (feedback_negozio_form) ---
+
+- rule: faq_giochi durante feedback_negozio_form
+  condition:
+  - active_loop: feedback_negozio_form
+  steps:
+  - intent: faq_giochi
+  - action: utter_faq_giochi
+  - action: feedback_negozio_form
+  - active_loop: feedback_negozio_form
+
+- rule: faq_carrello durante feedback_negozio_form
+  condition:
+  - active_loop: feedback_negozio_form
+  steps:
+  - intent: faq_carrello
+  - action: utter_faq_carrello
+  - action: feedback_negozio_form
+  - active_loop: feedback_negozio_form
+
+- rule: faq_ordini durante feedback_negozio_form
+  condition:
+  - active_loop: feedback_negozio_form
+  steps:
+  - intent: faq_ordini
+  - action: utter_faq_ordini
+  - action: feedback_negozio_form
+  - active_loop: feedback_negozio_form
+
+- rule: faq_spedizioni durante feedback_negozio_form
+  condition:
+  - active_loop: feedback_negozio_form
+  steps:
+  - intent: faq_spedizioni
+  - action: utter_faq_spedizioni
+  - action: feedback_negozio_form
+  - active_loop: feedback_negozio_form
+
+- rule: faq_pagamenti durante feedback_negozio_form
+  condition:
+  - active_loop: feedback_negozio_form
+  steps:
+  - intent: faq_pagamenti
+  - action: utter_faq_pagamenti
+  - action: feedback_negozio_form
+  - active_loop: feedback_negozio_form
+
+- rule: faq_resi durante feedback_negozio_form
+  condition:
+  - active_loop: feedback_negozio_form
+  steps:
+  - intent: faq_resi
+  - action: utter_faq_resi
+  - action: feedback_negozio_form
+  - active_loop: feedback_negozio_form
+
+- rule: faq_account durante feedback_negozio_form
+  condition:
+  - active_loop: feedback_negozio_form
+  steps:
+  - intent: faq_account
+  - action: utter_faq_account
+  - action: feedback_negozio_form
+  - active_loop: feedback_negozio_form
+
+- rule: faq_negozio durante feedback_negozio_form
+  condition:
+  - active_loop: feedback_negozio_form
+  steps:
+  - intent: faq_negozio
+  - action: utter_faq_negozio
+  - action: feedback_negozio_form
+  - active_loop: feedback_negozio_form

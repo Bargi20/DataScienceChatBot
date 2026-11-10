@@ -1,0 +1,913 @@
+version: "3.1"
+
+# Dominio di GIGI_Bot, l'assistente di GIGI Games (giochi da tavolo, negozio online e fisico).
+# È organizzato per area: in ogni sezione (intents, entities, slots, forms, responses, actions)
+# un commento indica l'area a cui appartengono le voci che seguono.
+# Le risposte delle domande frequenti (retrieval intent faq_*) sono in data/<area>/responses.yml.
+
+intents:
+  # ---------- Generale: chiacchiere, saluti, ora e data, intent comuni a tutte le aree ----------
+  - start
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - thanks
+  - how_are_you
+  - ask_name
+  - tell_name
+  - ask_capabilities
+  - ask_creator
+  - tell_joke
+  - ask_time
+  - ask_date
+  - compliment
+  - insult
+  - out_of_scope
+  - interrompi
+
+  # ---------- Catalogo: informazioni sui prodotti (actions/catalogo_azioni.py) ----------
+  - info_gioco
+  - chiedi_prezzo
+  - chiedi_disponibilita
+  - chiedi_giocatori
+  - chiedi_durata
+  - chiedi_eta
+  - chiedi_difficolta
+  - chiedi_editore_autore
+  - chiedi_lingua
+  - chiedi_espansioni
+  - confronta_giochi
+  - cerca_categoria
+  - cerca_editore
+  - mostra_offerte
+  - mostra_novita
+  - mostra_piu_apprezzati
+  - mostra_accessori
+  - indica_gioco
+
+  # ---------- Consigli: consiglio personalizzato, occasioni, giochi simili, regali, FAQ di cultura ludica ----------
+  - chiedi_consiglio
+  - indica_criteri
+  - rispondi_indifferente
+  - chiedi_consiglio_occasione
+  - chiedi_giochi_simili
+  - chiedi_idea_regalo
+  - chiedi_sorpresa
+  - faq_giochi
+
+  # ---------- Carrello: aggiunta, rimozione, codici sconto e checkout (actions/carrello.py) ----------
+  - aggiungi_carrello
+  - togli_carrello
+  - cambia_quantita_carrello
+  - mostra_carrello
+  - svuota_carrello
+  - applica_codice_sconto
+  - vai_checkout
+  - faq_carrello
+
+  # ---------- Ordini: stato, annullamento, modifica e ritardo (actions/ordini.py) ----------
+  - traccia_ordine
+  - annulla_ordine
+  - modifica_ordine
+  - ordine_in_ritardo
+  - dai_dati_ordine
+  - faq_ordini
+
+  # ---------- Spedizioni: FAQ e calcolo del costo di spedizione (actions/spedizioni.py) ----------
+  - faq_spedizioni
+  - calcola_spedizione
+
+  # ---------- Pagamenti: FAQ ----------
+  - faq_pagamenti
+
+  # ---------- Resi: FAQ e segnalazione di un problema con un ordine (actions/resi.py) ----------
+  - faq_resi
+  - segnala_problema_ordine
+
+  # ---------- Account: FAQ, newsletter e avviso di disponibilità (actions/account.py) ----------
+  - faq_account
+  - iscriviti_newsletter
+  - disiscriviti_newsletter
+  - avvisami_disponibilita
+  - fornisci_email
+
+  # ---------- Negozio: FAQ, apertura, eventi, operatore, reclami e feedback (actions/negozio.py) ----------
+  - faq_negozio
+  - chiedi_apertura_adesso
+  - chiedi_eventi
+  - chiedi_operatore
+  - fai_reclamo
+  - lascia_feedback
+  - dai_voto_negozio
+
+entities:
+  # ---------- Generale: chiacchiere, saluti, ora e data, intent comuni a tutte le aree ----------
+  - nome
+
+  # ---------- Entità condivise da tutte le aree ----------
+  - gioco
+  - categoria
+  - editore
+  - num_giocatori
+  - eta
+  - durata
+  - budget
+  - quantita
+  - numero_ordine
+  - codice_sconto
+  - email
+
+  # ---------- Consigli: consiglio personalizzato, occasioni, giochi simili, regali, FAQ di cultura ludica ----------
+  - occasione
+
+  # ---------- Spedizioni: FAQ e calcolo del costo di spedizione (actions/spedizioni.py) ----------
+  - destinazione_spedizione
+
+  # ---------- Negozio: FAQ, apertura, eventi, operatore, reclami e feedback (actions/negozio.py) ----------
+  - negozio_voto
+
+slots:
+  # ---------- Generale: chiacchiere, saluti, ora e data, intent comuni a tutte le aree ----------
+  nome:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: nome
+
+  # ---------- Slot condivisi da tutte le aree (solo dalle entità) ----------
+  # L'ultimo gioco di cui si è parlato: permette domande come «quanto costa?» subito dopo.
+  gioco:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: gioco
+  categoria:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: categoria
+  editore:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: editore
+  num_giocatori:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: num_giocatori
+  eta:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: eta
+  durata:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: durata
+  budget:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: budget
+  quantita:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: quantita
+  numero_ordine:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: numero_ordine
+  codice_sconto:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: codice_sconto
+  email:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: email
+
+  # ---------- Catalogo: informazioni sui prodotti (actions/catalogo_azioni.py) ----------
+  # Ultima domanda fatta su un gioco (nome dell'intent): serve per «e Carcassonne?»
+  # e per rispondere quando il bot ha chiesto «di quale gioco?».
+  catalogo_domanda:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: custom
+
+  # ---------- Consigli: consiglio personalizzato, occasioni, giochi simili, regali, FAQ di cultura ludica ----------
+  # Criteri del consiglio personalizzato, già normalizzati dalla validazione oppure
+  # «indifferente» (= nessun filtro). Fuori dal form si riempiono solo con le richieste
+  # di consiglio, così le domande sul catalogo non lasciano criteri vecchi.
+  consiglio_giocatori:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: num_giocatori
+      intent: [chiedi_consiglio, indica_criteri]
+    - type: from_entity
+      entity: num_giocatori
+      conditions:
+      - active_loop: consiglio_form
+    - type: from_text
+      conditions:
+      - active_loop: consiglio_form
+        requested_slot: consiglio_giocatori
+  consiglio_eta:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: eta
+      intent: [chiedi_consiglio, indica_criteri]
+    - type: from_entity
+      entity: eta
+      conditions:
+      - active_loop: consiglio_form
+    - type: from_text
+      conditions:
+      - active_loop: consiglio_form
+        requested_slot: consiglio_eta
+  consiglio_durata:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: durata
+      intent: [chiedi_consiglio, indica_criteri]
+    - type: from_entity
+      entity: durata
+      conditions:
+      - active_loop: consiglio_form
+    - type: from_text
+      conditions:
+      - active_loop: consiglio_form
+        requested_slot: consiglio_durata
+  consiglio_budget:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: budget
+      intent: [chiedi_consiglio, indica_criteri]
+    - type: from_entity
+      entity: budget
+      conditions:
+      - active_loop: consiglio_form
+    - type: from_text
+      conditions:
+      - active_loop: consiglio_form
+        requested_slot: consiglio_budget
+  consiglio_genere:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: categoria
+      intent: [chiedi_consiglio, indica_criteri]
+    - type: from_entity
+      entity: categoria
+      conditions:
+      - active_loop: consiglio_form
+    - type: from_text
+      conditions:
+      - active_loop: consiglio_form
+        requested_slot: consiglio_genere
+
+  # ---------- Carrello: aggiunta, rimozione, codici sconto e checkout (actions/carrello.py) ----------
+  # Righe del carrello: [{"id": id catalogo, "quantita": n}]
+  carrello:
+    type: any
+    influence_conversation: false
+    mappings:
+    - type: custom
+  carrello_codice:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: custom
+  # Vero solo subito dopo la domanda «vuoi davvero svuotare il carrello?»:
+  # ogni altra azione del carrello lo riporta a false
+  carrello_conferma_svuota:
+    type: bool
+    initial_value: false
+    influence_conversation: true
+    mappings:
+    - type: custom
+
+  # ---------- Ordini: stato, annullamento, modifica e ritardo (actions/ordini.py) ----------
+  # Cosa vuole fare l'utente: stato, annulla, modifica, ritardo
+  ordini_scopo:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: custom
+  ordini_numero:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: numero_ordine
+    - type: from_text
+      conditions:
+      - active_loop: ordine_form
+        requested_slot: ordini_numero
+  ordini_email:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: email
+    - type: from_text
+      conditions:
+      - active_loop: ordine_form
+        requested_slot: ordini_email
+  # Tentativi falliti di verifica (al massimo tre)
+  ordini_tentativi:
+    type: float
+    influence_conversation: false
+    mappings:
+    - type: custom
+  # Vero subito dopo aver chiesto «vuoi annullare l'ordine?»
+  ordini_attesa_conferma:
+    type: bool
+    initial_value: false
+    influence_conversation: true
+    mappings:
+    - type: custom
+
+  # ---------- Spedizioni: FAQ e calcolo del costo di spedizione (actions/spedizioni.py) ----------
+  # Dove si spedisce (testo libero: «sardegna», «germania», «milano»...)
+  destinazione_spedizione:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: destinazione_spedizione
+
+  # ---------- Resi: FAQ e segnalazione di un problema con un ordine (actions/resi.py) ----------
+  resi_numero_ordine:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: numero_ordine
+      intent: segnala_problema_ordine
+    - type: from_text
+      conditions:
+      - active_loop: segnalazione_form
+        requested_slot: resi_numero_ordine
+  resi_tipo_problema:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: segnalazione_form
+        requested_slot: resi_tipo_problema
+  resi_descrizione:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: segnalazione_form
+        requested_slot: resi_descrizione
+
+  # ---------- Account: FAQ, newsletter e avviso di disponibilità (actions/account.py) ----------
+  # Email per newsletter e avvisi: dal messaggio che avvia la richiesta o dalla risposta nel form
+  account_email:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: email
+      intent: [fornisci_email, iscriviti_newsletter, avvisami_disponibilita]
+    - type: from_entity
+      entity: email
+      conditions:
+      - active_loop: newsletter_form
+      - active_loop: avviso_disponibilita_form
+    - type: from_text
+      conditions:
+      - active_loop: newsletter_form
+        requested_slot: account_email
+      - active_loop: avviso_disponibilita_form
+        requested_slot: account_email
+  avviso_gioco:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: gioco
+      conditions:
+      - active_loop: avviso_disponibilita_form
+    - type: from_text
+      conditions:
+      - active_loop: avviso_disponibilita_form
+        requested_slot: avviso_gioco
+
+  # ---------- Negozio: FAQ, apertura, eventi, operatore, reclami e feedback (actions/negozio.py) ----------
+  negozio_voto:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: negozio_voto
+      conditions:
+      - active_loop: feedback_negozio_form
+        requested_slot: negozio_voto
+    - type: from_text
+      conditions:
+      - active_loop: feedback_negozio_form
+        requested_slot: negozio_voto
+  # Il bottone «Salta» manda /deny: commento vuoto («-»)
+  negozio_commento:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_intent
+      intent: deny
+      value: "-"
+      conditions:
+      - active_loop: feedback_negozio_form
+        requested_slot: negozio_commento
+    - type: from_text
+      conditions:
+      - active_loop: feedback_negozio_form
+        requested_slot: negozio_commento
+
+# In ogni form gli intent in ignored_intents non vengono presi come risposta alla domanda:
+# «interrompi» fa uscire dal form, le domande frequenti (faq_*) ricevono risposta e poi
+# il form ripete la domanda (regole in data/form_digressioni.yml).
+forms:
+  # ---------- Consigli: consiglio personalizzato, occasioni, giochi simili, regali, FAQ di cultura ludica ----------
+  consiglio_form:
+    ignored_intents: [interrompi, faq_giochi, faq_carrello, faq_ordini, faq_spedizioni, faq_pagamenti, faq_resi, faq_account, faq_negozio]
+    required_slots:
+    - consiglio_giocatori
+    - consiglio_eta
+    - consiglio_durata
+    - consiglio_budget
+    - consiglio_genere
+
+  # ---------- Ordini: stato, annullamento, modifica e ritardo (actions/ordini.py) ----------
+  ordine_form:
+    ignored_intents: [interrompi, faq_giochi, faq_carrello, faq_ordini, faq_spedizioni, faq_pagamenti, faq_resi, faq_account, faq_negozio]
+    required_slots:
+    - ordini_numero
+    - ordini_email
+
+  # ---------- Resi: FAQ e segnalazione di un problema con un ordine (actions/resi.py) ----------
+  segnalazione_form:
+    ignored_intents: [interrompi, faq_giochi, faq_carrello, faq_ordini, faq_spedizioni, faq_pagamenti, faq_resi, faq_account, faq_negozio]
+    required_slots:
+    - resi_numero_ordine
+    - resi_tipo_problema
+    - resi_descrizione
+
+  # ---------- Account: FAQ, newsletter e avviso di disponibilità (actions/account.py) ----------
+  newsletter_form:
+    ignored_intents: [interrompi, faq_giochi, faq_carrello, faq_ordini, faq_spedizioni, faq_pagamenti, faq_resi, faq_account, faq_negozio]
+    required_slots:
+    - account_email
+  avviso_disponibilita_form:
+    ignored_intents: [interrompi, faq_giochi, faq_carrello, faq_ordini, faq_spedizioni, faq_pagamenti, faq_resi, faq_account, faq_negozio]
+    required_slots:
+    - avviso_gioco
+    - account_email
+
+  # ---------- Negozio: FAQ, apertura, eventi, operatore, reclami e feedback (actions/negozio.py) ----------
+  feedback_negozio_form:
+    ignored_intents: [interrompi, faq_giochi, faq_carrello, faq_ordini, faq_spedizioni, faq_pagamenti, faq_resi, faq_account, faq_negozio]
+    required_slots:
+    - negozio_voto
+    - negozio_commento
+
+responses:
+  # ---------- Generale: chiacchiere, saluti, ora e data, intent comuni a tutte le aree ----------
+  utter_welcome:
+  - text: "Ciao! 👋 Sono GIGI_Bot, l'assistente di GIGI Games, il negozio di giochi da tavolo online e in Via Roma 12 ad Ancona.\n\nPosso consigliarti il gioco giusto, dirti prezzi e disponibilità, gestire il carrello, seguire i tuoi ordini e rispondere alle domande su spedizioni, pagamenti, resi e negozio.\n\nDa dove cominciamo?"
+    button_type: vertical
+    buttons:
+    - title: "🎲 Consigliami un gioco"
+      payload: /chiedi_consiglio
+    - title: "🏷️ Offerte del momento"
+      payload: /mostra_offerte
+    - title: "📦 Dov'è il mio ordine?"
+      payload: /traccia_ordine
+    - title: "❓ Cosa sai fare?"
+      payload: /ask_capabilities
+  utter_greet:
+  - text: Ciao! 👋 Come stai?
+  - text: Ehi, ciao! Come va oggi?
+  - text: Salve! Tutto bene? Se cerchi un gioco o ti serve una mano con un ordine, chiedi pure.
+  - text: Ciao! 😊 Come ti senti oggi?
+  utter_goodbye:
+  - text: Ciao, a presto!
+  - text: Arrivederci! È stato un piacere chiacchierare con te.
+  - text: A presto! 👋 Buon divertimento con i tuoi giochi!
+  - text: Ciao ciao, buona giornata!
+  utter_cheer_up:
+  - text: Mi dispiace sentirlo. 😔 Ricorda che dopo la pioggia arriva sempre il sole! ☀️
+  - text: Su con la vita! Fai un bel respiro profondo, bevi un bicchiere d'acqua e concediti una pausa.
+  - text: Mi spiace! Lo sapevi che le lontre si tengono per mano mentre dormono, per non allontanarsi? 🦦
+  - text: Capita a tutti di avere una giornata no. Domani è un altro giorno, e io sono qui se vuoi parlare.
+  utter_did_that_help:
+  - text: Ti ha aiutato?
+  - text: Va un po' meglio?
+  - text: Ti ha tirato su almeno un po'?
+  utter_happy:
+  - text: Benissimo, continua così!
+  - text: Che bello sentirlo! 😄
+  - text: Fantastico! Sono contento per te.
+  - text: Ottimo! Così mi piace.
+  utter_sorry:
+  - text: Mi dispiace. Se ti va di parlarne, io sono qui. 💙
+  - text: Peccato... Magari una barzelletta può aiutare? Chiedimene una quando vuoi.
+  utter_iamabot:
+  - text: Sono un bot! 🤖 Sono GIGI_Bot, l'assistente virtuale di GIGI Games, creato con Rasa. Se preferisci una persona, scrivi «operatore» e ti dico come contattare l'assistenza.
+  - text: Sì, sono un assistente virtuale, non una persona. Per parlare con un operatore scrivi pure «operatore».
+  - text: Sono un chatbot! Niente caffè per me, solo codice e giochi da tavolo. ☕🎲
+  utter_thanks:
+  - text: Prego! 😊
+  - text: Figurati, è un piacere!
+  - text: Di nulla! Se ti serve altro, chiedi pure.
+  - text: Non c'è di che!
+  utter_how_are_you:
+  - text: Io sto benissimo, grazie! E tu come stai?
+  - text: Tutto bene, i miei circuiti funzionano alla perfezione! 😄 E tu?
+  - text: Alla grande, grazie per avermelo chiesto! Tu come va?
+  utter_ask_name:
+  - text: Mi chiamo GIGI_Bot! 🤖 Sono l'assistente di GIGI Games.
+  - text: Sono GIGI_Bot, l'assistente virtuale del negozio GIGI Games. Piacere!
+  utter_capabilities:
+  - text: "Ecco cosa posso fare per te: 🎲\n\n• Catalogo: descrizione, prezzo, disponibilità, numero di giocatori, durata, età, espansioni e confronto tra due giochi; offerte, novità e accessori\n• Consigli: il gioco giusto per il tuo gruppo, per un'occasione o da regalare, giochi simili a uno che ti piace\n• Carrello: aggiungere e togliere giochi, codici sconto, totale con la spedizione e checkout\n• Ordini: stato e tracciamento, annullamento, modifiche e ritardi\n• Spedizioni, pagamenti e resi: costi, tempi, metodi, rimborsi e segnalazione di un problema con un ordine\n• Account: registrazione, GIGI Punti, newsletter e avviso quando un gioco torna disponibile\n• Negozio: orari, indirizzo, eventi, preordini, operatore e feedback\n\nE poi ora, data, una barzelletta e due chiacchiere. 😄"
+    button_type: vertical
+    buttons:
+    - title: "🎲 Consigliami un gioco"
+      payload: /chiedi_consiglio
+    - title: "✨ Novità"
+      payload: /mostra_novita
+    - title: "🛒 Il mio carrello"
+      payload: /mostra_carrello
+    - title: "📦 Traccia un ordine"
+      payload: /traccia_ordine
+    - title: "📅 Prossimi eventi"
+      payload: /chiedi_eventi
+    - title: "🙋 Parla con un operatore"
+      payload: /chiedi_operatore
+  utter_creator:
+  - text: Sono stato creato con Rasa, un framework open source per chatbot, per un progetto di Data Science. Faccio da assistente al negozio di giochi da tavolo GIGI Games.
+  - text: 'Sono fatto con Rasa: capisco i tuoi messaggi grazie al machine learning e rispondo in base a regole, storie di esempio e ai dati del catalogo di GIGI Games.'
+  utter_joke:
+  - text: Perché i pesci non usano il computer? Perché hanno paura della rete! 🐟
+  - text: Perché il libro di matematica è triste? Perché ha troppi problemi! 📚
+  - text: Sai perché i programmatori confondono Halloween e Natale? Perché OCT 31 = DEC 25! 🎃🎄
+  - text: Qual è il colmo per un elettricista? Restare folgorato a prima vista! ⚡
+  - text: 'Al bar: «Un caffè senza zucchero, per favore.» «Mi dispiace, lo zucchero è finito. Le va bene senza latte?» ☕'
+  - text: Cosa dice un muro a un altro muro? Ci vediamo all'angolo! 🧱
+  - text: Perché il dado non va mai alle feste? Perché ha sempre sei facce e non sa quale mostrare! 🎲
+  utter_compliment_response:
+  - text: Grazie mille, che gentilezza! 😊
+  - text: Oh, grazie! Così mi fai arrossire... se solo potessi. ☺️
+  - text: Grazie! Anche tu non sei niente male. 😉
+  utter_insult_response:
+  - text: Mi dispiace se ti ho deluso. Sto ancora imparando! 🙏
+  - text: Ahia... Cercherò di fare meglio. Prova a chiedermelo in un altro modo.
+  - text: Nessuno è perfetto, nemmeno i bot. 😅 Come posso aiutarti?
+  utter_out_of_scope:
+  - text: "Mi dispiace, su questo non posso aiutarti: sono l'assistente di GIGI Games e mi occupo di giochi da tavolo, ordini, spedizioni e del nostro negozio. 🎲 Scrivi «cosa sai fare?» per vedere come posso esserti utile."
+  - text: Questa non è proprio la mia specialità! 😅 Però posso consigliarti un gioco, dirti prezzi e disponibilità o aiutarti con un ordine.
+  - text: Ahimè, su questo non sono preparato, parlo solo di giochi da tavolo e del negozio GIGI Games. Prova a chiedermi «aiuto».
+  utter_default:
+  - text: "Scusa, non ho capito. 🤔 Puoi riformulare? Per esempio: «quanto costa Catan?», «dov'è il mio ordine?» o «quanto costa la spedizione?»."
+  - text: Mmm, non sono sicuro di aver capito. Prova a dirlo in un altro modo, oppure scrivi «cosa sai fare?».
+  - text: Non ho capito bene, mi dispiace. Riprova con altre parole; se preferisci parlare con una persona, scrivi «operatore».
+  # «sì» e «no» detti quando il bot non ha fatto nessuna domanda
+  utter_risposta_si:
+  - text: Perfetto! 🙂 Dimmi pure cosa ti serve.
+  - text: Bene! Come posso aiutarti?
+  utter_risposta_no:
+  - text: Va bene, nessun problema! Se ti serve altro, sono qui.
+  - text: D'accordo. Chiedimi pure quando vuoi.
+  utter_interrompi:
+  - text: Va bene, nessun problema! Se ti serve altro, sono qui. 🙂
+  - text: Ok, mi fermo. Quando vuoi, chiedimi pure!
+  - text: D'accordo, lasciamo stare. Posso aiutarti con qualcos'altro?
+
+  # ---------- Consigli: consiglio personalizzato, occasioni, giochi simili, regali, FAQ di cultura ludica ----------
+  utter_consiglio_intro:
+  - text: Volentieri! 🎲 Ti faccio qualche domanda veloce per trovare il gioco giusto. Se un criterio non ti interessa, rispondi pure «non importa».
+  - text: Certo, ti aiuto a scegliere! Bastano poche domande; quando qualcosa non conta, scrivi «indifferente».
+  - text: Ottimo, troviamo insieme il gioco perfetto! Ti chiedo un paio di cose (puoi sempre rispondere «non importa»).
+  utter_consiglio_intro_criteri:
+  - text: Perfetto, ne tengo conto! 👍 Ti faccio solo qualche altra domanda (puoi sempre rispondere «non importa»).
+  - text: Ricevuto! Mi mancano solo un paio di dettagli; se qualcosa non conta, scrivi «indifferente».
+  utter_ask_consiglio_giocatori:
+  - text: In quanti giocherete? 👥 Scrivimi un numero o scegli qui sotto.
+    button_type: vertical
+    buttons:
+    - title: Da solo
+      payload: /indica_criteri{{"num_giocatori":"1"}}
+    - title: In coppia
+      payload: /indica_criteri{{"num_giocatori":"2"}}
+    - title: In 4
+      payload: /indica_criteri{{"num_giocatori":"4"}}
+    - title: Non importa
+      payload: /rispondi_indifferente
+  - text: Quanti giocatori sarete? 👥 Puoi scrivere il numero o usare i pulsanti.
+    button_type: vertical
+    buttons:
+    - title: Da solo
+      payload: /indica_criteri{{"num_giocatori":"1"}}
+    - title: In coppia
+      payload: /indica_criteri{{"num_giocatori":"2"}}
+    - title: In 4
+      payload: /indica_criteri{{"num_giocatori":"4"}}
+    - title: Non importa
+      payload: /rispondi_indifferente
+  utter_ask_consiglio_eta:
+  - text: Quanti anni ha il giocatore più giovane? 🎂
+    button_type: vertical
+    buttons:
+    - title: Siamo tutti adulti
+      payload: /indica_criteri{{"eta":"18"}}
+    - title: Non importa
+      payload: /rispondi_indifferente
+  - text: Che età ha il più piccolo del gruppo? 🎂
+    button_type: vertical
+    buttons:
+    - title: Siamo tutti adulti
+      payload: /indica_criteri{{"eta":"18"}}
+    - title: Non importa
+      payload: /rispondi_indifferente
+  utter_ask_consiglio_durata:
+  - text: Quanto deve durare al massimo una partita? ⏱️
+    button_type: vertical
+    buttons:
+    - title: Veloce, fino a 30 minuti
+      payload: /indica_criteri{{"durata":"30 minuti"}}
+    - title: Fino a un'ora
+      payload: /indica_criteri{{"durata":"60 minuti"}}
+    - title: Fino a due ore
+      payload: /indica_criteri{{"durata":"120 minuti"}}
+    - title: Non importa, anche lunga
+      payload: /rispondi_indifferente
+  - text: Quanto tempo avete per una partita? ⏱️
+    button_type: vertical
+    buttons:
+    - title: Veloce, fino a 30 minuti
+      payload: /indica_criteri{{"durata":"30 minuti"}}
+    - title: Fino a un'ora
+      payload: /indica_criteri{{"durata":"60 minuti"}}
+    - title: Fino a due ore
+      payload: /indica_criteri{{"durata":"120 minuti"}}
+    - title: Non importa, anche lunga
+      payload: /rispondi_indifferente
+  utter_ask_consiglio_budget:
+  - text: Quanto vuoi spendere al massimo? 💶
+    button_type: vertical
+    buttons:
+    - title: Fino a 20 €
+      payload: /indica_criteri{{"budget":"20"}}
+    - title: Fino a 35 €
+      payload: /indica_criteri{{"budget":"35"}}
+    - title: Fino a 50 €
+      payload: /indica_criteri{{"budget":"50"}}
+    - title: Non importa
+      payload: /rispondi_indifferente
+  - text: Hai un budget massimo? Scrivimi la cifra o scegli qui sotto. 💶
+    button_type: vertical
+    buttons:
+    - title: Fino a 20 €
+      payload: /indica_criteri{{"budget":"20"}}
+    - title: Fino a 35 €
+      payload: /indica_criteri{{"budget":"35"}}
+    - title: Fino a 50 €
+      payload: /indica_criteri{{"budget":"50"}}
+    - title: Non importa
+      payload: /rispondi_indifferente
+  utter_ask_consiglio_genere:
+  - text: 'Ultima domanda: che genere preferisci? 🎯'
+    button_type: vertical
+    buttons:
+    - title: Strategia
+      payload: /indica_criteri{{"categoria":"strategia"}}
+    - title: Party
+      payload: /indica_criteri{{"categoria":"party"}}
+    - title: Famiglia
+      payload: /indica_criteri{{"categoria":"famiglia"}}
+    - title: Cooperativo
+      payload: /indica_criteri{{"categoria":"cooperativo"}}
+    - title: Carte
+      payload: /indica_criteri{{"categoria":"carte"}}
+    - title: Non importa
+      payload: /rispondi_indifferente
+  - text: 'E per finire: che tipo di gioco ti piace? 🎯 Scegli o scrivimelo tu.'
+    button_type: vertical
+    buttons:
+    - title: Strategia
+      payload: /indica_criteri{{"categoria":"strategia"}}
+    - title: Party
+      payload: /indica_criteri{{"categoria":"party"}}
+    - title: Famiglia
+      payload: /indica_criteri{{"categoria":"famiglia"}}
+    - title: Cooperativo
+      payload: /indica_criteri{{"categoria":"cooperativo"}}
+    - title: Carte
+      payload: /indica_criteri{{"categoria":"carte"}}
+    - title: Non importa
+      payload: /rispondi_indifferente
+  utter_consiglio_interrotto:
+  - text: Va bene, lasciamo perdere il consiglio. 🙂 Se cambi idea, scrivimi «consigliami un gioco».
+  - text: Nessun problema, mi fermo qui! Quando vuoi riprendere, chiedimi pure un consiglio.
+  - text: Ok, interrompo. Se ti serve altro sono qui! 🎲
+
+  # ---------- Ordini: stato, annullamento, modifica e ritardo (actions/ordini.py) ----------
+  utter_ask_ordini_numero:
+  - text: 'Certo! Mi dici il numero dell''ordine? Sono 6 cifre e lo trovi nell''email di conferma (per esempio #482913).'
+  - text: Va bene. Qual è il numero d'ordine? Lo trovi nell'email di conferma, sono 6 cifre.
+  - text: Mi serve il numero dell'ordine (6 cifre, è nell'email di conferma). Me lo scrivi?
+  utter_ask_ordini_email:
+  - text: Grazie! Per verificare che sia il tuo ordine, mi dici l'email usata al momento dell'acquisto?
+  - text: Perfetto. Per sicurezza, qual è l'email associata all'ordine?
+  - text: 'Ultimo passaggio: scrivimi l''email con cui hai fatto l''ordine, così controllo che coincida.'
+
+  # ---------- Resi: FAQ e segnalazione di un problema con un ordine (actions/resi.py) ----------
+  utter_ask_resi_numero_ordine:
+  - text: 'Mi dispiace per l''inconveniente! 😕 Per aprire la segnalazione mi serve il numero d''ordine (6 cifre, anche con #). Lo trovi nell''email di conferma.'
+  - text: 'Ti aiuto subito. Qual è il numero d''ordine? Sono 6 cifre, per esempio #482913.'
+  utter_ask_resi_tipo_problema:
+  - text: Che tipo di problema hai riscontrato?
+    buttons:
+    - title: Arrivato danneggiato
+      payload: Arrivato danneggiato
+    - title: Pezzi mancanti o difettosi
+      payload: Pezzi mancanti o difettosi
+    - title: Prodotto sbagliato
+      payload: Prodotto sbagliato
+    - title: Altro
+      payload: Altro
+  utter_ask_resi_descrizione:
+  - text: Descrivimi in breve cosa è successo (per esempio quale gioco, quale pezzo). Se non hai altro da aggiungere scrivi «nessuna».
+
+  # ---------- Account: FAQ, newsletter e avviso di disponibilità (actions/account.py) ----------
+  utter_ask_newsletter_form_account_email:
+  - text: Con piacere! A quale indirizzo email vuoi ricevere la newsletter?
+  - text: Perfetto, scrivimi la tua email e ti iscrivo 📬
+  utter_account_email_non_valida:
+  - text: Mmh, questa non sembra un'email valida. Puoi riscriverla? Per esempio nome@esempio.it
+  - text: Non riesco a riconoscere l'email, controlla di averla scritta bene (es. nome@esempio.it).
+  utter_disiscrizione_newsletter:
+  - text: 'Nessun problema! In fondo a ogni nostra email trovi il link «Annulla iscrizione»: cliccalo e smetterai di ricevere la newsletter. Se hai difficoltà scrivi a assistenza@gigigames.it.'
+  - text: Puoi disiscriverti in qualsiasi momento dal link in fondo a ogni email della newsletter. Se non lo trovi, scrivici a assistenza@gigigames.it e ci pensiamo noi.
+  utter_account_email_ricevuta:
+  - text: Grazie, ho letto la tua email. Cosa vuoi fare?
+    button_type: vertical
+    buttons:
+    - title: Iscrivermi alla newsletter
+      payload: /iscriviti_newsletter
+    - title: Avviso di disponibilità di un gioco
+      payload: /avvisami_disponibilita
+    - title: Controllare un ordine
+      payload: /traccia_ordine
+  utter_account_interrotto:
+  - text: Va bene, lasciamo perdere. Se ti serve altro sono qui!
+  - text: Ok, annullato. Dimmi pure se posso aiutarti in altro modo.
+  utter_ask_avviso_disponibilita_form_avviso_gioco:
+  - text: Per quale gioco vuoi essere avvisato?
+  - text: Dimmi il nome del gioco e controllo la disponibilità.
+  utter_ask_avviso_disponibilita_form_account_email:
+  - text: Il gioco al momento è esaurito. A quale email ti avviso quando torna disponibile?
+  - text: Purtroppo ora non è disponibile. Lasciami la tua email e ti scrivo appena torna in negozio.
+
+  # ---------- Negozio: FAQ, apertura, eventi, operatore, reclami e feedback (actions/negozio.py) ----------
+  utter_reclamo:
+  - text: "Mi dispiace tantissimo che tu sia scontento del nostro servizio, e ti chiedo scusa a nome di tutto il team di GIGI Games. 🙏\n\nVogliamo capire cosa è andato storto e rimediare: scrivi i dettagli (e il numero d'ordine, se c'è) ai nostri operatori.\n\n• Email: assistenza@gigigames.it (risposta entro 24 ore lavorative)\n• Telefono e WhatsApp: 071 123 4567 (lun–ven 9:00–18:00)\n\nPrenderemo il tuo reclamo molto sul serio."
+  - text: "Hai ragione a farcelo notare e mi dispiace molto per l'esperienza che hai avuto: scusaci. 🙏\n\nPer risolvere la situazione contatta la nostra assistenza raccontando cosa è successo:\n• Email: assistenza@gigigames.it (risposta entro 24 ore lavorative)\n• Telefono e WhatsApp: 071 123 4567 (lun–ven 9:00–18:00)\n\nFaremo il possibile per sistemare le cose."
+  utter_ask_negozio_voto:
+  - text: Ci farebbe piacere sapere cosa ne pensi di GIGI Games. Che voto ci dai da 1 a 5?
+    buttons:
+    - title: '1'
+      payload: /dai_voto_negozio{{"negozio_voto":"1"}}
+    - title: '2'
+      payload: /dai_voto_negozio{{"negozio_voto":"2"}}
+    - title: '3'
+      payload: /dai_voto_negozio{{"negozio_voto":"3"}}
+    - title: '4'
+      payload: /dai_voto_negozio{{"negozio_voto":"4"}}
+    - title: '5'
+      payload: /dai_voto_negozio{{"negozio_voto":"5"}}
+  utter_ask_negozio_commento:
+  - text: Grazie! Vuoi aggiungere un commento? Scrivilo pure, oppure premi «Salta».
+    buttons:
+    - title: Salta
+      payload: /deny
+  utter_negozio_feedback_interrotto:
+  - text: Nessun problema, lasciamo perdere il feedback. Se cambi idea, scrivimi «voglio lasciare un feedback».
+
+actions:
+  # ---------- Generale: chiacchiere, saluti, ora e data, intent comuni a tutte le aree ----------
+  - action_tell_time
+  - action_tell_date
+  - action_nice_to_meet
+
+  # ---------- Catalogo: informazioni sui prodotti (actions/catalogo_azioni.py) ----------
+  - action_info_gioco
+  - action_chiedi_prezzo
+  - action_chiedi_disponibilita
+  - action_chiedi_giocatori
+  - action_chiedi_durata
+  - action_chiedi_eta
+  - action_chiedi_difficolta
+  - action_chiedi_editore_autore
+  - action_chiedi_lingua
+  - action_chiedi_espansioni
+  - action_confronta_giochi
+  - action_cerca_categoria
+  - action_cerca_editore
+  - action_mostra_offerte
+  - action_mostra_novita
+  - action_mostra_piu_apprezzati
+  - action_mostra_accessori
+  - action_indica_gioco
+
+  # ---------- Consigli: consiglio personalizzato, occasioni, giochi simili, regali, FAQ di cultura ludica ----------
+  - action_avvia_consiglio
+  - validate_consiglio_form
+  - action_consiglia_giochi
+  - action_interrompi_consiglio
+  - action_consiglia_occasione
+  - action_giochi_simili
+  - action_idea_regalo
+  - action_sorprendimi
+
+  # ---------- Carrello: aggiunta, rimozione, codici sconto e checkout (actions/carrello.py) ----------
+  - action_aggiungi_carrello
+  - action_togli_carrello
+  - action_cambia_quantita_carrello
+  - action_mostra_carrello
+  - action_chiedi_svuota_carrello
+  - action_svuota_carrello
+  - action_annulla_svuota_carrello
+  - action_applica_codice_sconto
+  - action_vai_checkout
+
+  # ---------- Ordini: stato, annullamento, modifica e ritardo (actions/ordini.py) ----------
+  - action_ordini_imposta_scopo
+  - action_ordini_esegui
+  - action_ordini_conferma_annullamento
+  - action_ordini_rifiuta_annullamento
+  - action_ordini_reset
+  - validate_ordine_form
+
+  # ---------- Spedizioni: FAQ e calcolo del costo di spedizione (actions/spedizioni.py) ----------
+  - action_calcola_spedizione
+
+  # ---------- Resi: FAQ e segnalazione di un problema con un ordine (actions/resi.py) ----------
+  - validate_segnalazione_form
+  - action_resi_crea_pratica
+  - action_resi_annulla_segnalazione
+
+  # ---------- Account: FAQ, newsletter e avviso di disponibilità (actions/account.py) ----------
+  - action_iscrivi_newsletter
+  - action_prepara_avviso
+  - action_avviso_disponibilita
+  - validate_newsletter_form
+  - validate_avviso_disponibilita_form
+
+  # ---------- Negozio: FAQ, apertura, eventi, operatore, reclami e feedback (actions/negozio.py) ----------
+  - action_negozio_aperto
+  - action_prossimi_eventi
+  - action_parla_operatore
+  - action_invia_feedback_negozio
+  - action_azzera_feedback_negozio
+  - validate_feedback_negozio_form
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

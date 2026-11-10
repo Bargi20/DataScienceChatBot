@@ -1,0 +1,1619 @@
+# File generato da dataset/genera_lookup.py a partire da dataset/catalogo.csv:
+# non modificarlo a mano, rilancia lo script quando cambia il catalogo.
+version: "3.1"
+
+nlu:
+- lookup: gioco
+  examples: |
+    - CATchables 4-Pack - Gattobaleno, Gatto Relax, Gatto Buco Nero, Miacolazione
+    - CATchables 4-Pack Gattobaleno, Gatto Relax, Gatto Buco Nero, Miacolazione
+    - Unmatched Adventures - Teenage Mutant Ninja Turtles - Shredder and Krang
+    - Il Signore degli Anelli - La Compagnia dell'Anello - Trick-Taking Game
+    - Il Signore degli Anelli - La Compagnia dell’Anello - Trick-Taking Game
+    - Il Signore degli Anelli - La Compagnia dellAnello - Trick-Taking Game
+    - Unmatched Adventures Teenage Mutant Ninja Turtles Shredder and Krang
+    - Il Signore degli Anelli La Compagnia dell'Anello Trick-Taking Game
+    - Il Signore degli Anelli La Compagnia dell’Anello Trick-Taking Game
+    - Kronologic - Paris 1920 - Panico all'Opera e Gli Sventurati Amanti
+    - Kronologic - Paris 1920 - Panico all'Opéra e Gli Sventurati Amanti
+    - Kronologic - Paris 1920 - Panico all’Opera e Gli Sventurati Amanti
+    - Kronologic - Paris 1920 - Panico all’Opéra e Gli Sventurati Amanti
+    - Zombicide - White Death - Teenage Mutant Ninja Turtles - Timecrash
+    - Il Signore degli Anelli La Compagnia dellAnello Trick-Taking Game
+    - Kronologic - Paris 1920 - Panico allOpera e Gli Sventurati Amanti
+    - Kronologic - Paris 1920 - Panico allOpéra e Gli Sventurati Amanti
+    - Hidden Games - Sotto Sospetto - Otto Diverse Sfide Investigative
+    - Kronologic Paris 1920 Panico all'Opera e Gli Sventurati Amanti
+    - Kronologic Paris 1920 Panico all'Opéra e Gli Sventurati Amanti
+    - Kronologic Paris 1920 Panico all’Opera e Gli Sventurati Amanti
+    - Kronologic Paris 1920 Panico all’Opéra e Gli Sventurati Amanti
+    - Kronologic Paris 1920 Panico allOpera e Gli Sventurati Amanti
+    - Kronologic Paris 1920 Panico allOpéra e Gli Sventurati Amanti
+    - Barbascura X - Evolversi Male - Espansione Bradipo e Zanzara
+    - Hidden Games Sotto Sospetto Otto Diverse Sfide Investigative
+    - Zombicide White Death Teenage Mutant Ninja Turtles Timecrash
+    - Animali in Guerra - Bulloni, Giornali & Operazioni Speciali
+    - Barbascura X - Evolversi Male - Espansione Tasso e Granchio
+    - Il Signore degli Anelli - Le Due Torri - Trick-Taking Game
+    - Animali in Guerra Bulloni, Giornali & Operazioni Speciali
+    - La Cucaracha Glow in the Dark - Edizione 10° Anniversario
+    - Barbascura X Evolversi Male Espansione Bradipo e Zanzara
+    - La Cucaracha Glow in the Dark - Edizione 10 Anniversario
+    - Marvel Zombies - Heroes' Resistance - Un Gioco Zombicide
+    - Marvel Zombies - Heroes’ Resistance - Un Gioco Zombicide
+    - Mini Crimes - Speciale Halloween - Dolcetto o Scherzetto
+    - The Witcher - Il vecchio Mondo - Sulle Tracce dei Mostri
+    - Barbascura X Evolversi Male Espansione Tasso e Granchio
+    - Hidden Games - Il Giro del Mondo del Professor Leonardo
+    - La Cucaracha Glow in the Dark Edizione 10° Anniversario
+    - Marvel Zombies - Heroes Resistance - Un Gioco Zombicide
+    - Fino a Prova Contraria - La Collana del Cielo Stellato
+    - Il Signore degli Anelli Le Due Torri Trick-Taking Game
+    - La Cucaracha Glow in the Dark Edizione 10 Anniversario
+    - Ca$h, Schifosamente Ricchi Ca$h, Schifosamente Ricchi
+    - Ca$h, Schifosamente Ricchi!Ca$h, Schifosamente Ricchi
+    - Hidden Games Il Giro del Mondo del Professor Leonardo
+    - Fino a Prova Contraria La Collana del Cielo Stellato
+    - Il Signore degli Anelli - Il Destino della Compagnia
+    - Marvel Zombies Heroes' Resistance Un Gioco Zombicide
+    - Marvel Zombies Heroes’ Resistance Un Gioco Zombicide
+    - Mini Crimes Speciale Halloween Dolcetto o Scherzetto
+    - Spietato - Il Party Game Perfido per Persone Gentili
+    - Star Wars Il Palazzo di Jabba - Un Gioco Love Letter
+    - The Witcher Il vecchio Mondo Sulle Tracce dei Mostri
+    - Marvel Zombies Heroes Resistance Un Gioco Zombicide
+    - Sherlock Holmes C.I. - Carlton House e Queen’s Park
+    - The Elder Scrolls - Il Tradimento della Seconda Era
+    - Unmatched Adventures - Teenage Mutant Ninja Turtles
+    - Dragon Ball Super - La Sopravvivenza dell'Universo
+    - Dragon Ball Super - La Sopravvivenza dell’Universo
+    - Il Signore degli Anelli Il Destino della Compagnia
+    - Sherlock Holmes C.I. - Carlton House e Queens Park
+    - Spietato Il Party Game Perfido per Persone Gentili
+    - Star Wars Il Palazzo di Jabba Un Gioco Love Letter
+    - Dragon Ball Super - La Sopravvivenza dellUniverso
+    - Non si puo Dire piu Niente - Indignazioni Perenni
+    - Non si può Dire più Niente - Indignazioni Perenni
+    - Sherlock Holmes C.I. Carlton House e Queen’s Park
+    - Teenage Mutant Ninja Turtles - Shredder and Krang
+    - The Elder Scrolls Il Tradimento della Seconda Era
+    - Ticket to Ride Legacy - Leggende del Vecchio West
+    - Unmatched Adventures Teenage Mutant Ninja Turtles
+    - Borderlands - Mister Torgue's Arena of Badassery
+    - Borderlands - Mister Torgue’s Arena of Badassery
+    - Dragon Ball Super La Sopravvivenza dell'Universo
+    - Dragon Ball Super La Sopravvivenza dell’Universo
+    - Happy Little Dinosaurs - Appuntamenti Disastrosi
+    - Sherlock Holmes C.I. Carlton House e Queens Park
+    - Borderlands - Mister Torgues Arena of Badassery
+    - Dragon Ball Super La Sopravvivenza dellUniverso
+    - Il Signore degli Anelli - Duel for Middle-Earth
+    - Non si puo Dire piu Niente Indignazioni Perenni
+    - Non si può Dire più Niente Indignazioni Perenni
+    - Ticket to Ride Legacy Leggende del Vecchio West
+    - Borderlands Mister Torgue's Arena of Badassery
+    - Borderlands Mister Torgue’s Arena of Badassery
+    - Dragon Eclipse - Viaggio nel Regno delle Ombre
+    - Happy Little Dinosaurs Appuntamenti Disastrosi
+    - Unmatched - Battle of Legends Volume 3 + Promo
+    - Borderlands Mister Torgues Arena of Badassery
+    - Chicken Crimes - Il Mistero del Dom Gallignon
+    - Evolversi Male - Espansione Bradipo e Zanzara
+    - Il Signore degli Anelli Duel for Middle-Earth
+    - SETI - Ricerca di Intelligenza Extraterrestre
+    - Unmatched - Houdini vs Il Genio della Lampada
+    - Deep Regrets - Uno Sventurato Gioco di Pesca
+    - Dragon Eclipse Viaggio nel Regno delle Ombre
+    - Evolversi Male - Espansione Tasso e Granchio
+    - Exploding Kittens - Edizione per 2 Giocatori
+    - Unmatched Battle of Legends Volume 3 + Promo
+    - Winx VS Trix - Sfida per la Fiamma del Drago
+    - CATchables 2-Pack - Miciambella e Feligname
+    - Chicken Crimes Il Mistero del Dom Gallignon
+    - Scarabeo - Edizione Deluxe 60° Anniversario
+    - SETI Ricerca di Intelligenza Extraterrestre
+    - Sheriff of Nottingham - Disney's Robin Hood
+    - Sheriff of Nottingham - Disney’s Robin Hood
+    - Unmatched Houdini vs Il Genio della Lampada
+    - Animali in Guerra - Spie, Bugie e Fattorie
+    - CATchables 2-Pack - DJ Gatto e Gatto Mucca
+    - Deep Regrets Uno Sventurato Gioco di Pesca
+    - Exploding Kittens Edizione per 2 Giocatori
+    - Horrified - Dungeons & Dragons - Ravenloft
+    - Il vecchio Mondo - Sulle Tracce dei Mostri
+    - Magnetic Line - Non T'Arrabbiare Tascabile
+    - Magnetic Line - Non T’Arrabbiare Tascabile
+    - Magnetic Line - Scale e Serpenti Tascabile
+    - Marvel Champions LCG - L’Era di Apocalisse
+    - Scarabeo - Edizione Deluxe 60 Anniversario
+    - Sheriff of Nottingham - Disneys Robin Hood
+    - The Lost Code - Plastic Components Upgrade
+    - The Witcher - Il vecchio Mondo - Avventure
+    - Unmatched - Battle of Legends - Volume One
+    - Unmatched - Battle of Legends - Volume Two
+    - Unmatched - The Witcher - Steel and Silver
+    - Winx VS Trix Sfida per la Fiamma del Drago
+    - World of Warcraft - Wrath of the Lich King
+    - CATchables 2-Pack Miciambella e Feligname
+    - Magnetic Line - Non TArrabbiare Tascabile
+    - Marvel Champions LCG - LEra di Apocalisse
+    - ONE PIECE - Escape Game: Caccia al Tesoro
+    - Scarabeo Edizione Deluxe 60° Anniversario
+    - Sheriff of Nottingham Disney's Robin Hood
+    - Sheriff of Nottingham Disney’s Robin Hood
+    - The Castles of Burgundy - Special Edition
+    - Unmatched Adventures - Storie Incredibili
+    - Animali in Guerra Spie, Bugie e Fattorie
+    - CATchables 2-Pack DJ Gatto e Gatto Mucca
+    - Disney Villainous - Introduction to Evil
+    - La Casa dei Sogni - Facile Ristrutturare
+    - Magnetic Line Non T'Arrabbiare Tascabile
+    - Magnetic Line Non T’Arrabbiare Tascabile
+    - Magnetic Line Scale e Serpenti Tascabile
+    - Marvel Champions LCG L’Era di Apocalisse
+    - Scarabeo Edizione Deluxe 60 Anniversario
+    - Sheriff of Nottingham Disneys Robin Hood
+    - Small Railroad Empires - Scenario Pack 2
+    - Small Samurai Empires - Seconda Edizione
+    - The Lost Code Plastic Components Upgrade
+    - Unmatched - Cappuccetto Rosso vs Beowulf
+    - World of Warcraft Wrath of the Lich King
+    - World Order - Corsa all'Egemonia Globale
+    - World Order - Corsa all’Egemonia Globale
+    - Circadians - Caos e Ordine - Precursori
+    - Domande Stupide da Fare ai Vostri Amici
+    - Dungeons & Dragons - Inizia l'Avventura
+    - Dungeons & Dragons - Inizia l’Avventura
+    - Hidden Games - Il Diadema di Mezzanotte
+    - Magnetic Line Non TArrabbiare Tascabile
+    - Marvel Champions LCG LEra di Apocalisse
+    - Monkey Palace - Un Gioco da Tavolo LEGO
+    - Race for the Galaxy - Rischio Calcolato
+    - The Castles of Burgundy Special Edition
+    - Ticket to Ride - Primo Viaggio - Europa
+    - Unmatched Adventures Storie Incredibili
+    - World Order - Corsa allEgemonia Globale
+    - Disney Villainous - Filled with Fright
+    - Disney Villainous - Perfectly Wretched
+    - Disney Villainous Introduction to Evil
+    - Dungeons & Dragons - Inizia lAvventura
+    - Exploding Kittens - Il Gioco da Tavolo
+    - Forests of Pangaia - edizione Italiana
+    - Hidden Games - Freddo Come il Ghiaccio
+    - Hidden Games - Il Killer del Campeggio
+    - Hitster - La Sfida Musicale del Secolo
+    - Horrified Dungeons & Dragons Ravenloft
+    - Il Trono di Spade - Il Primo Cavaliere
+    - La Casa dei Sogni Facile Ristrutturare
+    - Looney Tunes Mayhem - Pack 4 Miniature
+    - ONE PIECE Escape Game Caccia al Tesoro
+    - Piccole Indagini Su Storie Incredibili
+    - Race for the Galaxy - Seconda Edizione
+    - Small Railroad Empires Scenario Pack 2
+    - Small Samurai Empires Seconda Edizione
+    - The Witcher Il vecchio Mondo Avventure
+    - Twilight Imperium - La Profezia dei Re
+    - Unmatched Battle of Legends Volume One
+    - Unmatched Battle of Legends Volume Two
+    - Unmatched Cappuccetto Rosso vs Beowulf
+    - Unmatched The Witcher Steel and Silver
+    - World Order Corsa all'Egemonia Globale
+    - World Order Corsa all’Egemonia Globale
+    - 23 Pugnalate - Tradirai Giulio Cesare
+    - Disney Villainous - Bigger and Badder
+    - Disney Villainous - Treacherous Tides
+    - Dungeons & Dragons Inizia l'Avventura
+    - Dungeons & Dragons Inizia l’Avventura
+    - Exploding Kittens - Imploding Kittens
+    - Exploding Kittens - Streaking Kittens
+    - Here To Slay - Berserker e Necromanti
+    - Hidden Games Il Diadema di Mezzanotte
+    - Kifake - Il gioco dei Cosi che Cosano
+    - Kifaké - Il gioco dei Cosi che Cosano
+    - Lupus In Tabula - Edizione Luna Piena
+    - Metal Gear Solid - Il Gioco da Tavolo
+    - Mini Crimes - Speciale Agatha Mistery
+    - Mini Dungeons - La Miniera e le Torri
+    - Monkey Palace Un Gioco da Tavolo LEGO
+    - Profiler - I Fantasmi di Brandonsbury
+    - Race for the Galaxy Rischio Calcolato
+    - Shadows of Brimstone - Feudal Village
+    - The Witcher - Il Sentiero del Destino
+    - Unmatched - The Witcher - Realms Fall
+    - Unstable Unicorns - Christmas Special
+    - World Order Corsa allEgemonia Globale
+    - Arcs - Kit Leaders & Lore Espansione
+    - Colpiamoci a Vicenda con Spade Finte
+    - Dead Cells - Il Rogue-Lite da Tavolo
+    - Disney Villainous - Despicable Plots
+    - Disney Villainous Filled with Fright
+    - Disney Villainous Perfectly Wretched
+    - Dungeons & Dragons Inizia lAvventura
+    - Dylan Dog - L'alba dei Morti Viventi
+    - Dylan Dog - L’alba dei Morti Viventi
+    - Exploding Kittens Il Gioco da Tavolo
+    - Forests of Pangaia edizione Italiana
+    - Hidden Games - Delitto sotto la Neve
+    - Hidden Games - Il Caso di Villasetia
+    - Hidden Games Freddo Come il Ghiaccio
+    - Hidden Games Il Killer del Campeggio
+    - Hidden Games – Sotto lo Stesso Tetto
+    - Hitster La Sfida Musicale del Secolo
+    - Il Trono di Spade - Terre di Nessuno
+    - Il Trono di Spade Il Primo Cavaliere
+    - Labyrinth - Pokemon Glow in the Dark
+    - Looney Tunes Mayhem Pack 4 Miniature
+    - Lupin the 3rd - L'Avventura Italiana
+    - Lupin the 3rd - L’Avventura Italiana
+    - Magnetic Line - Backgammon Tascabile
+    - Monopoly Classico - Scatola Quadrata
+    - Mystery House - Avventure in Scatola
+    - Race for the Galaxy Seconda Edizione
+    - Rival Cities - Amburgo contro Altona
+    - Small Railroad Empires - Red Company
+    - Tale of Carrot - L'Ascesa degli Eroi
+    - Tale of Carrot - L’Ascesa degli Eroi
+    - Tic Tac K.O. - Adorabili Vs. Malvagi
+    - Twilight Imperium La Profezia dei Re
+    - Wandering Towers - Edizione Italiana
+    - 23 Pugnalate Tradirai Giulio Cesare
+    - Circadians Caos e Ordine Precursori
+    - Disney Villainous - Sugar and Spite
+    - Disney Villainous Bigger and Badder
+    - Disney Villainous Treacherous Tides
+    - Dylan Dog - Lalba dei Morti Viventi
+    - Exploding Kittens - 10 Anni di Caos
+    - Exploding Kittens - Barking Kittens
+    - Exploding Kittens Imploding Kittens
+    - Exploding Kittens Streaking Kittens
+    - Here To Slay Berserker e Necromanti
+    - Hidden Games - In Bilico su un Filo
+    - Kifake Il gioco dei Cosi che Cosano
+    - Kifaké Il gioco dei Cosi che Cosano
+    - Lupin the 3rd - LAvventura Italiana
+    - Lupus In Tabula Edizione Luna Piena
+    - Metal Gear Solid Il Gioco da Tavolo
+    - Micromacro - Crime City - Bonus Box
+    - Mini Crimes Speciale Agatha Mistery
+    - Mini Dungeons La Miniera e le Torri
+    - Monopoly - Super Electronic Banking
+    - One Piece - Nakama - Amici & Nemici
+    - Profiler I Fantasmi di Brandonsbury
+    - Shadows of Brimstone Feudal Village
+    - Tale of Carrot - LAscesa degli Eroi
+    - The Witcher Il Sentiero del Destino
+    - Ticket to Ride Primo Viaggio Europa
+    - Trivial Pursuit - Edizione Famiglia
+    - Unstable Unicorns Christmas Special
+    - What do You Meme? - NSFW Espansione
+    - Arcs Kit Leaders & Lore Espansione
+    - Darwin Journey + Espansione BUNDLE
+    - Darwin’s Journey - Terra del Fuoco
+    - Dead Cells Il Rogue-Lite da Tavolo
+    - Disney Villainous Despicable Plots
+    - Dungeon Fighter - Seconda Edizione
+    - Dylan Dog L'alba dei Morti Viventi
+    - Dylan Dog L’alba dei Morti Viventi
+    - Eldritch Horror - Leggende Perdute
+    - Harry Potter - La Coppa delle Case
+    - Here To Slay: Druidi e Combattenti
+    - Hidden Games - L'Isola dei Misteri
+    - Hidden Games - L’Isola dei Misteri
+    - Hidden Games Delitto sotto la Neve
+    - Hidden Games Il Caso di Villasetia
+    - Hidden Games Sotto lo Stesso Tetto
+    - Il Trono di Spade Terre di Nessuno
+    - Labyrinth Pokemon Glow in the Dark
+    - Lupin the 3rd L'Avventura Italiana
+    - Lupin the 3rd L’Avventura Italiana
+    - Magnetic Line Backgammon Tascabile
+    - Mini Crimes - Una Scelta Sbagliata
+    - Monopoly Classico Scatola Quadrata
+    - Mystery House Avventure in Scatola
+    - Nome in Codice - Vietato ai Minori
+    - Rival Cities Amburgo contro Altona
+    - Small Railroad Empires Red Company
+    - Tale of Carrot L'Ascesa degli Eroi
+    - Tale of Carrot L’Ascesa degli Eroi
+    - Tic Tac K.O. - Draghi Vs. Unicorni
+    - Tic Tac K.O. Adorabili Vs. Malvagi
+    - Tombola - Edizione Speciale Deluxe
+    - Wandering Towers Edizione Italiana
+    - What do You Meme? - Family Edition
+    - Cyberpunk 2077 Gang di Night City
+    - Darwins Journey - Terra del Fuoco
+    - Descent - La Guerra del Traditore
+    - Disney Villainous Sugar and Spite
+    - Dragon Eclipse - Arena Indomabile
+    - Dylan Dog Lalba dei Morti Viventi
+    - Exploding Kittens - Edizione VM18
+    - Exploding Kittens 10 Anni di Caos
+    - Exploding Kittens Barking Kittens
+    - Here To Slay Druidi e Combattenti
+    - Hidden Games - LIsola dei Misteri
+    - Hidden Games In Bilico su un Filo
+    - Holly e Benji - Il Gioco di Carte
+    - Lupin the 3rd LAvventura Italiana
+    - Magnetic Line - Scacchi Tascabile
+    - Mini Crimes - Metterci lo Zampino
+    - Monopoly Super Electronic Banking
+    - Nome in Codice - Seconda Edizione
+    - Tale of Carrot LAscesa degli Eroi
+    - Trivial Pursuit Edizione Famiglia
+    - Unlock! - Supernatural Adventures
+    - Unmatched - Robin Hood vs Bigfoot
+    - Unmatched The Witcher Realms Fall
+    - Arkham Horror - Lovecraft Letter
+    - Backstories - Sola tra i Ghiacci
+    - Darwin’s Journey Terra del Fuoco
+    - Dragon Eclipse - Mari Pericolosi
+    - Dungeon Fighter Seconda Edizione
+    - Eldritch Horror Leggende Perdute
+    - Exploding Kittens - Good Vs Evil
+    - Harry Potter La Coppa delle Case
+    - Hidden Games - Un Piano Perfetto
+    - Hidden Games L'Isola dei Misteri
+    - Hidden Games L’Isola dei Misteri
+    - Magnetic Line - Domino Tascabile
+    - Magnetic Line - Mulino Tascabile
+    - Mini Crimes - Ritorno al Passato
+    - Mini Crimes Una Scelta Sbagliata
+    - Nome in Codice Vietato ai Minori
+    - One Piece - Assalto a Marineford
+    - Pilgrims - Una Curiosa Avventura
+    - Profiler - Sparizione ai Caraibi
+    - Spirit Island - Nature Incarnate
+    - Subbuteo - UEFA Champions League
+    - Tic Tac K.O. Draghi Vs. Unicorni
+    - Tombola Edizione Speciale Deluxe
+    - Twilight Imperium - Ultimo Tuono
+    - What do You Meme NSFW Espansione
+    - Backstories - Nozze di Smeraldo
+    - Darwins Journey Terra del Fuoco
+    - Descent La Guerra del Traditore
+    - Dragon Eclipse Arena Indomabile
+    - Endless Winter - Paleoamericans
+    - Exploding Kittens - Grab & Game
+    - Exploding Kittens Edizione VM18
+    - Faraway - Popoli dal Sottosuolo
+    - Fateforge - Le Cronache di Kaan
+    - Finis Terrae – Standard Edition
+    - Happy Salmon - Seconda Edizione
+    - Hidden Games LIsola dei Misteri
+    - Holly e Benji Il Gioco di Carte
+    - ISS Vanguard - Close Encounters
+    - Ito - Collega Numeri e Pensieri
+    - Magnetic Line Scacchi Tascabile
+    - Mercoledi - La Verita del Corvo
+    - Mercoledì - La Verità del Corvo
+    - Micromacro Crime City Bonus Box
+    - Mini Crimes Metterci lo Zampino
+    - Nome in Codice Seconda Edizione
+    - One Piece Nakama Amici & Nemici
+    - Paper World - Il Mondo di Carta
+    - Stranger Things - Il Sottosopra
+    - The Breach - Il Gioco da Tavolo
+    - Unmatched Robin Hood vs Bigfoot
+    - What do You Meme Family Edition
+    - 1997 Fuga da New York: Playmat
+    - Arkham Horror Lovecraft Letter
+    - Backstories Sola tra i Ghiacci
+    - Boxtop Pinball - Casa Stregata
+    - Captain Sonar - Second Edition
+    - Checkers - Il Gioco della Dama
+    - Chess - Il Gioco degli Scacchi
+    - Clash of Clans - The Epic Raid
+    - Cthulhu - Lo Stregone di Salem
+    - Dragon Eclipse Mari Pericolosi
+    - Everdell - Collector's Edition
+    - Everdell - Collector’s Edition
+    - Exploding Kittens Good Vs Evil
+    - Hidden Games Un Piano Perfetto
+    - Horrified - Dungeons & Dragons
+    - Magnetic Line Domino Tascabile
+    - Magnetic Line Mulino Tascabile
+    - Maretta - Extra Carnivore Pack
+    - Massive Darkness 2 - Hellscape
+    - Mini Crimes - Copia Imperfetta
+    - Mini Crimes - Scavando a Fondo
+    - Mini Crimes Ritorno al Passato
+    - One Piece Assalto a Marineford
+    - Pilgrims Una Curiosa Avventura
+    - Profiler Sparizione ai Caraibi
+    - Robo Rally - Edizione Italiana
+    - Spirit Island Nature Incarnate
+    - Subbuteo UEFA Champions League
+    - Team3 Green - Edizione Tedesca
+    - The Witcher - Il Vecchio Mondo
+    - Tristerra - La Grande Baldoria
+    - Twilight Imperium Ultimo Tuono
+    - Twin Pics - La Coppia Perfetta
+    - Unlock Supernatural Adventures
+    - Unstable Unicorns - Nightmares
+    - 1997 Fuga da New York Playmat
+    - Aeon's End - Seconda Edizione
+    - Aeon’s End - Seconda Edizione
+    - Alibi - Crimine in Salsa Rosa
+    - Backstories Nozze di Smeraldo
+    - Bag & Snatch - Backyard Brawl
+    - Bag & Snatch! – Ocean Turmoil
+    - Barbascura X - Evolversi Male
+    - Betrayal - Deck of Lost Souls
+    - Cluedo - Caccia all'Impostore
+    - Cluedo - Caccia all’Impostore
+    - Endless Winter Paleoamericans
+    - Everdell - Collectors Edition
+    - Exploding Kittens Grab & Game
+    - Faraway Popoli dal Sottosuolo
+    - Fateforge Le Cronache di Kaan
+    - Finis Terrae Standard Edition
+    - Happy Salmon Seconda Edizione
+    - Hidden Games - Morte di un Re
+    - ISS Vanguard Close Encounters
+    - Ito Collega Numeri e Pensieri
+    - Kit Leaders & Lore Espansione
+    - La Cucaracha Glow in the Dark
+    - Labyrinth Chronicles 40 Years
+    - Mercoledi La Verita del Corvo
+    - Mercoledì La Verità del Corvo
+    - Mini Card Game - Blue Penguin
+    - Mini Crimes - L'Ultimo Natale
+    - Mini Crimes - L’Ultimo Natale
+    - Paper World Il Mondo di Carta
+    - Saboteur - Le Miniere Perdute
+    - Star Wars Il Palazzo di Jabba
+    - Stranger Things Il Sottosopra
+    - The Breach Il Gioco da Tavolo
+    - Viaggio nel Regno delle Ombre
+    - Zicke Zacke - Spenna il Pollo
+    - 7 Wonders - Seconda Edizione
+    - Aeons End - Seconda Edizione
+    - Anunnaki - L' Alba degli Dei
+    - Anunnaki - L' Alba degli Dèi
+    - Anunnaki - L’ Alba degli Dei
+    - Anunnaki - L’ Alba degli Dèi
+    - Bag & Snatch – Ocean Turmoil
+    - Boxtop Pinball Casa Stregata
+    - Captain Sonar Second Edition
+    - Checkers Il Gioco della Dama
+    - Chess Il Gioco degli Scacchi
+    - Clash of Clans The Epic Raid
+    - Cluedo - Caccia allImpostore
+    - Cthulhu Lo Stregone di Salem
+    - Dune - La Guerra per Arrakis
+    - Dune Imperium - Insurrezione
+    - Escape Your House - Spy Team
+    - Everdell Collector's Edition
+    - Everdell Collector’s Edition
+    - Exploding Kittens Party Pack
+    - Horrified Dungeons & Dragons
+    - Il vecchio Mondo - Avventure
+    - Maretta Extra Carnivore Pack
+    - Massive Darkness 2 Hellscape
+    - Mini Crimes - LUltimo Natale
+    - Mini Crimes Copia Imperfetta
+    - Mini Crimes Scavando a Fondo
+    - One Piece - Adventure Island
+    - Robo Rally Edizione Italiana
+    - Taco Dorso Capra Cacio Pizza
+    - Taco Gatto Capra Cacio Pizza
+    - Team3 Green Edizione Tedesca
+    - That's Not a Hat - Incognito
+    - That’s Not a Hat - Incognito
+    - The UpsideDownChallenge Game
+    - The Witcher Il Vecchio Mondo
+    - Thorgal - Il Gioco da Tavolo
+    - Timeline Twist - Pop Culture
+    - Tristerra La Grande Baldoria
+    - Tutto Tutto Ma Proprio Tutto
+    - Twin Pics La Coppia Perfetta
+    - Unstable Unicorns Nightmares
+    - Aeon's End Seconda Edizione
+    - Aeon’s End Seconda Edizione
+    - Alibi - Delitto in Crociera
+    - Alibi Crimine in Salsa Rosa
+    - Anunnaki - L Alba degli Dei
+    - Anunnaki - L Alba degli Dèi
+    - Bag & Snatch Backyard Brawl
+    - Bag & Snatch! Ocean Turmoil
+    - Barbascura X Evolversi Male
+    - Betrayal Deck of Lost Souls
+    - Black Rose Wars Duel - Kami
+    - Black Rose Wars Duel - Void
+    - Cluedo - Dungeons & Dragons
+    - Cluedo Caccia all'Impostore
+    - Cluedo Caccia all’Impostore
+    - Everdell Collectors Edition
+    - Gatti che Odiano i Cetrioli
+    - Gloomhaven - Buttons & Bugs
+    - Heroes - Scrivi e conquista
+    - Hidden Games - Veleno Verde
+    - Hidden Games Morte di un Re
+    - Mini Card Game Blue Penguin
+    - Mini Crimes L'Ultimo Natale
+    - Mini Crimes L’Ultimo Natale
+    - Monopoly - My Hero Academia
+    - Mortum - Medieval Detective
+    - Navoria - Terre Dimenticate
+    - On Air - Play Like a Deejay
+    - Root - Il Mondo Sotterraneo
+    - Saboteur Le Miniere Perdute
+    - Splendor - Seconda Edizione
+    - Thats Not a Hat - Incognito
+    - The Game - 10° Anniversario
+    - UFO Robot Goldrake XperienZ
+    - Unmatched - Slings e Arrows
+    - Unstable Unicorns - Dragons
+    - Zicke Zacke Spenna il Pollo
+    - 7 Wonders Seconda Edizione
+    - Abroad - Diario di Viaggio
+    - Aeons End Seconda Edizione
+    - Anunnaki L' Alba degli Dei
+    - Anunnaki L' Alba degli Dèi
+    - Anunnaki L’ Alba degli Dei
+    - Anunnaki L’ Alba degli Dèi
+    - Arcs - Kit delle Miniature
+    - Bag & Snatch Ocean Turmoil
+    - Canvas - Finishing Touches
+    - Caos e Ordine - Precursori
+    - Chi Vuol Essere Milionario
+    - Circadians - Caos e Ordine
+    - Cluedo Caccia allImpostore
+    - Dune Imperium Insurrezione
+    - Dune La Guerra per Arrakis
+    - Escape Your House Spy Team
+    - Fantozzi e la Coppa Cobram
+    - Hegemony - Versione Estesa
+    - I Coloni di Catan - Junior
+    - Il Signore delle Bamboline
+    - Insondabili - Dagli Abissi
+    - Mini Crimes LUltimo Natale
+    - Monopoly - Stranger Things
+    - Non si puo Dire piu Niente
+    - Non si può Dire più Niente
+    - One Piece Adventure Island
+    - Pandemic - Una Nuova Sfida
+    - Pandemic Legacy - Season 1
+    - Plastic Components Upgrade
+    - Root - Predoni e Cavalieri
+    - That's Not a Hat Incognito
+    - That’s Not a Hat Incognito
+    - The Game - 10 Anniversario
+    - Thorgal Il Gioco da Tavolo
+    - Timeline Twist Pop Culture
+    - Vudu + Espansione - BUNDLE
+    - Vudù + Espansione - BUNDLE
+    - Agenda Investigativa 2025
+    - Alibi - Sangue sul Tartan
+    - Alibi Delitto in Crociera
+    - Anunnaki L Alba degli Dei
+    - Anunnaki L Alba degli Dèi
+    - Black Rose Wars Duel Kami
+    - Black Rose Wars Duel Void
+    - Cluedo Dungeons & Dragons
+    - Coco Rido 2- La Vendemmia
+    - Drako - Cavalieri & Troll
+    - Flip 7 - With A Vengeance
+    - Gloomhaven Buttons & Bugs
+    - Heroes Scrivi e conquista
+    - Hidden Games Veleno Verde
+    - La Boca - Tu come la vedi
+    - Monopoly Arcade - Pac-Man
+    - Monopoly My Hero Academia
+    - Mortum Medieval Detective
+    - Navoria Terre Dimenticate
+    - Non e un BINGO per vecchi
+    - Non è un BINGO per vecchi
+    - On Air Play Like a Deejay
+    - Root - Il Bosco Meccanico
+    - Root Il Mondo Sotterraneo
+    - Similo - Animali Selvaggi
+    - Splendor Seconda Edizione
+    - Su Una Scala da 1 a T-Rex
+    - Thats Not a Hat Incognito
+    - The Game 10° Anniversario
+    - Time's Up! - Harry Potter
+    - Time’s Up! - Harry Potter
+    - Unmatched Slings e Arrows
+    - Unstable Unicorns Dragons
+    - Abroad Diario di Viaggio
+    - Arcs Kit delle Miniature
+    - Canvas Finishing Touches
+    - Catan - Big Box Relaunch
+    - Challengers! - Beach Cup
+    - Circadians Caos e Ordine
+    - Easy Peasy Lemon Squeaky
+    - Gli Ultimi Saranno Primi
+    - Hegemony Versione Estesa
+    - I Coloni di Catan Junior
+    - Insondabili Dagli Abissi
+    - It's a Wonderful Kingdom
+    - It’s a Wonderful Kingdom
+    - King of Tokyo - Godzilla
+    - Monopoly Stranger Things
+    - Nobi Nobi - Thriller GDR
+    - Pandemic Legacy Season 1
+    - Pandemic Una Nuova Sfida
+    - Root - Il Gioco di Ruolo
+    - Root Predoni e Cavalieri
+    - Skull - Seconda Edizione
+    - Studiosi a Sud del Tigri
+    - Tea, Scones, and Arsenic
+    - The Game 10 Anniversario
+    - Times Up! - Harry Potter
+    - Unmatched - Cobble & Fog
+    - Unmatched - Sun's Origin
+    - Unmatched - Sun’s Origin
+    - Vudu + Espansione BUNDLE
+    - Vudù + Espansione BUNDLE
+    - Welcome to New Las Vegas
+    - WORMSTM - The Board Game
+    - Alibi Sangue sul Tartan
+    - Amun-Re - The Card Game
+    - Appuntamenti Disastrosi
+    - Dobble Anarchy Pancakes
+    - Drako Cavalieri & Troll
+    - Flip 7 With A Vengeance
+    - Forest Shuffle - Alpine
+    - Heat - Visione a Tunnel
+    - Il Signore degli Anelli
+    - Its a Wonderful Kingdom
+    - Kemet - Sangue e Sabbia
+    - Kronologic - Paris 1920
+    - La Boca Tu come la vedi
+    - Licantropo - Prima Luce
+    - Micromacro - Crime City
+    - MLEM - Agenzia Spaziale
+    - Monopoly Arcade Pac-Man
+    - Monsters of Loch Lomond
+    - Nome in Codice - Disney
+    - Pili Pili - Extra Spicy
+    - Risk - The Walking Dead
+    - Root Il Bosco Meccanico
+    - Scacchi & Dama in Legno
+    - Similo Animali Selvaggi
+    - The Castles of Burgundy
+    - The Resistance - Avalon
+    - Ticket to Ride - Europa
+    - Unmatched - Suns Origin
+    - Vudu - Seconda Edizione
+    - Vudù - Seconda Edizione
+    - WORMS™ - The Board Game
+    - Cartaventura - Vinland
+    - Catan Big Box Relaunch
+    - DEI - Divide et Impera
+    - Dixit - Disney Edition
+    - Dracula vs Van Helsing
+    - Escape the Dark Castle
+    - Escape the Dark Sector
+    - Fino a Prova Contraria
+    - Goryo - Nuova Edizione
+    - Goryō - Nuova Edizione
+    - Happy Little Dinosaurs
+    - ICE - Seconda Edizione
+    - King of Tokyo Godzilla
+    - La Ruota della Fortuna
+    - Maretta - Small Bundle
+    - Nobi Nobi GDR - Horror
+    - Nobi Nobi Thriller GDR
+    - Root Il Gioco di Ruolo
+    - Scotland Yard - Junior
+    - Skull Seconda Edizione
+    - Small Railroad Empires
+    - Teen Titans GO! Mayhem
+    - The Stars Belong to Us
+    - Time's Up Harry Potter
+    - Time’s Up Harry Potter
+    - Unmatched Cobble & Fog
+    - Unmatched Sun's Origin
+    - Unmatched Sun’s Origin
+    - Unstable Unicorns VM18
+    - Vudu - Comics VS Manga
+    - Vudù - Comics VS Manga
+    - WORMSTM The Board Game
+    - 1997 Fuga da New York
+    - Amun-Re The Card Game
+    - Bang! - La Pallottola
+    - Bang! - The Dice Game
+    - Challengers Beach Cup
+    - Fiesta de los Muertos
+    - Forest Shuffle Alpine
+    - Guilty - Houston 2015
+    - Heat Visione a Tunnel
+    - Kemet Sangue e Sabbia
+    - Kronologic Paris 1920
+    - La Casa delle Mannaie
+    - Labyrinth - One Piece
+    - Licantropo Prima Luce
+    - Micromacro Crime City
+    - MLEM Agenzia Spaziale
+    - Nobi Nobi GDR - Magia
+    - Nobi Nobi GDR - Spada
+    - Nome in Codice Disney
+    - Paranormal Detectives
+    - Pili Pili Extra Spicy
+    - Risk The Walking Dead
+    - Sheriff of Nottingham
+    - Small Samurai Empires
+    - Teen Titans GO Mayhem
+    - The Resistance Avalon
+    - Ticket to Ride Europa
+    - ticket to ride europe
+    - Ticket to Ride Legacy
+    - Times Up Harry Potter
+    - Unmatched Suns Origin
+    - Vudu Seconda Edizione
+    - Vudù Seconda Edizione
+    - Why Are You Like This
+    - WORMS™ The Board Game
+    - All In - Predictions
+    - BANG! - Dynamite Box
+    - Black Rose Wars Duel
+    - Canvas - Reflections
+    - Cartaventura - Lhasa
+    - Cartaventura Vinland
+    - DEI Divide et Impera
+    - Dixit Disney Edition
+    - Extra Carnivore Pack
+    - Goryo Nuova Edizione
+    - Goryō Nuova Edizione
+    - ICE Seconda Edizione
+    - Il Maledetto Dilemma
+    - Il Mondo Sotterraneo
+    - Le Leggende di Andor
+    - Maretta Small Bundle
+    - Marvel Champions LCG
+    - Navoria + Espansione
+    - Nobi Nobi GDR Horror
+    - Oh no, un Gatto Nero
+    - Scotland Yard Junior
+    - Shadows of Brimstone
+    - Tethys Space Dungeon
+    - The Vale of Eternity
+    - Twilight Inscription
+    - Unmatched Adventures
+    - Vudu Comics VS Manga
+    - Vudù Comics VS Manga
+    - Deal with the Devil
+    - Essere o Non Essere
+    - Fantascatti Express
+    - Guilty Houston 2015
+    - Hand-to-Hand Wombat
+    - Hidden Leaders Duel
+    - Kit delle Miniature
+    - La Miniera di Orapa
+    - La Ricetta Perfetta
+    - Labyrinth One Piece
+    - Looney Tunes Mayhem
+    - Mangia Preda Chiama
+    - Message in a Bottle
+    - Monopoly - Classico
+    - Nobi Nobi GDR Magia
+    - Nobi Nobi GDR Spada
+    - Occhio alla Scimmia
+    - Pianeti Sconosciuti
+    - Pirati di Maracaibo
+    - Predoni e Cavalieri
+    - Procioni in Cassa 4
+    - Race for the Galaxy
+    - Risiko! - Antartide
+    - Sherlock Holmes C.I
+    - Sobek - 2 Giocatori
+    - Throw Throw Avocado
+    - Throw Throw Burrito
+    - 1906 San Francisco
+    - A Carnivore Did It
+    - All In Predictions
+    - Bang La Pallottola
+    - Bang The Dice Game
+    - Canvas Reflections
+    - Cartaventura Lhasa
+    - Deep Sea Adventure
+    - Dungeons & Dragons
+    - Fiori di Cristallo
+    - Forests of Pangaia
+    - Heaven Here I Come
+    - Il Bosco Meccanico
+    - Judge Your Friends
+    - King of Tokyo Duel
+    - L'Isola del Tesoro
+    - Labirinto - Italia
+    - Let's Go! To Japan
+    - Let’s Go! To Japan
+    - Lo Scatto Perfetto
+    - L’Isola del Tesoro
+    - Maialini Salterini
+    - Marvel D.A.G.G.E.R
+    - Massive Darkness 2
+    - Monopoly - Pokemon
+    - Origami - Leggende
+    - Perfectly Wretched
+    - Piccioni Esplosivi
+    - Pictionary Air 2.0
+    - Room-25 - Ultimate
+    - seven wonders duel
+    - Super Boss Monster
+    - Survive The Island
+    - Telesketch Rebrand
+    - That’s Totally You
+    - The A.R.T. Project
+    - The Fox Experiment
+    - The Shadow Theater
+    - ticket to ride usa
+    - Time's Up - Family
+    - Time’s Up - Family
+    - Tribes of the Wind
+    - UNO - Harry Potter
+    - Alice in Wordland
+    - Animali in Guerra
+    - BANG Dynamite Box
+    - Bigger and Badder
+    - Cat Sushi Masters
+    - CATchables 2-Pack
+    - CATchables 4-Pack
+    - Chicken VS Hotdog
+    - Christmas Special
+    - Cluedo Conspiracy
+    - Command of Nature
+    - Couleurs de Paris
+    - Detective Charlie
+    - Disney Villainous
+    - Dragon Ball Super
+    - Dragon in the Hut
+    - Elfenland De Luxe
+    - Escape Your House
+    - Everdell Farshore
+    - Exploding Kittens
+    - Exploding Minions
+    - Finishing Touches
+    - gattini esplosivi
+    - How to Rob a Bank
+    - I Coloni di Catan
+    - Il Trono di Spade
+    - Imploding Kittens
+    - L'Isola dei Gatti
+    - La Casa dei Sogni
+    - La Via delle Spie
+    - La Vita a Reterra
+    - leggende di andor
+    - Let's Go To Japan
+    - Lets Go! To Japan
+    - Let’s Go To Japan
+    - Light Speed Arena
+    - LIsola del Tesoro
+    - L’Isola dei Gatti
+    - Mamma Mucca Magia
+    - Monopoly Classico
+    - Mysterium Refresh
+    - Pandemic - Iberia
+    - Parola per Parola
+    - Power Hungry Pets
+    - Romeo e Giulietta
+    - Scream - The Game
+    - Sobek 2 Giocatori
+    - Stomp Stomp Chomp
+    - Streaking Kittens
+    - Tassiamo i Ricchi
+    - Thats Totally You
+    - The Elder Scrolls
+    - Time's Up - Party
+    - Times Up - Family
+    - Time’s Up - Party
+    - Traditori a Bordo
+    - Treacherous Tides
+    - Twilight Imperium
+    - Unstable Unicorns
+    - Vudu + Espansione
+    - Vudù + Espansione
+    - World of Warcraft
+    - 1923 Cotton Club
+    - 21 Giochi Minuti
+    - 7 Wonders - Duel
+    - 7 wonders duello
+    - An Age Contrived
+    - Arena Indomabile
+    - Bicchieri Sprint
+    - Canvas - Big Box
+    - Cards VS Gravity
+    - Carnival of Sins
+    - Catan - Il Gioco
+    - Cena con Delitto
+    - Chocobo Party Up
+    - Close Encounters
+    - Compile - Main 2
+    - Creature Caravan
+    - Darwin's Journey
+    - Darwin’s Journey
+    - Despicable Plots
+    - Dobble - 1, 2, 3
+    - Eroi di Barcadia
+    - exploding kitten
+    - Feel Like a Fool
+    - How Gold Are You
+    - Intrighi a Corte
+    - IQ - Puzzler Pro
+    - La Casa Stregata
+    - Labirinto Italia
+    - legends of andor
+    - Lets Go To Japan
+    - LIsola dei Gatti
+    - Metal Gear Solid
+    - Mice and Mystics
+    - Mondo Senza Fine
+    - Monopoly Pokemon
+    - Origami Leggende
+    - Pack 4 Miniature
+    - Parola di Balena
+    - Quoridor Pac-Man
+    - Risiko Antartide
+    - Room-25 Ultimate
+    - Scaccia i Mostri
+    - That's Not a Hat
+    - That's Offensive
+    - That’s Not a Hat
+    - That’s Offensive
+    - Time's Up - Kids
+    - Time's Up Family
+    - Times Up - Party
+    - Time’s Up - Kids
+    - Time’s Up Family
+    - Trudvang Legends
+    - Twisted Cryptids
+    - UNO - Spider-Man
+    - UNO Harry Potter
+    - Visione a Tunnel
+    - Wandering Towers
+    - What do You Meme
+    - Who's The Boomer
+    - Who’s The Boomer
+    - Add to Playlist
+    - Amelia's Secret
+    - Amelia’s Secret
+    - Atlantis Rising
+    - Avanti un Altro
+    - Bang! - Legends
+    - Barking Kittens
+    - Cluedo - Junior
+    - Coco Rido - Hot
+    - Consiglio dei 4
+    - Darwins Journey
+    - Dinosaur Island
+    - Dixit - Odyssey
+    - Dungeon Fighter
+    - Dungeon Legends
+    - Eldritch Horror
+    - Espresso Doppio
+    - Indagini Minute
+    - Jurassic Brunch
+    - Land of Dragons
+    - Lupus In Tabula
+    - Maestro Makatsu
+    - Mari Pericolosi
+    - Monopoly Arcade
+    - Not Enough Mana
+    - NSFW Espansione
+    - Pandemic Iberia
+    - Pandemic Legacy
+    - Ratti di Wistar
+    - Saloon Showdown
+    - Scenario Pack 2
+    - Scream The Game
+    - Shifting Stones
+    - Stranger Things
+    - Stratego Junior
+    - Sugar and Spite
+    - Superstore 3000
+    - That Sound Game
+    - Thats Not a Hat
+    - Thats Offensive
+    - The Great Split
+    - The Magnificent
+    - Time's Up Party
+    - Times Up - Kids
+    - Times Up Family
+    - Time’s Up Party
+    - Tiny Turbo Cars
+    - Trivial Pursuit
+    - UNO - Minecraft
+    - Vincono i Verdi
+    - Wheels Vs Doors
+    - Whos The Boomer
+    - 7 Wonders Duel
+    - A Sky of Stars
+    - A Wild Venture
+    - Amelias Secret
+    - Boxtop Pinball
+    - Canvas Big Box
+    - Cat in the Box
+    - Catan Il Gioco
+    - Chicken Crimes
+    - Clash of Clans
+    - Compile Main 2
+    - Dance of Muses
+    - Dobble 1, 2, 3
+    - Doodle Dungeon
+    - Dragon Eclipse
+    - Echoes of Time
+    - Endless Winter
+    - Fairy Tale Inn
+    - Forest Shuffle
+    - Intent to Kill
+    - IQ Puzzler Pro
+    - Jekyll vs Hyde
+    - Legend Raiders
+    - Lift It! Party
+    - Lost Explorers
+    - Marvel Zombies
+    - Mini Card Game
+    - Monstrolicious
+    - Nome in Codice
+    - One Small Step
+    - Rebel Princess
+    - Rolling Realms
+    - Tale of Carrot
+    - The Resistance
+    - Ticket to Ride
+    - Time's Up Kids
+    - Timeline Twist
+    - Times Up Party
+    - Time’s Up Kids
+    - Turing Machine
+    - UNO Spider-Man
+    - Wonder Bowling
+    - Zombie Kittens
+    - Ace of Spades
+    - Arkham Horror
+    - Avocado Smash
+    - Bellum Magica
+    - Block and Key
+    - Burger Master
+    - Captain Sonar
+    - Cluedo Junior
+    - Coco Rido Hot
+    - C’era 3 Volte
+    - Danger Danger
+    - Dixit Odyssey
+    - Dune Betrayal
+    - Dune Imperium
+    - Dungeon Twist
+    - Eternal Decks
+    - Fari del Nord
+    - Haunted Lands
+    - Holly e Benji
+    - Hues and Cues
+    - King of Tokyo
+    - La Pallottola
+    - Last One Lost
+    - Lift It Party
+    - Little Secret
+    - Lucky Numbers
+    - Lupin the 3rd
+    - Ma che Cactus
+    - Magic Mandala
+    - Magico Atleta
+    - Magnetic Line
+    - Mini Dungeons
+    - Monkey Palace
+    - Mystery House
+    - Nobi Nobi GDR
+    - Papaya Monkey
+    - Patita Matata
+    - Per la Corona
+    - Per Northwood
+    - Pina Coladice
+    - Piña Coladice
+    - Qua ti Sbagli
+    - Rumble Nation
+    - S.T.A.L.K.E.R
+    - Samurai Sword
+    - San Francisco
+    - Scotland Yard
+    - Similo - Miti
+    - Skytear Horde
+    - Sock Monsters
+    - Spirit Island
+    - Taboo Refresh
+    - Tales of Evil
+    - Tali e Squali
+    - The Lost Code
+    - ticket europa
+    - Times Up Kids
+    - UNO Minecraft
+    - 23 Pugnalate
+    - Asterix & Co
+    - Bag & Snatch
+    - Bamboo Smash
+    - Bang Legends
+    - Barbascura X
+    - Berlino 1960
+    - Black Forest
+    - Bomb Busters
+    - Candy Utopia
+    - Captain Flip
+    - Cartaventura
+    - Castle Combo
+    - Cera 3 Volte
+    - Click A Tree
+    - Deep Regrets
+    - Dungeonology
+    - Dynamite Box
+    - Emozionarium
+    - Everdell Duo
+    - Fast Friends
+    - First Giants
+    - Flamme Rouge
+    - Four Gardens
+    - Goblin Horde
+    - Gossip Goose
+    - Happy Salmon
+    - Harry Potter
+    - Here To Slay
+    - Hidden Games
+    - Indovina Chi
+    - IQ - Circuit
+    - ISS Vanguard
+    - It's a Match
+    - It’s a Match
+    - K2 - Big Box
+    - L'Impiccione
+    - Last Message
+    - L’Impiccione
+    - Magic Rabbit
+    - Maple Valley
+    - Messina 1347
+    - Near and Far
+    - New York Zoo
+    - Origin Story
+    - Picchiatello
+    - Power Plants
+    - Rival Cities
+    - Rocking Raft
+    - Santa Monica
+    - Selfie Birds
+    - Sounds Fishy
+    - Spies & Lies
+    - Spooky Tower
+    - Thunderstone
+    - What the Bug
+    - When I Dream
+    - Winx VS Trix
+    - Without Fail
+    - Zombie Diner
+    - Affari Tuoi
+    - Art Society
+    - Backstories
+    - bomb buster
+    - Borderlands
+    - Buffet Boss
+    - Carcassonne
+    - Cavernicoli
+    - Cenerentola
+    - Challengers
+    - Coffee Rush
+    - Colourbrain
+    - Cosmolancer
+    - Dirt & Dust
+    - Garden Rush
+    - Happy Mochi
+    - Hint Pocket
+    - Insondabili
+    - IQ - Arrows
+    - It's a Bomb
+    - Its a Match
+    - It’s a Bomb
+    - Jolly Roger
+    - Jungle Race
+    - Kepler-3042
+    - king domino
+    - Knock Twice
+    - LImpiccione
+    - Love Letter
+    - Mini Crimes
+    - Nacho Party
+    - Not so Fast
+    - Ouija Manor
+    - Paper World
+    - Party Lines
+    - Pazzaparola
+    - Piggy Piggy
+    - Pulsar 2849
+    - Red Company
+    - Set & Match
+    - Similo Miti
+    - Stupeficium
+    - Team3 Green
+    - Terrorscape
+    - The Witcher
+    - Tic Tac K.O
+    - Tokaido Duo
+    - World Order
+    - Zicke Zacke
+    - Aeon's End
+    - Aeon’s End
+    - Alchimisti
+    - Blind Jack
+    - Bunny Hops
+    - Cafe Baras
+    - Café Baras
+    - Circadians
+    - Civolution
+    - Dead Cells
+    - Deep Vents
+    - Dice Forge
+    - Dreamember
+    - Dreamscape
+    - Drinkopoly
+    - Dungeon WC
+    - Etherstone
+    - Fairy Ring
+    - Federation
+    - Feed - Rex
+    - Flamecraft
+    - flip seven
+    - Frosthaven
+    - Gloomhaven
+    - Golden Cup
+    - Holy Sheep
+    - Honey Buzz
+    - IQ - Focus
+    - IQ - Stars
+    - IQ - Stixx
+    - IQ - Twist
+    - IQ Circuit
+    - Its a Bomb
+    - K2 Big Box
+    - Kingdomino
+    - Kronologic
+    - Le 5 Torri
+    - Licantropo
+    - Micro City
+    - Micromacro
+    - No Loyalty
+    - Overbooked
+    - Pearladora
+    - Robo Rally
+    - Rumblebots
+    - Skull King
+    - Snack Wars
+    - Solda Tiny
+    - Squid Game
+    - Super Cats
+    - Sushi Dice
+    - Tea Garden
+    - TeleSketch
+    - Terra Nova
+    - The Breach
+    - The Wolves
+    - Tinderblox
+    - Toy Battle
+    - Wavelenght
+    - Witchstone
+    - 13 Foglie
+    - 15 Uomini
+    - 7 Wonders
+    - Aeons End
+    - Algae Inc
+    - Azul Duel
+    - Azul Mini
+    - Bone Wars
+    - Botanicus
+    - Coco Rido
+    - Cubosaurs
+    - Dylan Dog
+    - e-Mission
+    - Evergreen
+    - Fateforge
+    - Fruit Cup
+    - Harmonies
+    - Horrified
+    - IQ - Xoxo
+    - IQ Arrows
+    - L'Eredita
+    - L'Eredità
+    - Labyrinth
+    - Landmarks
+    - Lost Seas
+    - L’Eredita
+    - L’Eredità
+    - Marabunta
+    - Mythicals
+    - Nobi Nobi
+    - One Piece
+    - Overseers
+    - Patchwork
+    - Pero Pera
+    - Pili Pili
+    - Polywords
+    - Project L
+    - Quicksand
+    - Quickshot
+    - Quickstop
+    - Saltfjord
+    - So Clover
+    - Stampfarm
+    - Task Team
+    - Tesseract
+    - Thesauros
+    - Time's Up
+    - Time’s Up
+    - Topo Chef
+    - Tristerra
+    - Twin Pics
+    - Unmatched
+    - Vektorace
+    - War Chest
+    - Wordsmith
+    - Zombicide
+    - 8Bit Box
+    - Abluxxen
+    - After Us
+    - Anunnaki
+    - Arbolito
+    - Betrayal
+    - Boonlake
+    - Cascadia
+    - Checkers
+    - Curators
+    - Decipher
+    - Decrypto
+    - Evenfall
+    - Everdell
+    - Fearless
+    - Feed Rex
+    - Hegemony
+    - Heredity
+    - Immagica
+    - IQ - Fit
+    - IQ Focus
+    - IQ Stars
+    - IQ Stixx
+    - IQ Twist
+    - Just One
+    - Kanagawa
+    - LEredita
+    - LEredità
+    - Level 10
+    - Mafiozoo
+    - Maharaja
+    - Monopoly
+    - Mr. Jack
+    - Munchkin
+    - Obscurio
+    - Okavango
+    - Pandemic
+    - Papillon
+    - Pendulum
+    - Pilgrims
+    - Play Hit
+    - Profiler
+    - Propolis
+    - Radlands
+    - Regicide
+    - Saboteur
+    - Scarabeo
+    - Severton
+    - Sherlook
+    - Shinjuku
+    - Sky Team
+    - Smart 10
+    - Splendor
+    - Subbuteo
+    - Sushi Go
+    - Tag Team
+    - Takenoko
+    - The Crew
+    - Times Up
+    - Tiwanaku
+    - Velonimo
+    - Voidfall
+    - Wingspan
+    - Wispwood
+    - Wyrmspan
+    - Amun-Re
+    - Arborea
+    - Bonfire
+    - Bumuntu
+    - Cabanga
+    - Claim 2
+    - Compile
+    - Cryptid
+    - Cthulhu
+    - Deducto
+    - Descent
+    - Diamant
+    - Faraway
+    - Finspan
+    - Foldris
+    - Frantic
+    - Fromage
+    - Genesia
+    - Hitster
+    - IQ Xoxo
+    - Isidore
+    - Landomy
+    - Miconia
+    - Mind Up
+    - Mindbug
+    - Navoria
+    - Nemesis
+    - Nimalia
+    - Odyssey
+    - One Key
+    - Onitama
+    - Orcs Up
+    - Pergola
+    - Quetzal
+    - Room-25
+    - Sagrada
+    - Solenia
+    - spot it
+    - Squeaky
+    - Thorgal
+    - Tindaya
+    - UNO H2O
+    - Verdant
+    - Wiz-War
+    - WORMSTM
+    - Yucatan
+    - Zefiria
+    - Abroad
+    - Alpine
+    - Apiary
+    - Arturo
+    - Biomos
+    - Boreal
+    - Canate
+    - Cluedo
+    - Coyote
+    - Cubeez
+    - Dobble
+    - Emerge
+    - Fizzol
+    - Flip 7
+    - Gobbit
+    - Guilty
+    - IQ Fit
+    - Jaipur
+    - Juduku
+    - Kifake
+    - Kifaké
+    - Kinoko
+    - Kitara
+    - Mortum
+    - Orbito
+    - Pixies
+    - Queenz
+    - Risiko
+    - Scream
+    - Similo
+    - Slapzi
+    - Tajuto
+    - Topito
+    - Unlock
+    - Yubibo
+    - Akros
+    - Alibi
+    - andor
+    - Aurum
+    - Catan
+    - Chess
+    - Coney
+    - Dixit
+    - Dobro
+    - Drako
+    - Goryo
+    - Goryō
+    - Jungo
+    - Karvi
+    - Kemet
+    - Kitsu
+    - Klask
+    - Mesos
+    - Monki
+    - Odino
+    - Omnia
+    - Pikit
+    - Sensu
+    - Skull
+    - Skyjo
+    - Sobek
+    - Tsuro
+    - Wonky
+    - Wroth
+    - Yatai
+    - Ahoy
+    - Arcs
+    - Bang
+    - Bivi
+    - Bivì
+    - Dany
+    - Dnup
+    - Foxy
+    - Hats
+    - Meow
+    - MLEM
+    - Momo
+    - Penk
+    - Vudu
+    - Vudù
+    - Axo
+    - Ito
+    - Koi
+    - Tao
+    - ttr
+    - YRO
+    - IQ
+    - K2
+
+- lookup: editore
+  examples: |
+    - Associazione 42 Games APS
+    - Lucky Duck Games Italia
+    - Creardo Pertitas Srls
+    - Dracomaca Game Studio
+    - Flyng Frog Production
+    - Pendragon Game Studio
+    - Boardgames Invasion
+    - Little Rocket Games
+    - Ludus Magnus Studio
+    - Deer Games Studio
+    - Ergo Ludo Edition
+    - Cranio Creations
+    - Isochronia Games
+    - Studio Supernova
+    - da vinci giochi
+    - Dawn Town Games
+    - Editrice Giochi
+    - Gale Force Nine
+    - Demoela Giochi
+    - Kaleidos Games
+    - Uplay Edizioni
+    - CreativaMente
+    - AbacusSpiele
+    - Devir Italia
+    - Ghenos Games
+    - Giochi Uniti
+    - Hasbro Games
+    - Mantic Games
+    - Pick N' Roll
+    - Pick N’ Roll
+    - Ravensburger
+    - Blue Orange
+    - Fever Games
+    - GateOnGames
+    - Mancalamaro
+    - MS Edizioni
+    - pick n roll
+    - Smart Games
+    - Space Otter
+    - Spin Master
+    - Tesla Games
+    - ATM Gaming
+    - Chur Games
+    - Clementoni
+    - StudioLabo
+    - Yas! Games
+    - dV GIOCHI
+    - Oliphante
+    - pendragon
+    - Red Glove
+    - tambu srl
+    - Tambù SRL
+    - yas games
+    - Helvetiq
+    - Hurrican
+    - Menecats
+    - USAopoly
+    - Asmodee
+    - Giochix
+    - Goliath
+    - cranio
+    - Flexiq
+    - ghenos
+    - Magari
+    - Mattel
+    - Cayro
+    - FUNKO
+    - IELLO
+    - Jumbo
+    - huch

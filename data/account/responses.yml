@@ -1,0 +1,72 @@
+version: "3.1"
+
+responses:
+  utter_faq_account/registrazione:
+    - text: "Registrarti è facile e gratuito 😊\nVai su www.gigigames.it, apri la pagina di accesso e scegli di creare un nuovo account con la tua email. Dall'area account potrai poi vedere ordini, wishlist e GIGI Punti."
+    - text: "Per creare un account vai su www.gigigames.it e scegli «Registrati» dalla pagina di accesso. Bastano pochi dati e la tua email. Se qualcosa non va, scrivici a assistenza@gigigames.it."
+
+  utter_faq_account/serve_account:
+    - text: "No, la registrazione è facoltativa: puoi comprare anche come ospite.\nL'account serve solo se vuoi lo storico ordini, la wishlist e i GIGI Punti."
+    - text: "Non è obbligatorio! Puoi fare l'ordine come ospite senza registrarti. Con l'account in più trovi storico ordini, wishlist e punti fedeltà."
+
+  utter_faq_account/vantaggi_account:
+    - text: "Con un account GIGI Games hai:\n• lo storico dei tuoi ordini, dove scaricare anche le fatture\n• la wishlist con i giochi che ti interessano\n• i GIGI Punti: 1 punto per ogni euro speso\nRegistrarsi è facoltativo, ma conviene se compri spesso 😉"
+
+  utter_faq_account/accesso_problemi:
+    - text: "Mi dispiace per il problema! Prova così:\n• controlla di aver scritto bene email e password\n• se non ricordi la password, usa «Password dimenticata?» nella pagina di accesso\nSe ancora non entri, scrivi a assistenza@gigigames.it o chiama il 071 123 4567 (lun–ven 9:00–18:00)."
+    - text: "Se non riesci ad accedere, per prima cosa verifica email e password. Puoi anche usare «Password dimenticata?» nella pagina di accesso per reimpostarla. Se il problema resta, i nostri operatori ti aiutano: assistenza@gigigames.it oppure 071 123 4567."
+
+  utter_faq_account/password_dimenticata:
+    - text: "Nessun problema! Nella pagina di accesso del sito clicca su «Password dimenticata?» e segui le istruzioni per reimpostarla."
+    - text: "Per recuperare la password vai alla pagina di accesso su www.gigigames.it e clicca «Password dimenticata?». Se non ti arriva nulla, scrivi a assistenza@gigigames.it."
+
+  utter_faq_account/cambiare_dati:
+    - text: "Per modificare email, indirizzo o altri dati personali entra nella tua area account sul sito. Se non trovi l'opzione che cerchi, scrivici a assistenza@gigigames.it e ti aiutiamo noi (risposta entro 24 ore lavorative)."
+
+  utter_faq_account/cancellare_account:
+    - text: "Puoi cancellare il tuo account dall'area account sul sito, oppure scrivendo a assistenza@gigigames.it. Se hai GIGI Punti da usare, ti conviene spenderli prima!"
+
+  utter_faq_account/privacy_gdpr:
+    - text: "Trattiamo i tuoi dati secondo il GDPR. Servono per gestire account, ordini, spedizioni e assistenza. I dati delle carte di pagamento non vengono salvati da noi. Per i dettagli leggi l'informativa privacy sul sito www.gigigames.it; per richieste sui tuoi dati scrivi a assistenza@gigigames.it."
+
+  utter_faq_account/wishlist:
+    - text: "La wishlist è la tua lista dei desideri: ci salvi i giochi che ti interessano per ritrovarli dopo. Serve un account: dalla scheda di un prodotto puoi aggiungerlo alla lista, e la ritrovi nella tua area account 🎲"
+
+  utter_faq_account/wishlist_condivisione:
+    - text: "Per la condivisione della wishlist non ho informazioni certe: ti consiglio di guardare nella tua area account sul sito. Se non trovi l'opzione, scrivici a assistenza@gigigames.it. Per i regali, se vuoi, posso anche consigliarti dei giochi!"
+
+  utter_faq_account/punti_funzionamento:
+    - text: "I GIGI Punti sono il nostro programma fedeltà 🎁\n• 1 punto per ogni euro speso\n• 100 punti = 5 € di sconto\n• i punti scadono dopo 24 mesi\nServe un account per accumularli, e il saldo lo vedi nell'area account."
+
+  utter_faq_account/punti_conversione:
+    - text: "Guadagni 1 punto per ogni euro speso, e 100 punti valgono 5 € di sconto. Quindi, per esempio, spendendo 100 € ottieni 100 punti, cioè 5 € di sconto per un prossimo acquisto."
+
+  utter_faq_account/punti_uso:
+    - text: "Una volta raggiunti 100 punti hai 5 € di sconto (100 punti = 5 €). Controlla il saldo nella tua area account e usa i punti dal carrello o al checkout quando fai un nuovo ordine. Se non vedi l'opzione, scrivi a assistenza@gigigames.it."
+
+  utter_faq_account/punti_scadenza:
+    - text: "Sì, i GIGI Punti scadono dopo 24 mesi. Meglio usarli prima: 100 punti valgono 5 € di sconto."
+
+  utter_faq_account/punti_saldo:
+    - text: "Il tuo saldo GIGI Punti si vede nell'area account sul sito (devi aver fatto l'accesso). Se i punti di un ordine recente non compaiono, scrivi a assistenza@gigigames.it indicando il numero d'ordine."
+
+  utter_faq_account/storico_ordini:
+    - text: "Nella tua area account trovi lo storico degli ordini, da dove puoi anche scaricare le fatture. Per vedere lo stato di una spedizione, dimmi il numero d'ordine e controllo."
+
+  utter_faq_account/newsletter_come_funziona:
+    - text: "La newsletter ti porta novità e offerte di GIGI Games direttamente via email 📬\nCon l'iscrizione ricevi il codice BENVENUTO10: 10% di sconto sul primo ordine. Ti disiscrivi quando vuoi dal link in fondo a ogni email. Vuoi iscriverti?"
+      buttons:
+        - title: "Sì, iscrivimi"
+          payload: "/iscriviti_newsletter"
+
+  utter_faq_account/codice_benvenuto:
+    - text: "BENVENUTO10 è il codice che ricevi iscrivendoti alla newsletter: vale il 10% sul primo ordine (un solo codice per ordine). Se non lo trovi controlla anche nella posta indesiderata, oppure scrivi a assistenza@gigigames.it. Se non ti sei ancora iscritto, posso farlo io!"
+      buttons:
+        - title: "Iscrivimi alla newsletter"
+          payload: "/iscriviti_newsletter"
+
+  utter_faq_account/account_bloccato:
+    - text: "Mi dispiace! Per un account bloccato o sospeso serve l'aiuto di un operatore: scrivi a assistenza@gigigames.it (risposta entro 24 ore lavorative) o chiama il 071 123 4567, dal lunedì al venerdì 9:00–18:00."
+
+  utter_faq_account/login_social:
+    - text: "Non ho informazioni certe sull'accesso con Google o Apple. Nella pagina di accesso di www.gigigames.it trovi i metodi disponibili; per dubbi scrivi a assistenza@gigigames.it."

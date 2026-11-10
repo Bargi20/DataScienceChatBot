@@ -1,0 +1,12 @@
+version: "3.1"
+
+rules:
+  - rule: Rispondi alle domande sulle spedizioni
+    steps:
+      - intent: faq_spedizioni
+      - action: utter_faq_spedizioni
+
+  - rule: Calcola il costo di spedizione
+    steps:
+      - intent: calcola_spedizione
+      - action: action_calcola_spedizione

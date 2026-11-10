@@ -1,0 +1,20 @@
+version: "3.1"
+
+stories:
+- story: Segnalazione con numero d'ordine già indicato
+  steps:
+  - intent: segnala_problema_ordine
+    entities:
+    - numero_ordine: "#482913"
+  - action: segnalazione_form
+  - active_loop: segnalazione_form
+  - active_loop: null
+  - action: action_resi_crea_pratica
+
+- story: FAQ resi poi segnalazione
+  steps:
+  - intent: faq_resi
+  - action: utter_faq_resi
+  - intent: segnala_problema_ordine
+  - action: segnalazione_form
+  - active_loop: segnalazione_form

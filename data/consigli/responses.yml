@@ -1,0 +1,64 @@
+version: "3.1"
+
+# Risposte del retrieval intent faq_giochi (cultura ludica).
+
+responses:
+  utter_faq_giochi/cooperativo:
+  - text: "In un gioco cooperativo si gioca tutti insieme contro il gioco: si vince o si perde come squadra. 🤝\nIl gioco «risponde» con eventi, nemici o un timer che rendono la sfida sempre più difficile.\nÈ ideale per chi non ama la competizione diretta, per le famiglie e per insegnare un gioco nuovo. Esistono anche i semi-cooperativi: si collabora, ma alla fine vince uno solo.\n\nSe vuoi, scrivimi «consigliami un gioco cooperativo»."
+
+  utter_faq_giochi/deckbuilding:
+  - text: "Nel deckbuilding (costruzione del mazzo) ogni giocatore parte con un piccolo mazzo di carte base e durante la partita compra carte nuove e più forti da aggiungere al proprio mazzo. 🃏\nIl bello è costruire un mazzo che «giri» bene: a volte conviene anche eliminare le carte deboli. Il genere è nato nel 2008 con Dominion."
+
+  utter_faq_giochi/legacy:
+  - text: "Un gioco legacy cambia per sempre partita dopo partita: si scrive sul tabellone, si attaccano adesivi, si strappano carte e si aprono buste sigillate con regole e componenti nuovi. 📜\nSi gioca come una campagna, di solito sempre con lo stesso gruppo e per un numero limitato di partite (spesso 12–24). Alla fine la tua copia è unica, ma non si può «resettare». Il primo è stato Risk Legacy, nel 2011."
+
+  utter_faq_giochi/piazzamento_lavoratori:
+  - text: "Nel piazzamento lavoratori (worker placement) ogni giocatore ha alcune pedine, i «lavoratori», che a turno mette sugli spazi azione del tabellone per raccogliere risorse, costruire o fare punti. 👷\nDi solito uno spazio occupato non è più disponibile per gli altri, quindi bisogna giocare d'anticipo. È una meccanica tipica dei gestionali alla tedesca."
+
+  utter_faq_giochi/german_american:
+  - text: "Sono due «scuole» di design:\n• German (eurogame): poca fortuna, interazione indiretta, nessuno viene eliminato, si vince facendo punti con una buona gestione delle risorse.\n• American (detto anche ameritrash): ambientazione e narrazione forti, dadi e fortuna, scontro diretto, spesso tante miniature.\nOggi molti giochi mescolano le due anime: si chiamano ibridi."
+
+  utter_faq_giochi/party_game:
+  - text: "Un party game è un gioco leggero pensato per gruppi numerosi (spesso da 6 persone in su), con regole che si spiegano in pochi minuti e partite brevi. 🎉\nPunta su risate, parole, disegni, bluff e intuito più che sulla strategia: perfetto per feste e serate con chi non gioca spesso."
+
+  utter_faq_giochi/astratto:
+  - text: "Un gioco astratto non ha (quasi) ambientazione: contano solo le regole e la logica, come negli scacchi, nella dama o nel Go. ♟️\nDi solito tutte le informazioni sono sul tavolo e la fortuna è pochissima, quindi vince chi ragiona meglio. Molti astratti moderni sono anche bellissimi da vedere e si spiegano in un minuto."
+
+  utter_faq_giochi/roll_and_write:
+  - text: "Nei roll & write si tirano i dadi (roll) e si segnano i risultati su un foglio personale con una matita (write). ✏️\nDi solito tutti usano gli stessi dadi nello stesso momento, quindi si gioca anche in tanti senza tempi morti. Sono economici, veloci e ottimi da portare in viaggio. I flip & write funzionano allo stesso modo, ma con le carte al posto dei dadi."
+
+  utter_faq_giochi/espansione_standalone:
+  - text: "• Un'espansione aggiunge contenuti a un gioco base (carte, scenari, regole o giocatori in più): per usarla serve il gioco base.\n• Uno stand-alone invece è un gioco completo, che si gioca da solo, anche se fa parte di una serie e a volte si può combinare con gli altri titoli.\nNella scheda di ogni prodotto trovi se si tratta di un'espansione e di quale gioco."
+
+  utter_faq_giochi/gateway_game:
+  - text: "Un gateway game (gioco «porta d'ingresso») è un gioco moderno facile da imparare, pensato per far scoprire l'hobby a chi conosce solo i classici come Monopoli o Risiko. 🚪\nHa regole che si spiegano in 10–15 minuti, partite sotto l'ora e scelte interessanti fin dal primo turno. Esempi famosi sono Catan, Carcassonne e Ticket to Ride.\n\nScrivimi «giochi per principianti» e ti propongo quelli che abbiamo."
+
+  utter_faq_giochi/gdr_vs_tavolo:
+  - text: "In un gioco di ruolo (GdR, come Dungeons & Dragons) ognuno interpreta un personaggio e un master racconta la storia e fa da arbitro: non serve un tabellone, non c'è un vincitore e un'avventura può durare molte serate. 🐉\nUn gioco da tavolo invece ha regole e componenti definiti, un obiettivo chiaro e di solito finisce in una sola partita. In mezzo ci sono i giochi da tavolo narrativi, che prendono un po' da entrambi."
+
+  utter_faq_giochi/conservare_giochi:
+  - text: "Qualche consiglio per far durare i tuoi giochi: 📦\n• proteggi le carte più usate con le bustine protettive (sleeve) della misura giusta;\n• usa sacchetti richiudibili o un organizer per tenere separati i componenti;\n• tieni le scatole in orizzontale, lontano dal sole diretto e dall'umidità;\n• non fare pile troppo alte, per non schiacciare gli angoli.\nBustine e organizer li trovi tra gli accessori del nostro catalogo."
+
+  utter_faq_giochi/complessita:
+  - text: "La complessità (o «peso») indica quanto è impegnativo un gioco: quante regole ha, quante decisioni chiede e quanto ci vuole a padroneggiarlo. Nel nostro catalogo non la indichiamo: per farti un'idea guarda l'età minima e la durata, oppure chiedimi un gioco «per principianti» o «per esperti» e ti consiglio io."
+
+  utter_faq_giochi/durata_partita:
+  - text: "Dipende molto dal tipo di gioco: ⏱️\n• party game e filler: 10–30 minuti;\n• giochi per famiglie: 30–60 minuti;\n• strategici di media complessità: 60–90 minuti;\n• giochi impegnativi: anche 2–4 ore.\nLa durata sulla scatola è indicativa: la prima partita, con la spiegazione delle regole, dura di più. Dimmi quanto tempo hai e ti consiglio un gioco adatto."
+
+  utter_faq_giochi/benefici:
+  - text: "Giocare da tavolo fa bene a tutte le età: 🧠\n• ai bambini insegna a rispettare i turni, contare, leggere e accettare la sconfitta;\n• allena memoria, logica, concentrazione e capacità di pianificare;\n• stimola la comunicazione e la collaborazione;\n• per gli anziani è un ottimo allenamento mentale e un'occasione per stare in compagnia;\n• e soprattutto si passa del tempo insieme, lontano dagli schermi."
+
+  utter_faq_giochi/eta_consigliata:
+  - text: "L'età sulla scatola (per esempio 8+) indica da quanti anni, in media, si riescono a capire le regole e a giocare in autonomia. Non è un limite massimo: tanti giochi 8+ piacciono moltissimo anche agli adulti.\nCon un adulto che aiuta, un bambino può spesso iniziare un po' prima. L'avviso «non adatto ai bambini sotto i 3 anni» invece riguarda la sicurezza: ci sono pezzi piccoli.\n\nDimmi l'età e ti consiglio qualcosa di adatto."
+
+  utter_faq_giochi/filler:
+  - text: "Un filler è un gioco molto breve (10–20 minuti) e leggero, ideale per «riempire» i tempi morti: mentre si aspetta qualcuno, tra un gioco lungo e l'altro o a fine serata. ⏳\nDi solito sta in una scatola piccola, costa poco e si spiega in un attimo."
+
+  utter_faq_giochi/drafting:
+  - text: "Nel drafting ogni giocatore sceglie una carta (o una tessera) da un gruppo e passa il resto al vicino, che fa lo stesso, finché le carte non finiscono. 🔄\nCosì devi decidere cosa tenere per te e cosa togliere agli altri. È la meccanica centrale di giochi come 7 Wonders e Sushi Go!."
+
+  utter_faq_giochi/carte_collezionabili:
+  - text: "Nei giochi di carte collezionabili (TCG o CCG, come Magic: The Gathering o Pokémon) si comprano buste con carte casuali e ci si costruisce il proprio mazzo per sfidare gli altri.\nNei LCG (Living Card Game) invece le espansioni hanno un contenuto fisso: sai sempre cosa compri, senza la «lotteria» delle buste. In entrambi il mazzo si prepara prima della partita."
+
+  utter_faq_giochi/deduzione_sociale:
+  - text: "Nei giochi di deduzione sociale alcuni giocatori hanno un ruolo segreto (traditori, lupi mannari, spie…) e gli altri devono scoprirli discutendo, accusando e bluffando. 🕵️\nContano più le persone che il tabellone, per questo sono perfetti per i gruppi numerosi. In Italia il più famoso è Lupus in Tabula."

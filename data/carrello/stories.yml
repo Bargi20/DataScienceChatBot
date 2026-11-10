@@ -1,0 +1,48 @@
+version: "3.1"
+
+stories:
+
+- story: aggiungi un gioco e guarda il carrello
+  steps:
+  - intent: aggiungi_carrello
+  - action: action_aggiungi_carrello
+  - intent: mostra_carrello
+  - action: action_mostra_carrello
+
+- story: aggiungi, applica un codice e vai al checkout
+  steps:
+  - intent: aggiungi_carrello
+  - action: action_aggiungi_carrello
+  - intent: applica_codice_sconto
+  - action: action_applica_codice_sconto
+  - intent: vai_checkout
+  - action: action_vai_checkout
+
+- story: svuota il carrello e conferma
+  steps:
+  - intent: svuota_carrello
+  - action: action_chiedi_svuota_carrello
+  - slot_was_set:
+    - carrello_conferma_svuota: true
+  - intent: affirm
+  - action: action_svuota_carrello
+  - slot_was_set:
+    - carrello_conferma_svuota: false
+
+- story: svuota il carrello e ci ripensa
+  steps:
+  - intent: svuota_carrello
+  - action: action_chiedi_svuota_carrello
+  - slot_was_set:
+    - carrello_conferma_svuota: true
+  - intent: deny
+  - action: action_annulla_svuota_carrello
+  - slot_was_set:
+    - carrello_conferma_svuota: false
+
+- story: cambia quantità e togli
+  steps:
+  - intent: cambia_quantita_carrello
+  - action: action_cambia_quantita_carrello
+  - intent: togli_carrello
+  - action: action_togli_carrello

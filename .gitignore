@@ -1,0 +1,24 @@
+# Secrets
+.env
+.env.*
+
+# Editor / tool config
+.claude/
+.vscode/
+
+# Rasa
+.rasa/
+models/
+*.tar.gz
+tests/test_results/
+results/
+story_graph.dot
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# OS
+.DS_Store

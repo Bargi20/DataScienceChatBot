@@ -1,0 +1,65 @@
+version: "3.1"
+
+rules:
+
+- rule: Aggiungi un gioco al carrello
+  steps:
+  - intent: aggiungi_carrello
+  - action: action_aggiungi_carrello
+
+- rule: Togli un gioco dal carrello
+  steps:
+  - intent: togli_carrello
+  - action: action_togli_carrello
+
+- rule: Cambia la quantità di un gioco nel carrello
+  steps:
+  - intent: cambia_quantita_carrello
+  - action: action_cambia_quantita_carrello
+
+- rule: Mostra il carrello
+  steps:
+  - intent: mostra_carrello
+  - action: action_mostra_carrello
+
+- rule: Chiedi conferma prima di svuotare il carrello
+  steps:
+  - intent: svuota_carrello
+  - action: action_chiedi_svuota_carrello
+
+# Il sì/no vale solo come risposta immediata alla domanda di conferma: se l'utente
+# scrive altro, un «sì» detto più avanti non svuota il carrello.
+- rule: Svuota il carrello dopo la conferma
+  steps:
+  - action: action_chiedi_svuota_carrello
+  - slot_was_set:
+    - carrello_conferma_svuota: true
+  - intent: affirm
+  - action: action_svuota_carrello
+  - slot_was_set:
+    - carrello_conferma_svuota: false
+
+- rule: Non svuotare il carrello se l'utente rifiuta
+  steps:
+  - action: action_chiedi_svuota_carrello
+  - slot_was_set:
+    - carrello_conferma_svuota: true
+  - intent: deny
+  - action: action_annulla_svuota_carrello
+  - slot_was_set:
+    - carrello_conferma_svuota: false
+
+- rule: Applica un codice sconto
+  steps:
+  - intent: applica_codice_sconto
+  - action: action_applica_codice_sconto
+
+- rule: Vai al checkout
+  steps:
+  - intent: vai_checkout
+  - action: action_vai_checkout
+
+- rule: Rispondi alle domande frequenti sul carrello
+  steps:
+  - intent: faq_carrello
+  - action: utter_faq_carrello

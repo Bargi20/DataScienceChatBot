@@ -1,0 +1,16 @@
+numero,email,stato,spedizione,corriere,tracking,articoli,totale,citta,giorni_fa,consegna_tra_giorni
+482913,mario.rossi@example.com,spedito,standard,BRT,BRT0048291377,4:1|32:1,72.80,Ancona,2,2
+516204,giulia.bianchi@example.com,in attesa di pagamento,standard,,,19:1,24.80,Milano,0,
+730155,luca.ferri@example.com,in preparazione,espressa,,,3:1,37.80,Roma,0,2
+294871,sara.neri@example.com,in consegna,standard,GLS,GLS7710293845,7:1|20:1,49.80,Bologna,3,0
+608342,paolo.verdi@example.com,consegnato,standard,SDA,SDA2290418833,5:1|9:1,64.80,Torino,9,-5
+351077,elena.conti@example.com,consegnato,locker,InPost,INP5509182,8:1|56:1,59.70,Napoli,12,-8
+847520,anna.moretti@example.com,annullato,standard,,,22:1,24.80,Firenze,15,
+119826,davide.russo@example.com,reso in corso,standard,BRT,BRT0011982655,6:1|14:1,89.80,Palermo,20,-15
+563390,chiara.galli@example.com,spedito,standard,SDA,SDA2290671450,10:1|13:1|100:1,67.70,Cagliari,9,-3
+175264,marco.romano@example.com,in preparazione,standard,,,11:1|38:1,64.80,Verona,5,-1
+920417,francesca.gatti@example.com,in preparazione,ritiro in negozio,,,12:1,27.90,Ancona,0,1
+402689,simone.costa@example.com,spedito,espressa,GLS,GLS7710774120,12:1,37.80,Bari,1,1
+638015,laura.fabbri@example.com,in attesa di pagamento,standard,,,15:1|76:1,72.80,Genova,6,
+771208,andrea.marini@example.com,consegnato,espressa,SDA,SDA2290555019,63:1,29.80,Pescara,4,-2
+925361,rosa.lombardi@example.com,in consegna,espressa,BRT,BRT0048877120,16:1|42:1|88:1,102.60,Trieste,2,0

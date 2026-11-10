@@ -1,0 +1,78 @@
+version: "3.1"
+
+rules:
+
+# --- Consiglio personalizzato (consiglio_form) ---
+
+- rule: Avvia il consiglio personalizzato
+  steps:
+  - intent: chiedi_consiglio
+  - action: action_avvia_consiglio
+  - action: consiglio_form
+  - active_loop: consiglio_form
+
+- rule: Avvia il consiglio quando l'utente elenca subito dei criteri
+  steps:
+  - intent: indica_criteri
+  - action: action_avvia_consiglio
+  - action: consiglio_form
+  - active_loop: consiglio_form
+
+- rule: Completa il consiglio e proponi i giochi
+  condition:
+  - active_loop: consiglio_form
+  steps:
+  - action: consiglio_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_consiglia_giochi
+
+- rule: Esci dal consiglio quando l'utente vuole interrompere
+  condition:
+  - active_loop: consiglio_form
+  steps:
+  - intent: interrompi
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_interrompi_consiglio
+
+# Le domande frequenti (anche di cultura ludica) a metà form sono in data/form_digressioni.yml
+
+# --- Interrompi fuori da qualsiasi form ---
+
+- rule: Interrompi quando non c'è niente in corso
+  steps:
+  - intent: interrompi
+  - action: utter_interrompi
+
+# --- Consigli rapidi ---
+
+- rule: Consiglio per occasione
+  steps:
+  - intent: chiedi_consiglio_occasione
+  - action: action_consiglia_occasione
+
+- rule: Giochi simili a un altro
+  steps:
+  - intent: chiedi_giochi_simili
+  - action: action_giochi_simili
+
+- rule: Idee regalo
+  steps:
+  - intent: chiedi_idea_regalo
+  - action: action_idea_regalo
+
+- rule: Sorprendimi
+  steps:
+  - intent: chiedi_sorpresa
+  - action: action_sorprendimi
+
+# --- FAQ di cultura ludica ---
+
+- rule: Rispondi alle domande di cultura ludica
+  steps:
+  - intent: faq_giochi
+  - action: utter_faq_giochi

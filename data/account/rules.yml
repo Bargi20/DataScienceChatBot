@@ -1,0 +1,74 @@
+version: "3.1"
+
+rules:
+- rule: Risposte alle FAQ sull'account
+  steps:
+  - intent: faq_account
+  - action: utter_faq_account
+
+- rule: Spiega come disiscriversi dalla newsletter
+  steps:
+  - intent: disiscriviti_newsletter
+  - action: utter_disiscrizione_newsletter
+
+- rule: Email data fuori da un form
+  condition:
+  - active_loop: null
+  steps:
+  - intent: fornisci_email
+  - action: utter_account_email_ricevuta
+
+- rule: Attiva il form della newsletter
+  steps:
+  - intent: iscriviti_newsletter
+  - action: newsletter_form
+  - active_loop: newsletter_form
+
+- rule: Conferma l'iscrizione alla newsletter
+  condition:
+  - active_loop: newsletter_form
+  steps:
+  - action: newsletter_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_iscrivi_newsletter
+
+- rule: Interrompi il form della newsletter
+  condition:
+  - active_loop: newsletter_form
+  steps:
+  - intent: interrompi
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_account_interrotto
+
+- rule: Attiva il form dell'avviso di disponibilità
+  steps:
+  - intent: avvisami_disponibilita
+  - action: action_prepara_avviso
+  - action: avviso_disponibilita_form
+  - active_loop: avviso_disponibilita_form
+
+- rule: Registra l'avviso di disponibilità
+  condition:
+  - active_loop: avviso_disponibilita_form
+  steps:
+  - action: avviso_disponibilita_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_avviso_disponibilita
+
+- rule: Interrompi il form dell'avviso di disponibilità
+  condition:
+  - active_loop: avviso_disponibilita_form
+  steps:
+  - intent: interrompi
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_account_interrotto

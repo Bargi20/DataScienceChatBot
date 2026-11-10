@@ -1,0 +1,55 @@
+version: "3.1"
+
+rules:
+  - rule: Rispondi alle FAQ sul negozio
+    steps:
+      - intent: faq_negozio
+      - action: utter_faq_negozio
+
+  - rule: Dire se il negozio è aperto adesso
+    steps:
+      - intent: chiedi_apertura_adesso
+      - action: action_negozio_aperto
+
+  - rule: Mostrare i prossimi eventi
+    steps:
+      - intent: chiedi_eventi
+      - action: action_prossimi_eventi
+
+  - rule: Parlare con un operatore
+    steps:
+      - intent: chiedi_operatore
+      - action: action_parla_operatore
+
+  - rule: Gestire un reclamo
+    steps:
+      - intent: fai_reclamo
+      - action: utter_reclamo
+
+  - rule: Avviare il form del feedback
+    steps:
+      - intent: lascia_feedback
+      - action: feedback_negozio_form
+      - active_loop: feedback_negozio_form
+
+  - rule: Concludere il form del feedback
+    condition:
+      - active_loop: feedback_negozio_form
+    steps:
+      - action: feedback_negozio_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: action_invia_feedback_negozio
+
+  - rule: Uscire dal form del feedback
+    condition:
+      - active_loop: feedback_negozio_form
+    steps:
+      - intent: interrompi
+      - action: action_deactivate_loop
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: utter_negozio_feedback_interrotto
+      - action: action_azzera_feedback_negozio

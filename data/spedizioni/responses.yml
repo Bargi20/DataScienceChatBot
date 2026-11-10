@@ -1,0 +1,112 @@
+version: '3.1'
+responses:
+  utter_faq_spedizioni/costo_standard:
+  - text: La spedizione standard in Italia costa 4,90 € e arriva in 2-4 giorni lavorativi. 📦 È gratis per ordini sopra i 49 €.
+  - text: In Italia la spedizione standard costa 4,90 € (2-4 giorni lavorativi). Se la spesa supera i 49 € la spedizione è gratuita!
+  - text: Spedire in Italia costa 4,90 € con consegna standard. Sopra i 49 € di spesa non paghi nulla. Vuoi sapere anche le altre opzioni (express, locker, ritiro in negozio)?
+  utter_faq_spedizioni/tempi_standard:
+  - text: 'Con la spedizione standard il pacco arriva in 2-4 giorni lavorativi dalla partenza. 🚚 Se ordini entro le 13:00 (lun-ven) parte in giornata.
+
+      Ti serve prima? C''è anche la spedizione espressa 24/48 ore a 9,90 €.'
+  - text: In Italia la consegna standard richiede 2-4 giorni lavorativi. Gli ordini fatti entro le 13:00 dal lunedì al venerdì partono in giornata. Per le isole e la Calabria calcola 1-2 giorni in più.
+  utter_faq_spedizioni/gratis_soglia:
+  - text: 'La spedizione standard in Italia è gratuita per ordini sopra i 49 €. 🎉 Sotto questa soglia costa 4,90 €.
+
+      Per l''Unione Europea la soglia è 120 €.'
+  - text: Sopra i 49 € di spesa la spedizione in Italia è gratis! Per i paesi dell'Unione Europea la spedizione è gratuita sopra i 120 €.
+  - text: 'Basta superare i 49 € nel carrello per avere la spedizione standard gratuita in Italia (UE: sopra i 120 €). Vuoi calcolare quanto pagheresti per il tuo ordine?'
+  utter_faq_spedizioni/express:
+  - text: Sì, c'è la spedizione espressa 24/48 ore a 9,90 €. ⚡ Per averla in tempi rapidi ordina entro le 13:00 dal lunedì al venerdì, così il pacco parte in giornata.
+  - text: La spedizione espressa costa 9,90 € e consegna in 24/48 ore. La scegli al checkout. Non garantiamo la consegna in giornata.
+  utter_faq_spedizioni/isole_calabria:
+  - text: Sì, spediamo anche in Sicilia, Sardegna e Calabria. 🏝️ Il prezzo è lo stesso dell'Italia (4,90 €, gratis sopra i 49 €), ma i tempi sono di 1-2 giorni in più rispetto ai 2-4 giorni standard.
+  - text: 'Certo! Per Sicilia, Sardegna e Calabria nessun supplemento: stesso costo dell''Italia (4,90 €, gratis sopra i 49 €) e 1-2 giorni lavorativi in più per la consegna. Per le isole minori scrivi all''assistenza e ti confermiamo.'
+  utter_faq_spedizioni/ue:
+  - text: Sì, spediamo in tutta l'Unione Europea. 🇪🇺 Costa 12,90 € e la consegna richiede 4-8 giorni lavorativi. La spedizione è gratuita sopra i 120 €.
+  - text: Spediamo nei paesi dell'Unione Europea a 12,90 €, con consegna in 4-8 giorni lavorativi. Sopra i 120 € di spesa la spedizione è gratis.
+  utter_faq_spedizioni/extra_ue:
+  - text: 'Per ora non spediamo fuori dall''Unione Europea, quindi purtroppo non possiamo consegnare in Svizzera, Regno Unito, USA e altri paesi extra UE. 🙁 Se hai un indirizzo in Italia o in un paese UE, nessun problema!
+
+      Puoi anche farlo spedire a un amico o parente che abita in Italia o nell''UE.'
+  - text: Al momento le spedizioni fuori dall'UE non sono attive. Spediamo in Italia e in tutti i paesi dell'Unione Europea (12,90 €, 4-8 giorni lavorativi). Per casi particolari scrivi ad assistenza@gigigames.it.
+  utter_faq_spedizioni/ritiro_negozio:
+  - text: 'Sì, puoi ritirare l''ordine nel nostro negozio di Via Roma 12, Ancona. 🏬 Il ritiro è gratuito e l''ordine è pronto entro 24 ore: ti avvisiamo via email quando puoi passare.
+
+      Orari: lun 15:30-19:30; mar-sab 10:00-13:00 e 15:30-19:30; domenica chiuso.'
+  - text: 'Certo, il ritiro in negozio è gratuito. Scegli «Ritiro in negozio» al checkout: entro 24 ore l''ordine è pronto e ti arriva un''email di avviso. Ci trovi in Via Roma 12, Ancona (domenica chiuso).'
+  utter_faq_spedizioni/locker:
+  - text: Sì, puoi scegliere la consegna in locker o punto di ritiro a 3,90 €. 📬 Lo selezioni al checkout e ritiri il pacco quando vuoi, senza dover essere a casa.
+  - text: 'La consegna in locker/punto di ritiro costa 3,90 €: comoda se non sei mai a casa. Scegli il punto che preferisci durante il checkout.'
+  utter_faq_spedizioni/corriere:
+  - text: Ci affidiamo a corrieri nazionali e internazionali selezionati. 🚚 Il corriere assegnato dipende dalla destinazione e dal metodo scelto, e non è possibile sceglierlo. Il nome lo trovi nell'email di spedizione, insieme al link di tracciamento.
+  - text: 'Non posso indicarti in anticipo il corriere specifico: viene assegnato alla spedizione. Appena il pacco parte ricevi un''email con corriere e link di tracciamento. Per richieste particolari scrivi ad assistenza@gigigames.it.'
+  utter_faq_spedizioni/tracciamento:
+  - text: 'Quando il pacco parte ti arriva un''email con il link di tracciamento, con cui puoi seguire la spedizione fino alla consegna. 🔎
+
+      Se vuoi sapere lo stato di un ordine preciso, dimmi il numero d''ordine (6 cifre) e lo controllo.'
+  - text: 'Ogni spedizione è tracciabile: il link di tracciamento arriva via email appena il pacco viene affidato al corriere. Controlla anche lo spam. Per un ordine specifico dimmi il numero d''ordine e vediamo lo stato.'
+  utter_faq_spedizioni/partenza_giornata:
+  - text: 'Gli ordini fatti entro le 13:00 dal lunedì al venerdì partono in giornata. ⏰ Quelli fatti dopo le 13:00, o nel weekend, partono il primo giorno lavorativo utile.
+
+      Il bonifico richiede invece l''accredito prima della spedizione (1-2 giorni).'
+  - text: Ordina entro le 13:00 dal lunedì al venerdì e il pacco parte lo stesso giorno. Dopo quell'ora o nel fine settimana la partenza slitta al primo giorno lavorativo successivo.
+  utter_faq_spedizioni/indirizzo_diverso:
+  - text: 'Sì, al checkout puoi inserire un indirizzo di spedizione diverso da quello di fatturazione. 📍 Controlla bene via, civico, CAP e un recapito telefonico per il corriere.
+
+      Se hai già ordinato e devi cambiare indirizzo, ti aiuto con l''ordine: dimmi il numero d''ordine.'
+  - text: 'Certo, indirizzo di consegna e di fatturazione possono essere diversi: li inserisci separatamente nel checkout. Se l''ordine è già partito, contatta subito l''assistenza al 071 123 4567.'
+  utter_faq_spedizioni/regalo_altra_persona:
+  - text: 'Sì, puoi spedire un regalo direttamente al destinatario: al checkout inserisci il suo indirizzo come indirizzo di spedizione. 🎁
+
+      Volendo puoi aggiungere la confezione regalo (2 €) e un biglietto personalizzato gratuito.'
+  - text: 'Certo! Metti l''indirizzo del destinatario come indirizzo di consegna e aggiungi, se vuoi, la confezione regalo (2 €) e il biglietto personalizzato (gratis).  '
+  utter_faq_spedizioni/assenza_giacenza:
+  - text: 'Se non ci sei, il corriere fa due tentativi di consegna. 🚪 Poi il pacco resta in giacenza 7 giorni: in quel periodo puoi ritirarlo seguendo le istruzioni del corriere.
+
+      Per evitare problemi puoi scegliere la consegna in locker o il ritiro in negozio.'
+  - text: Il corriere tenta la consegna due volte; se non trova nessuno il pacco rimane in giacenza per 7 giorni. Per accordarti sulla consegna usa il link di tracciamento dell'email, oppure scrivici.
+  utter_faq_spedizioni/sabato:
+  - text: 'I tempi indicati sono in giorni lavorativi e non posso garantirti la consegna di sabato, nei festivi o in un giorno scelto. 📅 I pacchi partono dal lunedì al venerdì (ordini entro le 13:00 in giornata).
+
+      Per un''esigenza specifica scrivi ad assistenza@gigigames.it o chiama il 071 123 4567 (lun-ven 9:00-18:00).'
+  - text: 'Sulla consegna di sabato o nel weekend non posso promettere nulla: i tempi sono calcolati in giorni lavorativi e la data non è selezionabile. Per una verifica scrivi ad assistenza@gigigames.it o chiama il 071 123 4567.'
+  utter_faq_spedizioni/imballaggio:
+  - text: 'Ogni gioco viene imballato con cura per proteggere la scatola durante il trasporto. 📦 Il pacco è anonimo, senza indicazioni del contenuto all''esterno: ideale anche per un regalo a sorpresa.
+
+      Se nonostante questo arriva danneggiato, segnalalo entro 7 giorni con una foto e risolviamo.'
+  - text: I giochi viaggiano ben protetti in una scatola anonima, senza scritte che rivelino il contenuto. Se qualcosa arrivasse rovinato, scrivici entro 7 giorni allegando una foto.
+  - text: I preordini si pagano all'ordine e si spediscono all'uscita del gioco. 📅 Se nell'ordine ci sono anche prodotti disponibili, questi partono subito e il preordine viene spedito dopo, senza costi aggiuntivi di spedizione.
+  - text: Il preordine parte appena il gioco esce. Se lo ordini con articoli già disponibili, questi vengono spediti subito e il preordine arriva in un secondo momento, senza spese aggiuntive.
+  utter_faq_spedizioni/ordini_multipli:
+  - text: 'Ogni ordine ha la sua spedizione, quindi per risparmiare conviene mettere tutto in un unico ordine (sopra i 49 € la spedizione è gratis). 🛒 Se tutti i giochi sono disponibili viaggiano insieme.
+
+      Per unire due ordini già fatti scrivi presto ad assistenza@gigigames.it, indicando i numeri d''ordine: se non sono ancora partiti verifichiamo se si può fare.'
+  - text: Per non pagare più spedizioni ti consiglio di fare un solo ordine. Per due ordini già effettuati contatta l'assistenza (assistenza@gigigames.it o 071 123 4567) prima che partano e vediamo se è possibile unirli.
+  utter_faq_spedizioni/cambio_metodo:
+  - text: 'Il metodo di spedizione si sceglie al checkout. Dopo l''ordine il cambio è possibile solo se il pacco non è ancora partito: scrivi subito ad assistenza@gigigames.it o chiama il 071 123 4567 (lun-ven 9:00-18:00) con il numero d''ordine. 📝'
+  - text: Se l'ordine non è ancora stato spedito possiamo provare a cambiare il metodo; non posso garantirlo, dipende dallo stato. Contatta quanto prima l'assistenza (assistenza@gigigames.it, 071 123 4567) indicando il numero d'ordine.
+  utter_faq_spedizioni/azienda:
+  - text: 'Sì, puoi spedire a un ufficio o a un indirizzo aziendale: basta inserirlo come indirizzo di consegna, indicando eventualmente il nome della ditta. 🏢 La fattura si richiede al checkout con partita IVA.
+
+      Per ludoteche, associazioni e scuole ci sono condizioni dedicate: scrivi a b2b@gigigames.it.'
+  - text: Certo, consegniamo anche presso uffici e sedi aziendali. Ricorda che il corriere passa in orari di lavoro, quindi indica un recapito. Per ordini grandi o condizioni dedicate (ludoteche, scuole, associazioni) scrivi a b2b@gigigames.it.
+  utter_faq_spedizioni/opzioni:
+  - text: 'Ecco le opzioni di consegna di GIGI Games. 📦
+
+      • Standard Italia: 4,90 € (gratis sopra i 49 €), 2-4 giorni lavorativi
+
+      • Espressa 24/48 ore: 9,90 €
+
+      • Locker / punto di ritiro: 3,90 €
+
+      • Ritiro in negozio ad Ancona: gratis, pronto entro 24 ore
+
+      • Unione Europea: 12,90 € (gratis sopra i 120 €), 4-8 giorni lavorativi
+
+      Fuori dall''UE non spediamo. Su cosa vuoi più dettagli?'
+  utter_faq_spedizioni/dogana:
+  - text: Per l'Unione Europea il costo della spedizione è 12,90 € (gratis sopra i 120 €) e i nostri prezzi includono l'IVA. 🧾 Non ci sono costi doganali per i paesi UE. Se vedi richieste di pagamento alla consegna, contattaci subito. Altri costi non sono previsti al checkout oltre a quelli mostrati prima del pagamento.
+  utter_faq_spedizioni/modifica_dopo_partenza:
+  - text: 'Una volta partito il pacco è in mano al corriere. 🚚 Dal link di tracciamento nell''email puoi vedere le opzioni offerte dal corriere (riprogrammare, lasciare istruzioni o indicare un altro ritiro), che dipendono dal servizio e non sono garantite.
+
+      Per fermare un ordine o cambiare indirizzo scrivi subito ad assistenza@gigigames.it o chiama il 071 123 4567 (lun-ven 9:00-18:00).'

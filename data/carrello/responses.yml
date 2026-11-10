@@ -1,0 +1,25 @@
+version: "3.1"
+
+responses:
+  utter_faq_carrello/come_ordinare:
+  - text: "Ordinare è semplice:\n• scegli i giochi e aggiungili al carrello (puoi farlo anche qui in chat)\n• controlla il riepilogo con spedizione ed eventuale codice sconto\n• vai al checkout su www.gigigames.it/checkout, inserisci indirizzo e metodo di pagamento e conferma\n\nRiceverai un'email di conferma con il riepilogo dell'ordine."
+  - text: "Per ordinare basta aggiungere i giochi al carrello, andare al checkout su www.gigigames.it/checkout, indicare indirizzo e pagamento e confermare. Ti arriva subito un'email di conferma. Se vuoi, intanto riempiamo il carrello qui in chat."
+
+  - text: "Non serve registrarsi: puoi comprare come ospite, ti basta inserire i dati di spedizione al checkout. Con un account, però, hai storico ordini, wishlist e GIGI Punti."
+  - text: "La registrazione è facoltativa, puoi fare l'ordine come ospite. Creare un account serve solo se vuoi rivedere gli ordini, usare la wishlist e accumulare i GIGI Punti."
+
+  utter_faq_carrello/carrello_salvato:
+  - text: "Sul sito, se hai effettuato l'accesso, il carrello resta legato al tuo account e lo ritrovi quando torni. Da ospite dipende dal browser: se cancelli i dati di navigazione potresti perderlo. Qui in chat il carrello resta salvato per tutta la nostra conversazione."
+
+  utter_faq_carrello/ordine_minimo:
+  - text: "Non c'è nessun ordine minimo: puoi comprare anche un solo gioco. Ricorda solo che la spedizione standard costa 4,90 € e diventa gratis da 49 € in su."
+  - text: "Nessun importo minimo, ordina quello che vuoi! La spedizione è gratuita da 49 € in su, sotto costa 4,90 €. Il ritiro in negozio è sempre gratuito."
+
+  utter_faq_carrello/modifica_dopo_ordine:
+  - text: "Per cambiare un ordine già confermato serve l'assistenza ordini: scrivimi pure che vuoi modificare il tuo ordine, indicando il numero, e ti aiuto da lì."
+  - text: "Una volta confermato l'ordine il carrello non si modifica più, ma di questo si occupa la gestione ordini. Dimmi 'voglio modificare il mio ordine' con il numero d'ordine e proseguiamo."
+
+  - text: "Sì! Al checkout scegli il ritiro in negozio: è gratuito e l'ordine è pronto entro 24 ore, ti avvisiamo via email. Il negozio è in Via Roma 12, 60121 Ancona (lunedì 15:30–19:30; martedì–sabato 10:00–13:00 e 15:30–19:30; domenica chiuso)."
+
+  utter_faq_carrello/prezzi_aggiornati:
+  - text: "I prezzi che ti mostro nel carrello sono quelli attuali del catalogo, IVA inclusa, con le offerte già applicate. Se un prezzo cambia prima dell'ordine, il riepilogo si aggiorna di conseguenza. Lo sconto di un codice si vede nel riepilogo, la spedizione si calcola in base al totale."

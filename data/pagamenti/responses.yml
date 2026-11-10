@@ -1,0 +1,126 @@
+version: "3.1"
+
+responses:
+  utter_faq_pagamenti/metodi:
+    - text: "Su GIGI Games puoi pagare con:\n• Carte Visa, Mastercard, Maestro e American Express\n• PayPal (anche con «Paga in 3 rate»)\n• Apple Pay e Google Pay\n• Satispay\n• Bonifico bancario\n• Contrassegno (+3 €, solo Italia, fino a 300 €)\nTutti i prezzi sono IVA inclusa."
+    - text: "Ecco i metodi di pagamento disponibili:\n• Visa, Mastercard, Maestro, American Express\n• PayPal, anche a rate\n• Apple Pay e Google Pay\n• Satispay\n• Bonifico\n• Contrassegno (+3 €, solo in Italia e fino a 300 €)\nAl checkout scegli quello che preferisci."
+
+  utter_faq_pagamenti/paypal:
+    - text: "Sì, accettiamo PayPal! Lo scegli al checkout e vieni portato sulla pagina PayPal per confermare il pagamento, anche usando il saldo o una carta collegata al tuo conto. 😊"
+    - text: "Certo, PayPal è tra i metodi disponibili. Al checkout selezioni PayPal, accedi al tuo conto e confermi: l'ordine viene registrato appena il pagamento va a buon fine."
+
+  utter_faq_pagamenti/rate:
+    - text: "Sì, puoi pagare a rate con PayPal «Paga in 3 rate»: lo trovi tra le opzioni di PayPal al checkout. La disponibilità e le condizioni dipendono da PayPal, che valuta la richiesta al momento dell'acquisto. Per altre forme di rateizzazione non abbiamo servizi attivi."
+    - text: "Per pagare a rate usa PayPal con l'opzione «Paga in 3 rate», che compare al checkout quando è disponibile per il tuo ordine. Importi, condizioni e approvazione sono gestiti da PayPal. Se hai dubbi scrivici a assistenza@gigigames.it."
+
+  utter_faq_pagamenti/carte:
+    - text: "Accettiamo carte dei circuiti Visa, Mastercard, Maestro e American Express, sia di credito che di debito. Il pagamento è protetto con 3D Secure. Se la tua carta è di un altro circuito, puoi ripiegare su PayPal, Satispay o bonifico."
+    - text: "Sul sito funzionano le carte Visa, Mastercard, Maestro e American Express (credito e debito). Se la tua carta appartiene a un altro circuito, puoi scegliere PayPal, Satispay o bonifico."
+
+  utter_faq_pagamenti/prepagate:
+    - text: "Sì, le carte prepagate funzionano se hanno il circuito Visa o Mastercard, come la PostePay: le inserisci come una normale carta al checkout. Assicurati che sia abilitata agli acquisti online e che ci sia credito sufficiente."
+    - text: "Certo! PostePay e le altre prepagate Visa o Mastercard sono accettate come le carte normali. Controlla solo che siano abilitate ai pagamenti online e che abbiano saldo a sufficienza. 😊"
+
+  utter_faq_pagamenti/apple_google_pay:
+    - text: "Sì, accettiamo sia Apple Pay che Google Pay. Compaiono al checkout se il tuo dispositivo e il tuo browser li supportano (per esempio Apple Pay su iPhone e Safari). Se non li vedi, puoi pagare con carta o PayPal."
+    - text: "Apple Pay e Google Pay sono disponibili! Al checkout trovi il pulsante dedicato, se il tuo dispositivo li supporta e hai una carta salvata nel wallet del telefono."
+
+  utter_faq_pagamenti/satispay:
+    - text: "Sì, puoi pagare con Satispay! Lo scegli al checkout e confermi il pagamento dalla tua app Satispay. 😊"
+    - text: "Satispay è tra i metodi accettati. Selezionalo al checkout e approva il pagamento direttamente nell'app Satispay."
+
+  utter_faq_pagamenti/bonifico_dati:
+    - text: "Sì, puoi pagare con bonifico bancario: scegli «Bonifico» al checkout, completa l'ordine e fai il bonifico con i dati di pagamento che ti vengono indicati per quell'ordine. Per non sbagliare, ti consiglio di non inserire un IBAN trovato altrove. Se non trovi i dati, scrivi a assistenza@gigigames.it indicando il numero d'ordine."
+    - text: "Il bonifico è accettato. Dopo aver confermato l'ordine scegliendo «Bonifico», riceverai le indicazioni per pagare, causale compresa. Spediamo non appena il pagamento risulta accreditato. Se hai problemi a trovare i dati, scrivici a assistenza@gigigames.it con il numero d'ordine."
+
+  utter_faq_pagamenti/bonifico_tempi:
+    - text: "Con il bonifico spediamo dopo l'accredito, che richiede in genere 1–2 giorni. Appena il pagamento risulta sul nostro conto prepariamo il pacco e ti avvisiamo via email. Se sono passati più giorni, scrivici a assistenza@gigigames.it con il numero d'ordine e la ricevuta del bonifico."
+    - text: "Ordini pagati con bonifico: l'ordine parte dopo l'accredito, che di solito richiede 1–2 giorni. Quando lo riceviamo, ti arriva la email di spedizione con il link di tracciamento. Se vedi ritardi, mandaci la ricevuta a assistenza@gigigames.it."
+
+  utter_faq_pagamenti/contrassegno:
+    - text: "Sì, c'è il contrassegno: paghi quando ricevi il pacco, con un supplemento di 3 €. Vale solo per spedizioni in Italia e per ordini fino a 300 €. Per sapere con cosa puoi pagare il corriere (contanti o altro), scrivi a assistenza@gigigames.it."
+    - text: "Il pagamento alla consegna è possibile: contrassegno +3 €, solo per l'Italia e fino a 300 € di ordine. Per ordini più alti o per l'estero scegli un altro metodo, come carta, PayPal o bonifico."
+
+  utter_faq_pagamenti/pagamento_negozio:
+    - text: "Nel negozio di Via Roma 12 ad Ancona puoi acquistare normalmente alla cassa. Per i metodi accettati in negozio ti conviene chiedere direttamente a noi al 071 123 4567 o passare in negozio. Se scegli il ritiro in negozio per un ordine online, il pagamento va completato al checkout con i metodi del sito."
+    - text: "Certo, puoi acquistare direttamente in negozio (Via Roma 12, Ancona). Per sapere con quali metodi si paga in cassa chiamaci o scrivici su WhatsApp al 071 123 4567. Gli ordini online con ritiro in negozio si pagano invece al checkout."
+
+  utter_faq_pagamenti/sicurezza:
+    - text: "Sì, i pagamenti sono protetti con 3D Secure e noi non salviamo i dati della tua carta: restano gestiti dai circuiti e dai fornitori di pagamento. Questo significa anche che la prossima volta dovrai reinserirli. Se preferisci, puoi pagare con PayPal, Apple Pay o Google Pay."
+    - text: "Puoi stare tranquillo: i pagamenti avvengono con protezione 3D Secure e non conserviamo i dati delle carte. Se vuoi un livello in più di comodità e sicurezza, usa PayPal, Apple Pay o Google Pay."
+
+  utter_faq_pagamenti/tre_d_secure:
+    - text: "3D Secure è la verifica di sicurezza richiesta dalla banca per i pagamenti con carta: di solito arriva un codice via SMS o una notifica da approvare nell'app della tua banca. È normale e serve a proteggerti. Se il codice non arriva, controlla che il numero registrato sia corretto o contatta la tua banca; in alternativa puoi pagare con PayPal."
+    - text: "È la procedura di autenticazione che la tua banca usa per confermare che sei davvero tu a pagare (codice SMS o conferma nell'app). Se non ti arriva nulla, verifica i dati registrati con la banca; puoi anche provare un altro metodo, come PayPal o Satispay."
+
+  utter_faq_pagamenti/pagamento_rifiutato:
+    - text: "Mi dispiace! Prova così:\n• controlla numero, scadenza e CVV della carta\n• verifica di avere credito sufficiente e che la carta sia abilitata agli acquisti online\n• completa la verifica 3D Secure della banca\n• prova un altro metodo (PayPal, Apple Pay, Google Pay, Satispay)\nSe continua a non funzionare, scrivi a assistenza@gigigames.it o chiama il 071 123 4567 (lun-ven 9:00-18:00)."
+    - text: "Il pagamento può essere rifiutato per dati errati, credito insufficiente, limiti della carta o verifica 3D Secure non completata. Ricontrolla i dati, prova con un altro metodo, oppure contatta la tua banca. Se resti bloccato, siamo qui: assistenza@gigigames.it o 071 123 4567."
+
+  utter_faq_pagamenti/doppio_addebito:
+    - text: "Capita che la banca mostri un'autorizzazione temporanea oltre all'addebito vero, che di norma si libera da sola in qualche giorno. Se invece l'importo risulta addebitato due volte, scrivi a assistenza@gigigames.it (o chiama il 071 123 4567) con il numero d'ordine, l'email usata e una schermata dei movimenti: verificheremo il pagamento."
+    - text: "Mi dispiace per l'inconveniente. Controlla se uno dei due importi è solo un'autorizzazione in sospeso della banca: spesso sparisce da solo. Se l'addebito è davvero doppio, o se hai pagato ma l'ordine non risulta, contatta l'assistenza (assistenza@gigigames.it, 071 123 4567) con numero d'ordine e movimenti."
+
+  utter_faq_pagamenti/quando_addebito:
+    - text: "Con carta, PayPal, Apple Pay, Google Pay e Satispay il pagamento avviene al momento dell'ordine. Con il bonifico paghi tu quando lo effettui e spediamo dopo l'accredito; con il contrassegno paghi al corriere alla consegna. Anche i preordini si pagano subito, mentre la spedizione parte all'uscita del gioco."
+    - text: "L'importo viene addebitato al momento dell'ordine se paghi con carta, PayPal, Apple Pay, Google Pay o Satispay (preordini compresi). Con il bonifico decidi tu quando pagare, con il contrassegno paghi alla consegna."
+
+  utter_faq_pagamenti/iva:
+    - text: "Tutti i prezzi che vedi sul sito sono IVA inclusa. Al checkout si aggiungono solo gli eventuali costi di spedizione (gratis sopra i 49 €), il supplemento del contrassegno se lo scegli, e vengono sottratti i codici sconto applicati."
+    - text: "I nostri prezzi comprendono già l'IVA, quindi non ci sono sorprese: al totale puoi trovare solo la spedizione (gratuita sopra i 49 €) e il contrassegno (+3 €) se lo scegli."
+
+  utter_faq_pagamenti/fattura_richiesta:
+    - text: "La fattura si richiede al checkout, inserendo il tuo codice fiscale (o la partita IVA). Una volta emessa, la scarichi dall'area account, nella sezione degli ordini. Se hai dimenticato di chiederla, scrivi a assistenza@gigigames.it con il numero d'ordine e i dati di fatturazione."
+    - text: "Per avere la fattura inserisci codice fiscale o partita IVA durante il checkout. La trovi poi da scaricare nell'area account. Se ti sei accorto dopo l'ordine, contatta assistenza@gigigames.it indicando il numero d'ordine."
+
+  utter_faq_pagamenti/fattura_azienda:
+    - text: "Sì, puoi avere la fattura intestata alla tua azienda inserendo la partita IVA al checkout, nel passaggio dedicato alla fatturazione. Per dettagli come codice destinatario o PEC scrivi a assistenza@gigigames.it. Per ludoteche, associazioni e scuole abbiamo anche condizioni dedicate: b2b@gigigames.it."
+    - text: "Se hai la partita IVA, indicala al checkout e la fattura verrà intestata alla tua attività; poi la scarichi dall'area account. Per esigenze particolari (codice destinatario, PEC) scrivici a assistenza@gigigames.it. Per ludoteche, associazioni e scuole c'è b2b@gigigames.it."
+
+  utter_faq_pagamenti/gift_card:
+    - text: "Sì, abbiamo le gift card digitali: da 10 a 150 €, valide 12 mesi dall'acquisto e inviate via email. Sono un'ottima idea regalo! 🎁 Per dettagli come l'invio a un'altra persona, scrivi a assistenza@gigigames.it."
+    - text: "Le gift card di GIGI Games sono digitali, con importo da 10 a 150 € e validità di 12 mesi. Dopo l'acquisto le ricevi via email. 🎁"
+
+  utter_faq_pagamenti/gift_card_uso:
+    - text: "La gift card è un credito da spendere sul nostro sito, con validità di 12 mesi dall'acquisto. Per le modalità precise (inserimento del codice, uso parziale, saldo residuo, abbinamento con altri sconti, uso in negozio) ti rispondiamo volentieri a assistenza@gigigames.it o al 071 123 4567 (lun-ven 9:00-18:00). Se hai perso l'email, scrivici indicando l'indirizzo con cui è stata acquistata."
+    - text: "Hai una gift card? Ottimo! 🎁 Ricorda che dura 12 mesi dall'acquisto e arriva via email. Per sapere come usarla nei dettagli, quanto credito residuo hai, oppure per recuperare l'email, contatta l'assistenza: assistenza@gigigames.it, 071 123 4567."
+
+  utter_faq_pagamenti/come_codice:
+    - text: "I codici sconto si inseriscono nel carrello o al checkout, nel campo «Codice sconto». Attivi ora:\n• BENVENUTO10: 10% sul primo ordine (lo ricevi iscrivendoti alla newsletter)\n• GIOCA5: 5 € di sconto con una spesa minima di 40 €\nSi può usare un solo codice per ordine. Se vuoi, applicalo qui in chat dicendomi il codice."
+    - text: "Per usare un codice scrivilo nel campo «Codice sconto» del carrello o del checkout e conferma. Ecco i due codici principali:\n• BENVENUTO10: 10% sul primo ordine (si riceve iscrivendosi alla newsletter)\n• GIOCA5: 5 € di sconto con spesa minima di 40 €\nUn solo codice per ordine."
+
+  utter_faq_pagamenti/codice_non_funziona:
+    - text: "Un codice può non funzionare per questi motivi:\n• è scaduto o non è più attivo\n• l'hai già usato (BENVENUTO10 vale solo sul primo ordine)\n• non raggiungi la spesa minima (GIOCA5 richiede almeno 40 €)\n• nell'ordine c'è già un altro codice: se ne può usare uno solo\n• errore di battitura: controlla maiuscole, spazi e caratteri\nSe ancora non va, scrivi a assistenza@gigigames.it con il codice e il numero d'ordine."
+    - text: "Controlla questi punti:\n• il codice è digitato esattamente (senza spazi)\n• non è scaduto né già utilizzato (BENVENUTO10 è solo per il primo ordine)\n• la spesa minima è raggiunta (GIOCA5: 40 €)\n• nel carrello c'è un solo codice\nSe è tutto a posto e non funziona, contatta l'assistenza: assistenza@gigigames.it, 071 123 4567."
+
+  utter_faq_pagamenti/codici_cumulabili:
+    - text: "No, i codici non sono cumulabili: si può usare un solo codice sconto per ordine. Se ne hai più di uno, il consiglio è di usare quello più conveniente per il tuo carrello. Per l'abbinamento con gift card, GIGI Punti o prodotti già in offerta scrivi a assistenza@gigigames.it e ti confermeremo le condizioni."
+    - text: "Un solo codice per ordine: non è possibile sommare, per esempio, BENVENUTO10 e GIOCA5. Per sapere come funziona con gift card, GIGI Punti o articoli già in offerta, contatta l'assistenza: assistenza@gigigames.it."
+
+  utter_faq_pagamenti/saldi:
+    - text: "Le offerte e le promozioni del momento (compresi periodi speciali come saldi e Black Friday) le trovi sul sito www.gigigames.it e nella nostra newsletter, dove arrivano per prime. Non posso anticiparti date o percentuali, perché cambiano di volta in volta. 😊"
+    - text: "Per saldi, Black Friday e altre promozioni controlla il sito www.gigigames.it e iscriviti alla newsletter: lì pubblichiamo le offerte appena partono. Riceverai anche il codice BENVENUTO10 per il primo ordine."
+
+  utter_faq_pagamenti/prezzo_cambiato:
+    - text: "Il prezzo che paghi è quello mostrato al momento dell'ordine: se cambia dopo, l'ordine già confermato non si modifica. Se il prezzo è sceso subito dopo il tuo acquisto, scrivi a assistenza@gigigames.it con il numero d'ordine e valuteremo il caso, senza garanzie. Se vedi un importo diverso da quello atteso, mandaci pure una schermata."
+    - text: "Una volta confermato l'ordine, l'importo è quello del momento dell'acquisto. Se ritieni che ci sia un errore di prezzo o hai visto un'offerta partire subito dopo, contatta l'assistenza (assistenza@gigigames.it, 071 123 4567) con il numero d'ordine: vediamo insieme cosa si può fare."
+
+  utter_faq_pagamenti/estero:
+    - text: "Tutti i prezzi sono in euro (€). Le carte emesse all'estero dei circuiti Visa, Mastercard, Maestro e American Express sono accettate, e così PayPal; se la tua carta è in un'altra valuta, l'eventuale cambio e le commissioni dipendono dalla tua banca. Ricorda che spediamo in Italia e nell'Unione Europea, non fuori dall'UE. Il contrassegno vale solo per l'Italia."
+    - text: "Paghi in euro. Con carte straniere (Visa, Mastercard, Maestro, American Express) e con PayPal non ci sono problemi, ma conversione e commissioni le applica la tua banca. Per spedizioni e paesi serviti (Italia e UE) vedi le info sulle spedizioni; il contrassegno è solo per l'Italia."
+
+  utter_faq_pagamenti/cambia_metodo:
+    - text: "Una volta confermato l'ordine il metodo di pagamento di norma non si può cambiare in autonomia. Se non hai ancora pagato (per esempio hai scelto il bonifico) o hai sbagliato, scrivici subito a assistenza@gigigames.it o al 071 123 4567 con il numero d'ordine: vediamo cosa si può fare. Un'alternativa è rifare l'ordine con il metodo giusto."
+    - text: "Dopo la conferma il pagamento non si modifica da solo. Contatta l'assistenza il prima possibile (assistenza@gigigames.it, 071 123 4567, lun-ven 9:00-18:00) indicando il numero d'ordine e il metodo che vorresti usare: ti diciamo se è possibile."
+
+  utter_faq_pagamenti/metodi_non_accettati:
+    - text: "I metodi disponibili sono: Visa, Mastercard, Maestro, American Express, PayPal (anche «Paga in 3 rate»), Apple Pay, Google Pay, Satispay, bonifico e contrassegno. Altri metodi, come criptovalute, assegni o buoni di altro tipo, non risultano tra quelli attivi. Se hai un'esigenza particolare, scrivi a assistenza@gigigames.it."
+    - text: "Al momento puoi pagare con carte (Visa, Mastercard, Maestro, American Express), PayPal, Apple Pay, Google Pay, Satispay, bonifico e contrassegno. Non ho informazioni su altri metodi: per richieste particolari contatta assistenza@gigigames.it."
+
+  utter_faq_pagamenti/pagamento_combinato:
+    - text: "Al checkout si sceglie un solo metodo di pagamento per ordine, quindi dividere l'importo tra due carte o metodi non è previsto in modo automatico. Se hai un caso particolare (per esempio gift card o GIGI Punti insieme a un altro metodo), scrivi a assistenza@gigigames.it e ti diciamo come procedere."
+    - text: "Di norma un ordine si paga con un solo metodo. Per situazioni particolari, come dividere tra più persone o abbinare gift card e carta, contatta l'assistenza: assistenza@gigigames.it o 071 123 4567."
+
+  utter_faq_pagamenti/ricevuta:
+    - text: "Quando il pagamento va a buon fine ricevi una email di conferma con il riepilogo dell'ordine. Puoi ritrovarlo anche nell'area account, alla voce degli ordini. Se ti serve un documento fiscale, chiedi la fattura al checkout inserendo codice fiscale o partita IVA. Se la email non arriva, controlla lo spam o scrivi a assistenza@gigigames.it."
+    - text: "Dopo il pagamento ti arriva una email di conferma con il riepilogo. Trovi lo storico degli ordini anche nell'area account. Per un documento fiscale usa la fattura (codice fiscale o partita IVA al checkout). Se non ricevi niente, scrivi a assistenza@gigigames.it."

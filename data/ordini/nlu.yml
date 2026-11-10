@@ -1,0 +1,213 @@
+version: "3.1"
+
+nlu:
+- regex: numero_ordine
+  examples: |
+    - (#\s?)?\d{6}
+
+- intent: traccia_ordine
+  examples: |
+    - dov'e il mio ordine?
+    - vorrei sapere lo stato del mio ordine
+    - stato ordine
+    - tracciare un ordine
+    - voglio tracciare il mio ordine
+    - posso vedere a che punto e il mio ordine?
+    - controllare lo stato dell'ordine [482913](numero_ordine)
+    - a che punto e l'ordine [#482913](numero_ordine)?
+    - dov'e finito il mio pacco?
+    - dove si trova il pacco del mio ordine?
+    - ho fatto un ordine ieri, e stato spedito?
+    - il mio ordine e gia partito?
+    - mi dici lo stato dell'ordine [730155](numero_ordine)
+    - tracking del mio ordine per favore
+    - vorrei il codice di tracciamento del mio ordine
+    - che fine ha fatto l'ordine [#294871](numero_ordine)?
+    - quando arriva il mio ordine?
+    - quando mi arriva il pacco che ho ordinato?
+    - info sul mio ordine [608342](numero_ordine)
+    - ciao, vorrei sapere se il mio ordine e stato spedito
+    - ordine [#516204](numero_ordine) a che punto siamo?
+    - il mio ordine e stato confermato?
+    - verifica stato ordine
+    - dove e il mio pacco gigi games?
+    - a che punto e il mio ordine?
+    - voglio sapere a che punto e la mia spedizione
+    - dove si trova adesso il mio ordine?
+    - seguire il mio ordine
+
+- intent: annulla_ordine
+  examples: |
+    - vorrei annullare il mio ordine
+    - annulla l'ordine
+    - voglio annullare l'ordine [482913](numero_ordine)
+    - posso cancellare un ordine che ho fatto ieri?
+    - cancella il mio ordine per favore
+    - come faccio ad annullare un ordine?
+    - ho sbagliato ordine, lo vorrei annullare
+    - non voglio piu l'ordine, si puo annullare?
+    - annullamento ordine [#730155](numero_ordine)
+    - devo cancellare l'ordine che ho appena fatto
+    - e possibile annullare un ordine gia pagato?
+    - vorrei stornare il mio ordine
+    - mi sono pentito, voglio annullare l'ordine
+    - si puo cancellare l'ordine se e ancora in preparazione?
+    - annullate l'ordine [516204](numero_ordine) per favore
+    - ordine fatto per errore, cancellatelo
+    - posso annullare l'ordine dopo averlo spedito?
+    - voglio disdire il mio ordine
+    - elimina il mio ordine
+
+- intent: modifica_ordine
+  examples: |
+    - vorrei cambiare l'indirizzo di spedizione del mio ordine
+    - ho sbagliato indirizzo nell'ordine, posso correggerlo?
+    - posso modificare il mio ordine?
+    - voglio aggiungere un gioco al mio ordine
+    - si puo togliere un articolo dall'ordine che ho fatto?
+    - modificare ordine [482913](numero_ordine)
+    - devo cambiare l'indirizzo di consegna dell'ordine [#730155](numero_ordine)
+    - ho inserito il cap sbagliato nell'ordine
+    - posso cambiare il contenuto del mio ordine gia fatto?
+    - come cambio l'indirizzo di un ordine gia effettuato?
+    - vorrei spedire il mio ordine a un altro indirizzo
+    - ho ordinato il gioco sbagliato, posso cambiarlo prima che parta?
+    - aggiungere un'espansione a un ordine che ho gia fatto
+    - correzione dati di spedizione dell'ordine
+    - nell'ordine ho messo il numero civico sbagliato
+    - posso cambiare la quantita di un prodotto dell'ordine gia fatto?
+    - cambiare il mio ordine dopo l'acquisto
+    - l'indirizzo del mio ordine e errato, che faccio?
+
+- intent: ordine_in_ritardo
+  examples: |
+    - il mio ordine e in ritardo
+    - l'ordine non e ancora arrivato
+    - non mi e arrivato l'ordine
+    - e passata una settimana e il pacco non e arrivato
+    - il mio ordine [482913](numero_ordine) non arriva
+    - doveva arrivare ieri ma non ho ricevuto nulla
+    - il corriere non ha ancora consegnato il mio ordine
+    - ordine in ritardo, che succede?
+    - aspetto il mio ordine da giorni
+    - il pacco non e ancora arrivato, e normale?
+    - sono passati piu giorni di quelli previsti per il mio ordine
+    - ho ordinato giorni fa e ancora niente
+    - perche il mio ordine ci mette cosi tanto?
+    - l'ordine [#563390](numero_ordine) e in ritardo
+    - segna consegnato ma io non ho ricevuto il pacco
+    - ordine bloccato, non si muove da giorni
+    - il mio ordine non e mai arrivato
+    - non ho ricevuto il mio pacco nei tempi previsti
+    - il tracking e fermo da giorni, il mio ordine e perso?
+
+- intent: dai_dati_ordine
+  examples: |
+    - [#482913](numero_ordine)
+    - [482913](numero_ordine)
+    - il numero e [516204](numero_ordine)
+    - l'ordine [730155](numero_ordine)
+    - il mio ordine e il [#294871](numero_ordine)
+    - ordine numero [608342](numero_ordine)
+    - e il [351077](numero_ordine)
+    - [#119826](numero_ordine) grazie
+    - numero ordine [563390](numero_ordine)
+    - ordine [#175264](numero_ordine), email [marco.romano@example.com](email)
+    - il numero d'ordine e [402689](numero_ordine)
+    - ecco il numero: [#638015](numero_ordine)
+    - [925361](numero_ordine), email [rosa.lombardi@example.com](email)
+    - si tratta dell'ordine [771208](numero_ordine)
+    - numero [847520](numero_ordine)
+
+- intent: faq_ordini/email_conferma
+  examples: |
+    - non mi e arrivata l'email di conferma dell'ordine
+    - non ho ricevuto nessuna email di conferma
+    - ho fatto l'ordine ma la mail di conferma non e arrivata
+    - dove e finita la mail di conferma ordine?
+    - la conferma d'ordine non mi arriva
+    - non mi arriva l'email dopo l'acquisto
+    - ho comprato ma non ho ricevuto la conferma via email
+    - email di conferma non ricevuta
+    - dopo l'ordine non e arrivata nessuna mail
+    - non trovo la mail di conferma, forse e finita nello spam?
+    - quanto ci mette ad arrivare la mail di conferma dell'ordine?
+    - non ricevo le email del vostro negozio dopo l'ordine
+    - posso farmi rimandare l'email di conferma?
+    - ho sbagliato a scrivere l'email nell'ordine, non ricevo niente
+
+- intent: faq_ordini/dove_numero_ordine
+  examples: |
+    - dove trovo il numero d'ordine?
+    - non trovo il numero del mio ordine
+    - dove vedo il numero dell'ordine?
+    - ho perso il numero d'ordine
+    - come faccio a sapere il numero del mio ordine?
+    - non ricordo il numero ordine
+    - dov'e scritto il numero dell'ordine?
+    - dove lo trovo il codice del mio ordine?
+    - il numero d'ordine dove si legge?
+    - mi serve il numero ordine ma non so dove cercarlo
+    - ho comprato come ospite, come recupero il numero dell'ordine?
+    - quante cifre ha il numero d'ordine?
+    - come e fatto il numero di un ordine?
+
+- intent: faq_ordini/ordine_telefono
+  examples: |
+    - posso ordinare per telefono?
+    - si puo fare un ordine telefonicamente?
+    - posso fare l'ordine chiamandovi?
+    - accettate ordini via telefono?
+    - posso ordinare tramite whatsapp?
+    - si puo ordinare per email?
+    - potete prendere il mio ordine al telefono?
+    - non sono pratico di internet, posso ordinare chiamando?
+    - ordini telefonici possibili?
+    - posso dettarvi l'ordine via mail?
+    - e possibile ordinare in negozio e farlo spedire?
+    - si ordina solo dal sito?
+
+- intent: faq_ordini/tempi_preparazione
+  examples: |
+    - quanto tempo ci mettete a preparare l'ordine?
+    - in quanto tempo preparate un ordine?
+    - quanto passa prima che il mio ordine parta?
+    - quando viene spedito l'ordine dopo l'acquisto?
+    - ordino oggi, quando parte il pacco?
+    - tempi di preparazione dell'ordine
+    - ci vuole molto a preparare il pacco?
+    - ordino di sabato, quando lo spedite?
+    - se ordino nel weekend quando parte?
+    - quanto ci vuole prima della partenza del pacco?
+    - quanti giorni per evadere un ordine?
+    - preparate gli ordini in giornata?
+
+- intent: faq_ordini/stati_ordine
+  examples: |
+    - cosa significa in preparazione?
+    - che differenza c'e tra spedito e in consegna?
+    - cosa vuol dire in attesa di pagamento?
+    - quali sono gli stati di un ordine?
+    - cosa significa reso in corso?
+    - il mio ordine e in attesa di pagamento, che vuol dire?
+    - spiegami gli stati dell'ordine
+    - cosa vuol dire che l'ordine e in preparazione?
+    - che significano gli stati degli ordini?
+    - perche l'ordine risulta in attesa di pagamento?
+    - cosa vuol dire ordine spedito?
+    - come leggo lo stato del mio ordine?
+
+- intent: faq_ordini/piu_pacchi
+  examples: |
+    - perche il mio ordine arriva in piu pacchi?
+    - ho ordinato piu giochi ma ne e arrivato uno solo
+    - posso ricevere un ordine in due spedizioni?
+    - mi e arrivato solo un pacco su due
+    - il mio ordine e stato diviso in piu spedizioni?
+    - ho ricevuto solo una parte dell'ordine
+    - gli articoli del mio ordine partono separati?
+    - perche ho due tracking per un solo ordine?
+    - un gioco del mio ordine e arrivato e l'altro no
+    - l'ordine puo essere spedito a pezzi?
+    - se un gioco non e disponibile spedite il resto?
+    - ho ricevuto due pacchi per lo stesso ordine

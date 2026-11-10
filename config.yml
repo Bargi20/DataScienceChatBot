@@ -1,0 +1,61 @@
+# The config recipe.
+# https://rasa.com/docs/rasa/model-configuration/
+recipe: default.v1
+
+# The assistant project unique identifier
+# This default value must be replaced with a unique assistant name within your deployment
+assistant_id: 20261108-213907-every-lintel
+
+# Configuration for Rasa NLU.
+# https://rasa.com/docs/rasa/nlu/components/
+language: it
+
+pipeline:
+  - name: WhitespaceTokenizer
+  # Regex (numero d'ordine, email) e lookup table (nomi dei giochi, editori, destinazioni)
+  # diventano caratteristiche per DIET, senza distinguere maiuscole e minuscole
+  - name: RegexFeaturizer
+    case_sensitive: false
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: char_wb
+    min_ngram: 1
+    max_ngram: 4
+  # Intent principali ed entità annotate negli esempi
+  - name: DIETClassifier
+    epochs: 150
+    constrain_similarities: true
+  # Estrae le entità anche da regex e lookup table: nomi dei giochi del catalogo,
+  # numeri d'ordine ed email vengono riconosciuti anche se non compaiono negli esempi
+  - name: RegexEntityExtractor
+    case_sensitive: false
+    use_lookup_tables: true
+    use_regexes: true
+    use_word_boundaries: true
+  - name: EntitySynonymMapper
+  # Un solo ResponseSelector per tutte le domande frequenti (faq_giochi, faq_spedizioni, ...):
+  # DIET sceglie l'area, il selettore sceglie la domanda precisa tra tutte le 143.
+  # Con un selettore unico, se DIET confonde due aree vicine (es. spedizioni e negozio) la
+  # risposta scelta resta quella giusta, e il modello è molto più leggero e veloce da addestrare
+  # rispetto a un selettore per area (con otto selettori il modello superava i 490 MB).
+  - name: ResponseSelector
+    epochs: 100
+    constrain_similarities: true
+  # Sotto questa confidenza l'intent diventa nlu_fallback -> utter_default
+  - name: FallbackClassifier
+    threshold: 0.3
+    ambiguity_threshold: 0.1
+
+# Configuration for Rasa Core.
+# https://rasa.com/docs/rasa/core/policies/
+policies:
+  - name: MemoizationPolicy
+  - name: RulePolicy
+    core_fallback_threshold: 0.3
+    core_fallback_action_name: action_default_fallback
+    enable_fallback_prediction: true
+  - name: TEDPolicy
+    max_history: 5
+    epochs: 100
+    constrain_similarities: true

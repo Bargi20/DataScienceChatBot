@@ -1,0 +1,97 @@
+version: "3.1"
+
+rules:
+
+- rule: Descrivi un gioco
+  steps:
+  - intent: info_gioco
+  - action: action_info_gioco
+
+- rule: Dì il prezzo di un gioco
+  steps:
+  - intent: chiedi_prezzo
+  - action: action_chiedi_prezzo
+
+- rule: Dì se un gioco è disponibile
+  steps:
+  - intent: chiedi_disponibilita
+  - action: action_chiedi_disponibilita
+
+- rule: Dì in quanti si gioca
+  steps:
+  - intent: chiedi_giocatori
+  - action: action_chiedi_giocatori
+
+- rule: Dì quanto dura una partita
+  steps:
+  - intent: chiedi_durata
+  - action: action_chiedi_durata
+
+- rule: Dì l'età consigliata
+  steps:
+  - intent: chiedi_eta
+  - action: action_chiedi_eta
+
+- rule: Dì quanto è difficile un gioco
+  steps:
+  - intent: chiedi_difficolta
+  - action: action_chiedi_difficolta
+
+- rule: Dì editore e autore
+  steps:
+  - intent: chiedi_editore_autore
+  - action: action_chiedi_editore_autore
+
+- rule: Dì in che lingua è un gioco
+  steps:
+  - intent: chiedi_lingua
+  - action: action_chiedi_lingua
+
+- rule: Mostra le espansioni di un gioco
+  steps:
+  - intent: chiedi_espansioni
+  - action: action_chiedi_espansioni
+
+- rule: Confronta due giochi
+  steps:
+  - intent: confronta_giochi
+  - action: action_confronta_giochi
+
+- rule: Mostra i giochi di una categoria
+  steps:
+  - intent: cerca_categoria
+  - action: action_cerca_categoria
+
+- rule: Mostra i giochi di un editore
+  steps:
+  - intent: cerca_editore
+  - action: action_cerca_editore
+
+- rule: Mostra le offerte
+  steps:
+  - intent: mostra_offerte
+  - action: action_mostra_offerte
+
+- rule: Mostra le novità
+  steps:
+  - intent: mostra_novita
+  - action: action_mostra_novita
+
+- rule: Mostra i giochi più apprezzati
+  steps:
+  - intent: mostra_piu_apprezzati
+  - action: action_mostra_piu_apprezzati
+
+- rule: Mostra gli accessori
+  steps:
+  - intent: mostra_accessori
+  - action: action_mostra_accessori
+
+# Solo il nome di un gioco: risponde all'ultima domanda sul catalogo o mostra la scheda.
+# Fuori dai form, così non ruba la risposta a un form di un'altra area.
+- rule: L'utente indica un gioco
+  condition:
+  - active_loop: null
+  steps:
+  - intent: indica_gioco
+  - action: action_indica_gioco

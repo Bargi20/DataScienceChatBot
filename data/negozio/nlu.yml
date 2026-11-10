@@ -1,0 +1,511 @@
+version: "3.1"
+
+nlu:
+- intent: faq_negozio/orari
+  examples: |
+    - che orari avete?
+    - quali sono gli orari di apertura del negozio?
+    - orari del negozio fisico
+    - a che ora aprite?
+    - a che ora chiudete la sera?
+    - fate orario continuato?
+    - siete aperti il lunedi?
+    - il sabato fino a che ora siete aperti?
+    - avete la pausa pranzo?
+    - mi dite gli orari per favore
+    - quando siete aperti in negozio?
+    - orari apertura Ancona
+    - il negozio di mattina e aperto?
+    - di pomeriggio a che ora riaprite?
+    - volevo sapere gli orari del negozio, grazie
+    - orario di chiusura?
+
+- intent: faq_negozio/domenica
+  examples: |
+    - siete aperti la domenica?
+    - la domenica aprite?
+    - domenica il negozio e aperto?
+    - aprite anche nel weekend?
+    - posso passare domenica a vedere i giochi?
+    - la domenica siete chiusi?
+    - c'e qualche giorno di chiusura settimanale?
+    - che giorno siete chiusi?
+    - siete aperti anche la domenica pomeriggio?
+    - domenica mattina posso venire in negozio?
+    - il weekend siete aperti?
+    - la domenica fate apertura?
+    - il sabato siete aperti? e la domenica?
+    - quali giorni siete chiusi?
+
+- intent: faq_negozio/indirizzo
+  examples: |
+    - dove si trova il negozio?
+    - qual e l'indirizzo del negozio?
+    - dove siete?
+    - in che via siete?
+    - indirizzo negozio fisico
+    - dove vi trovo ad Ancona?
+    - avete un negozio fisico?
+    - esiste un punto vendita?
+    - mi dai l'indirizzo per favore?
+    - in che citta e il negozio?
+    - dove posso venire a trovarvi?
+    - siete solo online o avete anche un negozio?
+    - voglio passare in negozio, dove siete?
+    - in che zona di Ancona siete?
+    - mi potete dire dove e il vostro negozio?
+
+- intent: faq_negozio/come_arrivare
+  examples: |
+    - come arrivo al negozio?
+    - come si raggiunge il negozio?
+    - c'e parcheggio vicino al negozio?
+    - dove posso parcheggiare?
+    - si arriva facilmente dalla stazione?
+    - ci sono mezzi pubblici per arrivare da voi?
+    - sono in macchina, dove lascio l'auto?
+    - e vicino al centro?
+    - si trova vicino al parcheggio?
+    - come ci arrivo dalla stazione di Ancona?
+    - ci si arriva a piedi dal centro?
+    - indicazioni per raggiungervi
+    - c'e la zona ZTL vicino a voi?
+    - quale autobus devo prendere per arrivare?
+    - avete un parcheggio per i clienti?
+
+- intent: faq_negozio/telefono
+  examples: |
+    - qual e il vostro numero di telefono?
+    - posso telefonarvi?
+    - mi dai un numero da chiamare?
+    - numero di telefono del negozio
+    - come vi chiamo?
+    - avete un recapito telefonico?
+    - vorrei chiamarvi, che numero devo fare?
+    - telefono assistenza
+    - numero per telefonare in negozio
+    - posso chiamarvi per informazioni?
+    - a che numero vi trovo?
+    - recapito telefonico per favore
+    - c'e un numero fisso?
+    - mi passate il numero?
+
+- intent: faq_negozio/email
+  examples: |
+    - qual e la vostra email?
+    - a che indirizzo email posso scrivervi?
+    - mi dai la mail dell'assistenza?
+    - voglio mandarvi una email
+    - email di contatto
+    - come vi scrivo una mail?
+    - indirizzo mail per l'assistenza
+    - in quanto tempo rispondete alle email?
+    - quanto ci mettete a rispondere alla mail?
+    - ho scritto una mail ma nessuno mi ha risposto
+    - posso contattarvi via posta elettronica?
+    - mail assistenza clienti
+    - avete un indirizzo e-mail?
+    - a chi scrivo per avere informazioni?
+
+- intent: faq_negozio/whatsapp
+  examples: |
+    - avete WhatsApp?
+    - posso scrivervi su WhatsApp?
+    - numero whatsapp
+    - mi date il vostro whatsapp?
+    - potete rispondermi su whatsapp?
+    - si puo contattarvi con whatsapp?
+    - qual e il numero WhatsApp del negozio?
+    - vi posso mandare un messaggio su whatsapp?
+    - preferisco scrivervi su whatsapp, si puo?
+    - contatto whatsapp
+    - fate assistenza via whatsapp?
+    - mandate messaggi su wapp?
+    - posso mandarvi una foto su whatsapp?
+    - c'e un numero per i messaggi?
+
+- intent: faq_negozio/social
+  examples: |
+    - avete Instagram?
+    - siete su Facebook?
+    - come vi trovo sui social?
+    - qual e la vostra pagina Instagram?
+    - social del negozio
+    - avete una pagina facebook?
+    - come vi seguo su instagram?
+    - siete presenti sui social network?
+    - dove posso seguirvi per le novita?
+    - avete un profilo instagram?
+    - come si chiama la vostra pagina?
+    - voglio seguirvi sui social
+    - avete anche tiktok?
+    - link ai vostri social
+
+- intent: faq_negozio/chi_siamo
+  examples: |
+    - chi siete?
+    - parlami di GIGI Games
+    - cos'e GIGI Games?
+    - chi c'e dietro il negozio?
+    - raccontami qualcosa su di voi
+    - che negozio siete?
+    - di cosa vi occupate?
+    - cosa vendete?
+    - da quanto tempo esistete?
+    - chi siamo?
+    - cosa fa GIGI Games?
+    - mi spiegate chi siete?
+    - siete un negozio di giochi da tavolo?
+    - vorrei sapere qualcosa di piu sul negozio
+    - presentatevi
+
+- intent: faq_negozio/provare_giochi
+  examples: |
+    - posso provare i giochi in negozio?
+    - si possono provare i giochi prima di comprarli?
+    - avete un tavolo per provare i giochi?
+    - posso giocare in negozio?
+    - c'e un'area gioco?
+    - posso fare una partita di prova?
+    - prima di comprare posso vederlo giocare?
+    - fate dimostrazioni dei giochi?
+    - ci sono tavoli demo?
+    - posso aprire la scatola per provare il gioco?
+    - qualcuno mi spiega le regole in negozio?
+    - posso venire a provare un gioco prima di acquistarlo?
+    - c'e qualcuno che mi insegna a giocare?
+    - quando posso provare un gioco da voi?
+    - si puo giocare nel vostro negozio?
+
+- intent: faq_negozio/serate_tornei
+  examples: |
+    - fate serate di gioco?
+    - organizzate tornei?
+    - c'e una serata di gioco libero?
+    - ogni quanto fate i tornei?
+    - come partecipo a un torneo?
+    - la serata del venerdi come funziona?
+    - serve prenotare per la serata di gioco?
+    - la serata di gioco e a pagamento?
+    - posso venire da solo alla serata di gioco?
+    - ci sono serate a tema?
+    - fate tornei ogni mese?
+    - come funzionano i vostri tornei?
+    - mi iscrivo alla serata del venerdi?
+    - voglio partecipare a un torneo, cosa devo fare?
+    - e una serata per tutti o solo per esperti?
+    - avete un gruppo di giocatori?
+
+- intent: faq_negozio/preordini
+  examples: |
+    - posso preordinare un gioco?
+    - come funzionano i preordini?
+    - quando pago un preordine?
+    - il gioco non e ancora uscito, posso prenotarlo?
+    - preordine come si fa?
+    - se preordino, quando mi arriva?
+    - ho un preordine e un altro prodotto disponibile, partono insieme?
+    - il preordine ha costi aggiuntivi?
+    - posso prenotare le novita in anticipo?
+    - il preordine si paga subito?
+    - come prenoto un gioco in uscita?
+    - vorrei preordinare un gioco in uscita
+    - spedite il preordine appena esce?
+    - posso mettere un preordine insieme ad altri giochi?
+    - quando spedite i giochi in preordine?
+    - come vengono spedite le prenotazioni
+    - quando spedite un preordine
+    - il preordine paga la spedizione
+    - preordino un gioco, quando arriva
+    - ho ordinato un gioco in preordine e uno disponibile, come li spedite
+    - spedizione dei preordini
+    - il preordine viene spedito subito
+    - se preordino pago la spedizione due volte
+    - ordine con preordine e prodotti disponibili
+    - il mio gioco in preordine parte con gli altri
+    - quando spedite un gioco in prenotazione
+    - costi aggiuntivi per il preordine
+    - il preordine parte alla data di uscita
+    - se aggiungo un preordine al carrello ritarda tutto
+    - i preordini si spediscono insieme agli altri articoli
+    - il preordine arriva separato
+    - spedizione di un gioco non ancora uscito
+
+- intent: faq_negozio/confezione_regalo
+  examples: |
+    - fate la confezione regalo?
+    - quanto costa il pacchetto regalo?
+    - posso avere il gioco incartato?
+    - e possibile mettere un biglietto di auguri?
+    - il biglietto personalizzato costa?
+    - voglio regalare un gioco, lo impacchettate?
+    - avete la carta regalo?
+    - posso scrivere una dedica nel biglietto?
+    - e un regalo, potete confezionarlo?
+    - quanto costa la confezione regalo?
+    - come aggiungo la confezione regalo all'ordine?
+    - si puo aggiungere un messaggio al regalo?
+    - impacchettate i regali?
+    - il prezzo dentro il pacco si vede?
+    - biglietto di auguri per un regalo
+
+- intent: faq_negozio/usato_permute
+  examples: |
+    - vendete giochi usati?
+    - fate permute?
+    - posso vendervi un gioco che non uso piu?
+    - ritirate l'usato?
+    - accettate giochi usati in cambio?
+    - avete un angolo dell'usato?
+    - compro giochi di seconda mano da voi?
+    - posso scambiare il mio gioco con uno nuovo?
+    - comprate giochi usati?
+    - si puo portare un gioco usato in negozio?
+    - fate scambi di giochi?
+    - voglio vendere la mia collezione
+    - esiste il mercatino dell'usato?
+    - valutate giochi usati?
+    - cerco un gioco usato, ce l'avete?
+
+- intent: faq_negozio/b2b
+  examples: |
+    - ho una ludoteca, fate condizioni per noi?
+    - avete sconti per associazioni?
+    - sono un insegnante, posso avere condizioni per la scuola?
+    - fate prezzi per scuole?
+    - vorrei fare un ordine per la mia associazione
+    - come ordino per una ludoteca?
+    - offrite sconti per ordini all'ingrosso?
+    - sono il referente di un'associazione, a chi scrivo?
+    - mi serve un preventivo per una scuola
+    - avete condizioni dedicate per i gruppi?
+    - ordine per l'oratorio, come faccio?
+    - fornite biblioteche e centri educativi?
+    - vendete all'ingrosso?
+    - ho un'attivita, posso avere un listino?
+    - prezzi riservati per ludoteche
+
+- intent: faq_negozio/lavora_con_noi
+  examples: |
+    - assumete personale?
+    - lavora con noi
+    - cercate commessi?
+    - posso mandarvi il curriculum?
+    - come mi candido per lavorare da voi?
+    - ci sono posizioni aperte?
+    - sto cercando lavoro, avete bisogno di qualcuno?
+    - vorrei lavorare in negozio
+    - a che indirizzo mando il cv?
+    - fate selezioni?
+    - cercate collaboratori?
+    - posso fare uno stage da voi?
+    - mi piacerebbe far parte del vostro team
+    - avete offerte di lavoro?
+    - candidatura spontanea, a chi la mando?
+
+- intent: faq_negozio/feste_eventi_privati
+  examples: |
+    - organizzate feste di compleanno?
+    - posso fare una festa di compleanno in negozio?
+    - si puo affittare il negozio per un evento privato?
+    - fate eventi privati?
+    - vorrei organizzare una serata di giochi con gli amici da voi
+    - avete pacchetti per le feste dei bambini?
+    - possiamo fare il compleanno di mio figlio da voi?
+    - si possono prenotare i tavoli per un gruppo?
+    - fate team building aziendali?
+    - posso prenotare un tavolo per un evento?
+    - festeggiate compleanni con giochi da tavolo?
+    - serve un animatore per una festa a tema giochi, lo fornite?
+    - ospitate eventi per gruppi?
+    - vorrei prenotare il negozio per una festa
+
+- intent: faq_negozio/sconti_studenti
+  examples: |
+    - fate sconti per studenti?
+    - c'e uno sconto studenti?
+    - avete convenzioni?
+    - sconti per universitari?
+    - ci sono agevolazioni per chi ha una tessera?
+    - avete convenzioni con associazioni o circoli?
+    - sconto per insegnanti?
+    - fate prezzi speciali per i soci?
+    - esistono sconti per i gruppi?
+    - ho la tessera studente, ho diritto a uno sconto?
+    - avete affiliazioni con altri negozi o club?
+    - ci sono sconti per chi compra tanti giochi?
+    - sconto per i militari o per le famiglie numerose?
+    - agevolazioni per ragazzi under 25?
+
+- intent: faq_negozio/festivi
+  examples: |
+    - siete aperti a Natale?
+    - aprite il giorno di Pasqua?
+    - a Ferragosto siete aperti?
+    - siete aperti nei giorni festivi?
+    - orari durante le feste?
+    - il primo gennaio siete aperti?
+    - fate ferie ad agosto?
+    - chiudete per le vacanze estive?
+    - siete aperti il 25 aprile?
+    - ci sono chiusure straordinarie?
+    - aprite il giorno dell'Immacolata?
+    - orario speciale per il periodo natalizio?
+    - il 2 giugno siete aperti?
+    - nei ponti festivi aprite?
+
+- intent: faq_negozio/prodotti_in_negozio
+  examples: |
+    - in negozio avete gli stessi giochi che ci sono online?
+    - posso vedere dal vivo un gioco prima di comprarlo online?
+    - un gioco del sito lo trovo anche in negozio?
+    - posso vedere la scatola di un gioco in negozio?
+    - i prezzi in negozio sono uguali a quelli online?
+    - in negozio c'e tutto il catalogo?
+    - posso comprare in negozio quello che vedo sul sito?
+    - il negozio fisico vende gli stessi prodotti dell'e-shop?
+    - se un gioco e disponibile online lo e anche in negozio?
+    - posso toccare con mano i giochi prima di ordinare?
+    - avete l'intero assortimento anche in negozio?
+    - vorrei vedere un gioco di persona
+    - ci sono giochi in esposizione?
+    - le offerte del sito valgono anche in negozio?
+
+- intent: chiedi_apertura_adesso
+  examples: |
+    - siete aperti adesso?
+    - il negozio e aperto in questo momento?
+    - siete aperti ora?
+    - e aperto oggi il negozio?
+    - posso passare adesso in negozio?
+    - aprite oggi?
+    - siete aperti stasera?
+    - il negozio e aperto in questo istante?
+    - a quest'ora siete aperti?
+    - oggi siete aperti o chiusi?
+    - se vengo adesso trovo il negozio aperto?
+    - siete ancora aperti?
+    - e ancora aperto il negozio?
+    - sto arrivando, siete aperti?
+    - ora siete aperti?
+    - oggi pomeriggio siete aperti?
+    - quando riaprite?
+    - il negozio fisico e aperto?
+    - ma adesso siete aperti o no?
+
+- intent: chiedi_eventi
+  examples: |
+    - quali sono i prossimi eventi?
+    - che eventi ci sono in negozio?
+    - ci sono eventi in programma?
+    - quando e il prossimo torneo?
+    - prossimi tornei
+    - cosa c'e in programma questo mese?
+    - calendario degli eventi
+    - quali tornei organizzate nei prossimi mesi?
+    - c'e qualche presentazione in arrivo?
+    - eventi di questo mese
+    - c'e qualcosa in negozio nei prossimi giorni?
+    - avete eventi a tema?
+    - mostrami gli eventi
+    - quando e la prossima serata di gioco?
+    - quando c'e il tavolo demo?
+    - cosa organizzate prossimamente?
+    - eventi in negozio
+    - date dei prossimi tornei
+    - lista eventi
+    - quali eventi ci sono prossimamente?
+    - che eventi ci sono in negozio questo mese?
+    - eventi in programma da voi
+    - ci sono eventi questo weekend?
+
+- intent: chiedi_operatore
+  examples: |
+    - voglio parlare con una persona
+    - operatore
+    - c'e un umano con cui parlare?
+    - vorrei parlare con un operatore
+    - passami un operatore
+    - mi serve una persona vera
+    - posso parlare con qualcuno dell'assistenza?
+    - non voglio parlare con un bot, voglio un operatore
+    - mi metti in contatto con una persona?
+    - c'e qualcuno che mi puo rispondere?
+    - parlo con un operatore umano?
+    - assistenza umana
+    - voglio parlare con un addetto
+    - mi passate un operatore per favore
+    - c'e un operatore disponibile?
+    - ho bisogno di parlare con un essere umano
+    - fammi parlare con qualcuno in carne e ossa
+    - mi trasferisci a un operatore?
+    - voglio il servizio clienti
+    - posso parlare con un responsabile?
+    - a che ora risponde l'assistenza?
+    - orari dell'assistenza clienti
+    - fino a che ora sono disponibili gli operatori?
+    - quando posso telefonare all'assistenza?
+    - l'assistenza lavora il sabato?
+    - gli operatori rispondono di domenica?
+    - dalle 9 alle 18 l'assistenza c'e?
+    - in quali giorni risponde il servizio clienti?
+    - orario del servizio clienti
+    - assistenza aperta anche la sera?
+    - in che orari posso contattare il supporto?
+    - il supporto clienti c'e nel weekend?
+    - a che ora apre l'assistenza telefonica?
+    - quando rispondono su whatsapp?
+
+- intent: fai_reclamo
+  examples: |
+    - voglio fare un reclamo
+    - sono molto insoddisfatto del servizio
+    - il vostro servizio e stato pessimo
+    - non sono contento del vostro servizio
+    - vorrei lamentarmi
+    - ho una lamentela da fare
+    - sono deluso dal servizio clienti
+    - siete stati poco professionali
+    - nessuno mi risponde, e un servizio scadente
+    - vorrei presentare un reclamo formale
+    - il servizio e stato davvero deludente
+    - non e la prima volta, il servizio fa schifo
+    - sono arrabbiato con il vostro negozio
+    - mi sono trovato male con voi
+    - esperienza negativa con GIGI Games
+    - voglio lamentarmi di come mi avete trattato
+    - il personale in negozio e stato scortese
+    - mi avete trattato male
+    - siete lenti a rispondere e non mi sento ascoltato
+    - che pessima esperienza d'acquisto
+
+- intent: lascia_feedback
+  examples: |
+    - voglio lasciare un feedback
+    - vorrei dare un voto al servizio
+    - posso lasciare una recensione?
+    - lasciare un commento sul negozio
+    - voglio valutare il servizio
+    - feedback
+    - vorrei darvi un voto
+    - mi piacerebbe lasciare un parere su di voi
+    - come posso valutarvi?
+    - voglio darvi una recensione
+    - ho un suggerimento da darvi
+    - posso dare un giudizio sul vostro servizio?
+    - vorrei valutare la mia esperienza
+    - lascio un feedback sul negozio
+    - fammi dare un voto
+
+- intent: dai_voto_negozio
+  examples: |
+    - [5](negozio_voto)
+    - [4](negozio_voto)
+    - [3](negozio_voto)
+    - [2](negozio_voto)
+    - [1](negozio_voto)
+    - do [4](negozio_voto) stelle
+    - voto [5](negozio_voto)
+    - [3](negozio_voto) su 5
+    - il mio voto e [2](negozio_voto)
+    - direi [4](negozio_voto)

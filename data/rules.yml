@@ -1,0 +1,124 @@
+version: "3.1"
+
+rules:
+
+- rule: Messaggio di benvenuto quando si avvia il bot su Telegram
+  steps:
+  - intent: start
+  - action: utter_welcome
+
+- rule: Saluta quando l'utente saluta
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Saluta quando l'utente se ne va
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Rispondi quando l'utente sta bene
+  steps:
+  - intent: mood_great
+  - action: utter_happy
+
+- rule: Tira su l'utente quando è giù
+  steps:
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+
+- rule: L'incoraggiamento ha funzionato
+  steps:
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- rule: L'incoraggiamento non ha funzionato
+  steps:
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_sorry
+
+# «sì» e «no» senza una domanda in sospeso. Le regole che rispondono a una domanda precisa
+# (utter_did_that_help, svuotare il carrello, annullare un ordine) cominciano con l'azione
+# che ha fatto la domanda: sono più lunghe di queste e quindi hanno la precedenza.
+- rule: Sì detto senza una domanda in sospeso
+  steps:
+  - intent: affirm
+  - action: utter_risposta_si
+
+- rule: No detto senza una domanda in sospeso
+  steps:
+  - intent: deny
+  - action: utter_risposta_no
+
+- rule: Dì di essere un bot
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Rispondi ai ringraziamenti
+  steps:
+  - intent: thanks
+  - action: utter_thanks
+
+- rule: Rispondi a come stai
+  steps:
+  - intent: how_are_you
+  - action: utter_how_are_you
+
+- rule: Dì come ti chiami
+  steps:
+  - intent: ask_name
+  - action: utter_ask_name
+
+- rule: Saluta l'utente per nome
+  steps:
+  - intent: tell_name
+  - action: action_nice_to_meet
+
+- rule: Spiega cosa sai fare
+  steps:
+  - intent: ask_capabilities
+  - action: utter_capabilities
+
+- rule: Dì chi ti ha creato
+  steps:
+  - intent: ask_creator
+  - action: utter_creator
+
+- rule: Racconta una barzelletta
+  steps:
+  - intent: tell_joke
+  - action: utter_joke
+
+- rule: Dì che ore sono
+  steps:
+  - intent: ask_time
+  - action: action_tell_time
+
+- rule: Dì che giorno è
+  steps:
+  - intent: ask_date
+  - action: action_tell_date
+
+- rule: Ringrazia per i complimenti
+  steps:
+  - intent: compliment
+  - action: utter_compliment_response
+
+- rule: Rispondi con calma agli insulti
+  steps:
+  - intent: insult
+  - action: utter_insult_response
+
+- rule: Rispondi alle richieste fuori tema
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- rule: Chiedi di riformulare quando non capisci
+  steps:
+  - intent: nlu_fallback
+  - action: utter_default

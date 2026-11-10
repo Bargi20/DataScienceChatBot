@@ -1,0 +1,36 @@
+version: "3.1"
+
+stories:
+- story: metodi di pagamento
+  steps:
+  - user: |
+      che metodi di pagamento accettate?
+    intent: faq_pagamenti
+  - action: utter_faq_pagamenti
+
+- story: pagamento rifiutato
+  steps:
+  - user: |
+      la carta viene rifiutata
+    intent: faq_pagamenti
+  - action: utter_faq_pagamenti
+
+- story: codice sconto non funziona
+  steps:
+  - user: |
+      il codice [BENVENUTO10](codice_sconto) non funziona
+    intent: faq_pagamenti
+    entities:
+    - codice_sconto: BENVENUTO10
+  - action: utter_faq_pagamenti
+
+- story: gift card e fattura
+  steps:
+  - user: |
+      avete le gift card?
+    intent: faq_pagamenti
+  - action: utter_faq_pagamenti
+  - user: |
+      posso avere la fattura?
+    intent: faq_pagamenti
+  - action: utter_faq_pagamenti

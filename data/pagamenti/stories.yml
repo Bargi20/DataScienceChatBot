@@ -1,0 +1,9 @@
+version: "3.1"
+
+stories:
+- story: domande sui pagamenti di seguito
+  steps:
+  - intent: faq_pagamenti
+  - action: utter_faq_pagamenti
+  - intent: faq_pagamenti
+  - action: utter_faq_pagamenti

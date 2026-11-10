@@ -1,0 +1,34 @@
+version: "3.1"
+
+rules:
+- rule: Rispondi alle FAQ su resi e garanzia
+  steps:
+  - intent: faq_resi
+  - action: utter_faq_resi
+
+- rule: Avvia la segnalazione di un problema con un ordine
+  steps:
+  - intent: segnala_problema_ordine
+  - action: segnalazione_form
+  - active_loop: segnalazione_form
+
+- rule: Completa la segnalazione e crea la pratica
+  condition:
+  - active_loop: segnalazione_form
+  steps:
+  - action: segnalazione_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_resi_crea_pratica
+
+- rule: Esci dalla segnalazione
+  condition:
+  - active_loop: segnalazione_form
+  steps:
+  - intent: interrompi
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_resi_annulla_segnalazione

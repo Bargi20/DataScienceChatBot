@@ -1,0 +1,12 @@
+version: "3.1"
+
+stories:
+  - story: costo di spedizione e poi calcolo
+    steps:
+      - intent: faq_spedizioni
+      - action: utter_faq_spedizioni
+      - intent: calcola_spedizione
+        entities:
+          - budget: 35 euro
+          - destinazione_spedizione: sardegna
+      - action: action_calcola_spedizione

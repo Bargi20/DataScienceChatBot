@@ -1,0 +1,522 @@
+version: "3.1"
+
+nlu:
+  - intent: faq_spedizioni/costo_standard
+    examples: |
+      - quanto costa la spedizione
+      - quanto costa spedire in italia
+      - che costi di spedizione avete
+      - costo spedizione?
+      - quanto si paga di spedizione
+      - la spedizione quanto viene
+      - quanto mi costa farmi arrivare il pacco a casa
+      - mi dite le spese di spedizione per favore
+      - quanto e la spedizione standard
+      - spese di spedizione
+      - ci sono costi di spedizione
+      - per spedire un gioco quanto devo pagare
+      - vorrei sapere quanto costa la consegna
+      - quanto costa la consegna a domicilio
+      - prima di ordinare vorrei sapere le tariffe di spedizione
+      - quanto spendo in piu per la spedizione
+      - spedizione quanto?
+      - quanto costa il corriere
+
+  - intent: faq_spedizioni/tempi_standard
+    examples: |
+      - quanto ci mette ad arrivare
+      - in quanti giorni arriva il pacco
+      - quanto tempo ci vuole per la consegna
+      - tempi di consegna
+      - quando arriva il mio ordine se ordino oggi
+      - tra quanto mi arriva
+      - ci mette tanto la spedizione
+      - quanti giorni lavorativi per la consegna
+      - in quanto tempo consegnate
+      - consegna in quanti giorni
+      - entro quando arriva se ordino adesso
+      - quanto devo aspettare per ricevere il gioco
+      - tempi di spedizione in italia
+      - e vero che arriva in 2-4 giorni
+      - vorrei sapere i tempi di consegna prima di ordinare
+      - quanto ci mette un pacco a ariivare
+      - mi serve sapere quando arriva
+      - la consegna e veloce?
+
+  - intent: faq_spedizioni/gratis_soglia
+    examples: |
+      - spedizione gratuita
+      - da quanto e gratis la spedizione
+      - avete la spedizione gratis
+      - soglia per la spedizione gratuita
+      - quanto devo spendere per non pagare la spedizione
+      - spedizione gratis sopra quanto
+      - con che importo non pago la spedizione
+      - la spedizione e gratuita se spendo 50 euro
+      - c'e un minimo per spedire gratis
+      - spese di spedizione gratis da che cifra
+      - se compro un gioco da 30 euro pago la spedizione
+      - spedizione offerta?
+      - quando la spedizione e gratuita
+      - ordine minimo per consegna gratuita
+      - per avere la spedizione omaggio cosa devo fare
+      - free shipping?
+      - per quanto spendo non pago il trasporto
+      - mi manca poco per la spedizione gratis, qual e la soglia
+
+  - intent: faq_spedizioni/express
+    examples: |
+      - fate spedizioni espresse
+      - spedizione express
+      - mi serve il pacco in fretta
+      - si puo avere la consegna in 24 ore
+      - consegna veloce
+      - quanto costa la spedizione espressa
+      - spedizione urgente
+      - posso ricevere il gioco entro domani
+      - avete un servizio di consegna rapida
+      - c'e la spedizione 24/48 ore
+      - mi serve entro due giorni, come faccio
+      - corriere espresso quanto costa
+      - vorrei spedizione piu veloce
+      - e un regalo urgente, in quanto arriva con l'express
+      - esiste una consegna prioritaria
+      - per arrivare prima che opzione devo scegliere
+      - express quanto costa e quanto ci mette
+      - consegna in giornata?
+
+  - intent: faq_spedizioni/isole_calabria
+    examples: |
+      - spedite in sardegna
+      - consegnate in sicilia
+      - fate spedizioni in calabria
+      - abito in sardegna, quanto costa la spedizione
+      - vivo in sicilia e vorrei ordinare, quanto ci mette
+      - spedizione isole
+      - per le isole c'e un supplemento
+      - ci sono costi extra per la sardegna
+      - spedizioni in calabria tempi
+      - quanto ci mette ad arrivare in sicilia
+      - la sardegna costa di piu per la spedizione?
+      - consegnate anche nelle isole minori
+      - abito a cagliari, spedite li
+      - sono di palermo, i tempi di consegna sono uguali
+      - spedizione per messina
+      - e a reggio calabria arriva?
+      - per le isole la consegna e piu lenta?
+      - ordino da catania, quanto pago di spedizione
+
+  - intent: faq_spedizioni/ue
+    examples: |
+      - spedite in europa
+      - consegnate in germania
+      - spedizioni nell'unione europea
+      - quanto costa spedire in francia
+      - vivo in spagna, posso ordinare
+      - spedizione estero europa
+      - fate spedizioni verso altri paesi europei
+      - quanto ci mette un pacco in austria
+      - spedizione ue costi
+      - spedite anche in olanda
+      - spedizione gratuita europa
+      - da quanto e gratis la spedizione per l'ue
+      - abito in belgio e vorrei comprare un gioco
+      - posso farmi spedire il gioco a berlino
+      - consegna in portogallo
+      - tempi di consegna europa
+      - spedizione internazionale
+      - spedite all'estero?
+
+  - intent: faq_spedizioni/extra_ue
+    examples: |
+      - spedite negli stati uniti
+      - consegnate in svizzera
+      - fate spedizioni nel regno unito
+      - spedite in america
+      - posso ordinare dagli usa
+      - vivo in svizzera, mi spedite il pacco
+      - spedizioni fuori europa
+      - consegnate extra ue
+      - spedite in inghilterra dopo la brexit
+      - spedite in canada
+      - avete spedizioni in australia
+      - mi serve la spedizione in norvegia
+      - spedizione in giappone
+      - spedite in paesi che non sono nell'unione europea
+      - vivo a londra, posso comprare da voi
+      - consegna in albania
+      - fuori dall'ue spedite?
+      - spedizioni internazionali extraeuropee
+
+  - intent: faq_spedizioni/ritiro_negozio
+    examples: |
+      - posso ritirare in negozio
+      - ritiro in negozio
+      - si puo ritirare di persona
+      - posso passare a prendere l'ordine in negozio
+      - ritiro in sede costi
+      - click and collect
+      - ordino online e ritiro da voi?
+      - ritirare il gioco ad ancona
+      - quanto costa il ritiro in negozio
+      - dopo quanto e pronto per il ritiro
+      - se scelgo il ritiro in negozio pago la spedizione
+      - abito vicino ad ancona, posso venire a ritirare
+      - evito la spedizione e passo io, si puo
+      - quando posso ritirare il mio ordine
+      - come funziona il ritiro in negozio
+      - ritiro in negozio come vengo avvisato
+      - posso ritirare un ordine fatto online al negozio fisico
+      - voglio ritirare in negozio, e gratis?
+      - posso prenotare un gioco e ritirarlo in negozio?
+      - posso ordinare online e ritirare da voi?
+      - voglio ritirare l'ordine al negozio
+      - si può prenotare per il ritiro in negozio?
+      - ordino sul sito e passo a prenderlo
+      - posso riservare un gioco e pagarlo in negozio?
+      - come faccio a ritirare in negozio?
+      - posso pagare direttamente in negozio?
+      - prenotazione gioco per ritiro
+      - voglio mettere da parte un gioco e passare a ritirarlo
+      - si può pagare al ritiro?
+      - ritiro in sede come si fa
+      - posso passare a prendere l'ordine di persona?
+      - prenoto online e ritiro al negozio di ancona
+
+  - intent: faq_spedizioni/locker
+    examples: |
+      - consegnate nei locker
+      - si puo spedire a un punto di ritiro
+      - avete i pickup point
+      - spedizione in locker quanto costa
+      - consegna presso punto di ritiro
+      - posso farmi spedire in un locker
+      - non sono mai a casa, avete punti di ritiro
+      - il locker costa meno?
+      - consegna al locker 3,90
+      - ritiro del pacco in tabaccheria o locker
+      - come funziona il ritiro nei punti di ritiro
+      - posso scegliere il locker piu vicino
+      - preferisco ritirare il pacco vicino al lavoro, si puo
+      - spedizione ai punti di ritiro
+      - c'e il servizio di locker amazon o simili
+      - dove sono i punti di ritiro
+      - consegna in locker tempi
+
+  - intent: faq_spedizioni/corriere
+    examples: |
+      - con quale corriere spedite
+      - che corriere usate
+      - spedite con brt o gls
+      - chi consegna i pacchi
+      - quale corriere mi porta il pacco
+      - usate sda o poste
+      - con che corriere viene spedito
+      - il corriere e espresso?
+      - posso scegliere il corriere
+      - che servizio di spedizione utilizzate
+      - mi dite il nome del corriere
+      - spedite con dhl?
+      - il pacco lo porta il corriere o le poste
+      - a chi vi affidate per le consegne
+      - posso scegliere io il corriere che preferisco
+      - il corriere chiama prima di consegnare
+      - corriere usato per le spedizioni
+
+  - intent: faq_spedizioni/tracciamento
+    examples: |
+      - come faccio a seguire il pacco
+      - posso tracciare la spedizione
+      - avete il tracking
+      - come ricevo il codice di tracciamento
+      - link per tracciare il pacco
+      - dove trovo il numero di tracking
+      - come monitoro la spedizione
+      - si puo vedere dove si trova il pacco
+      - riceveo il tracciamento via email?
+      - come faccio a sapere quando parte il pacco
+      - mi arriva un avviso quando spedite
+      - tracciabilita delle spedizioni
+      - come funziona il tracking dell'ordine
+      - quando mi arriva il link per seguire la spedizione
+      - il pacco e tracciabile?
+      - dove trovo il codice per tracciare
+      - vi mando il pacco con tracking?
+
+  - intent: faq_spedizioni/partenza_giornata
+    examples: |
+      - entro che ora devo ordinare per la spedizione in giornata
+      - fino a che ora ordino per farlo partire oggi
+      - orario limite per la spedizione in giornata
+      - se ordino alle 12 parte oggi
+      - ordino alle 14, parte oggi o domani
+      - entro le 13 parte in giornata?
+      - quando partono gli ordini
+      - a che ora chiudete gli ordini per la spedizione
+      - cut off ordini
+      - se ordino adesso il pacco parte oggi
+      - spedizione in giornata come funziona
+      - ordino di venerdi sera, quando parte
+      - ordino il sabato, quando lo spedite
+      - ordine fatto domenica quando parte
+      - dopo che ora l'ordine parte il giorno dopo
+      - spedite in giornata?
+      - che orario devo rispettare per ordinare e spedire oggi stesso
+
+  - intent: faq_spedizioni/indirizzo_diverso
+    examples: |
+      - posso spedire a un altro indirizzo
+      - spedire a un indirizzo diverso da quello di fatturazione
+      - indirizzo di spedizione diverso
+      - posso far arrivare il pacco a casa di mia madre
+      - voglio farlo spedire al lavoro
+      - si puo mettere un indirizzo di consegna differente
+      - l'indirizzo di spedizione puo essere diverso dalla residenza
+      - posso indicare due indirizzi
+      - spedite anche a domicili diversi dalla residenza
+      - consegna presso indirizzo alternativo
+      - fatturare a me e spedire altrove
+      - pacco a casa di un amico si puo
+      - posso inserire un altro indirizzo al checkout
+      - mi spedite dal mio ufficio invece che a casa?
+      - spedizione presso un parente
+      - indirizzo di consegna e fatturazione diversi
+
+  - intent: faq_spedizioni/regalo_altra_persona
+    examples: |
+      - posso spedire un regalo direttamente a una persona
+      - voglio spedire il gioco a un mio amico come regalo
+      - regalo spedito direttamente al destinatario
+      - come faccio a mandare un regalo a mia sorella
+      - si puo spedire un regalo senza prezzo
+      - spedite direttamente a chi riceve il regalo
+      - vorrei fare un regalo e farlo arrivare a casa sua
+      - posso far recapitare il pacco a un'altra persona
+      - fate spedizioni regalo
+      - il destinatario del regalo vede il prezzo
+      - regalo a distanza, come fate
+      - voglio mandare un gioco al mio ragazzo in un'altra citta
+      - spedizione regalo con biglietto
+      - posso aggiungere un biglietto e spedire alla persona
+      - come spedire un regalo di compleanno
+      - mi arriva prima il regalo o va direttamente alla persona
+
+  - intent: faq_spedizioni/assenza_giacenza
+    examples: |
+      - cosa succede se non sono a casa
+      - se non ci sono quando arriva il corriere
+      - non sono in casa durante la consegna
+      - il corriere passa piu volte
+      - quanti tentativi di consegna fa il corriere
+      - cosa succede se il pacco non viene consegnato
+      - cosa e la giacenza
+      - per quanti giorni il pacco resta in giacenza
+      - se perdo la consegna dove ritiro il pacco
+      - ero fuori e il corriere e passato
+      - e se sono al lavoro quando arriva
+      - posso farlo lasciare al vicino
+      - dopo il tentativo fallito che succede
+      - il pacco torna indietro se nessuno apre
+      - quanto resta in giacenza il pacco
+      - assente alla consegna
+      - il corriere ripassa se non trova nessuno
+
+  - intent: faq_spedizioni/sabato
+    examples: |
+      - consegnate di sabato
+      - il pacco puo arrivare il sabato
+      - spedite anche il sabato
+      - consegna il sabato mattina
+      - si puo ricevere di sabato
+      - fate consegne nel weekend
+      - consegnate la domenica
+      - ordino venerdi, arriva sabato
+      - consegna nei giorni festivi
+      - posso avere il pacco di sabato
+      - consegne di domenica?
+      - lavorate nel weekend per le spedizioni
+      - il corriere consegna anche sabato
+      - spedite nei festivi
+      - consegna al sabato e possibile
+      - consegna weekend
+      - posso scegliere il giorno di consegna
+      - si puo scegliere la data di consegna
+
+  - intent: faq_spedizioni/imballaggio
+    examples: |
+      - come viene imballato il pacco
+      - i giochi arrivano protetti
+      - come imballate i giochi
+      - il pacco e anonimo
+      - scatola neutra per un regalo
+      - si vede cosa c'e dentro la scatola
+      - come proteggete le scatole dei giochi
+      - usate imballaggi adeguati
+      - il gioco arriva dentro la sua scatola originale integra
+      - che tipo di imballaggio usate
+      - imballaggio sicuro per i giochi da tavolo
+      - c'e scritto fuori che dentro ci sono giochi
+      - e un regalo, il pacco e discreto
+      - imballo resistente?
+
+  - intent: faq_spedizioni/ordini_multipli
+    examples: |
+      - se faccio due ordini li spedite insieme
+      - posso unire due ordini in un solo pacco
+      - ho fatto due ordini separati, pago due spedizioni
+      - spedite insieme piu ordini
+      - accorpare gli ordini
+      - ho ordinato due volte, arrivano insieme
+      - due ordini stesso giorno una sola spedizione
+      - posso aggiungere un gioco a un ordine gia fatto
+      - unificare le spedizioni di due ordini
+      - ordino piu giochi, arrivano nello stesso pacco
+      - se compro tre giochi la spedizione e una sola
+      - i giochi di un ordine arrivano in pacchi diversi
+      - il mio ordine puo arrivare diviso in piu pacchi
+      - ho dimenticato un gioco, posso farlo spedire con l'ordine precedente
+      - conviene fare un unico ordine per risparmiare sulla spedizione
+      - pacchi separati?
+
+  - intent: faq_spedizioni/cambio_metodo
+    examples: |
+      - posso cambiare metodo di spedizione
+      - ho scelto standard ma vorrei l'express
+      - cambiare la spedizione dopo l'ordine
+      - voglio passare dal corriere al ritiro in negozio
+      - si puo modificare il tipo di spedizione
+      - ho sbagliato a scegliere la spedizione
+      - posso passare al locker
+      - vorrei cambiare da standard a espressa
+      - modificare la modalita di consegna
+      - cambio da consegna a domicilio a ritiro in negozio
+      - ho selezionato la spedizione sbagliata cosa faccio
+      - dopo aver ordinato posso scegliere un'altra spedizione
+      - ho scelto ritiro in negozio ma preferisco la spedizione
+      - si puo cambiare il metodo di consegna a ordine fatto
+      - upgrade spedizione express dopo l'acquisto
+      - posso scegliere un altra consegna
+
+  - intent: faq_spedizioni/azienda
+    examples: |
+      - spedite a un ufficio
+      - posso far spedire a un indirizzo aziendale
+      - consegna presso azienda
+      - spedizione a una partita iva
+      - ordino per la mia ditta, spedite in ufficio
+      - spedite a scuole e ludoteche
+      - spedire a una ludoteca
+      - fate spedizioni a un'associazione
+      - consegna in orario d'ufficio
+      - posso mettere l'indirizzo dell'azienda
+      - spedizione verso un negozio
+      - ordini per un'associazione, come funzionano le spedizioni
+      - ordine per una scuola, avete condizioni per la spedizione
+      - spedizione a un ufficio con fattura
+      - consegna presso sede aziendale
+      - la mia ludoteca ha bisogno di tanti giochi, come fate la spedizione
+      - indirizzo di lavoro per la consegna
+
+  - intent: faq_spedizioni/opzioni
+    examples: |
+      - che tipi di spedizione avete
+      - quali opzioni di consegna ci sono
+      - modalita di spedizione disponibili
+      - che metodi di consegna offrite
+      - come posso farmi arrivare il gioco
+      - come spedite i giochi
+      - info sulle spedizioni
+      - riassumi le spedizioni
+      - quali sono le spedizioni
+      - parlami delle spedizioni
+      - spedizioni come funzionano
+      - informazioni sulla consegna
+      - vorrei info sulle modalita di consegna e i costi
+      - consegna a casa o ritiro?
+      - dimmi tutte le opzioni di spedizione
+      - politica di spedizione
+      - tutte le spedizioni disponibili
+
+  - intent: faq_spedizioni/dogana
+    examples: |
+      - ci sono dazi o dogana per la spedizione in ue
+      - pago tasse extra se mi spedite in germania
+      - ci sono costi doganali
+      - devo pagare l'iva del mio paese
+      - spedizione ue costi aggiuntivi
+      - pago dazi per ordini in europa
+      - ci sono altri costi oltre ai 12,90 euro
+      - devo pagare qualcosa alla consegna in francia
+      - dogana per spedizioni europee
+      - il prezzo e comprensivo di iva in ue
+      - tasse di importazione per ordini ue
+      - il corriere mi chiedera dei soldi alla consegna
+      - oltre la spedizione ci sono altre spese
+      - spese nascoste nella spedizione?
+
+  - intent: faq_spedizioni/modifica_dopo_partenza
+    examples: |
+      - il pacco e gia partito, posso fermarlo
+      - posso bloccare la spedizione
+      - ho cambiato idea, fermate il pacco
+      - il corriere puo cambiare l'indirizzo in transito
+      - posso rimandare la consegna a un altro giorno
+      - posso concordare la consegna con il corriere
+      - si puo riprogrammare la consegna
+      - posso dare delega a un'altra persona per ritirare
+      - possono ritirare per me i miei familiari
+      - il vicino puo ritirare il pacco
+      - come cambio la data di consegna
+      - posso lasciare istruzioni al corriere
+      - la firma e obbligatoria alla consegna
+      - serve la firma per ricevere il pacco
+      - chiedo al corriere di consegnare piu tardi
+
+  - intent: calcola_spedizione
+    examples: |
+      - quanto pago di spedizione per un ordine da [35 euro](budget) in sardegna
+      - calcola la spedizione per [60 euro](budget) in italia
+      - se spendo [49 euro](budget) pago la spedizione
+      - spedizione per un ordine da [100 euro](budget) in germania
+      - quanto costerebbe spedire [25 euro](budget) di giochi in sicilia
+      - per [80 euro](budget) di ordine la spedizione in francia quanto viene
+      - quanto pago di spedizione con [30 euro](budget) di giochi
+      - calcolami la spedizione per [150 euro](budget) in spagna
+      - ordino per [45 euro](budget) in calabria, spedizione?
+      - con un carrello da [120,50 euro](budget) spedizione in austria quanto costa
+      - quanto spendo di spedizione se compro [20 euro](budget) di roba a [milano](destinazione_spedizione)
+      - calcola le spese di spedizione per la [sicilia](destinazione_spedizione)
+      - calcola la spedizione per il mio carrello in [sardegna](destinazione_spedizione)
+      - quanto pago di spedizione per il mio carrello
+      - quanto mi costa la spedizione del carrello verso la [germania](destinazione_spedizione)
+      - spedizione per ordine da [70 euro](budget) in [svizzera](destinazione_spedizione)
+      - e per la [calabria](destinazione_spedizione) quanto pago
+      - e se spedisco in [francia](destinazione_spedizione)?
+      - quanto sarebbe la spedizione di un ordine da [55 euro](budget) in [italia](destinazione_spedizione)
+      - calcolami le spese per [38 euro](budget) in [sardegna](destinazione_spedizione)
+
+  - lookup: destinazione_spedizione
+    examples: |
+      - italia
+      - sicilia
+      - sardegna
+      - calabria
+      - isole
+      - germania
+      - francia
+      - spagna
+      - austria
+      - olanda
+      - belgio
+      - portogallo
+      - svizzera
+      - regno unito
+      - stati uniti
+      - milano
+      - roma
+      - torino
+      - napoli
+      - ancona
+      - cagliari
+      - palermo
+      - europa

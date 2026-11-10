@@ -1,0 +1,39 @@
+version: "3.1"
+
+stories:
+  - story: Feedback con voto alto e commento
+    steps:
+      - intent: lascia_feedback
+      - action: feedback_negozio_form
+      - active_loop: feedback_negozio_form
+      - slot_was_set:
+          - requested_slot: negozio_voto
+      - intent: dai_voto_negozio
+        entities:
+          - negozio_voto: "5"
+      - slot_was_set:
+          - negozio_voto: "5"
+      - action: feedback_negozio_form
+      - slot_was_set:
+          - requested_slot: negozio_commento
+      - slot_was_set:
+          - negozio_commento: "Personale gentilissimo"
+      - action: feedback_negozio_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: action_invia_feedback_negozio
+
+  - story: Operatore dopo un reclamo
+    steps:
+      - intent: fai_reclamo
+      - action: utter_reclamo
+      - intent: chiedi_operatore
+      - action: action_parla_operatore
+
+  - story: Orari e poi eventi
+    steps:
+      - intent: chiedi_apertura_adesso
+      - action: action_negozio_aperto
+      - intent: chiedi_eventi
+      - action: action_prossimi_eventi

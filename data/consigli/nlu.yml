@@ -1,0 +1,578 @@
+version: "3.1"
+
+# Area consigli.
+# Entità nuova: «occasione», con i valori coppia (partner: ragazza, marito…), principianti, esperti.
+# Le occasioni che sono anche categorie del catalogo (per due, solitario, famiglia, bambini, party)
+# restano annotate come «categoria»: action_consiglia_occasione le traduce nell'occasione.
+
+nlu:
+- intent: chiedi_consiglio
+  examples: |
+    - mi consigli un gioco?
+    - consigliami un gioco da tavolo
+    - che gioco mi consigli?
+    - mi aiuti a scegliere un gioco?
+    - non so che gioco comprare, mi dai una mano?
+    - cerco un gioco per [4](num_giocatori) persone sotto i [30](budget) euro
+    - vorrei un gioco per [3](num_giocatori) giocatori che duri al massimo [un'ora](durata)
+    - consigliami un gioco [di strategia](categoria)
+    - mi serve un consiglio su un gioco [cooperativo](categoria) per [2](num_giocatori)
+    - un gioco per [5](num_giocatori) amici con un budget di [40](budget) euro
+    - cosa mi consiglieresti per una partita di [mezz'ora](durata)?
+    - che gioco posso prendere per un bambino di [6](eta) anni?
+    - cerco qualcosa di [veloce](durata) da giocare in [due](num_giocatori)
+    - dammi un consiglio su cosa comprare
+    - consigliami qualcosa da giocare stasera
+    - mi suggerisci un gioco da tavolo?
+    - quale gioco mi consigli di prendere con [50](budget) euro?
+    - vorrei un consiglio personalizzato
+    - aiutami a trovare il gioco giusto
+    - cerco un gioco [di carte](categoria) per [3](num_giocatori), il piu piccolo ha [9](eta) anni
+    - mi consigli un gioco che duri sui [45 minuti](durata)?
+    - non so cosa scegliere tra tutti i vostri giochi
+    - che gioco da tavolo potrei comprare?
+    - consiglio gioco [deckbuilding](categoria) max [60 minuti](durata)
+    - cerco un gioco x [4](num_giocatori) sotto i [35](budget) €
+    - mi consiglieresti un gioco carino?
+    - vorrei comprare un gioco ma non so quale, mi consigli tu?
+    - qualche consiglio per un gioco [astratto](categoria) da [20](budget) euro al massimo?
+    - un gioco di [strategia](categoria) per [2](num_giocatori) che non duri piu di [due ore](durata)
+    - consigliami un gioco adatto a [6](num_giocatori) giocatori dai [10](eta) anni in su
+
+- intent: indica_criteri
+  examples: |
+    - siamo in [4](num_giocatori)
+    - saremo [6](num_giocatori) persone
+    - giochiamo in [tre](num_giocatori)
+    - [3](num_giocatori) giocatori
+    - di solito siamo [5](num_giocatori) amici
+    - il piu piccolo ha [7](eta) anni
+    - ha [10](eta) anni
+    - [12](eta) anni
+    - la piu giovane ne ha [5](eta)
+    - siamo tutti adulti
+    - massimo [un'ora](durata)
+    - non piu di [mezz'ora](durata)
+    - [45 minuti](durata) al massimo
+    - una cosa [veloce](durata)
+    - al massimo [due ore](durata)
+    - fino a [30](budget) euro
+    - sui [40](budget) euro
+    - posso spendere al massimo [25](budget) euro
+    - budget [60](budget) €
+    - [strategia](categoria)
+    - mi piacciono i giochi [cooperativi](categoria)
+    - preferisco i [party game](categoria)
+    - qualcosa di [astratto](categoria)
+    - un [deckbuilding](categoria)
+    - giochi [di carte](categoria)
+
+- intent: rispondi_indifferente
+  examples: |
+    - non importa
+    - indifferente
+    - per me e indifferente
+    - qualsiasi
+    - va bene qualsiasi cosa
+    - fa lo stesso
+    - è uguale
+    - e uguale
+    - non ho preferenze
+    - nessuna preferenza particolare
+    - decidi tu
+    - vedi tu
+    - non ho un budget preciso
+    - qualunque durata va bene
+    - l'eta non conta
+    - non saprei, fai tu
+    - boh uguale
+    - va bene tutto
+    - non ho limiti di prezzo
+    - come vuoi tu
+    - non mi importa
+    - qualsiasi genere
+
+- intent: chiedi_consiglio_occasione
+  examples: |
+    - consigliami un gioco da fare [in coppia](categoria)
+    - cosa mi consigli per giocare con la mia [ragazza](occasione)?
+    - cosa mi consigli per una [serata romantica](occasione)?
+    - un gioco da fare io e mio [marito](occasione)
+    - qualcosa da giocare con la mia [fidanzata](occasione)
+    - consigliami un gioco [per la famiglia](categoria)
+    - qualcosa da giocare con tutta la [famiglia](categoria) a natale
+    - che gioco posso far fare ai [bambini](categoria)?
+    - cosa posso far giocare ai miei figli?
+    - cosa consigli [per bimbi](categoria) piccoli?
+    - mi serve un gioco per una [festa](categoria)
+    - consigliami un gioco per un gruppo numeroso
+    - cosa mi consigli per una serata tra amici?
+    - che gioco porto a una cena con amici?
+    - un gioco da [party](categoria) per fare due risate
+    - un gioco da fare [da solo](categoria)
+    - mi consigli un gioco [in solitario](categoria)?
+    - mi consigli qualcosa da giocare [da sola](categoria) la sera?
+    - consigliami qualcosa per [principianti](occasione)
+    - un gioco per chi [non ha mai giocato](occasione)
+    - consigli per [neofiti](occasione)?
+    - un gioco facile per chi inizia, cosa mi consigli?
+    - che gioco consiglieresti a dei giocatori [esperti](occasione)?
+    - qualcosa di tosto per [giocatori esperti](occasione)
+    - consigliami un gioco bello impegnativo per gente che gioca da anni
+    - un gioco [per la famiglia](categoria) sotto i [30](budget) euro
+    - cosa mi consigli per i [bambini](categoria) di [5](eta) anni?
+    - un gioco da [coppia](categoria) che duri poco, che mi consigli?
+    - siamo alle [prime armi](occasione), cosa ci consigli?
+    - consigliami un gioco per una [festa](categoria) di compleanno
+
+- intent: chiedi_giochi_simili
+  examples: |
+    - qualcosa come [Catan](gioco)
+    - mi è piaciuto [Dixit](gioco), cosa mi consigli?
+    - giochi simili a [Catan](gioco)
+    - cerco un gioco tipo [Dixit](gioco)
+    - ho adorato [Catan](gioco), cos'altro potrei provare?
+    - avete qualcosa di simile a [Ticket to Ride](gioco)?
+    - se mi piace [Carcassonne](gioco) cosa posso prendere?
+    - un gioco nello stile di [Azul](gioco)
+    - consigliami qualcosa che assomigli a [Pandemic](gioco)
+    - alternative a [Catan](gioco)?
+    - giochi simili a questo
+    - avete qualcosa di simile?
+    - ne avete altri cosi?
+    - mi piacciono i giochi come [7 Wonders](gioco)
+    - abbiamo consumato [Dixit](gioco) a furia di giocarci, cosa compriamo adesso?
+    - dopo [Catan](gioco) cosa mi consigli?
+    - vorrei un gioco che ricordi [Codenames](gioco)
+    - qualcosa tipo [Splendor](gioco) ma diverso
+    - ho gia [Carcassonne](gioco), cosa mi piacerebbe di simile?
+    - a casa giochiamo sempre a [Azul](gioco), cosa potremmo provare di simile?
+    - simile a [Pandemic](gioco)
+
+- intent: chiedi_idea_regalo
+  examples: |
+    - idee regalo?
+    - devo fare un regalo, cosa mi consigli?
+    - cosa posso regalare a un [appassionato](occasione) di giochi da tavolo?
+    - un regalo per mio nipote di [8](eta) anni
+    - regalo per la mia [ragazza](occasione) sui [30](budget) euro
+    - cerco un regalo di natale [per la famiglia](categoria)
+    - idea regalo per un amico, massimo [40](budget) euro
+    - cosa regalo a mio papa che non gioca mai?
+    - un pensiero per un compleanno sotto i [20](budget) euro
+    - regalo per una bambina di [6](eta) anni
+    - che gioco posso regalare a mia sorella?
+    - mi serve un regalo per un collega
+    - un regalo originale per un [esperto](occasione) di giochi
+    - regalo di compleanno per un ragazzo di [14](eta) anni
+    - consigliami un gioco da regalare
+    - cosa mi suggerisci come regalo di natale?
+    - un gioco da regalare a mia nonna
+    - ho [50](budget) euro per un regalo, cosa prendo?
+    - idee per un regalo a una coppia di amici
+    - che regalo faccio a mio fratello che ha gia tutti i giochi?
+    - vorrei regalare un gioco ai miei figli
+
+- intent: chiedi_sorpresa
+  examples: |
+    - sorprendimi
+    - sorprendimi!
+    - consigliami un gioco a caso
+    - dimmi un gioco a caso
+    - scegli tu un gioco per me
+    - stupiscimi
+    - fammi una sorpresa
+    - pesca un gioco a caso dal catalogo
+    - non so cosa voglio, sorprendimi tu
+    - un gioco random
+    - tirami fuori un gioco a sorpresa
+    - dammi un'idea a caso
+    - proponimi qualcosa di inaspettato
+    - mi fai scoprire un gioco nuovo?
+    - un'altra sorpresa
+    - un altro a caso
+    - sorprendimi con un gioco che non conosco
+
+- intent: interrompi
+  examples: |
+    - lascia perdere
+    - lascia stare
+    - basta così
+    - basta cosi
+    - stop
+    - non mi interessa più
+    - non mi interessa piu
+    - lasciamo perdere
+    - ho cambiato idea
+    - fa niente
+    - niente, lascia stare
+    - ci ho ripensato, lascia perdere
+    - interrompi
+    - smettiamola qui
+    - non voglio piu continuare
+    - basta domande
+    - fermati
+    - stop stop
+    - non serve piu, grazie
+    - lascia perdere il consiglio
+    - mi sono stancato, basta
+    - dimentica quello che ti ho chiesto
+    - ok basta cosi grazie
+
+# ---------------------------------------------------------------------------
+# FAQ di cultura ludica (retrieval intent faq_giochi)
+# ---------------------------------------------------------------------------
+
+- intent: faq_giochi/cooperativo
+  examples: |
+    - cos'è un gioco cooperativo?
+    - cosa vuol dire gioco cooperativo
+    - cosa significa che un gioco è collaborativo?
+    - come funzionano i giochi cooperativi?
+    - in un cooperativo si vince tutti insieme?
+    - che differenza c'è tra un gioco competitivo e uno cooperativo?
+    - cos e un coop
+    - giochi in cui si gioca tutti contro il gioco, come funzionano?
+    - spiegami i giochi cooperativi
+    - nei cooperativi chi vince?
+    - cosa si intende per semi cooperativo?
+    - che vuol dire giocare in cooperazione contro il gioco?
+    - cooperativo cosa significa
+    - ho sentito parlare di giochi cooperativi, cosa sono?
+
+- intent: faq_giochi/deckbuilding
+  examples: |
+    - cos'è un deckbuilding?
+    - cosa significa deck building
+    - come funziona un gioco di deckbuilding?
+    - cosa vuol dire costruzione del mazzo?
+    - deckbuilder che significa?
+    - spiegami il deck building
+    - cos e il deckbuilding nei giochi da tavolo
+    - nei deckbuilding si comprano carte durante la partita?
+    - che cos'è un gioco di costruzione del mazzo?
+    - deckbuilding cosa vuol dire
+    - come si gioca a un deck builder?
+    - ho letto deckbuilding sulla scatola, cosa vuol dire?
+
+- intent: faq_giochi/legacy
+  examples: |
+    - cos'è un gioco legacy?
+    - cosa significa legacy nei giochi da tavolo
+    - come funzionano i giochi legacy?
+    - è vero che nei legacy si strappano le carte?
+    - un legacy si può rigiocare?
+    - cosa vuol dire che il gioco cambia partita dopo partita?
+    - legacy che significa
+    - spiegami i giochi in versione legacy
+    - nei legacy si scrive sul tabellone?
+    - cos e una campagna legacy
+    - quante partite dura un gioco legacy?
+    - perche nei legacy ci sono buste sigillate?
+
+- intent: faq_giochi/piazzamento_lavoratori
+  examples: |
+    - cos'è il piazzamento lavoratori?
+    - cosa significa worker placement
+    - come funziona il piazzamento dei lavoratori?
+    - cosa vuol dire piazzare i lavoratori?
+    - worker placement che vuol dire
+    - spiegami la meccanica del piazzamento lavoratori
+    - cosa sono i lavoratori nei giochi da tavolo?
+    - giochi a piazzamento lavoratori, di cosa si tratta?
+    - cos e il worker placement
+    - nei giochi di piazzamento lavoratori cosa si fa?
+    - perche si chiamano lavoratori quelle pedine?
+    - piazzamento lavoratori cosa significa
+
+- intent: faq_giochi/german_american
+  examples: |
+    - che differenza c'è tra german e american?
+    - cos'è un eurogame?
+    - cosa vuol dire gioco alla tedesca?
+    - cos'è un american?
+    - cosa significa ameritrash?
+    - differenza tra eurogame e ameritrash
+    - german o american, cosa cambia?
+    - cosa si intende per gioco german?
+    - cos e un gioco all'americana
+    - perche si dice eurogame?
+    - gioco tedesco e gioco americano, che differenze ci sono?
+    - cosa sono i giochi ibridi tra german e american?
+    - cos'è un gestionale alla tedesca?
+
+- intent: faq_giochi/party_game
+  examples: |
+    - cos'è un party game?
+    - cosa si intende per party game
+    - cosa significa gioco da festa?
+    - come sono i party game?
+    - party game che vuol dire
+    - che caratteristiche ha un party game?
+    - cos e un gioco party
+    - perche si chiamano party game?
+    - in che senso un gioco è da party?
+    - definizione di party game
+    - un party game è adatto a tanti giocatori?
+    - spiegami cosa sono i giochi da festa
+
+- intent: faq_giochi/astratto
+  examples: |
+    - cos'è un gioco astratto?
+    - cosa significa astratto nei giochi da tavolo
+    - cosa vuol dire gioco astratto?
+    - i giochi astratti cosa sono?
+    - perche gli scacchi sono un gioco astratto?
+    - astratto che significa
+    - giochi astratti, di cosa si tratta?
+    - cos e un astratto
+    - che vuol dire che un gioco non ha ambientazione?
+    - spiegami i giochi astratti
+    - un astratto è come gli scacchi?
+    - cosa rende astratto un gioco?
+
+- intent: faq_giochi/roll_and_write
+  examples: |
+    - cos'è un roll and write?
+    - cosa significa roll & write
+    - come funziona un roll and write?
+    - cosa sono i giochi carta e matita con i dadi?
+    - roll e write che vuol dire
+    - cos e un flip and write
+    - giochi tira e scrivi, cosa sono?
+    - spiegami i roll & write
+    - nei roll and write si scrive sul foglio?
+    - che significa roll'n write
+    - cosa vuol dire flip & write?
+    - roll and write cosa sono
+
+- intent: faq_giochi/espansione_standalone
+  examples: |
+    - che differenza c'è tra espansione e stand alone?
+    - cos'è un'espansione?
+    - cosa vuol dire stand-alone?
+    - un'espansione si può giocare da sola?
+    - per usare un'espansione serve il gioco base?
+    - cosa significa standalone
+    - cos e un gioco base
+    - espansione o standalone, cosa cambia?
+    - cosa sono le espansioni dei giochi da tavolo?
+    - una stand alone ha bisogno del gioco originale?
+    - che vuol dire espansione indipendente?
+    - le espansioni sono giochi completi?
+    - a cosa servono le espansioni?
+
+- intent: faq_giochi/gateway_game
+  examples: |
+    - cos'è un gateway game?
+    - cosa significa gateway
+    - cosa vuol dire gioco gateway?
+    - cosa sono i giochi introduttivi?
+    - gateway game che significa
+    - cosa vuol dire che un gioco è introduttivo?
+    - cos e un gioco porta d'ingresso
+    - perche si chiamano gateway game?
+    - in che senso un gioco fa da porta d'ingresso all'hobby?
+    - spiegami cosa sono i gateway
+    - cosa intendete per gioco di introduzione?
+    - giochi gateway, che caratteristiche hanno?
+
+- intent: faq_giochi/gdr_vs_tavolo
+  examples: |
+    - che differenza c'è tra gioco di ruolo e gioco da tavolo?
+    - cos'è un gioco di ruolo?
+    - cosa significa gdr
+    - un gdr è un gioco da tavolo?
+    - cosa vuol dire gioco di ruolo?
+    - differenza tra dungeons and dragons e un gioco da tavolo
+    - cos e un rpg
+    - nei giochi di ruolo c'è un tabellone?
+    - cosa fa il master in un gioco di ruolo?
+    - gioco di ruolo e boardgame sono la stessa cosa?
+    - come funziona un gioco di ruolo?
+    - perche il gioco di ruolo è diverso da un gioco in scatola?
+
+- intent: faq_giochi/conservare_giochi
+  examples: |
+    - come conservo i giochi da tavolo?
+    - come proteggo le carte?
+    - servono le bustine protettive?
+    - a cosa servono le sleeve?
+    - come si imbustano le carte?
+    - come tengo in ordine i componenti nella scatola?
+    - come evitare che le carte si rovinino?
+    - consigli per conservare i giochi
+    - le scatole vanno tenute in verticale o in orizzontale?
+    - cos e un organizer per giochi da tavolo
+    - perche si mettono le carte nelle bustine?
+    - come faccio a non perdere i pezzi?
+    - cosa sono le sleeves
+    - come conservare bene la collezione di giochi
+
+- intent: faq_giochi/complessita
+  examples: |
+    - cos'è la complessità di un gioco?
+    - cosa significa peso di un gioco?
+    - cosa vuol dire che un gioco è pesante?
+    - come si misura la difficoltà di un gioco da tavolo?
+    - cosa indica il peso da 1 a 5?
+    - gioco leggero o gioco pesante, cosa cambia?
+    - cos e il weight dei giochi
+    - complessita 3 su 5 cosa vuol dire?
+    - un gioco lungo è anche complesso?
+    - cosa intendete per complessita?
+    - spiegami la scala di difficolta che usate
+    - che vuol dire gioco di peso medio?
+
+- intent: faq_giochi/durata_partita
+  examples: |
+    - quanto dura una partita tipica a un gioco da tavolo?
+    - in media quanto dura una partita?
+    - quanto tempo serve per giocare a un gioco da tavolo?
+    - le partite durano tanto?
+    - quanto durano di solito i giochi da tavolo?
+    - la durata scritta sulla scatola è affidabile?
+    - perche la prima partita dura di piu?
+    - quanto dura un party game di solito?
+    - un gioco strategico quanto dura in genere?
+    - quanto ci vuole per finire una partita?
+    - i giochi da tavolo moderni sono lunghi?
+    - quanto tempo bisogna avere per una serata di giochi?
+
+- intent: faq_giochi/benefici
+  examples: |
+    - i giochi da tavolo fanno bene?
+    - quali sono i benefici dei giochi da tavolo?
+    - perche far giocare i bambini ai giochi da tavolo?
+    - giocare da tavolo aiuta la memoria?
+    - i giochi da tavolo sono utili per gli anziani?
+    - a cosa servono i giochi da tavolo per i bambini?
+    - giocare in famiglia fa bene?
+    - cosa insegnano i giochi da tavolo?
+    - i boardgame sono educativi?
+    - perche giocare ai giochi da tavolo invece che ai videogiochi?
+    - vantaggi dei giochi da tavolo
+    - i giochi da tavolo allenano il cervello?
+
+- intent: faq_giochi/eta_consigliata
+  examples: |
+    - cosa significa l'eta scritta sulla scatola?
+    - cosa vuol dire 8+ sulla confezione?
+    - da che eta si può iniziare a giocare ai giochi da tavolo?
+    - l'eta consigliata è un limite?
+    - un bambino piu piccolo può giocare a un gioco 10+?
+    - cosa indica il numero con il piu sulla scatola?
+    - a che eta i bambini capiscono le regole?
+    - perche c'è scritto non adatto ai bambini sotto i 3 anni?
+    - come si legge l'eta minima dei giochi?
+    - l'eta sulla scatola vale anche per gli adulti?
+    - da quanti anni si gioca ai giochi da tavolo?
+    - 14+ vuol dire che e solo per ragazzi?
+
+- intent: faq_giochi/filler
+  examples: |
+    - cos'è un filler?
+    - cosa significa filler nei giochi da tavolo
+    - cosa vuol dire gioco filler?
+    - cosa sono i giochi riempitivi?
+    - filler che significa
+    - perche si chiamano filler?
+    - cos e un gioco da riempimento
+    - che caratteristiche ha un filler?
+    - un filler quanto dura?
+    - quando si gioca un filler?
+    - spiegami cosa sono i filler
+    - giochi filler, di cosa si tratta?
+
+- intent: faq_giochi/drafting
+  examples: |
+    - cos'è il drafting?
+    - cosa significa card drafting
+    - come funziona il draft delle carte?
+    - cosa vuol dire draftare?
+    - drafting che vuol dire
+    - cos e il draft nei giochi da tavolo
+    - spiegami la meccanica del drafting
+    - cosa vuol dire scegli una carta e passa il resto?
+    - cos'è il pick and pass?
+    - come si fa il draft?
+    - drafting di carte, di cosa si tratta?
+    - perche nel drafting si passano le carte al vicino?
+
+- intent: faq_giochi/carte_collezionabili
+  examples: |
+    - cos'è un gioco di carte collezionabili?
+    - cosa significa tcg
+    - che differenza c'è tra tcg e lcg?
+    - cos'è un living card game?
+    - cosa vuol dire lcg?
+    - cosa sono i booster delle carte collezionabili?
+    - cos e un ccg
+    - carte collezionabili, come funzionano?
+    - perche nei collezionabili le carte sono casuali?
+    - cosa vuol dire trading card game?
+    - i giochi di carte collezionabili sono giochi da tavolo?
+    - spiegami cosa sono gli lcg
+
+- intent: faq_giochi/deduzione_sociale
+  examples: |
+    - cos'è un gioco di deduzione sociale?
+    - cosa significa social deduction
+    - come funzionano i giochi con il traditore?
+    - cosa vuol dire gioco a ruoli nascosti?
+    - cos'è un gioco di bluff?
+    - giochi tipo lupus in tabula, come funzionano?
+    - cos e un hidden role
+    - spiegami i giochi di deduzione sociale
+    - nei giochi con il traditore come si vince?
+    - cosa sono i giochi a identita segreta?
+    - deduzione sociale che vuol dire
+    - perche i giochi di ruoli nascosti sono adatti ai gruppi?
+
+# ---------------------------------------------------------------------------
+# Sinonimi
+# ---------------------------------------------------------------------------
+
+- synonym: coppia
+  examples: |
+    - ragazza
+    - ragazzo
+    - fidanzata
+    - fidanzato
+    - moglie
+    - marito
+    - morosa
+    - partner
+    - serata romantica
+
+- synonym: per due
+  examples: |
+    - coppia
+    - in coppia
+
+- synonym: party
+  examples: |
+    - festa
+    - feste
+
+- synonym: solitario
+  examples: |
+    - da solo
+    - da sola
+    - in solitaria
+
+- synonym: principianti
+  examples: |
+    - principiante
+    - neofiti
+    - neofita
+    - non ha mai giocato
+    - prime armi
+    - alle prime armi
+
+- synonym: esperti
+  examples: |
+    - esperto
+    - giocatori esperti
+    - appassionato
+    - appassionati

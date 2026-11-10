@@ -1,0 +1,98 @@
+version: '3.1'
+responses:
+  utter_faq_resi/recesso_diritto:
+  - text: 'Hai diritto di recesso entro 14 giorni dalla consegna, a patto che il gioco sia nuovo e con il cellophane integro. 📦
+
+      Per avviare il reso vai in area account → I miei ordini → Richiedi reso, oppure scrivi a assistenza@gigigames.it.'
+  - text: Puoi restituire il tuo ordine entro 14 giorni dal giorno della consegna (non dell'ordine). Il gioco deve essere nuovo, con il cellophane integro. Il reso si richiede da area account → I miei ordini → Richiedi reso.
+  utter_faq_resi/come_fare_reso:
+  - text: 'Fare un reso è semplice:
+
+      • entra nel tuo account → I miei ordini → Richiedi reso
+
+      • scegli i prodotti da restituire
+
+      • ricevi l''etichetta prepagata e spedisci il pacco
+
+      Puoi anche scriverci a assistenza@gigigames.it. Se hai comprato come ospite, scrivici indicando il numero d''ordine.'
+  - text: 'Per restituire un gioco: area account → I miei ordini → Richiedi reso, poi segui le istruzioni per l''etichetta prepagata. In alternativa scrivi a assistenza@gigigames.it con il numero d''ordine e ti guidiamo noi (rispondiamo entro 24 ore lavorative).'
+  utter_faq_resi/costo_reso:
+  - text: 'Il reso costa 6,90 € con etichetta prepagata. 💶
+
+      È gratuito se il prodotto è difettoso o se abbiamo sbagliato noi. Se preferisci, puoi anche portare il gioco di persona nel negozio di Via Roma 12 ad Ancona.'
+  - text: Le spese di reso sono di 6,90 € (etichetta prepagata). Se il gioco è arrivato difettoso, danneggiato o è stato un nostro errore, il reso non ti costa nulla.
+  utter_faq_resi/condizioni_reso:
+  - text: 'Per il reso il gioco deve essere nuovo, con il cellophane integro e nella confezione originale, completo di tutto il contenuto. ✅
+
+      Se il cellophane è stato rimosso o la scatola è rovinata ti consigliamo di scrivere a assistenza@gigigames.it: valutiamo il caso insieme. I difetti di fabbrica sono gestiti dalla garanzia.'
+  - text: 'Condizioni del reso: gioco nuovo, cellophane integro, confezione originale. Se il prodotto è difettoso o è un nostro errore, invece, il reso è sempre possibile e gratuito.'
+  utter_faq_resi/gioco_aperto:
+  - text: 'Il recesso vale per i giochi nuovi con il cellophane integro, quindi un gioco aperto o già giocato di norma non rientra nel reso per ripensamento. 🎲
+
+      Se c''è un difetto o un pezzo mancante, invece, la garanzia ti tutela. Per casi particolari scrivi a assistenza@gigigames.it e vediamo cosa si può fare. Per provare un gioco prima di comprarlo c''è il tavolo demo in negozio il sabato pomeriggio!'
+  - text: 'Se hai già aperto il cellophane non possiamo accettare il reso per cambio idea. Se invece il gioco è difettoso o incompleto, ti spetta la garanzia. Per un caso dubbio scrivi a assistenza@gigigames.it: ti rispondiamo entro 24 ore lavorative.'
+  utter_faq_resi/tempi_rimborso:
+  - text: 'Rimborsiamo entro 14 giorni dal ricevimento del reso, con lo stesso metodo di pagamento usato per l''ordine. 💳
+
+      Il tempo effettivo con cui vedi i soldi può dipendere anche dalla tua banca o da PayPal.'
+  - text: Il rimborso arriva entro 14 giorni da quando riceviamo il pacco, sullo stesso metodo di pagamento dell'ordine (carta, PayPal, ecc.). Non emettiamo buoni al posto del rimborso, a meno che tu lo preferisca.
+  utter_faq_resi/cambio_gioco:
+  - text: 'Sì, il cambio con un altro gioco è possibile! 🔄
+
+      Scrivici a assistenza@gigigames.it indicando l''ordine e il gioco che vorresti al posto di quello restituito: ti spieghiamo come procedere. Valgono le stesse condizioni del reso (gioco nuovo, cellophane integro).'
+  - text: Puoi cambiare il gioco con un altro del catalogo, purché quello restituito sia nuovo e con il cellophane integro. Contatta l'assistenza (assistenza@gigigames.it o 071 123 4567) e organizziamo il cambio.
+  utter_faq_resi/reso_regalo:
+  - text: 'Anche un regalo si può restituire o cambiare entro 14 giorni dalla consegna, se il gioco è nuovo e con il cellophane integro. 🎁
+
+      Scrivi a assistenza@gigigames.it con il numero d''ordine (te lo può dare chi ha fatto il regalo): ti diciamo come procedere. Il rimborso va a chi ha pagato l''ordine.'
+  - text: Hai ricevuto un regalo che non fa per te? Entro 14 giorni dalla consegna puoi chiedere il cambio con un altro gioco, se è nuovo e sigillato. Per i dettagli scrivi a assistenza@gigigames.it indicando il numero d'ordine.
+  utter_faq_resi/reso_offerta:
+  - text: 'Anche i prodotti in offerta si possono restituire, con le stesse regole: 14 giorni dalla consegna, gioco nuovo e cellophane integro. 🏷️
+
+      Il rimborso corrisponde a quanto hai effettivamente pagato, quindi tiene conto di sconti e codici applicati. Per un reso parziale su ordini con codice sconto scrivi a assistenza@gigigames.it.'
+  - text: Offerte e saldi non cambiano il diritto di recesso. Ti rimborsiamo l'importo realmente pagato per quel prodotto, sconto compreso.
+  utter_faq_resi/reso_giftcard_preordine:
+  - text: 'Per gift card e preordini non ho tutti i dettagli, quindi ti consiglio di scrivere a assistenza@gigigames.it o chiamare il 071 123 4567 (lunedì-venerdì 9:00-18:00). 🎟️
+
+      Ti ricordo che le gift card digitali valgono 12 mesi, e che i preordini si pagano all''ordine e si spediscono all''uscita del gioco.'
+  - text: 'Su rimborso di gift card e annullamento di preordini è meglio sentire l''assistenza: assistenza@gigigames.it o 071 123 4567 (lun-ven 9:00-18:00). Ti rispondono con le condizioni precise per il tuo caso.'
+  utter_faq_resi/garanzia_legale:
+  - text: 'Tutti i nostri prodotti hanno la garanzia legale di 24 mesi dalla consegna. 🛡️
+
+      Copre i difetti di conformità e di fabbricazione (non i danni da uso scorretto). Se c''è un difetto o un pezzo mancante, inviamo il ricambio tramite l''editore o sostituiamo il gioco. Per attivarla scrivi a assistenza@gigigames.it con numero d''ordine e foto.'
+  - text: 'La garanzia legale dura 24 mesi dalla consegna. In caso di difetto o pezzi mancanti, ti mandiamo il ricambio tramite l''editore oppure sostituiamo il gioco. Per procedere puoi anche usare la segnalazione qui in chat: basta scrivere «voglio segnalare un problema con il mio ordine».'
+  utter_faq_resi/difetto_dopo_mesi:
+  - text: 'Nessun problema: i difetti sono coperti dalla garanzia legale di 24 mesi, anche se i 14 giorni di recesso sono passati. 🔧
+
+      Scrivi a assistenza@gigigames.it con numero d''ordine, descrizione e qualche foto: ti mandiamo il ricambio tramite l''editore o sostituiamo il gioco. Se vuoi, puoi aprire subito la segnalazione qui in chat scrivendo «voglio segnalare un problema con il mio ordine».'
+  - text: 'Per un difetto emerso dopo mesi vale la garanzia legale (24 mesi dalla consegna). Mandaci numero d''ordine e foto a assistenza@gigigames.it e troviamo la soluzione: ricambio dall''editore o sostituzione.'
+  utter_faq_resi/dove_spedire_reso:
+  - text: 'Non devi preoccuparti dell''indirizzo: quando richiedi il reso dall''account ricevi un''etichetta prepagata con tutti i dati da applicare al pacco. 📮
+
+      Imballa bene il gioco, meglio nella scatola di spedizione, e consegnalo al corriere indicato. Se hai dubbi scrivi a assistenza@gigigames.it.'
+  - text: L'indirizzo di reso e l'etichetta ti arrivano dopo aver richiesto il reso (area account → I miei ordini → Richiedi reso). Applica l'etichetta al pacco e consegnalo al corriere. In alternativa puoi portare il gioco di persona in negozio, Via Roma 12 ad Ancona.
+  utter_faq_resi/reso_in_negozio:
+  - text: 'Sì, puoi portare il gioco di persona al nostro negozio in Via Roma 12, 60121 Ancona. 🏬
+
+      Orari: lunedì 15:30-19:30; martedì-sabato 10:00-13:00 e 15:30-19:30; domenica chiuso. Ti consigliamo di avvisare prima l''assistenza (071 123 4567) per fare tutto più in fretta. Valgono le solite condizioni: gioco nuovo e cellophane integro.'
+  - text: 'Puoi riportare il gioco in negozio (Via Roma 12, Ancona) negli orari di apertura: lun 15:30-19:30, mar-sab 10:00-13:00 e 15:30-19:30. Per sicurezza chiama prima lo 071 123 4567.'
+  utter_faq_resi/stato_rimborso:
+  - text: 'Il rimborso parte entro 14 giorni da quando riceviamo il pacco di reso, con lo stesso metodo di pagamento. ⏳
+
+      Se sono passati più giorni o non sai se il pacco è arrivato, scrivi a assistenza@gigigames.it con il numero d''ordine, oppure chiama il 071 123 4567 (lunedì-venerdì 9:00-18:00). Non posso vedere da qui lo stato del singolo rimborso.'
+  - text: Per lo stato del tuo reso o rimborso contatta l'assistenza (assistenza@gigigames.it o 071 123 4567, lun-ven 9:00-18:00) con il numero d'ordine. Ricorda che abbiamo 14 giorni dal ricevimento del reso per rimborsare.
+  utter_faq_resi/reso_parziale:
+  - text: 'Sì, puoi restituire anche solo alcuni giochi dell''ordine: quando richiedi il reso scegli i prodotti da rendere. 🧩
+
+      Se l''ordine superava i 49 € solo grazie ai prodotti restituiti, per il calcolo della spedizione scrivi a assistenza@gigigames.it. Il rimborso riguarda i prodotti resi.'
+  - text: 'Il reso parziale è possibile: seleziona i prodotti da restituire dall''area account → I miei ordini → Richiedi reso. Per ordini con codici sconto o spedizione gratuita, l''assistenza (assistenza@gigigames.it) ti conferma l''importo esatto del rimborso.'
+  utter_faq_resi/reso_scaduto:
+  - text: 'Passati i 14 giorni dalla consegna il diritto di recesso non vale più. ⌛
+
+      Se però c''è un difetto o un problema del prodotto, la garanzia legale copre 24 mesi. Per altri casi scrivi a assistenza@gigigames.it: valutiamo la situazione, senza promesse.'
+  - text: Oltre i 14 giorni il recesso non è più possibile per cambio idea. Se il gioco è difettoso, la garanzia di 24 mesi ti tutela. In ogni caso puoi esporre il tuo caso a assistenza@gigigames.it.
+  utter_faq_resi/reso_estero:
+  - text: 'Il diritto di recesso di 14 giorni vale anche per gli ordini nell''Unione Europea. 🇪🇺
+
+      Per i costi e la spedizione del reso dall''estero non ho i dettagli, quindi scrivi a assistenza@gigigames.it indicando il numero d''ordine: ti indichiamo come procedere.'
+  - text: Anche per chi ha ordinato in UE vale il recesso entro 14 giorni dalla consegna. Per le modalità di restituzione dall'estero contatta assistenza@gigigames.it con il numero d'ordine.

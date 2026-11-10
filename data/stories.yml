@@ -1,0 +1,72 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_sorry
+
+- story: avvio da Telegram
+  steps:
+  - intent: start
+  - action: utter_welcome
+  - intent: mood_great
+  - action: utter_happy
+  - intent: ask_capabilities
+  - action: utter_capabilities
+
+- story: l'utente chiede come sta il bot
+  steps:
+  - intent: how_are_you
+  - action: utter_how_are_you
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_sorry
+  - intent: tell_joke
+  - action: utter_joke
+
+- story: chiacchierata completa
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+  - intent: ask_name
+  - action: utter_ask_name
+  - intent: tell_name
+    entities:
+    - nome: Andrea
+  - slot_was_set:
+    - nome: Andrea
+  - action: action_nice_to_meet
+  - intent: ask_time
+  - action: action_tell_time
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: utter_goodbye

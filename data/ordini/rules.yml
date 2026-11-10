@@ -1,0 +1,84 @@
+version: "3.1"
+
+rules:
+- rule: Ordini - tracciare un ordine
+  steps:
+  - intent: traccia_ordine
+  - action: action_ordini_imposta_scopo
+  - action: ordine_form
+  - active_loop: ordine_form
+
+- rule: Ordini - annullare un ordine
+  steps:
+  - intent: annulla_ordine
+  - action: action_ordini_imposta_scopo
+  - action: ordine_form
+  - active_loop: ordine_form
+
+- rule: Ordini - modificare un ordine
+  steps:
+  - intent: modifica_ordine
+  - action: action_ordini_imposta_scopo
+  - action: ordine_form
+  - active_loop: ordine_form
+
+- rule: Ordini - ordine in ritardo
+  steps:
+  - intent: ordine_in_ritardo
+  - action: action_ordini_imposta_scopo
+  - action: ordine_form
+  - active_loop: ordine_form
+
+- rule: Ordini - numero d'ordine dato senza contesto
+  condition:
+  - active_loop: null
+  steps:
+  - intent: dai_dati_ordine
+  - action: action_ordini_imposta_scopo
+  - action: ordine_form
+  - active_loop: ordine_form
+
+- rule: Ordini - risposta al termine del form
+  condition:
+  - active_loop: ordine_form
+  steps:
+  - action: ordine_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_ordini_esegui
+
+# Il sì/no conferma l'annullamento solo subito dopo la domanda «vuoi annullarlo davvero?»
+- rule: Ordini - conferma annullamento
+  steps:
+  - action: action_ordini_esegui
+  - slot_was_set:
+    - ordini_attesa_conferma: true
+  - intent: affirm
+  - action: action_ordini_conferma_annullamento
+  - slot_was_set:
+    - ordini_attesa_conferma: false
+
+- rule: Ordini - rifiuto annullamento
+  steps:
+  - action: action_ordini_esegui
+  - slot_was_set:
+    - ordini_attesa_conferma: true
+  - intent: deny
+  - action: action_ordini_rifiuta_annullamento
+  - slot_was_set:
+    - ordini_attesa_conferma: false
+
+- rule: Ordini - l'utente lascia perdere durante il form
+  condition:
+  - active_loop: ordine_form
+  steps:
+  - intent: interrompi
+  - action: action_deactivate_loop
+  - active_loop: null
+  - action: action_ordini_reset
+
+- rule: Ordini - domande frequenti
+  steps:
+  - intent: faq_ordini
+  - action: utter_faq_ordini

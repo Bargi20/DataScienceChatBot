@@ -1,0 +1,127 @@
+version: "3.1"
+
+stories:
+- story: test ordini - stato di un ordine
+  steps:
+  - user: |
+      dov'e il mio ordine?
+    intent: traccia_ordine
+  - action: action_ordini_imposta_scopo
+  - action: ordine_form
+  - active_loop: ordine_form
+  - slot_was_set:
+    - requested_slot: ordini_numero
+  - user: |
+      [#482913](numero_ordine)
+    intent: dai_dati_ordine
+  - action: ordine_form
+  - slot_was_set:
+    - ordini_numero: "482913"
+  - slot_was_set:
+    - requested_slot: ordini_email
+  - user: |
+      [mario.rossi@example.com](email)
+    intent: dai_dati_ordine
+  - action: ordine_form
+  - slot_was_set:
+    - ordini_email: mario.rossi@example.com
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_ordini_esegui
+
+- story: test ordini - annullare un ordine e confermare
+  steps:
+  - user: |
+      vorrei annullare l'ordine [516204](numero_ordine)
+    intent: annulla_ordine
+    entities:
+    - numero_ordine: "516204"
+  - action: action_ordini_imposta_scopo
+  - action: ordine_form
+  - active_loop: ordine_form
+  - slot_was_set:
+    - requested_slot: ordini_email
+  - user: |
+      [giulia.bianchi@example.com](email)
+    intent: dai_dati_ordine
+  - action: ordine_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_ordini_esegui
+  - slot_was_set:
+    - ordini_attesa_conferma: true
+  - user: |
+      si
+    intent: affirm
+  - action: action_ordini_conferma_annullamento
+  - slot_was_set:
+    - ordini_attesa_conferma: false
+
+- story: test ordini - annullamento rifiutato
+  steps:
+  - user: |
+      voglio cancellare il mio ordine
+    intent: annulla_ordine
+  - action: action_ordini_imposta_scopo
+  - action: ordine_form
+  - active_loop: ordine_form
+  - user: |
+      [#730155](numero_ordine)
+    intent: dai_dati_ordine
+  - action: ordine_form
+  - user: |
+      [luca.ferri@example.com](email)
+    intent: dai_dati_ordine
+  - action: ordine_form
+  - active_loop: null
+  - action: action_ordini_esegui
+  - slot_was_set:
+    - ordini_attesa_conferma: true
+  - user: |
+      no
+    intent: deny
+  - action: action_ordini_rifiuta_annullamento
+  - slot_was_set:
+    - ordini_attesa_conferma: false
+
+- story: test ordini - ritardo
+  steps:
+  - user: |
+      il mio ordine non e ancora arrivato
+    intent: ordine_in_ritardo
+  - action: action_ordini_imposta_scopo
+  - action: ordine_form
+  - active_loop: ordine_form
+
+- story: test ordini - modifica indirizzo
+  steps:
+  - user: |
+      devo cambiare l'indirizzo del mio ordine
+    intent: modifica_ordine
+  - action: action_ordini_imposta_scopo
+  - action: ordine_form
+  - active_loop: ordine_form
+
+- story: test ordini - lascia perdere durante il form
+  steps:
+  - user: |
+      voglio tracciare il mio ordine
+    intent: traccia_ordine
+  - action: action_ordini_imposta_scopo
+  - action: ordine_form
+  - active_loop: ordine_form
+  - user: |
+      lascia perdere
+    intent: interrompi
+  - action: action_deactivate_loop
+  - active_loop: null
+  - action: action_ordini_reset
+
+- story: test ordini - domanda frequente email di conferma
+  steps:
+  - user: |
+      non mi e arrivata la mail di conferma
+    intent: faq_ordini
+  - action: utter_faq_ordini

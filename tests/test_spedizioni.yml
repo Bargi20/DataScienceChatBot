@@ -1,0 +1,30 @@
+version: "3.1"
+
+stories:
+  - story: costo della spedizione
+    steps:
+      - user: |
+          quanto costa la spedizione
+        intent: faq_spedizioni
+      - action: utter_faq_spedizioni
+
+  - story: spedizione gratuita
+    steps:
+      - user: |
+          da quanto e gratis la spedizione
+        intent: faq_spedizioni
+      - action: utter_faq_spedizioni
+
+  - story: ritiro in negozio
+    steps:
+      - user: |
+          posso ritirare in negozio
+        intent: faq_spedizioni
+      - action: utter_faq_spedizioni
+
+  - story: calcolo spedizione per la Sardegna
+    steps:
+      - user: |
+          quanto pago di spedizione per un ordine da [35 euro](budget) in [sardegna](destinazione_spedizione)
+        intent: calcola_spedizione
+      - action: action_calcola_spedizione

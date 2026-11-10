@@ -1,0 +1,352 @@
+version: "3.1"
+
+nlu:
+- intent: faq_resi/recesso_diritto
+  examples: |
+    - posso restituire un gioco che ho comprato?
+    - quanti giorni ho per fare il reso?
+    - c'è il diritto di recesso?
+    - entro quanto tempo posso restituire l'ordine
+    - quanto tempo ho per ripensarci dopo l'acquisto
+    - posso recedere dal contratto?
+    - se non mi serve piu il gioco lo posso rimandare indietro?
+    - voglio sapere la vostra politica sui resi
+    - come funziona il recesso per gli acquisti online
+    - da quando decorrono i 14 giorni per il reso
+    - i giorni per il reso si contano dalla consegna o dall'ordine?
+    - avete una politica di reso soddisfatti o rimborsati?
+    - ho 14 giorni per restituire vero?
+    - posso cambiare idea dopo aver ordinato
+    - informazioni sui resi
+    - si puo restiture quello che compro sul sito?
+
+- intent: faq_resi/come_fare_reso
+  examples: |
+    - come faccio a fare un reso?
+    - voglio restituire un gioco, come devo fare
+    - come si richiede un reso
+    - qual e la procedura per restituire un prodotto
+    - dove clicco per richiedere il reso?
+    - devo restituire un ordine, cosa devo fare
+    - come rimando indietro il pacco
+    - come si apre una richiesta di reso
+    - si puo fare il reso anche via email?
+    - devo compilare qualche modulo per il reso?
+    - vorrei rendere un acquisto, da dove comincio
+    - procedura di reso
+    - dove trovo il pulsante richiedi reso
+    - ho comprato da ospite, come faccio il reso senza account
+    - mi spiegate come funziona la restituzione passo passo
+    - come restituisco quello che ho ordinato
+
+- intent: faq_resi/costo_reso
+  examples: |
+    - quanto costa fare un reso?
+    - il reso e gratuito?
+    - devo pagare io le spese di restituzione?
+    - chi paga la spedizione del reso
+    - quanto costa rimandare indietro un gioco
+    - costi di reso
+    - la restituzione ha un costo
+    - se il gioco e difettoso pago il reso?
+    - le spese di reso me le rimborsate?
+    - c'e un'etichetta prepagata per il reso?
+    - quanto mi costa restituire un prodotto sbagliato
+    - 6,90 euro per il reso sono sempre dovuti?
+    - se avete sbagliato voi il reso e gratis?
+    - spedire il reso e a mio carico?
+    - paga il cliente il reso?
+
+- intent: faq_resi/condizioni_reso
+  examples: |
+    - in che condizioni deve essere il gioco per il reso?
+    - il cellophane deve essere integro?
+    - posso restituire un gioco senza cellophane?
+    - quali sono le condizioni per accettare un reso
+    - la scatola deve essere sigillata?
+    - il gioco deve essere nuovo per il reso
+    - serve la confezione originale per restituire?
+    - se ho tolto la plastica posso ancora fare il reso
+    - accettate resi di giochi non sigillati
+    - ho strappato il cellophane per sbaglio, posso restituirlo?
+    - la scatola e un po schiacciata, posso fare il reso?
+    - cosa non si puo restituire
+    - requisiti per restituire un prodotto
+    - serve lo scontrino o la fattura per il reso?
+    - ci sono prodotti che non si possono rendere?
+    - il gioco va rimandato con tutti i componenti?
+
+- intent: faq_resi/gioco_aperto
+  examples: |
+    - ho aperto il gioco ma non mi piace, posso restituirlo?
+    - se apro la scatola posso ancora fare il reso?
+    - ho giocato una partita e non mi e piaciuto
+    - posso rendere un gioco gia provato
+    - il gioco non mi ha convinto, lo posso riportare indietro?
+    - ho aperto la scatola, accettate il reso?
+    - non mi diverte, posso restituire un gioco aperto
+    - comprato un gioco ma e troppo difficile, posso renderlo?
+    - ho tolto il cellophane e non mi piace, cosa posso fare
+    - giochi aperti si possono restituire?
+    - e troppo complicato per i miei figli, posso restituirlo dopo averlo aperto?
+    - ho fatto una partita e ora vorrei il rimborso
+    - posso provare il gioco e poi restituirlo se non mi piace?
+    - gioco aperto e giocato, c'e modo di avere un rimborso?
+    - se non mi piace dopo averlo giocato lo riprendete?
+
+- intent: faq_resi/tempi_rimborso
+  examples: |
+    - quando arriva il rimborso?
+    - in quanto tempo mi rimborsate?
+    - dopo il reso quanto devo aspettare per i soldi
+    - tempi di rimborso
+    - come vengo rimborsato?
+    - il rimborso torna sulla mia carta?
+    - i soldi li ricevo con lo stesso metodo di pagamento?
+    - ho pagato con paypal, il rimborso dove arriva
+    - quanti giorni ci vogliono per riavere i soldi
+    - rimborso su buono o in denaro?
+    - mi rimborsate anche le spese di spedizione?
+    - quando vengo rimborsato dopo aver restituito il pacco
+    - ho pagato con bonifico, come mi rimborsate
+    - il rimborso e immediato?
+    - avro i soldi indietro o un buono acquisto?
+
+- intent: faq_resi/cambio_gioco
+  examples: |
+    - posso cambiare il gioco con un altro?
+    - vorrei sostituirlo con un altro titolo
+    - fate il cambio merce?
+    - posso scambiare il gioco con un altro del catalogo
+    - ho preso il gioco sbagliato, posso cambiarlo?
+    - voglio cambiare il mio acquisto con un gioco diverso
+    - e possibile un cambio invece del rimborso
+    - se costa di piu del primo pago la differenza?
+    - cambio prodotto
+    - posso rendere questo e prenderne un altro?
+    - mi piacerebbe cambiare il gioco con un altro simile
+    - fate sostituzioni di giochi?
+    - il cambio e gratuito?
+    - invece di restituire posso scegliere un altro gioco
+    - come funziona il cambio con un altro prodotto
+
+- intent: faq_resi/reso_regalo
+  examples: |
+    - mi hanno regalato un gioco, posso restituirlo?
+    - ho ricevuto un gioco in regalo e non lo voglio, si puo cambiare
+    - reso di un regalo
+    - posso fare il reso di un regalo senza essere l'acquirente?
+    - il regalo e doppio, posso cambiarlo?
+    - ho un regalo comprato da voi, vorrei cambiarlo con un altro gioco
+    - chi ha ricevuto il regalo puo fare il reso?
+    - mi hanno regalato un vostro gioco ma ce l'ho gia
+    - come restituisco un regalo ricevuto?
+    - il regalo e stato spedito direttamente a me, posso renderlo?
+    - se il rimborso va a chi ha comprato il regalo?
+    - posso cambiare un regalo senza che lo sappia chi me l'ha fatto
+    - ho ricevuto un pacco regalo e vorrei un altro titolo
+    - serve il nome di chi ha fatto l'ordine per rendere un regalo?
+    - gioco ricevuto in regalo, cosa faccio per il cambio
+
+- intent: faq_resi/reso_offerta
+  examples: |
+    - posso restituire un prodotto comprato in offerta?
+    - il reso vale anche per i giochi in saldo?
+    - ho preso un gioco scontato, posso renderlo
+    - i prodotti in promozione si possono restituire?
+    - reso di un articolo scontato
+    - se restituisco un gioco acquistato con codice sconto cosa mi rimborsate?
+    - ho usato BENVENUTO10, quanto mi viene rimborsato se rendo il gioco?
+    - rimborso di un gioco pagato meno grazie a un codice
+    - le offerte hanno lo stesso diritto di recesso?
+    - se rendo un solo gioco di un ordine scontato come calcolate il rimborso
+    - ho comprato in saldo, posso fare il cambio?
+    - gli sconti vengono tolti dal rimborso?
+    - posso restituire un gioco pagato con codice sconto GIOCA5
+    - ho usato i punti sconto, se rendo il gioco li riavro?
+    - i giochi in promo non si rendono?
+
+- intent: faq_resi/reso_giftcard_preordine
+  examples: |
+    - posso restituire una gift card?
+    - la gift card si rimborsa?
+    - ho comprato una carta regalo per sbaglio, posso farmi rimborsare
+    - le gift card si possono rendere
+    - posso annullare un preordine?
+    - ho fatto un preordine e ho cambiato idea, posso avere il rimborso?
+    - reso di un gioco in preordine
+    - il preordine si puo restituire dopo la consegna?
+    - se preordino un gioco posso recedere prima che esca?
+    - ho pagato un preordine, quando posso chiedere il rimborso
+    - la carta regalo non e piu utile, la riprendete?
+    - preordine e diritto di recesso
+    - gift card acquistata ma non la voglio piu
+    - posso restituire il codice della gift card?
+    - posso rimborsare un preordine non ancora spedito
+
+- intent: faq_resi/garanzia_legale
+  examples: |
+    - c'e la garanzia sui giochi?
+    - quanto dura la garanzia?
+    - garanzia legale di 24 mesi vale anche da voi?
+    - come funziona la garanzia
+    - il gioco ha la garanzia?
+    - quanti anni di garanzia hanno i prodotti
+    - cosa copre la garanzia legale
+    - la garanzia copre i difetti di fabbrica?
+    - chi risponde in caso di difetto, voi o l'editore
+    - ho bisogno di far valere la garanzia, come si fa
+    - la garanzia copre anche pezzi rovinati dall'uso?
+    - garanzia 2 anni
+    - il difetto e coperto dalla garanzia?
+    - serve la fattura per usare la garanzia?
+    - la garanzia vale anche sugli accessori?
+
+- intent: faq_resi/difetto_dopo_mesi
+  examples: |
+    - il gioco si e rovinato dopo qualche mese, cosa faccio
+    - ho comprato un gioco otto mesi fa e ha un difetto
+    - dopo sei mesi le carte si sono scollate, posso fare qualcosa
+    - il tabellone si e staccato dopo poco tempo, ho diritto a un rimedio?
+    - gioco difettoso ma i 14 giorni sono passati
+    - e passato piu di un mese e ho scoperto un difetto
+    - mi accorgo solo ora che manca un pezzo, ordine di mesi fa
+    - difetto di fabbricazione dopo mesi
+    - se il gioco si rompe dopo un anno
+    - la scatola era ok ma ora i pezzi di plastica si sono spaccati
+    - ho trovato un difetto dopo molto tempo dall'acquisto
+    - prodotto che non funziona piu dopo qualche mese
+    - segnare un difetto uscito tardi
+    - dopo sei mesi posso ancora chiedere la sostituzione?
+    - un componente del gioco e difettoso da quando l'ho aperto un po di tempo fa
+
+- intent: faq_resi/dove_spedire_reso
+  examples: |
+    - dove devo spedire il reso?
+    - a che indirizzo mando il pacco del reso
+    - indirizzo per i resi
+    - dove va rispedito il gioco
+    - a chi devo consegnare il pacco da restituire
+    - quale corriere devo usare per il reso?
+    - posso scegliere io il corriere per la restituzione
+    - devo stampare un'etichetta per il reso?
+    - dove porto il pacco per la restituzione
+    - ho il pacco pronto, a chi lo consegno?
+    - come imballo il gioco da restituire
+    - mi mandate voi l'etichetta di spedizione per il reso?
+    - posso lasciare il reso in un punto di ritiro?
+    - dove rimando indietro il gioco difettoso
+    - il corriere passa a ritirare il reso a casa?
+
+- intent: faq_resi/reso_in_negozio
+  examples: |
+    - posso riportare il gioco in negozio?
+    - il reso si puo fare al negozio fisico?
+    - posso restituire in negozio ad Ancona?
+    - ho comprato online, posso rendere in negozio
+    - se porto il pacco al negozio evito le spese di reso?
+    - posso fare il cambio di persona in negozio
+    - riconsegno il gioco al negozio di via Roma?
+    - gli acquisti online si possono rendere nel punto vendita
+    - posso passare in negozio per un cambio
+    - il reso di persona e gratuito?
+    - quando posso venire in negozio a fare il reso
+    - vengo io a riportare il gioco, e possibile?
+    - ho ritirato in negozio e vorrei rendere
+    - reso al banco
+
+- intent: faq_resi/stato_rimborso
+  examples: |
+    - ho restituito il gioco, quando mi rimborsate?
+    - ho spedito il reso una settimana fa e non ho ancora il rimborso
+    - come faccio a sapere lo stato del mio rimborso
+    - non ho ancora ricevuto il rimborso
+    - dove vedo a che punto e il mio reso?
+    - il reso e arrivato da voi?
+    - avete ricevuto il pacco che ho restituito?
+    - sto ancora aspettando il rimborso
+    - controllare lo stato del reso
+    - ho rimandato il gioco ma i soldi non sono arrivati
+    - il rimborso e in ritardo
+    - mi avvisate quando ricevete il reso?
+    - quando vedo il rimborso sul conto
+    - lo stato della restituzione dove lo trovo
+    - sono passati piu di 14 giorni e non ho il rimborso
+
+- intent: faq_resi/reso_parziale
+  examples: |
+    - posso restituire solo uno dei giochi dell'ordine?
+    - vorrei rendere solo un prodotto e tenere gli altri
+    - reso parziale di un ordine
+    - ho ordinato tre giochi e ne restituisco uno
+    - se rendo un solo gioco perdo la spedizione gratuita?
+    - dopo un reso parziale la spedizione gratis viene tolta?
+    - si puo restituire solo una parte dell'ordine
+    - posso tenere l'espansione e rendere il gioco base?
+    - restituzione di un articolo su due
+    - ordine con piu giochi, ne rendo solo uno, come funziona
+    - ho preso 2 giochi uguali per sbaglio, ne posso rendere uno?
+    - rendere solo qualche gioco dell'ordine
+
+- intent: faq_resi/reso_scaduto
+  examples: |
+    - sono passati piu di 14 giorni, posso ancora restituire?
+    - ho superato i 14 giorni per il reso
+    - ho dimenticato di fare il reso entro i termini
+    - e troppo tardi per restituire?
+    - il termine per il reso e scaduto di qualche giorno
+    - ho ricevuto il pacco tre settimane fa, posso restituirlo lo stesso?
+    - reso fuori termine
+    - fate un'eccezione se sono passati 20 giorni?
+    - oltre i 14 giorni cosa posso fare
+    - sono in ritardo di due giorni con il reso
+    - il recesso e scaduto, ho qualche alternativa?
+    - ho aspettato troppo per restituire, c'e una soluzione
+
+- intent: faq_resi/reso_estero
+  examples: |
+    - ho ordinato dall'estero, come faccio il reso?
+    - abito in Germania, posso restituire un gioco?
+    - reso da un paese dell'unione europea
+    - quanto costa il reso se vivo fuori dall'Italia
+    - ho un indirizzo di consegna in Francia, come restituisco
+    - spedizione del reso dall'estero
+    - dalla Spagna posso fare il reso?
+    - vale lo stesso diritto di recesso per gli ordini UE
+    - i resi dall'Europa sono gratuiti?
+    - mi trovo in Austria e devo rendere un gioco
+    - ho ordinato da Parigi e vorrei restituire il pacco
+    - se vivo in Belgio chi paga la spedizione del reso?
+    - restituire un ordine arrivato in un altro paese europeo
+    - sono in Olanda, come rimando indietro il gioco?
+
+- intent: segnala_problema_ordine
+  examples: |
+    - mi è arrivato il gioco con la scatola rotta
+    - mi e arrivato il gioco danneggiato
+    - la scatola e arrivata tutta schiacciata
+    - mancano delle carte nel mio gioco
+    - nel gioco mancano dei pezzi
+    - mi avete mandato il gioco sbagliato
+    - ho ricevuto un gioco diverso da quello che ho ordinato
+    - voglio segnalare un problema con il mio ordine
+    - devo segnalare un problema con un ordine ricevuto
+    - ho un problema con il pacco che mi e arrivato
+    - il pacco e arrivato aperto e rovinato
+    - ho aperto la scatola e c'e un pezzo spaccato
+    - il gioco che ho ricevuto e difettoso
+    - nell'ordine [#482913](numero_ordine) il gioco e arrivato rotto
+    - ho un problema con l'ordine [482913](numero_ordine)
+    - voglio fare una segnalazione sull'ordine [#215476](numero_ordine)
+    - il corriere mi ha consegnato il pacco tutto ammaccato
+    - manca una pedina nella scatola
+    - ho ricevuto un prodotto che non avevo ordinato
+    - le carte del mio gioco sono stampate male
+    - aprire una pratica per un danno
+    - vorrei segnalare un danno da trasporto
+    - c'e un errore nel mio ordine, il gioco non e quello giusto
+    - il tabellone e arrivato strappato
+    - segnalazione problema ordine
+    - mi e arrivato il gioco rovinato
+    - il corriere mi ha consegnato la scatola distrutta
+    - il pacco e arrivato tutto ammaccato e il gioco e rotto

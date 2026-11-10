@@ -1,0 +1,164 @@
+version: "3.1"
+
+stories:
+
+- story: consiglio personalizzato con tutte le domande
+  steps:
+  - user: |
+      mi consigli un gioco?
+    intent: chiedi_consiglio
+  - action: action_avvia_consiglio
+  - action: consiglio_form
+  - active_loop: consiglio_form
+  - user: |
+      siamo in [4](num_giocatori)
+    intent: indica_criteri
+  - action: consiglio_form
+  - user: |
+      il piu piccolo ha [8](eta) anni
+    intent: indica_criteri
+  - action: consiglio_form
+  - user: |
+      non importa
+    intent: rispondi_indifferente
+  - action: consiglio_form
+  - user: |
+      fino a [30](budget) euro
+    intent: indica_criteri
+  - action: consiglio_form
+  - user: |
+      mi piacciono i giochi [cooperativi](categoria)
+    intent: indica_criteri
+  - action: consiglio_form
+  - active_loop: null
+  - action: action_consiglia_giochi
+
+- story: consiglio con criteri nel primo messaggio
+  steps:
+  - user: |
+      cerco un gioco per [4](num_giocatori) persone sotto i [30](budget) euro
+    intent: chiedi_consiglio
+  - action: action_avvia_consiglio
+  - action: consiglio_form
+  - active_loop: consiglio_form
+  - user: |
+      ha [10](eta) anni
+    intent: indica_criteri
+  - action: consiglio_form
+  - user: |
+      massimo [un'ora](durata)
+    intent: indica_criteri
+  - action: consiglio_form
+  - user: |
+      qualsiasi
+    intent: rispondi_indifferente
+  - action: consiglio_form
+  - active_loop: null
+  - action: action_consiglia_giochi
+
+- story: domanda di cultura ludica durante il consiglio
+  steps:
+  - user: |
+      aiutami a trovare il gioco giusto
+    intent: chiedi_consiglio
+  - action: action_avvia_consiglio
+  - action: consiglio_form
+  - active_loop: consiglio_form
+  - user: |
+      cos'è un gioco cooperativo?
+    intent: faq_giochi
+  - action: utter_faq_giochi
+  - action: consiglio_form
+  - active_loop: consiglio_form
+
+- story: consiglio interrotto
+  steps:
+  - user: |
+      consigliami un gioco da tavolo
+    intent: chiedi_consiglio
+  - action: action_avvia_consiglio
+  - action: consiglio_form
+  - active_loop: consiglio_form
+  - user: |
+      lascia perdere
+    intent: interrompi
+  - action: action_deactivate_loop
+  - active_loop: null
+  - action: action_interrompi_consiglio
+
+- story: interrompi senza niente in corso
+  steps:
+  - user: |
+      basta così
+    intent: interrompi
+  - action: utter_interrompi
+
+- story: consiglio per una coppia
+  steps:
+  - user: |
+      consigliami un gioco da fare [in coppia](categoria)
+    intent: chiedi_consiglio_occasione
+  - action: action_consiglia_occasione
+
+- story: consiglio per giocare da soli
+  steps:
+  - user: |
+      mi consigli un gioco [in solitario](categoria)?
+    intent: chiedi_consiglio_occasione
+  - action: action_consiglia_occasione
+
+- story: consiglio per principianti
+  steps:
+  - user: |
+      consigliami qualcosa per [principianti](occasione)
+    intent: chiedi_consiglio_occasione
+  - action: action_consiglia_occasione
+
+- story: giochi simili a Catan
+  steps:
+  - user: |
+      qualcosa come [Catan](gioco)
+    intent: chiedi_giochi_simili
+  - action: action_giochi_simili
+
+- story: giochi simili a Dixit
+  steps:
+  - user: |
+      mi è piaciuto [Dixit](gioco), cosa mi consigli?
+    intent: chiedi_giochi_simili
+  - action: action_giochi_simili
+
+- story: idea regalo con età e budget
+  steps:
+  - user: |
+      un regalo per mia nipote di [8](eta) anni sui [30](budget) euro
+    intent: chiedi_idea_regalo
+  - action: action_idea_regalo
+
+- story: sorprendimi
+  steps:
+  - user: |
+      sorprendimi
+    intent: chiedi_sorpresa
+  - action: action_sorprendimi
+
+- story: faq deckbuilding
+  steps:
+  - user: |
+      cosa vuol dire deckbuilding?
+    intent: faq_giochi
+  - action: utter_faq_giochi
+
+- story: faq german e american
+  steps:
+  - user: |
+      differenza tra german e american?
+    intent: faq_giochi
+  - action: utter_faq_giochi
+
+- story: faq conservare le carte
+  steps:
+  - user: |
+      come faccio a proteggere le carte dei giochi?
+    intent: faq_giochi
+  - action: utter_faq_giochi

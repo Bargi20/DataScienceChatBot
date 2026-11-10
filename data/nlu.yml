@@ -1,0 +1,407 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - ciao
+    - ehi
+    - ei
+    - hey
+    - salve
+    - ciao a tutti
+    - salve a tutti
+    - ciao bot
+    - ehi ciao
+    - buongiorno
+    - buonasera
+    - buon pomeriggio
+    - buondì
+    - ehilà
+    - hello
+    - hi
+    - hola
+    - iniziamo
+    - ciao gigi
+    - buongiorno a te
+    - salve bot
+    - ehi ciao come va
+    - ciaoo
+    - hey gigi bot
+    - ciao, ci sei?
+    - ciao a te
+    - ciao gigi bot
+    - ciao, buongiorno
+
+- intent: goodbye
+  examples: |
+    - arrivederci
+    - a presto
+    - ci vediamo
+    - ci vediamo dopo
+    - ci sentiamo
+    - buonanotte
+    - addio
+    - buona giornata
+    - buona serata
+    - a dopo
+    - a domani
+    - alla prossima
+    - devo andare
+    - ora vado
+    - bye
+
+- intent: affirm
+  examples: |
+    - sì
+    - si
+    - s
+    - certo
+    - certamente
+    - ovviamente
+    - esatto
+    - corretto
+    - giusto
+    - va bene
+    - ok
+    - d'accordo
+    - sì grazie
+    - assolutamente sì
+    - proprio così
+    - sì un po'
+    - yes
+    - sì certo
+    - si si
+    - confermo
+    - sì, procedi
+    - va benissimo
+    - esatto, così
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - mai
+    - non credo
+    - non mi piace
+    - assolutamente no
+    - non proprio
+    - no grazie
+    - per niente
+    - non molto
+    - nemmeno un po'
+    - neanche per sogno
+    - direi di no
+    - nope
+    - no no
+    - non voglio
+    - no, non serve
+    - assolutamente no grazie
+
+- intent: mood_great
+  examples: |
+    - bene
+    - sto bene
+    - tutto bene
+    - molto bene
+    - benone
+    - benissimo
+    - sto benissimo
+    - alla grande
+    - sto alla grande
+    - ottimo
+    - fantastico
+    - meraviglioso
+    - mi sento un re
+    - mi sento molto bene
+    - sono felice
+    - sono al settimo cielo
+    - super contento
+    - estremamente bene
+    - tutto ok
+    - abbastanza bene
+    - bene grazie
+    - sto bene grazie
+    - tutto bene grazie
+    - bene dai
+    - non c'è male
+    - discretamente
+    - tutto a posto
+
+- intent: mood_unhappy
+  examples: |
+    - male
+    - sto male
+    - malissimo
+    - così così
+    - non benissimo
+    - non sto bene
+    - non sto molto bene
+    - non mi sento molto bene
+    - sono triste
+    - triste
+    - molto triste
+    - tristissimo
+    - sono deluso
+    - sono delusa
+    - infelice
+    - sono giù
+    - sono stanco
+    - sono stanca
+    - sono stressato
+    - giornata no
+    - la mia giornata è stata orribile
+    - potrebbe andare meglio
+    - oggi mi sento giù
+    - oggi sto male
+    - oggi non è giornata
+    - ho avuto una giornata terribile
+    - è stata una giornata difficile
+    - che giornata storta
+    - sono a pezzi
+    - mi sento solo
+    - sono preoccupato
+    - sono arrabbiato
+
+- intent: bot_challenge
+  examples: |
+    - sei un bot?
+    - sei un robot?
+    - sei umano?
+    - sei un essere umano?
+    - sei una persona?
+    - sei reale?
+    - sei un computer?
+    - sei una macchina?
+    - sei un programma?
+    - sei un'intelligenza artificiale?
+    - sto parlando con un bot?
+    - sto parlando con una persona vera?
+
+- intent: thanks
+  examples: |
+    - grazie
+    - grazie mille
+    - grazie tante
+    - grazie infinite
+    - molte grazie
+    - ti ringrazio
+    - grazie davvero
+    - grazie per l'aiuto
+    - ok grazie
+    - perfetto grazie
+    - gentilissimo
+    - thanks
+    - ti ringrazio molto
+    - grazie gentilissimo
+    - mille grazie
+
+- intent: how_are_you
+  examples: |
+    - come stai?
+    - come va?
+    - ciao, come stai?
+    - tu come stai?
+    - e tu?
+    - come te la passi?
+    - come ti senti?
+    - stai bene?
+    - come procede?
+    - tutto a posto da te?
+
+- intent: ask_name
+  examples: |
+    - come ti chiami?
+    - qual è il tuo nome?
+    - chi sei?
+    - tu chi sei?
+    - hai un nome?
+    - come posso chiamarti?
+    - dimmi il tuo nome
+    - il tuo nome?
+    - presentati
+
+- intent: tell_name
+  examples: |
+    - mi chiamo [Andrea](nome)
+    - mi chiamo [Giulia](nome)
+    - mi chiamo [luca](nome)
+    - io mi chiamo [Marco](nome)
+    - ciao, mi chiamo [Matteo](nome)
+    - mi chiamo [Chiara](nome) e tu?
+    - il mio nome è [Francesca](nome)
+    - il mio nome è [Alessandro](nome)
+    - il mio nome è [sara](nome)
+    - chiamami [Davide](nome)
+    - chiamami pure [Federico](nome)
+    - puoi chiamarmi [Elena](nome)
+    - piacere, sono [Martina](nome)
+    - piacere, [Simone](nome)
+    - mi chiamano tutti [Giorgio](nome)
+
+- intent: ask_capabilities
+  examples: |
+    - che sai fare?
+    - che sai fare
+    - che sai fare ?
+    - cosa sai fare
+    - che puoi fare?
+    - che fai?
+    - cosa sei capace di fare?
+    - che cosa puoi fare?
+    - a che servi?
+    - che servizi hai?
+    - cosa sai fare?
+    - che cosa sai fare?
+    - cosa puoi fare?
+    - cosa fai?
+    - aiuto
+    - help
+    - come funzioni?
+    - quali sono le tue funzioni?
+    - in cosa mi puoi aiutare?
+    - come mi puoi aiutare?
+    - cosa posso chiederti?
+    - che comandi hai?
+    - mi aiuti?
+    - ho bisogno di aiuto
+    - cosa puoi fare per me?
+    - menu
+    - quali servizi offri?
+    - a cosa servi?
+    - che domande posso farti?
+
+- intent: ask_creator
+  examples: |
+    - chi ti ha creato?
+    - chi ti ha fatto?
+    - chi ti ha programmato?
+    - chi ti ha costruito?
+    - chi ti ha sviluppato?
+    - chi è il tuo creatore?
+    - da chi sei stato creato?
+    - come sei stato creato?
+    - con cosa sei fatto?
+    - che tecnologia usi?
+
+- intent: tell_joke
+  examples: |
+    - raccontami una barzelletta
+    - dimmi una barzelletta
+    - conosci qualche barzelletta?
+    - barzelletta
+    - un'altra barzelletta
+    - dimmi una battuta
+    - fai una battuta
+    - fammi ridere
+    - raccontami qualcosa di divertente
+    - sai qualche barzelletta?
+    - mi racconti una barzelletta?
+    - raccontami una barzelletta divertente
+    - fammi una battuta
+    - voglio ridere un po'
+    - dimmi qualcosa che fa ridere
+    - conosci battute sui giochi?
+
+- intent: ask_time
+  examples: |
+    - che ore sono?
+    - che ora è?
+    - che ore sono adesso?
+    - sai che ore sono?
+    - mi sai dire che ore sono?
+    - mi dici l'ora?
+    - dimmi l'ora
+    - ora
+    - quanto è tardi?
+
+- intent: ask_date
+  examples: |
+    - che giorno è oggi?
+    - oggi che giorno è?
+    - che giorno siamo?
+    - in che giorno siamo?
+    - che data è?
+    - qual è la data di oggi?
+    - dimmi la data
+    - data
+    - quanti ne abbiamo oggi?
+    - in che mese siamo?
+    - che anno è?
+
+- intent: compliment
+  examples: |
+    - sei bravo
+    - bravo
+    - che bravo
+    - sei fantastico
+    - sei simpatico
+    - sei intelligente
+    - sei il migliore
+    - sei grande
+    - sei utile
+    - mi piaci
+    - complimenti
+    - ottimo lavoro
+    - sei forte
+    - sei troppo forte
+    - che forte
+    - sei mitico
+    - sei un grande
+    - sei bravissimo
+
+- intent: insult
+  examples: |
+    - sei stupido
+    - sei scemo
+    - sei un idiota
+    - sei inutile
+    - sei pessimo
+    - sei lento
+    - fai schifo
+    - non capisci niente
+    - non servi a niente
+    - che bot inutile
+    - sei proprio stupido
+    - bot scemo
+    - che idiota
+    - sei una schifezza
+    - non vali niente
+    - sei proprio inutile
+
+- intent: out_of_scope
+  examples: |
+    - che tempo farà domani?
+    - prenotami un volo per Roma
+    - qual è la capitale della Francia?
+    - mi ordini una pizza?
+    - quanto fa 2+2?
+    - traduci questa frase in inglese
+    - qual è il prezzo del bitcoin?
+    - accendi la luce
+    - mettimi della musica
+    - quanto dista Napoli da Torino?
+    - qwerty
+    - jkjkjk
+    - sdfsdf
+    - aaaaa
+    - blablabla
+    - xyz
+    - hjkl
+    - consigliami un film da vedere stasera
+    - mi consigli un libro da leggere?
+    - che serie tv mi consigli su netflix?
+    - consigliami un videogioco per la ps5
+    - chi ha vinto lo scudetto quest'anno?
+    - che risultato ha fatto la juve?
+    - mi dai la ricetta della carbonara?
+    - aiutami a fare i compiti di matematica
+    - scrivimi una poesia d'amore
+    - che tempo fa ad ancona?
+    - dove posso comprare un telefono nuovo?
+    - vendete anche biciclette?
+    - prenotami un tavolo al ristorante
+    - chi e il presidente della repubblica?
+    - quanto costa un iphone?
+    - come si cambia una gomma della macchina?
+    - mi trovi un idraulico?
+    - spiegami la teoria della relativita

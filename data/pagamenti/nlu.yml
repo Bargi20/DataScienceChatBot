@@ -1,0 +1,559 @@
+version: "3.1"
+
+nlu:
+- intent: faq_pagamenti/metodi
+  examples: |
+    - come posso pagare?
+    - che metodi di pagamento accettate?
+    - quali metodi di pagamento avete
+    - si puo pagare con carta?
+    - accettate carte di credito?
+    - come si paga sul vostro sito
+    - metodi di pagamento
+    - che sistemi di pagamento avete a disposizione
+    - vorrei sapere come posso pagare un ordine
+    - posso pagare con paypal o solo con carta?
+    - ma da voi si paga come
+    - quali modalita di pagamento ci sono
+    - con cosa posso pagare
+    - che opzioni di pagamento ho al checkout
+    - quali carte e servizi di pagamento supportate
+    - dimmi come pagare
+
+- intent: faq_pagamenti/paypal
+  examples: |
+    - posso pagare con paypal?
+    - accettate paypal?
+    - si puo usare paypal
+    - paypal e disponibile?
+    - vorrei pagare tramite paypal
+    - pagate con paypal?
+    - c'e la possibilita di pagare con paypal
+    - ho solo paypal, va bene?
+    - accettate pagamenti paypal
+    - posso usare il mio conto paypal per l ordine
+    - paypal si puo usare anche senza carta?
+    - come pago con paypal
+    - potete accettare paypal per favore
+    - pagamento con pay pal
+    - posso pagare col mio saldo paypal
+
+- intent: faq_pagamenti/rate
+  examples: |
+    - si puo pagare a rate?
+    - posso pagare a rate
+    - avete il pagamento rateale?
+    - paga in 3 rate paypal
+    - come funziona il pagamento in 3 rate
+    - posso dividere il pagamento in piu rate
+    - pagare in tre rate si puo?
+    - fate pagamenti a rate senza interessi?
+    - vorrei pagare a rate un gioco costoso
+    - c e la possibilita di rateizzare
+    - rateizzazione dell ordine
+    - accettate il pagamento dilazionato
+    - posso pagare un po alla volta
+    - paypal in 3 rate quanto costa
+    - come attivo il paga in 3 rate
+    - si puo pagare in comode rate?
+    - ci sono finanziamenti o rate?
+
+- intent: faq_pagamenti/carte
+  examples: |
+    - quali carte accettate?
+    - accettate visa e mastercard?
+    - si puo pagare con american express?
+    - accettate la carta maestro?
+    - posso usare la mia carta di credito?
+    - carte di debito accettate?
+    - accettate bancomat?
+    - posso pagare con il bancomat
+    - amex la prendete?
+    - che circuiti di carte accettate
+    - la mia carta e una maestro, va bene?
+    - posso pagare con visa electron?
+    - accettate carte di credito straniere
+    - si paga con carta di debito
+    - carta di credito o debito, quale posso usare
+    - quali carte funzionano sul sito
+
+- intent: faq_pagamenti/prepagate
+  examples: |
+    - accettate postepay?
+    - posso pagare con la postepay
+    - si puo usare una carta prepagata?
+    - la mia carta prepagata va bene?
+    - postepay evolution accettata?
+    - accettate le carte ricaricabili
+    - posso pagare con una prepagata
+    - ho solo una carta prepagata, posso comprare?
+    - funziona la postepay sul vostro sito
+    - carta ricaricabile si puo usare
+    - posso usare la hype o altre prepagate
+    - le prepagate le accettate?
+    - postepay si o no
+    - con la postepay come faccio a pagare
+    - una carta prepagata visa va bene?
+
+- intent: faq_pagamenti/apple_google_pay
+  examples: |
+    - accettate apple pay?
+    - posso pagare con apple pay
+    - si puo usare google pay?
+    - avete google pay
+    - pagamento con il telefono si puo?
+    - posso pagare con l iphone
+    - apple pay e disponibile sul sito?
+    - pagare con gpay
+    - accettate pagamenti da smartphone
+    - posso usare il wallet del telefono
+    - google pay funziona da voi?
+    - vorrei pagare con apple pay dal mio iphone
+    - c e apple pay al checkout
+    - apple pay o google pay?
+    - come pago con google pay
+
+- intent: faq_pagamenti/satispay
+  examples: |
+    - accettate satispay?
+    - posso pagare con satispay
+    - si puo usare satispay
+    - avete satispay come metodo di pagamento?
+    - pagamento con satispay
+    - come pago con satispay
+    - satispay e disponibile?
+    - ho solo satispay, posso ordinare
+    - accettate satispay sul sito?
+    - posso usare l app satispay per pagare
+    - voglio pagare con sattispay
+    - satispay online si puo?
+    - funziona satispay da voi
+    - pagare tramite satispay
+
+- intent: faq_pagamenti/bonifico_dati
+  examples: |
+    - posso pagare con bonifico?
+    - accettate bonifici?
+    - vorrei pagare con bonifico bancario
+    - come funziona il pagamento con bonifico
+    - che iban devo usare per il bonifico?
+    - dove trovo l iban per pagare
+    - mi dai i dati per il bonifico?
+    - qual e l iban di gigi games
+    - che causale devo mettere nel bonifico
+    - a chi intestare il bonifico
+    - come faccio il bonifico per il mio ordine
+    - bonifico bancario come si fa
+    - si puo pagare con bonifico istantaneo?
+    - dati bancari per il pagamento
+    - voglio pagare con bonifico, cosa devo fare
+
+- intent: faq_pagamenti/bonifico_tempi
+  examples: |
+    - quanto ci mette il bonifico?
+    - quando spedite se pago con bonifico?
+    - ho fatto il bonifico, quando parte l ordine?
+    - dopo quanto arriva il pacco se pago con bonifico
+    - ho pagato con bonifico ma l ordine non risulta pagato
+    - tempi del bonifico
+    - il bonifico quando viene accreditato?
+    - spedite subito pagando con bonifico?
+    - ho fatto un bonifico ieri, quando spedite
+    - l ordine con bonifico parte solo dopo l accredito?
+    - quanti giorni servono per il bonifico
+    - bonifico fatto, ora cosa succede?
+    - con il bonifico la spedizione e piu lenta?
+    - ho effettuato il bonifico ma non ho ricevuto nulla
+    - il bonifico istantaneo accelera la spedizione?
+
+- intent: faq_pagamenti/contrassegno
+  examples: |
+    - posso pagare in contrassegno?
+    - accettate il contrassegno?
+    - quanto costa il contrassegno
+    - pagamento alla consegna si puo?
+    - c e il pagamento in contanti al corriere
+    - contrassegno fino a quanto?
+    - limite massimo per il contrassegno
+    - il contrassegno ha un supplemento?
+    - posso pagare quando arriva il pacco
+    - contrassegno anche per ordini all estero?
+    - voglio pagare alla consegna, e possibile?
+    - si paga extra per il contrassegno
+    - contrassegno si o no
+    - quanto si paga in piu col contrassegno
+    - posso pagare il corriere direttamente
+    - ordine da 400 euro in contrassegno si puo?
+
+- intent: faq_pagamenti/pagamento_negozio
+  examples: |
+    - posso pagare in negozio?
+    - si puo pagare al negozio fisico
+    - posso ordinare online e pagare in negozio?
+    - pagamento alla cassa in negozio come funziona
+    - in negozio accettate carte?
+    - in negozio si paga col bancomat
+    - nel negozio di ancona posso pagare in contanti?
+    - ritiro in negozio, quando pago?
+    - se ritiro in negozio pago online o li?
+    - accettate contanti nel negozio
+    - al negozio posso usare satispay
+    - posso pagare quando passo a ritirare
+    - pagare allo store fisico
+    - nel punto vendita che pagamenti accettate
+    - prenoto online e pago al ritiro?
+
+- intent: faq_pagamenti/sicurezza
+  examples: |
+    - e sicuro pagare sul vostro sito?
+    - i pagamenti sono sicuri?
+    - salvate i dati della mia carta?
+    - i dati della carta sono al sicuro
+    - e sicuro inserire la carta di credito?
+    - vi fidate? ho paura di dare i dati della carta
+    - conservate il numero della mia carta?
+    - il sito e protetto per i pagamenti
+    - quanto sono sicuri i pagamenti con carta da voi
+    - posso fidarmi a pagare online da voi?
+    - i miei dati bancari vengono memorizzati?
+    - avete protezione contro le frodi
+    - si possono salvare le carte per la prossima volta?
+    - rischio truffe pagando qui?
+    - la carta resta salvata sul sito?
+    - e sicuro il checkout?
+
+- intent: faq_pagamenti/tre_d_secure
+  examples: |
+    - cos e il 3d secure?
+    - cosa significa 3d secure
+    - perche mi chiede un codice dalla banca
+    - mi arriva un sms dalla banca per pagare, e normale?
+    - non mi arriva il codice 3d secure
+    - la banca mi chiede di autorizzare il pagamento
+    - perche devo confermare dall app della banca
+    - codice otp per il pagamento non arriva
+    - la mia banca mi chiede conferma, cosa devo fare
+    - verifica 3d secure non funziona
+    - devo approvare il pagamento sull app della banca?
+    - mi chiede una password per la carta
+    - non mi arriva l sms di conferma del pagamento
+    - autenticazione forte della carta cos e
+    - 3d secure obbligatorio?
+
+- intent: faq_pagamenti/pagamento_rifiutato
+  examples: |
+    - il pagamento e stato rifiutato
+    - la mia carta non funziona
+    - pagamento non andato a buon fine
+    - non riesco a pagare
+    - la carta viene rifiutata
+    - errore durante il pagamento
+    - perche il pagamento non va?
+    - il checkout mi da errore al pagamento
+    - transazione rifiutata cosa faccio
+    - pagamento fallito
+    - ho provato a pagare ma non passa
+    - carta declinata
+    - non mi fa completare l acquisto, il pagamento da errore
+    - il pagamento si blocca e non va avanti
+    - ho provato tre volte e la carta non passa
+    - paypal non mi fa pagare
+
+- intent: faq_pagamenti/doppio_addebito
+  examples: |
+    - mi hanno addebitato due volte
+    - doppio addebito sulla carta
+    - ho pagato due volte lo stesso ordine
+    - mi e stato addebitato l importo due volte
+    - vedo due addebiti dal mio conto
+    - addebito doppio, cosa faccio?
+    - la carta e stata addebitata due volte per un solo ordine
+    - mi avete fatto pagare due volte
+    - il pagamento risulta doppio
+    - ho visto due prelievi per lo stesso acquisto
+    - ho cliccato due volte e ho pagato due volte
+    - sulla carta c e un addebito ma l ordine non risulta
+    - mi hanno tolto i soldi ma non ho ricevuto la conferma
+    - soldi addebitati ma ordine non confermato
+    - pagamento addebitato ma l ordine non c e
+
+- intent: faq_pagamenti/quando_addebito
+  examples: |
+    - quando mi viene addebitato il pagamento?
+    - quando pagate l ordine, subito o alla spedizione?
+    - quando viene scalato l importo dalla carta
+    - l addebito avviene al momento dell ordine?
+    - mi addebitate quando spedite o quando ordino?
+    - la carta viene addebitata subito?
+    - quando partono i soldi dal mio conto
+    - addebito alla spedizione o all ordine?
+    - per i preordini quando devo pagare?
+    - quando mi fate pagare
+    - il pagamento viene preso subito?
+    - mmi addebitate solo alla consegna?
+    - quando esce il denaro dalla carta
+    - l importo viene bloccato fino alla spedizione?
+
+- intent: faq_pagamenti/iva
+  examples: |
+    - i prezzi sono iva inclusa?
+    - iva compresa nel prezzo?
+    - i prezzi comprendono l iva
+    - l iva e gia inclusa
+    - devo pagare l iva in piu?
+    - prezzo con iva o senza?
+    - ci sono costi nascosti oltre al prezzo?
+    - il prezzo che vedo e quello finale?
+    - iva esclusa o inclusa
+    - il prezzo sul sito e tutto compreso
+    - c e iva da aggiungere al checkout
+    - i prezzi mostrati includono le tasse?
+    - il totale al checkout cambia rispetto al prezzo?
+    - l iva si paga a parte?
+
+- intent: faq_pagamenti/fattura_richiesta
+  examples: |
+    - posso avere la fattura?
+    - come richiedo la fattura
+    - fate fattura?
+    - vorrei la fattura per il mio ordine
+    - dove scarico la fattura?
+    - dove trovo la fattura dell ordine
+    - come ottengo la fattura
+    - la fattura si chiede dopo l acquisto?
+    - ho dimenticato di chiedere la fattura
+    - posso chiedere la fattura anche dopo aver ordinato?
+    - mi serve la fattura, come faccio
+    - serve la ricevuta o la fattura per il mio acquisto
+    - dove si scarica la fattura dall account
+    - fattura con codice fiscale si puo?
+    - fattura in pdf dove la trovo
+    - ricevo la fattura via email?
+
+- intent: faq_pagamenti/fattura_azienda
+  examples: |
+    - ho la partita iva, posso fare fattura aziendale?
+    - fattura intestata a una societa
+    - come inserisco la partita iva
+    - vorrei fattura a nome della mia azienda
+    - sono una ditta, come faccio la fattura
+    - fattura elettronica per partita iva
+    - serve il codice sdi?
+    - posso comprare con la mia partita iva
+    - fatturate a liberi professionisti?
+    - come intestare la fattura a un associazione
+    - fattura per ristorante o bar con giochi
+    - fattura intestata all azienda invece che a me
+    - ho un attivita, mi fate la fattura con partita iva?
+    - la ludoteca ha bisogno di fattura, si puo?
+    - fattura con pec o codice destinatario
+
+- intent: faq_pagamenti/gift_card
+  examples: |
+    - avete le gift card?
+    - vendete carte regalo?
+    - voglio fare una gift card
+    - come compro una gift card
+    - gift card da quanto?
+    - quanto puo valere una gift card
+    - che tagli hanno le gift card
+    - quanto durano le gift card
+    - la gift card ha scadenza?
+    - la gift card e fisica o digitale?
+    - come mi arriva la gift card
+    - vorrei regalare una gift card
+    - buono regalo da voi si puo?
+    - gift card per un amico
+    - fino a quanto posso caricare una gift card
+    - quanto e valida la carta regalo
+
+- intent: faq_pagamenti/gift_card_uso
+  examples: |
+    - come uso la gift card?
+    - come si usa una gift card
+    - dove inserisco il codice della gift card
+    - ho una gift card, come la spendo
+    - posso usare la gift card in negozio?
+    - la gift card si puo usare insieme a un codice sconto?
+    - se spendo meno della gift card cosa succede al resto?
+    - saldo residuo della gift card
+    - rimane credito sulla gift card?
+    - posso usare la carta regalo in piu ordini
+    - come controllo il saldo della gift card
+    - la gift card e scaduta, posso ancora usarla?
+    - posso pagare solo con gift card?
+    - la gift card copre anche la spedizione?
+    - ho perso l email della gift card
+    - posso pagare meta con gift card e meta con carta?
+
+- intent: faq_pagamenti/come_codice
+  examples: |
+    - come si usa un codice sconto?
+    - dove inserisco il codice sconto?
+    - come funzionano i codici sconto
+    - ho un codice promozionale, come lo uso
+    - dove metto il codice promo
+    - come funziona il codice [GIOCA5](codice_sconto)?
+    - che codici sconto avete?
+    - avete dei codici promozionali attivi?
+    - come si attiva un voucher sconto
+    - dove si scrive il codice sconto al checkout
+    - a cosa serve [GIOCA5](codice_sconto)?
+    - quanto sconto da il codice [benvenuto10](codice_sconto)
+    - codici sconto disponibili
+    - ho un coupon ma non so dove inserirlo
+
+- intent: faq_pagamenti/codice_non_funziona
+  examples: |
+    - il codice sconto non funziona
+    - codice sconto non valido
+    - perche il mio codice non viene accettato?
+    - il codice promozionale e rifiutato
+    - [BENVENUTO10](codice_sconto) non funziona
+    - il codice [GIOCA5](codice_sconto) non va
+    - dice che il codice e scaduto
+    - mi dice codice gia utilizzato
+    - codice sconto non si applica
+    - non riesco ad applicare il coupon
+    - ho inserito il codice ma lo sconto non c e
+    - perche [gioca5](codice_sconto) non si applica al mio ordine
+    - errore nel codice promo
+    - codice non valido ma e giusto
+    - il buono sconto non e accettato
+    - lo sconto non viene scalato dal totale
+
+- intent: faq_pagamenti/codici_cumulabili
+  examples: |
+    - posso usare due codici sconto?
+    - i codici sono cumulabili?
+    - posso usare piu codici nello stesso ordine
+    - si possono sommare due sconti?
+    - posso usare [BENVENUTO10](codice_sconto) e [GIOCA5](codice_sconto) insieme?
+    - cumulabili i codici promozionali?
+    - ho due coupon, li posso usare tutti e due
+    - posso unire due promozioni
+    - quanti codici posso mettere per ordine
+    - si puo usare un codice insieme ai gigi punti
+    - un codice sconto e un prodotto gia scontato si sommano?
+    - il codice sconto vale anche sui prodotti in offerta?
+    - posso usare un codice e una gift card insieme?
+    - sconto cumulabile con altre offerte
+    - un solo codice o piu di uno?
+
+- intent: faq_pagamenti/saldi
+  examples: |
+    - quando fate i saldi?
+    - ci sono saldi?
+    - fate il black friday?
+    - promozioni black friday
+    - ci sono offerte speciali in arrivo?
+    - quando ci sono le prossime offerte
+    - fate sconti a natale?
+    - sconti stagionali
+    - ci sono promozioni per il black friday
+    - come faccio a sapere quando ci sono le offerte
+    - avete il cyber monday?
+    - fate saldi estivi o invernali?
+    - quando ci sono gli sconti piu grossi
+
+- intent: faq_pagamenti/prezzo_cambiato
+  examples: |
+    - il prezzo e cambiato dopo che ho comprato
+    - ho pagato un gioco e ora costa meno
+    - il prezzo e sceso dopo il mio acquisto, posso avere la differenza?
+    - ho comprato ieri e oggi e in offerta
+    - posso avere il rimborso della differenza di prezzo?
+    - hanno abbassato il prezzo dopo il mio ordine
+    - prezzo diverso tra carrello e checkout
+    - perche il prezzo e diverso da quello che avevo visto?
+    - il gioco costava meno quando l ho messo nel carrello
+    - e aumentato il prezzo dopo l ordine, devo pagare di piu?
+    - dopo l ordine il prezzo puo cambiare?
+    - ho visto un prezzo piu basso dopo aver acquistato
+    - l offerta e finita proprio dopo il mio acquisto
+    - prezzo errato sul sito, cosa succede?
+    - l importo addebitato e diverso dal prezzo sul sito
+
+- intent: faq_pagamenti/estero
+  examples: |
+    - posso pagare dall estero?
+    - accettate carte straniere?
+    - in che valuta si paga?
+    - i prezzi sono in euro?
+    - posso pagare in dollari?
+    - pagare in sterline si puo?
+    - sono in germania, posso pagare con la mia carta tedesca?
+    - pagamento con carta non italiana
+    - vivo all estero, come posso pagare
+    - paypal funziona dall estero?
+    - ci sono costi di conversione valuta?
+    - la mia banca mi fa pagare il cambio valuta
+    - vorrei pagare con carta svizzera
+    - che valuta usate sul sito
+    - carta americana si puo usare?
+    - contrassegno dall estero?
+
+- intent: faq_pagamenti/cambia_metodo
+  examples: |
+    - posso cambiare metodo di pagamento dopo l ordine?
+    - ho sbagliato metodo di pagamento
+    - vorrei pagare con paypal invece che con bonifico
+    - posso modificare il pagamento di un ordine gia fatto?
+    - ho scelto il bonifico ma voglio pagare con carta
+    - cambiare da contrassegno a carta
+    - si puo cambiare il modo di pagare
+    - ho scelto il contrassegno per sbaglio
+    - voglio cambiare il metodo di pagamento del mio ordine
+    - posso pagare con una carta diversa dopo aver ordinato
+    - ordine non pagato, posso scegliere un altro metodo?
+    - ho inserito la carta sbagliata nell ordine
+    - come cambio la carta usata per l ordine
+
+- intent: faq_pagamenti/metodi_non_accettati
+  examples: |
+    - accettate klarna?
+    - accettate scalapay?
+    - posso pagare con bitcoin?
+    - accettate criptovalute
+    - posso pagare con assegno?
+    - si puo pagare in contanti online?
+    - accettate il bonus cultura?
+    - posso usare la carta del docente
+    - accettate buoni pasto?
+    - accettate la carta di credito diners?
+    - posso pagare con amazon pay?
+    - posso pagare con la carta della cultura
+    - satispay si, e klarna?
+    - pagamento con ricarica telefonica si puo?
+
+- intent: faq_pagamenti/pagamento_combinato
+  examples: |
+    - posso pagare meta con una carta e meta con un altra?
+    - si puo dividere il pagamento tra due carte
+    - pagare con due metodi diversi insieme
+    - posso pagare con paypal e gift card
+    - usare due carte per un solo ordine
+    - dividere il costo tra me e un amico
+    - pagamento diviso tra due persone
+    - voglio pagare un parte con bonifico e il resto con carta
+    - si possono usare due metodi di pagamento?
+    - posso pagare in parte con i punti e in parte con carta
+    - l ordine e grande, posso suddividere il pagamento?
+    - due carte per lo stesso acquisto
+    - possiamo dividere il pagamento in due persone?
+
+- intent: faq_pagamenti/ricevuta
+  examples: |
+    - mi arriva la ricevuta del pagamento?
+    - ricevuta di pagamento dove la trovo
+    - mi serve una ricevuta
+    - avete lo scontrino per gli acquisti online?
+    - ricevo conferma del pagamento via email?
+    - come dimostro di aver pagato
+    - mi serve una prova del pagamento
+    - ricevuta per il rimborso spese aziendale
+    - posso avere la conferma del pagamento dell ordine
+    - dove vedo che il pagamento e andato a buon fine
+    - non ho ricevuto l email di conferma del pagamento
+    - come faccio a sapere se il pagamento e andato a buon fine
+    - riepilogo ordine con importo pagato dove lo vedo

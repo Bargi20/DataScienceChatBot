@@ -1,0 +1,265 @@
+version: "3.1"
+
+nlu:
+- intent: aggiungi_carrello
+  examples: |
+    - aggiungi [Catan](gioco) al carrello
+    - aggiungi [2](quantita) [Dixit](gioco)
+    - mettilo nel carrello
+    - lo aggiungo al carrello
+    - metti nel carrello [Carcassonne](gioco)
+    - voglio comprare [Azul](gioco)
+    - lo prendo
+    - lo voglio, aggiungilo
+    - ne prendo [due](quantita) copie di [Dobble](gioco)
+    - aggiungimi [3](quantita) [Uno](gioco) al carrello
+    - mettimi [Splendor](gioco) nel carrello per favore
+    - vorrei acquistare [Pandemic](gioco)
+    - aggiungi al carrello
+    - prendo [Ticket to Ride](gioco)
+    - metti dentro [2](quantita) copie
+    - ok lo compro, mettilo nel carrello
+    - aggiungi un altro
+    - ne voglio [quattro](quantita)
+    - mi serve [Exploding Kittens](gioco), aggiungilo
+    - agiungi [Jenga](gioco) al carello
+    - puoi mettere [7 Wonders](gioco) nel mio carrello?
+    - compro [Codenames](gioco)
+    - aggiungine [5](quantita)
+
+- intent: togli_carrello
+  examples: |
+    - togli [Catan](gioco) dal carrello
+    - rimuovi [Dixit](gioco) dal carrello
+    - elimina [Azul](gioco) dal carrello
+    - toglilo dal carrello
+    - levalo dal carrello
+    - non lo voglio più, toglilo
+    - rimuovilo
+    - cancella [Dobble](gioco) dal mio carrello
+    - ho cambiato idea su [Uno](gioco), toglilo
+    - togli l'ultimo gioco che ho messo
+    - butta fuori [Splendor](gioco) dal carrello
+    - elimina quel gioco dal carrello
+    - non voglio più [Pandemic](gioco)
+    - togliete [Carcassonne](gioco) dal carrello
+    - rimuovi dal carrello [Jenga](gioco)
+    - puoi togliermi [Cluedo](gioco) dal carrello?
+    - toglimi [Codenames](gioco)
+    - via [Ticket to Ride](gioco) dal carrello
+    - vorrei rimuovere un gioco dal carrello
+
+- intent: cambia_quantita_carrello
+  examples: |
+    - cambia la quantità di [Catan](gioco) a [3](quantita)
+    - metti [2](quantita) [Dixit](gioco) invece di uno
+    - ne voglio [tre](quantita) invece di due
+    - modifica la quantità a [4](quantita)
+    - portalo a [2](quantita)
+    - fammi [5](quantita) copie di [Azul](gioco)
+    - cambia quantità
+    - voglio cambiare la quantità nel carrello
+    - riduci a [1](quantita) la quantità di [Dobble](gioco)
+    - aumenta la quantità di [Uno](gioco) a [6](quantita)
+    - invece di uno ne voglio [due](quantita)
+    - metti [3](quantita) pezzi di [Splendor](gioco)
+    - cambia [Pandemic](gioco) a [2](quantita) copie
+    - la quantità di [Jenga](gioco) deve essere [2](quantita)
+    - imposta [4](quantita) per [Carcassonne](gioco)
+    - ne basta [uno](quantita) solo
+    - modifica quantita del carrello
+    - non due ma [tre](quantita)
+    - ne servono [due](quantita) in più
+
+- intent: mostra_carrello
+  examples: |
+    - mostra il carrello
+    - fammi vedere il carrello
+    - cosa c'è nel mio carrello?
+    - cosa ho nel carrello
+    - vedi carrello
+    - apri il carrello
+    - il mio carrello
+    - carrello
+    - riepilogo del carrello
+    - quanto devo pagare in totale?
+    - qual è il totale?
+    - quanto viene il mio ordine?
+    - a quanto ammonta il carrello
+    - cosa ho messo nel carrello finora?
+    - voglio vedere cosa ho nel carrello
+    - totale del carrello con la spedizione
+    - quanto spendo in tutto
+    - controlla il mio carrello
+    - mostrami il riepilogo
+    - quanto costa tutto con la spedizione?
+    - dimmi cosa c'è nel carello
+    - mostrami il carrello
+    - vedere il carrello
+    - quanto ho nel carrello finora?
+    - che giochi ho messo nel carrello?
+
+- intent: svuota_carrello
+  examples: |
+    - svuota il carrello
+    - svuotalo
+    - cancella tutto il carrello
+    - togli tutto dal carrello
+    - elimina tutto dal carrello
+    - voglio ricominciare da capo con il carrello
+    - resetta il carrello
+    - rimuovi tutti i giochi dal carrello
+    - butta via tutto il carrello
+    - cancella il carrello
+    - ripulisci il carrello
+    - non voglio più niente, svuota tutto
+    - azzera il carrello
+    - svuota il mio carrello per favore
+    - vorrei svuotare il carrello
+    - tolgo tutto
+
+- intent: applica_codice_sconto
+  examples: |
+    - ho un codice sconto
+    - applica il codice [BENVENUTO10](codice_sconto)
+    - uso il codice [GIOCA5](codice_sconto)
+    - ho il codice [GIOCA5](codice_sconto)
+    - voglio usare un codice sconto
+    - inserisci il codice [BENVENUTO10](codice_sconto)
+    - codice sconto [PROMO20](codice_sconto)
+    - ho un coupon
+    - posso usare il codice [ESTATE15](codice_sconto)?
+    - metti il codice [GIOCA5](codice_sconto) sul carrello
+    - applicami lo sconto [BENVENUTO10](codice_sconto)
+    - il mio codice è [NATALE10](codice_sconto)
+    - ho un buono sconto da usare
+    - dove metto il codice sconto?
+    - vorrei inserire un codice promozionale
+    - sconto [BENVENUTO10](codice_sconto)
+    - usa [CIAO5](codice_sconto) come codice
+    - mi hanno dato un codice, lo applichi?
+    - provo il codice [SCONTO10](codice_sconto)
+    - usa il codice [GIOCA5](codice_sconto)
+    - voglio usare il coupon [BENVENUTO10](codice_sconto)
+    - ho un buono sconto da usare sul carrello
+    - metti il codice sconto [GIOCA5](codice_sconto) nel carrello
+    - inserisci [benvenuto10](codice_sconto)
+
+- intent: vai_checkout
+  examples: |
+    - vado al checkout
+    - voglio pagare
+    - procedi al pagamento
+    - concludi l'ordine
+    - voglio finalizzare l'acquisto
+    - completa l'ordine
+    - checkout
+    - ho finito, come pago?
+    - ordina
+    - passa alla cassa
+    - sono pronto per pagare
+    - voglio completare l'acquisto
+    - fammi pagare
+    - confermo l'ordine
+    - chiudiamo l'ordine
+    - ok procedi con l'acquisto
+    - vorrei finire l'ordine
+    - paghiamo il carrello
+    - come concludo l'acquisto?
+    - andiamo alla cassa
+    - ho finito, voglio pagare il carrello
+    - procediamo con il pagamento
+    - finalizza l'acquisto
+    - chiudi l'ordine, ho preso tutto
+    - porta tutto alla cassa
+    - vado alla cassa
+
+- intent: faq_carrello/come_ordinare
+  examples: |
+    - come si fa un ordine?
+    - come faccio ad ordinare?
+    - come funziona l'ordine online
+    - come si acquista sul sito?
+    - vorrei sapere come comprare un gioco
+    - quali sono i passaggi per fare un ordine
+    - come ordino un gioco?
+    - spiegami come si fa un acquisto
+    - non so come fare un ordine
+    - come comprare dal vostro sito
+    - qual è la procedura per ordinare?
+    - come funziona il vostro negozio online
+    - come effettuo un ordine
+    - come si completa un acquisto?
+    - potete spiegarmi come ordinare?
+
+- intent: faq_carrello/carrello_salvato
+  examples: |
+    - il carrello resta salvato?
+    - se chiudo il sito il carrello si cancella?
+    - il carrello viene salvato?
+    - se esco i giochi nel carrello rimangono?
+    - per quanto tempo resta il carrello?
+    - il mio carrello rimane salvato se mi disconnetto
+    - posso finire l'acquisto più tardi senza perdere il carrello?
+    - perdo il carrello se chiudo la pagina?
+    - quanto dura il carrello?
+    - il carrello si svuota da solo?
+    - i prodotti nel carrello restano anche domani?
+    - se torno dopo trovo ancora il carrello?
+    - il carrello si salva sul mio account?
+    - posso lasciare il carrello e tornare dopo?
+    - il carello rimane salvato?
+
+- intent: faq_carrello/ordine_minimo
+  examples: |
+    - c'è un ordine minimo?
+    - qual è l'importo minimo per ordinare?
+    - devo spendere una cifra minima?
+    - ordine minimo?
+    - posso comprare anche un solo gioco?
+    - c'è una spesa minima per acquistare
+    - quanto devo spendere almeno?
+    - si può ordinare anche solo un gioco da poco prezzo?
+    - serve una soglia minima per fare un ordine?
+    - minimo d'ordine?
+    - c'è un minimo di acquisto?
+    - posso fare un ordine piccolo?
+    - esiste un importo minimo di spesa
+    - bisogna comprare più giochi insieme?
+    - ordino anche una cosa sola, va bene?
+
+- intent: faq_carrello/modifica_dopo_ordine
+  examples: |
+    - posso modificare il carrello dopo aver ordinato?
+    - ho sbagliato l'ordine, posso cambiarlo?
+    - posso aggiungere un gioco a un ordine già fatto?
+    - dopo l'ordine posso cambiare i prodotti?
+    - ho già pagato, posso togliere un gioco?
+    - come modifico un ordine già effettuato
+    - ho dimenticato un gioco nell'ordine, posso aggiungerlo?
+    - si può cambiare quantità dopo l'acquisto?
+    - posso cambiare qualcosa dopo aver confermato l'ordine?
+    - ho confermato ma vorrei cambiare un articolo
+    - modificare ordine già pagato
+    - posso aggiungere altro a un ordine che ho appena fatto?
+    - ordine già inviato, posso cambiare il contenuto?
+    - ho fatto l'ordine con un errore nei prodotti
+    - c'è modo di correggere un ordine dopo il checkout?
+
+- intent: faq_carrello/prezzi_aggiornati
+  examples: |
+    - i prezzi nel carrello sono aggiornati?
+    - il prezzo nel carrello può cambiare?
+    - se un gioco va in offerta il carrello si aggiorna?
+    - il prezzo nel carrello è quello finale?
+    - se il prezzo scende dopo che l'ho messo nel carrello?
+    - il carrello blocca il prezzo?
+    - il prezzo cambia tra carrello e checkout?
+    - le offerte si applicano da sole nel carrello?
+    - il prezzo che vedo nel carrello è definitivo?
+    - se cambia il prezzo mentre ho il carrello pieno?
+    - nel carrello i prezzi comprendono l'IVA?
+    - il totale del carrello è già comprensivo di tutto?
+    - le offerte vengono applicate automaticamente?
+    - se aggiungo un gioco in sconto il prezzo resta quello scontato?
+    - il prezzo del carrello è garantito?
